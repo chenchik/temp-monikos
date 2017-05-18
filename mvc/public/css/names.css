@@ -1,0 +1,30 @@
+
+button.btnBlue {
+    background: #550000;
+    color: #fff;
+    font-family: Sans-serif;
+    font-size: 13px;
+    height: 160px;
+    width: 150px;
+    line-height: 60px;
+    text-align: center;
+	border-radius: 2px;
+	border: 5px solid lightgray;
+	white-space: normal;
+    transition: all 0.3s ease 0s;
+}
+
+
+.columns {
+  columns: 3;
+}
+
+  .highlight {
+    background: yellow;
+  }
+
+button:hover {
+  background: #3071A9
+}
+
+.active{background-color:red;}

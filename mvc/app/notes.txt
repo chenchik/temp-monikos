@@ -1,0 +1,45 @@
+Installing phpmyadmin and my sql on digital ocean
+
+ssh into server with:
+ssh root@104.236.241.100
+
+password:
+kc3irtapdnayeli29r
+
+username:
+root
+
+host:
+104.236.241.100
+
+perform these commands:
+apt-get update
+apt-get install -y mysql-server phpmyadmin
+sudo service apache2 restart
+
+be sure to add this line in /etc/apache2
+Include /etc/phpmyadmin/apache.conf
+
+to access phpmyadmin:
+www.monikos.org/phpmyadmin
+
+host:104.236.241.100
+password:kc3irtapdnayeli29r
+user:root
+
+connect to sql command line:
+mysql -u [username]-p
+username root
+password, same as before
+
+find /etc -name "my.cnf" -print
+fore whatever file you want to find
+
+sudo service apache2 restart
+restarts apache
+
+****
+URL REDIRECTION
+default url is set up in /etc/apache2/mods-available/dir.conf
+change the contents of this file if you want to start not using /mvc/public as the root
+******

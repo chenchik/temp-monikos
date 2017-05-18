@@ -1,0 +1,316 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway:300,500,900';
+
+button.btnBlue  {
+    background: #3071A9;
+    color:white;
+    font-family: 'Raleway'; 
+    font-weight: 600;
+    font-size: 12px;
+    width:100%;
+   	height: 19vh; 
+    text-align: center;   
+  	border-radius: 2px;
+  	text-overflow: ellipsis;
+    white-space: initial;
+    word-wrap: break-word;
+    transition: all 0.3s ease 0s;
+    border-radius: 20px;
+}
+
+
+/* 
+
+body {
+	background-image: url('completed.png');
+/* 	background-repeat: no-repeat; */
+}
+
+
+
+p {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    letter-spacing: 2px;
+
+}
+
+p#donedone {
+    font-family: 'Raleway', sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 2px;
+    color: #2ECC71;
+    margin-top: 20vh;
+
+}
+
+.shine {
+    position: absolute;
+    top: -70px;
+    left: -25px;
+    width:100px;
+    height:100px;
+    border-radius: 50px;
+
+    background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 150%); /* Chrome10+,Safari5.1+ */
+    background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 150%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,1.5)), color-stop(100%,rgba(255,255,255,0))); /*     Chrome,Safari4+ */
+    background: -o-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 150%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 150%); /* IE10+ */
+    background: radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 150%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+/******Header********/	
+#app_header {
+    display: block;
+    position:fixed;
+    top:0;
+    width:100%;
+    height:65px;
+    background:#777;
+    text-align: center;
+    box-shadow: 0 0 5px #444;
+    z-index: 10;
+}
+
+#app_header button.back {
+    position: fixed;
+    left: 10px;
+    font-size: 16px;
+    border: 0;
+    background: #606060;
+    height: 40px;
+    margin-top: 13px;
+    width: 60px;
+}
+
+#app_header button{
+    background: transparent;
+    font-family: 'Raleway',sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+	margin: 7px 0 0 0;
+    color:white;
+    border: 1px lightblue solid;
+	width: 45px;
+    border-radius: 4px;
+	padding: 2px;
+}
+/******Header END********/
+
+.columns {
+  columns: 3;
+}
+
+.highlight {
+  background: yellow;
+}
+
+
+.active{background-color:red;}
+
+.ng-hide {
+  height: 0;
+  width: 0;
+  background-color: transparent;
+  transition: all linear 0.5s;
+  top:-200px;
+  left: 200px;
+}
+.animate-hide {
+
+  line-height: 20px;
+  opacity: 1;
+  padding: 10px;
+  border: 1px solid black;
+  background: white;
+}
+
+.animate-hide.ng-hide {
+  line-height: 0;
+  opacity: 0;
+  padding: 0 10px;
+}
+
+.check-element {
+  padding: 10px;
+  border: 1px solid black;
+  background: white;
+}
+
+/**Inside the app header***/
+#tryagain {
+	/**margin-left:10vh; **/
+	font-size:20px; 
+	border: 5px solid lightgray; 
+	background-color: #0099ff; 
+	height: 6vh; 
+	width: 17vh;
+}
+
+#new_round {
+	width: 100%;
+  height: 50px;
+  background-color: #ff3333;
+  color: white;
+  font-weight: 900;
+  box-shadow: 0 0 5px #444;
+}
+
+.home{
+	position: relative;
+	z-index: 20;
+}
+
+/**Inside the app header END***/
+
+#app_content {
+  min-height: 90%;
+  margin-top: 65px;
+  overflow-y: auto;
+  padding-top: 0px;
+  background-color: #ABB7B7;
+
+}
+
+#app_body {
+  padding-top: 5px;
+}
+
+.footer {
+	text-align: center;
+	position: fixed;
+	bottom:0;
+	width: 100%;
+	height:7vh;
+	background-color: #777;
+	color:white;
+	font-family: 'Raleway',sans-serif;
+	font-size: 30px;
+	letter-spacing: 5px;
+	/*padding: 5px;*/
+	z-index: 25;
+	font-weight: 900;
+	box-shadow: 0 0 5px #444;
+}
+
+.row.drugGridRow {
+    margin-left: 0px;
+    margin-right: 0px;
+}
+.drugGridCell {
+    padding: 5px;
+}
+
+div#completeMessage {
+    position: fixed;
+    z-index: 5;
+    text-align: center;
+    width: 300px;
+    font-family: 'Raleway',sans-serif;
+    font-size: 20px;
+    background: #333;
+    padding: 30px;
+    color: white;
+    border-radius: 20px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div#challengeInfoBar {
+    background: #22A7F0;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    overflow: auto;
+    background: linear-gradient(269deg, #22a7f0, #19b5fe);
+    background-size: 400% 400%;
+}
+
+.challengeInfoText {
+    font-family: raleway;
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 0px;
+}
+
+div#challengeCompleteMessage {
+    position: fixed;
+    z-index: 50;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    font-family: 'Raleway',sans-serif;
+    font-size: 20px;
+    background: #333;
+    padding: 60px;
+    color: white;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    padding-top: 30px;
+}
+
+#challenge_complete_btn {
+    background: #22A7F0;
+    border-radius: 5px;
+    margin-top: 20px;
+    top: 100%;
+}
+
+#challenge_complete_btn:focus {
+  outline:none;
+}
+
+img#challengeCompleteLogo {
+    width: 150px;
+    margin-bottom: 20px;
+}
+button#inner_challenge_complete_btn {
+    background: inherit;
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+}
+
+button#inner_challenge_complete_btn:focus {
+    background: rgb(108, 122, 137);
+    outline: none;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+}
+
+div#finishedPlayNewRoundButton:focus {
+    outline: none;
+    border: none;
+    background: #777;
+}
+div#finishedPlayNewRoundButton:hover {
+    cursor: pointer;
+}
+div#finishedPlayNewRoundButton {
+    background: #22A7F0;
+    padding: 5px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+div#finishedBackToMenuButton:focus {
+    outline: none;
+    border: none;
+    background: #777;
+}
+div#finishedBackToMenuButton:hover {
+    cursor: pointer;
+}
+div#finishedBackToMenuButton {
+    background: #22A7F0;
+    padding: 5px;
+    margin-top: 15px;
+    border-radius: 5px;
+}

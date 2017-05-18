@@ -1,0 +1,122 @@
+
+button.btnBlue {
+    background: #3071A9;
+    color:white;
+    font-family: Sans-serif;
+    font-size: 14px;
+    width:26vw;
+   height: 23vh; 
+    text-align: center;   
+	border-radius: 2px;
+	text-overflow: ellipsis;
+    white-space: initial;
+    word-wrap: break-word;
+    transition: all 0.3s ease 0s;
+}
+
+body {
+	background-color: lightgray 
+}
+
+p {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    letter-spacing: 2px;
+
+
+}
+
+.shine {
+    position: absolute;
+    top: -70px;
+    left: -25px;
+    width:100px;
+    height:100px;
+    border-radius: 50px;
+
+    background: -webkit-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 150%); /* Chrome10+,Safari5.1+ */
+    background: -moz-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%, rgba(255,255,255,0) 150%); /* FF3.6+ */
+    background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%,rgba(255,255,255,1.5)), color-stop(100%,rgba(255,255,255,0))); /*     Chrome,Safari4+ */
+    background: -o-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 150%); /* Opera 12+ */
+    background: -ms-radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 150%); /* IE10+ */
+    background: radial-gradient(center, ellipse cover,  rgba(255,255,255,1) 0%,rgba(255,255,255,0) 150%); /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+}
+
+
+#app_header {
+    display: block;
+    position:fixed;
+    top:0;
+    width:100vw;
+    height:10vh;
+    background:#777;
+    text-align: center;
+    box-shadow: 0 0 5px #444;
+    margin-bottom:100px;
+    padding-top:5px;
+
+
+}
+
+#app_body {
+
+    margin-top:70px;
+}
+
+
+#app_header button{
+    background: transparent;
+    font-family: 'Raleway',sans-serif;
+    font-weight: 300;
+    font-size: 30px;
+    color:white;
+    border: 1px lightblue solid;
+    border-radius: 4px;
+}
+
+
+
+.columns {
+  columns: 3;
+}
+
+  .highlight {
+    background: yellow;
+  }
+
+button:hover {
+  background: #3071A9
+}
+
+.active{background-color:red;}
+
+.ng-hide {
+  height: 0;
+  width: 0;
+  background-color: transparent;
+  transition: all linear 0.5s;
+  top:-200px;
+  left: 200px;
+}
+.animate-hide {
+
+  line-height: 20px;
+  opacity: 1;
+  padding: 10px;
+  border: 1px solid black;
+  background: white;
+}
+
+.animate-hide.ng-hide {
+  line-height: 0;
+  opacity: 0;
+  padding: 0 10px;
+}
+
+.check-element {
+  padding: 10px;
+  border: 1px solid black;
+  background: white;
+}

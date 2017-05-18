@@ -1,0 +1,6 @@
+{
+    "require": {
+        "aws/aws-sdk-php": "2.*",
+        "illuminate/database": "^5.2"
+    }
+}

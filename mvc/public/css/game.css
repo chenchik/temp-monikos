@@ -1,0 +1,149 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway:300,400';
+
+body {
+    margin: 0;
+    padding: 0;    
+    background: #FF3D39;
+}
+
+#app_header {
+    display: block;
+    position:fixed;
+    top:0;
+    width:100%;
+    height:65px;
+    background:#777;
+    text-align: center;
+    box-shadow: 0 0 5px #444;
+	z-index: 10;
+}
+
+.back{
+	position: fixed;
+	left:10px;
+}
+
+#app_header button{
+    background: transparent;
+    font-family: 'Raleway',sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+	margin: 7px 0 0 0;
+    color:white;
+    border: 1px lightblue solid;
+	width: 45px;
+    border-radius: 4px;
+	padding: 2px;
+}
+
+
+a {
+    text-decoration: none;
+}
+
+.game-wrapper {
+    display: block;
+    text-align: center;
+    font-family: 'Raleway',sans-serif;
+    font-size: 25px;
+    letter-spacing: 3px;
+    margin-top: 65px;
+}
+
+.game-block{
+    margin:0;
+    padding: 53px;
+}
+.game-block:hover{
+    cursor:pointer;
+}
+/*#game_0, #game_2 {
+    background: #ff3333;
+    color:white;
+    
+}
+
+#game_1, #game_3{
+    color: #8d99ae;
+
+}*/
+
+.game-red{
+    background: #FF3D39;
+    color:white;
+}
+.game-white{
+    color: #8d99ae;
+    background: white;
+}
+
+/*DCEDITS*/
+
+.challengeButton {
+    border: 1px solid #8d99ae;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 5px;
+}
+
+input#findUser {
+    color: #8d99ae;
+    border: 1px solid #8d99ae;
+    margin-bottom: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+input#findUser:focus {
+    outline:none;
+}
+
+input#capsulesQuantity {
+    color: #8d99ae;
+    border: 1px solid #8d99ae;
+    margin-bottom: 15px;
+    padding: 5px;
+    border-radius: 5px;
+    text-align: center;
+}
+input#capsulesQuantity:focus {
+    outline:none;
+}
+
+span#notificationIndicator {
+    background: #22A7F0;
+    border-radius: 16px;
+    padding: 2px;
+    font-size: 13px;
+    /* float: left; */
+    /* margin-bottom: -3px; */
+    position: fixed;
+    width: 21px;
+    top: 8px;
+    right: 29px;
+}
+
+::-webkit-input-placeholder { /* Chrome */
+  color: #8d99ae;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  color: #8d99ae;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  color: #8d99ae;
+  opacity: 1;
+}
+:-moz-placeholder { /* Firefox 4 - 18 */
+  color: #8d99ae;
+  opacity: 1;
+}
+
+.game-red:hover{
+    text-decoration: none !important;
+}
+.game-block:hover{
+    text-decoration: none !important;   
+}
+ a:hover{
+    text-decoration: none;
+ }

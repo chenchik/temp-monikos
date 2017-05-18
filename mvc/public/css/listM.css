@@ -1,0 +1,386 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway:300,500,900';
+
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+button {
+    border:none;
+    background: transparent;
+}
+
+h1 {
+	font-size: 20px !important;
+	margin-top: 5px !important;
+	margin-bottom: 5px !important;
+}
+
+a {
+    text-decoration: none;
+}
+
+label {
+	font-weight: 300 !important;
+	margin-bottom: 0 !important;
+}
+
+		
+#app_header {
+    display: block;
+    position:fixed;
+    top:0;
+    width:100%;
+    height:65px;
+    background:#777;
+    text-align: center;
+    box-shadow: 0 0 5px #444;
+	z-index: 10;
+}
+
+.back{
+	position: fixed;
+	left:10px;
+}
+
+#app_header button{
+    background: transparent;
+    font-family: 'Raleway',sans-serif;
+    font-weight: 500;
+    font-size: 30px;
+	margin: 7px 0 0 0;
+    color:white;
+    border: 1px lightblue solid;
+	width: 45px;
+    border-radius: 4px;
+	padding: 2px;
+}
+
+.add-list-block button {
+     font-family: 'Raleway',sans-serif;
+	color:#8d99ae;
+    font-size: 13px;
+    margin: 5px;
+	margin-top: 8px;
+    padding: 10px;
+	width:auto;
+	line-height: 15px;
+    letter-spacing: 1px;
+    border: 2px #ccc solid;
+    border-radius: 10px;
+	font-weight: 300;
+}
+
+.add-list-block label {
+    color:#8d99ae;
+}
+
+.list-name-header{
+    font-family: 'Raleway', sans-serif;
+    letter-spacing: 2px;
+    margin: 0px;
+	font-size: 20px !important;
+    background: none;
+}
+
+.list-creator {
+    font-family: 'Raleway',sans-serif;
+    letter-spacing: 1px;
+	margin: 10px;
+	font-weight: 500;
+}
+
+.list-creator #listName {
+    height: 24px;
+    width: 150px;
+	border-radius: 10px;
+    text-align: center;
+    font-family: 'Raleway',sans-serif;
+    font-size: 16px;
+    letter-spacing: 2px;
+	font-weight: 500;
+}
+
+#listName:focus {
+	outline: none;
+}
+
+h1.list-m-header {
+    position:relative;
+    width:100%;
+    color:#8d99ae;
+    font-family: 'Raleway',sans-serif;
+    text-transform: uppercase;
+    font-size: 16px !important;
+    letter-spacing: 2px;
+
+}
+
+h1.school-list {
+        margin-top: 40px !important;
+}
+
+h1.your-list {
+        margin-top: 15px !important;
+}
+
+
+
+.list-collection-block {
+    margin: 5px;
+    padding:5px;
+    border-top:  2px solid #8d99ae;
+    border-bottom: 2px solid #8d99ae;
+	font-family: 'Raleway',sans-serif;
+	line-height: normal;
+	color: #464a53;
+/*	overflow-y: scroll;*/
+/*	max-height: 475px;*/
+}
+
+.list-collection-block-short{
+	height: 110px;
+}
+
+.list-block {
+    margin: 0 5px 0 5px;
+    border-top:  2px solid #ccc;
+    border-bottom: 2px solid #ccc;
+	font-weight: 500;	
+	font-size: 12px;
+}
+
+.select {
+	color: #999;
+}
+
+.delete {
+	color: #999;
+}
+
+.list-drugs {
+    word-wrap: normal;
+	white-space: normal;
+}
+
+.list-info-block{
+    letter-spacing: 1px;
+    display:none;
+    padding: 3px;
+    color: #8d99ae;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+	font-weight: 300;
+}
+
+#app_content {
+    display:block;
+    width:100vw;
+    text-align: center;
+	margin-bottom: 10%;
+	overflow-y: hidden;
+	overflow-x: hidden;
+    margin-top: 65px;
+}
+
+.red {
+	background: #ff3333;
+	color:white;
+}
+
+.play {
+	text-align: center;
+	position: fixed;
+	bottom:0;
+	width: 100%;
+	height:50px;
+	background-color: #ff3333;
+	color:white;
+	font-family: 'Raleway',sans-serif;
+	font-size: 30px;
+	letter-spacing: 5px;
+	padding: 5px;
+	z-index: 25;
+	font-weight: 900;
+	box-shadow: 0 0 5px #444;
+}
+
+/**********CREATOR************/
+.text-container {
+	display: block;
+}
+
+.field-name{
+	color: white;
+}
+
+input#listname{
+	margin: 0;
+	border-radius: 4px;
+    text-align: -webkit-center;
+	border-style: none;
+}
+
+.form-group input {
+	margin-bottom: 20px;
+}
+
+.list-creator button {
+    font-family: 'Raleway',sans-serif;
+	color:#8d99ae;
+    font-size: 15px;
+    margin: 5px;
+    padding: 5px;
+    letter-spacing: 1px;
+    border: 2px #ccc solid;
+    border-radius: 5px;
+	font-weight: 500;
+	position: fixed;
+	bottom: 53px;
+	display: block;
+	left: 40%;
+	z-index: 20;
+}
+
+.searchable-container label.drug_name{
+	border:0;
+	margin:8px; 
+	font-size: 14px;
+	width: 150px;
+	color:white;
+	line-height: 14px;
+	width:90%; 
+	text-align: center; 
+	max-width: 150px;
+	word-wrap: break-word;
+	white-space: normal;
+	vertical-align: middle;
+	padding: 10px;
+	background-color: #777;
+	border-radius: 4px;
+	letter-spacing: 2px;
+}
+
+input[type=checkbox]{
+    display:none; !important
+}
+
+.checkboxes input[type=checkbox]:checked + .drug_name {
+    background: #ff3333;
+    border: 0;
+    border-radius: 4px;
+	border-bottom: 2px solid #D10000;
+    text-decoration: none;
+    color: #FFF;
+    font-size: 14px;
+    font-family: 'Raleway';
+    font-weight: 600;
+    padding: 10px;
+	font-weight: 600;
+	letter-spacing: 2px;
+}
+
+.drug-container .scrollableCreateDrugList {
+    height: 60%;
+    width: 95%;
+    overflow-y: scroll;
+    overflow-wrap: normal;
+    padding: 10px;
+    margin: auto;
+    border: 1px solid #777;
+	border-radius: 4px;
+}
+
+#addbtn {
+    background: #ff3333;
+    border: 0;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #FFF;
+    font-size: 14px;
+    font-family: 'Raleway';
+    font-weight: 600;
+    padding: 5px 10px;
+}
+
+/***********OVERLAY CSS************/
+/* The Overlay (background) */
+.overlay {
+    /* Height & width depends on how you want to reveal the overlay (see JS below) */    
+    height: 100%;
+    width: 0;
+    position: fixed; /* Stay in place */
+    z-index: 30; /* Sit on top */
+    left: 0;
+    top: 0;
+    background-color: rgb(0,0,0); /* Black fallback color */
+    background-color: rgba(0,0,0, 0.9); /* Black w/opacity */
+    overflow-x: hidden; /* Disable horizontal scroll */
+    transition: 0.5s; /* 0.5 second transition effect to slide in or slide down the overlay (height or width, depending on reveal) */
+}
+
+/* Position the content inside the overlay */
+.overlay-content {
+    position: relative;
+    top: 5%;
+    width: 100%; 
+    text-align: center; 
+    margin-top: 20px; 
+}
+
+/* Position the close button (top right corner) */
+.overlay .closebtn {
+    position: absolute;
+    top: 10px;
+    right: 30px;
+    font-size: 45px;
+	color: #ff3333;
+	font-family: 'Raleway',sans-serif;
+}
+
+
+div#errorMessage {
+    position: fixed;
+    z-index: 5;
+    text-align: center;
+    width: 300px;
+    font-family: 'Raleway',sans-serif;
+    font-size: 20px;
+    background: #333;
+    padding: 30px;
+    color: white;
+    border-radius: 20px;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+div#errorButton:focus {
+    outline: none;
+    border: none;
+    background: #777;
+}
+div#errorButton:hover {
+    cursor: pointer;
+}
+div#errorButton {
+    background: #22A7F0;
+    padding: 5px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+span#notificationIndicator {
+    background: #22A7F0;
+    border-radius: 16px;
+    padding: 2px;
+    font-size: 13px;
+    /* float: left; */
+    /* margin-bottom: -3px; */
+    position: fixed;
+    width: 21px;
+    top: 8px;
+    right: 29px;
+}
