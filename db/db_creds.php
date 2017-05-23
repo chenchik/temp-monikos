@@ -2,18 +2,18 @@
 
 /*Created by Danila Chenchik Monikos LLC*/
 
-/*old db credentials
+//old db credentials
 $host = "mysql.danilachenchik.com";
 $dbuser = "mnksdbun";
 $pass = "mnksdbpw";
 $dbname = "mnkstest";
-*/
+
 
 //$host = "104.236.241.100:3306";
-$host = 'localhost';
-$dbuser = "root";
-$pass = "kc3irtapdnayeli29r";
-$dbname = "monikosmasterDB";
+//$host = 'localhost';
+//$dbuser = "root";
+//$pass = "kc3irtapdnayeli29r";
+//$dbname = "monikosmasterDB";
 
 $conn = new mysqli($host, $dbuser, $pass, $dbname);
 
