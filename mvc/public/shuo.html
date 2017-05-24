@@ -1,16 +1,29 @@
 <!DOCTYPE html>
 
 <!--
-   Template:   Asso - One Page HTML5 Website Template
-   Author:     Themetorium
-   URL:        http://themetorium.net/
+		TODO:
+		intro inmage
+		  commit
+
 -->
 
 <html lang="en">
-	<head>
 
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8"/>
+	<head>
+		<!-- angular js -->
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+		<!-- jQuery js -->
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!-- anuglar controllers -->
+		<script src="/mvc/public/js/myCtrl.js"></script>
+    	<script src="/mvc/public/js/checklist-model.js"></script>
+    	<script src="/mvc/public/js/global-script.js"></script>
+    	<script src ='/mvc/public/js/account/loginCtrl.js' ></script>
+    	<script src = '/mvc/public/js/account/accountCtrl.js'></script>
+    	<script src="assets/vendor/jquery.leanModal.min.js"></script>
 		<!-- Title -->
-		<title>Asso - One Page HTML5 Website Template</title>
+		<title>Monikos</title>
 
 		<!-- Meta -->
 		<meta charset="utf-8">
@@ -55,6 +68,7 @@
 
 		<!-- Theme custom CSS (all your CSS customizations) -->
 		<link rel="stylesheet" href="assets/css/custom.css">
+		<link rel="stylesheet" href="assets/css/style.css">
 
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -84,6 +98,76 @@
 	* Use backgroun classes to change boxed layout background color. example: <body class="boxed bg-dark" data-spy="scroll" data-target="#scrollspy"> (look into "helper.css" file for more info).
 	-->
 	<body data-spy="scroll" data-target="#scrollspy">
+		<!-- POPUP -->
+						<div id ="modal" class="popupContainer" style="display:none;">
+                    		<header class    ="popupHeader">
+                        <span class      ="header_title">Login</span>
+                        <span id="login_close" class="modal_close"><i class="fa fa-times"></i></span>
+                    </header>
+
+                    <section class   ="popupBody">
+                        
+                        <!-- Username & Password Login form -->
+
+                        <div class       ="social_login" ng-app="loginApp" ng-controller="loginCtrl"  id="usr_mng_module">
+                            <form id="login_form">
+                                <input placeholder="Username" type      ="text" id="un"/>
+                                <br />
+                                <input placeholder="Password" type      ="password" id="pw"/>
+                                <!-- <div class       ="checkbox">
+                                    <input id        ="remember" type="checkbox" />
+                                    <label for       ="remember">Remember me </label>
+                                </div> -->
+                                <br />
+
+                                <div class       ="action_btns">
+                                    <div class       ="one_half"><a  class="btn btn-primary margin-top-10 wow bounceIn" data-wow-delay="0.5s" ng-click= "login()">Log in</a></div>
+                                    <div class       ="one_half last"><a id="register_button" class="btn btn-primary margin-top-10 wow bounceIn" data-wow-delay="0.5s" >Register</a></div>
+                                </div>
+                            </form>
+
+                            <!-- <a href          ="#" class="forgot_password">Forgot password?</a> -->
+                        </div>
+
+                        <!-- Register Form -->
+                        <div class ="user_register" ng-app="myApp" ng-controller="accountCtrl" id="register_app">
+                            <form id="register_form">
+                                
+                                <input placeholder="Username" type      ="text" id="un_reg"/>
+                                <br />
+                                <input placeholder="Email" type      ="text" id="email_reg"/>
+                                <br />
+                                <input placeholder="Password" type      ="password" id="pw_reg"/>
+                                <br />
+                                <input placeholder="Confirm Password" type      ="password" id="pw2_reg"/>
+                                <br />
+                                <!-- <p id="program">Nursing</p> -->
+
+																<div id="reg_form" class="form-group">
+						            					<select id="program" class= "form-control">
+						                					<option selected disabled>select a program</option>
+						                					<option ng-repeat="x in programs" id="a{{x.program}}" value="{{x.program}}">{{x.program}}</option>
+						            					</select>
+																</br>
+											            <select id="school" ng-click="findSchool()" class= "form-control" style="display: none">
+											                <option selected disabled>select a school</option>
+						                					<option ng-repeat="x in schoolnames" id="a{{x.schoolid}}" value="{{x.schoolid}}">{{x.schoolname}}</option>
+											            </select>
+																</div>
+
+
+
+                                <div class="action_btns">
+                                    <div class="one_half"><a href="#" class="btn back_btn btn-primary margin-top-10" id="back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
+                                    <div class ="one_half last"><a href="" id="register" class="btn btn-primary margin-top-10" ng-click="checkUsername()">Register</a></div>
+
+                                </div>
+                            </form>
+                            
+                        </div>
+                    </section>
+                </div>
+        <!-- End Popup  -->
 
 		<!-- Begin preloader -->
 		<div id="preloader">
@@ -93,72 +177,6 @@
 
 		<!-- Begin body content -->
 		<div id="body-content">
-
-
-			<!-- ============================
-			///// Begin top sliding bar /////
-			=================================
-			* Add class "slidingbar-fixed" to enable fixed slidingbar.
-			-->
-			<section id="top-slidingbar-wrapper" class="slidingbar-fixed">
-				<div id="top-slidingbar">
-					<div class="container">
-						<div class="row">
-
-							<div class="col col-md-4">
-								<h4 class="top-slidingbar-heading text-gray-2">Information</h4>
-								<hr class="hr-width-1 hr-double margin-top-15">
-								<p class="small">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt uteralis labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
-							</div> <!-- /.col -->
-
-							<div class="col col-md-4">
-								<h4 class="top-slidingbar-heading text-gray-2">Contact</h4>
-								<hr class="hr-width-1 hr-double margin-top-15">
-								<ul class="list-unstyled small">
-									<li><i class="fa fa-home"></i> 121 King Street, Melbourne, Australia</li>
-									<li><i class="fa fa-phone"></i> (+548) 12-345-6789</li>
-									<li><i class="fa fa-envelope-o"></i> <a href="mailto:support@mail.com">support@mail.com</a></li>
-								</ul>
-							</div> <!-- /.col -->
-
-							<div class="col col-md-4">
-
-								<h4 class="top-slidingbar-heading text-gray-2">Our Instagram</h4>
-								<hr class="hr-width-1 hr-double margin-top-15">
-
-								<!-- Begin thumbnail list
-								==========================
-								* Use class "col-2", "col-3", "col-4" "col-5" or "col-6" for thumbnail list columns.
-								* Use class "gutter-1", "gutter-2", "gutter-3", "gutter-4" or "gutter-5" to add more space between items.
-								-->
-								<ul class="thumb-list col-5 gutter-3">
-									<li><a target="_blank" href="https://www.instagram.com" class="thumb-list-item bg-image" style="background-image: url(assets/img/misc/small/img-1.jpg);"></a></li>
-									<li><a target="_blank" href="https://www.instagram.com" class="thumb-list-item bg-image" style="background-image: url(assets/img/misc/small/img-2.jpg);"></a></li>
-									<li><a target="_blank" href="https://www.instagram.com" class="thumb-list-item bg-image" style="background-image: url(assets/img/misc/small/img-3.jpg);"></a></li>
-									<li><a target="_blank" href="https://www.instagram.com" class="thumb-list-item bg-image" style="background-image: url(assets/img/misc/small/img-4.jpg);"></a></li>
-									<li><a target="_blank" href="https://www.instagram.com" class="thumb-list-item bg-image" style="background-image: url(assets/img/misc/small/img-5.jpg);"></a></li>
-									<li><a target="_blank" href="https://www.instagram.com" class="thumb-list-item bg-image" style="background-image: url(assets/img/misc/small/img-6.jpg);"></a></li>
-									<li><a target="_blank" href="https://www.instagram.com" class="thumb-list-item bg-image" style="background-image: url(assets/img/misc/small/img-7.jpg);"></a></li>
-									<li><a target="_blank" href="https://www.instagram.com" class="thumb-list-item bg-image" style="background-image: url(assets/img/misc/small/img-8.jpg);"></a></li>
-									<li><a target="_blank" href="https://www.instagram.com" class="thumb-list-item bg-image" style="background-image: url(assets/img/misc/small/img-9.jpg);"></a></li>
-									<li><a target="_blank" href="https://www.instagram.com" class="thumb-list-item bg-image" style="background-image: url(assets/img/misc/small/img-11.jpg);"></a></li>
-								</ul>
-								<!-- End thumbnail list -->
-
-							</div> <!-- /.col -->
-
-						</div> <!-- /.row -->
-					</div> <!-- /.container -->
-				</div> <!-- /.top-slidingbar -->
-
-				<!-- top-top-slidingbar trigger -->
-				<div class="top-slidingbar-trigger-wrapper"><span class="top-slidingbar-trigger">+</span></div>
-
-			</section>
-			<!-- End top sliding bar -->
-
-
 			<!-- ==============
 			///// Begin header
 			=================== -->
@@ -177,12 +195,13 @@
 				* Use class "header-shadow" to enable header bottom shadow.
 				* Use class "header-md", "header-lg" or "header-xlg" to change header size.
 				-->
-				<div id="header" class="header-md header-dark show-hide-on-scroll transparent">
+				<div id="header" class="header-md header-dark show-hide-on-scroll transparent eader-shadow">
 					<div id="scrollspy" class="container header-container">
 
 						<!-- Begin logo  -->
+
 						<div class="logo font-alter-1">
-							<a href="index.html"><h1>MONIKOS</h1></a>
+							<a href="index.html"><h1><!-- MONIKOS --></h1></a>
 						</div>
 						<!-- End logo -->
 
@@ -219,84 +238,39 @@
 								* Use class "pills-gradient" to enable gradient pills (class "nav-pills" is required).
 								* Use class "nav-border-bottom" to enable menu links with bottom border (class "nav-pills" is required).
 								-->
-								<ul class="nav navbar-nav navbar-right nav-pills">
+								<ul class="nav navbar-nav navbar-right nav-pills pills-rounded-4x ">
 
 									<li class="active"><a class="mlc sm-scroll" href="#intro">Home</a></li>
 									<li><span class="nav-link-separator">/</span></li>
-
-									<!-- Begin dropdown
-									====================
-									* Use class "dropdown-hover" to make navigation toggle on desktop hover.
-									* Use class "dropdown-uppercase" to enable dropdown menu uppercase letters.
-									* Use class "dropdown-menu-dark" to enable dark dropdown menu.
-									* Use class "dropdown-menu-color" to enable custom colored dropdown menu.
-									* Use class "dropdown-menu-right" to right align the dropdown menu.
-									-->
+									<li><a class="mlc sm-scroll" href="#section-1">Our Story</a></li>
+									<li><span class="nav-link-separator">/</span></li>
+									<li><a class="mlc sm-scroll" href="#section-2">Our Product</a></li>
 									<li class="dropdown dropdown-uppercase dropdown-menu-color dropdown-hover">
 										<a href="#0" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-											About<span class="caret-2"><i class="fa fa-angle-down"></i></span>
+											About Us<span class="caret-2"><i class="fa fa-angle-down"></i></span>
 										</a>
 										<ul class="dropdown-menu">
-											<li><a class="mlc sm-scroll" href="#section-1">About Us</a></li>
 											<li><a class="mlc sm-scroll" href="#section-5">Our Team</a></li>
 											<li><a class="mlc sm-scroll" href="#section-9">Video Promo</a></li>
 											<li><a class="mlc sm-scroll" href="#section-7">Testimonials</a></li>
 											<li><a class="mlc sm-scroll" href="#section-10">Our Clients</a></li>
-
+<!-- 
 											 Begin dropdown (submenu)
 											==============================
 											* Use class "dropdown-hover" to make navigation toggle on desktop hover.
 											* Use class "dropdown-uppercase" to enable dropdown menu uppercase letters.
 											* Use class "dropdown-menu-dark" to enable dark dropdown menu.
 											* Use class "dropdown-menu-color" to enable custom colored dropdown menu.
-											* Use class "dropdown-submenu" for dropdown submenu.
-											
-											<li class="dropdown dropdown-submenu dropdown-uppercase dropdown-menu-color dropdown-hover">
-												<a href="#0" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-													Submenu<span class="caret-2 margin-left-10"><i class="fa fa-angle-right"></i></span>
-												</a>
-												<ul class="dropdown-menu">
-													<li><a class="mlc" href="#">Submenu Link 1</a></li>
-													<li><a class="mlc" href="#">Submenu Link 2</a></li>
-													<li><a class="mlc" href="#">Submenu Link 3</a></li>
-													<li><a class="mlc" href="#">Submenu Link 4</a></li>
-													<li><a class="mlc" href="#">Submenu Link 5</a></li>
-
-													<!-- Begin dropdown (submenu)
-													==============================
-													* Use class "dropdown-hover" to make navigation toggle on desktop hover.
-													* Use class "dropdown-uppercase" to enable dropdown menu uppercase letters.
-													* Use class "dropdown-menu-dark" to enable dark dropdown menu.
-													* Use class "dropdown-menu-color" to enable custom colored dropdown menu.
-													* Use class "dropdown-submenu" for dropdown submenu.
-													-->
-													<li class="dropdown dropdown-submenu dropdown-uppercase dropdown-menu-color dropdown-hover">
-														<a href="#0" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-															3 Level Submenu<span class="caret-2 margin-left-10"><i class="fa fa-angle-right"></i></span>
-														</a>
-														<ul class="dropdown-menu">
-															<li><a class="mlc" href="#">Submenu Link 1</a></li>
-															<li><a class="mlc" href="#">Submenu Link 2</a></li>
-															<li><a class="mlc" href="#">Submenu Link 3</a></li>
-															<li><a class="mlc" href="#">Submenu Link 4</a></li>
-															<li><a class="mlc" href="#">Submenu Link 5</a></li>
-														</ul> <!-- /.dropdown-menu -->
-													</li>
-													<!-- End dropdown -->
-
-												</ul> <!-- /.dropdown-menu -->
-											</li>
+											* Use class "dropdown-submenu" for dropdown submenu. -->
 											<!-- End dropdown -->
 
 										</ul> <!-- /.dropdown-menu -->
 									</li>
 									<!-- End dropdown -->
+									<li><span class="nav-link-separator">/</span></li>
 
 									<li><span class="nav-link-separator">/</span></li>
-									<li><a class="mlc sm-scroll" href="#section-1">About Us</a></li>
-									<li><span class="nav-link-separator">/</span></li>
-									<li><a class="mlc sm-scroll" href="#section-2">Our Product</a></li>
-									<li><span class="nav-link-separator">/</span></li>
+
 									<li><a class="mlc sm-scroll" href="#section-10">Sponsors</a></li>
 								
 									<li><span class="nav-link-separator">/</span></li>
@@ -334,23 +308,14 @@
 					===================
 					* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.
 					-->
-					<span class="cover bg-transparent-2-dark bg-transparent-gradient-2"></span>
-
+					<!-- <span class="cover bg-transparent-2-dark bg-transparent-gradient-2"></span> -->
+					<span class="cover"></span>
 					<!-- Begin intro caption -->
 					<div class="intro-caption vertical-align-center text-center text-white">
-						<h2 class="intro-title font-alter-1">
-							<span class="wow fadeInDown" data-wow-delay="0.4s" data-wow-duration="0.5s">M</span>
-							<span class="wow fadeInDown" data-wow-delay="0.6s" data-wow-duration="0.5s">O</span>
-							<span class="wow fadeInDown" data-wow-delay="0.8s" data-wow-duration="0.5s">N</span>
-							<span class="wow fadeInDown" data-wow-delay="1s" data-wow-duration="0.5s">I</span>
-							<span class="wow fadeInDown" data-wow-delay="1.2s" data-wow-duration="0.5s">K</span>
-							<span class="wow fadeInDown" data-wow-delay="1.4s" data-wow-duration="0.5s">O</span>
-							<span class="wow fadeInDown" data-wow-delay="1.6s" data-wow-duration="0.5s">S</span>
-						</h2>
-						<p class="intro-description wow fadeIn" data-wow-delay="2.2s">Since 2016</p>
-						<div class="margin-top-30">
-
-							<a href="#section-8" class="btn btn-primary sm-scroll margin-top-10 wow bounceIn" data-wow-delay="1s">SIGN UP NOW!</a>
+						<!-- <p class="intro-description wow fadeIn" data-wow-delay="2.2s">est. 2015</p> -->
+						<div id="sign_up" class="margin-top-30">
+							<a href="/mvc/public/index.php" class="btn btn-white-bordered sm-scroll wow bounceIn" data-wow-delay="0.8s">SIGN UP NOW</a> 
+							<a id="modal_trigger" href="#modal" class="btn btn-primary sm-scroll margin-top-10 wow bounceIn" data-wow-delay="1s">START HERE</a>
 						</div>
 					</div>
 					<!-- End intro caption -->
@@ -377,51 +342,18 @@
 			* Use class "bg-image-parallax" to enable background image parallax effect (otherwise use class "bg-image").
 			* Use class "bg-pattern" if you use background patterns (example: http://subtlepatterns.com/). Combine with class "bg-image-fixed".
 			-->
-		<!--	<section class="call-to-action-section bg-dark bg-pattern" style="background-image: url(assets/img/patterns/ptn-2.png);">
 
-				<!-- Element cover
-				===================
-				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.
-				-->
-			<!--	<span class="cover bg-transparent-4-5-dark"></span>
 
+
+<!-- 			 =================================
+			///// Begin section 1 (about us) /////
+			==================================  -->
+			<section id="section-1" class="about-section">
 				<div class="container">
 					<div class="row wow fadeIn">
 
 						<!-- Left column -->
-					<!--	<div class="col-md-8 padding-right-40">
-
-							<h2 class="call-to-action-title text-uppercase text-gray-2">Pellentesque Dignissim Risus Ante</h2>
-							<p class="lead call-to-action-text text-gray">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-								sed do eiusmod tempor incididunt ut labore.
-							</p>
-							<p class="call-to-action-text lead text-gray margin-top-30"><strong>Cool / Innovative / Creative</strong></p>
-
-						</div> <!-- /.col -->
-
-						<!-- Right column -->
-					<!--	<div class="col-md-4 text-center">
-
-							<a href="https://wrapbootstrap.com/user/Themetorium" target="_blank" class="btn btn-primary-bordered btn-rounded-5x btn-xlg btn-block"><i class="fa fa-shopping-cart"></i> Buy This Template</a>
-							<br>
-							<a href="#" class="small text-gray">Or Learn More.. <i class="fa fa-graduation-cap"></i></a>
-
-						</div> <!-- /.col -->
-
-				<!--	</div><!-- /.row -->
-			<!--	</div> <!-- /.container -->
-			<!--</section>
-			End call to action section -->
-
-
-			<!-- =================================
-			///// Begin section 1 (about us) /////
-			================================== -->
-			<section id="section-1" class="about-section">
-				<div class="container">
-					<div class="row">
-						<div class="col-md-12">
+						<div class="col-md-6">
 
 							<!-- Begin heading
 							===================
@@ -430,7 +362,7 @@
 							* Use class "heading-hover" to enable heading hover effect.
 							* Use class "heading-uppercase" to enable uppercase letters.
 							-->
-							<div class="heading heading-md heading-uppercase heading-center heading-hover wow fadeIn">
+							<div class="heading heading-md heading-uppercase heading-hover">
 								<span class="heading-title-ghost">About Us</span>
 								<h2 class="heading-title">About Us</h2>
 
@@ -442,51 +374,32 @@
 								-->
 								<hr class="hr-width-1 hr-5x border-main">
 								<!-- End divider -->
-
-								<p class="heading-tescription lead max-width-1000 margin-auto">Healthcare is changing more now than ever before. With so much uncertainty with looming healthcare reform, Monikos is attempting to do something novel in the healthcare realm. As healthcare students, we understand that collaboration is the key providing value based care to patients. We also understand that healthcare professionals have to be students first. We want to make our impact on healthcare students while they are still learning the information they need to be successful; we also want them to have fun doing it. We understand that healthcare professionals will always have some sort of pharmacology, drug-based class within their curriculum. Monikos is here to supplement the learning for these drug-based facts to help healthcare students not only learn, but also retain different drug facts.
-
-								</p>
-
-								<a href="#" ><img src="assets/img/ourst.jpg" alt="" id='our_str'/></a>
-
-							</div>
+								<img class="img-responsive" src="assets/img/ourst.jpg" alt="team_img" id='our_str' style="height: 100%;width: 100%; padding-right: 20px;padding-top: 20px" />
+							</div>	
 							<!-- End heading -->
 
 						</div> <!-- /.col -->
+
+						<!-- Right column -->
+						<div class="col-md-6">
+
+							<p class="lead">
+								Healthcare is changing more now than ever before. With so much uncertainty with looming healthcare reform, Monikos is attempting to do something novel in the healthcare realm. As healthcare students, we understand that collaboration is the key providing value based care to patients. We also understand that healthcare professionals have to be students first. We want to make our impact on healthcare students while they are still learning the information they need to be successful; we also want them to have fun doing it.
+							</p>
+							<p class="lead">
+								 We understand that healthcare professionals will always have some sort of pharmacology, drug-based class within their curriculum. Monikos is here to supplement the learning for these drug-based facts to help healthcare students not only learn, but also retain different drug facts.
+							</p>
+<!-- 							<p class="lead">
+								v
+							</p> -->
+
+						</div> <!-- /.col -->
+
 					</div> <!-- /.row -->
-
-					<div class="heading heading-md heading-uppercase heading-hover">
-								<span class="heading-title-ghost">The Team</span>
-								<h2 class="heading-title">The Team</h2>
-
-								<!-- Begin divider
-								===================
-								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
-								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
-								* Use class "hr-dotted", "hr-dashed" or "hr-double" to shange divider style.
-								-->
-								<hr class="hr-width-1 hr-5x border-main">
-								<!-- End divider -->
-
-							</div>
-					<div class="row">
-							<article class="6u 12u$(xsmall) work-item">
-								<a href="images/fulls/01.jpg" class="image fit thumb"><img src="images/thumbs/01.jpg" alt="" /></a>
-								<h3>Riley</h3>
-								<p>Riley always wanted to work in healthcare, but she was never one to take the traditional path. She graduated from Tufts University with a double degree in Economics and International Relations with a minor in Spanish. During her undergrad years, she took every opportunity to travel, including a year in Buenos Aires during her Junior year. Upon graduation, she moved to her favorite place, New York City, to work in international finance at a Korean investment fund. As an investment banker, Riley was able to learn about international finance and business, but she didn’t feel that her mentors, especially her female mentors were leading lives that she wanted for herself. Conjuring up her true passion for helping people, making an impact and interest in healthcare, she decided to take another career turn. After much contemplation, she took a leap of faith and started taking post-bac courses at the nearest community college to prepare for pharmacy school. Since that one brave day when she chose to register for the first Biology course, Riley has been blessed to have made it all the way to UNC Eshelman School of Pharmacy, the best pharmacy school in the nation. Now, with her interest entrepreneurship and startups, she is launching Monikos to help fellow pharmacy students better learn and retain drug information. </p>
-							</article>
-							<article class="6u$ 12u$(xsmall) work-item">
-								<a href="images/fulls/02.jpg" class="image fit thumb"><img src="images/thumbs/02.jpg" alt="" /></a>
-								<h3>Patrick</h3>
-								<p>Patrick is originally from Austin, Texas. He attended Duke University on a full athletic football scholarship. Before he left for college, his mother was diagnosed with type 2 diabetes. It was during this time period that Patrick started to take notice into what medications she took to control her diabetes and this is what motivated him to want to attend Pharmacy school. Upon graduation, he took a two-year hiatus to enter the work force and complete a post-bac to make himself an eligible candidate for pharmacy school. He originally thought he would be heading back to Texas for Pharmacy school to be closer to his family, but when he was accepted into the UNC Eshelman School of Pharmacy, it was hard for him to turn down the then #2 ranked pharmacy school in the country.  One of the promise Patrick’s mother made him keep was that no matter what school he chose to attend, that he leaves a positive impact. Hopefully Monikos will fulfill this promise to her.</p>
-							</article>
-							
-						</div>
 				</div> <!-- /.container -->
-
-
 			</section>
 			<!-- End section 1 -->
+
 
 
 			<!-- =================================
@@ -499,14 +412,7 @@
 			-->
 			<section id="section-2" class="services-section bg-dark bg-image-parallax" style="background-image: url(assets/img/unc_med.jpeg);">
 			    <span class="cover bg-transparent-6-5-dark"></span>
-
-			   
 					<div class="row">
-
-						
-
-							
-						
 							<div class="heading heading-md heading-uppercase text-white heading-hover wow fadeIn" data-wow-delay="0.2s">
 
 				<span class="heading-title-ghost" id = 'our_pro'>Our Product</span>
@@ -519,38 +425,47 @@
 				-->
 				
 				<div class="container margin-top-20">
-				<div class="row wow fadeIn" data-wow-delay="0.3s" style="visability: visible; animation-delay: 0.3s; animation-name: fadeIn">
+				<div class="row" data-wow-delay="0.3s" style="visability: visible; animation-delay: 0.3s; animation-name: fadeIn">
 				<!--first-->
-   			<div class="col-sm-6 col-md-4">
-        <div class="thumbnail">
-      	<img src="..." alt="...">
-      	<div class="caption">
-        <h3>Card Matching</h3>
-        <p>...</p>
-      </div>
-    </div>
-  </div>
+   					<div class="col-sm-6 col-md-4">
+									<div class="portfolio-item wow fadeInLeft">
+										<a class="item-link inline-popup-trigger" href="">
+											<span class="cover bg-transparent-9-main"></span>
+											<img class="item-img" src="images/landing_page/app2.jpeg" alt="Matching Game">
+											<div class="item-info text-white">
+												<h3 class="item-info-title">Matching game</h3>
+												<p class="item-info-text">Matching game</p>
+											</div>
+										</a>
+									</div>
+  					</div>
 	<!--end first-->
 	<!--second-->
-	<div class="col-sm-6 col-md-4">
-	<div class="thumbnail">
-	<img src="..." alt="...">
-	<div class="caption">
-	<h3>Friends Competing</h3>
-	<p>...</p>
-</div>
-</div>
-</div>
-<!--end second-->
-<!--third-->
-<div class="col-sm-6 col-md-4">
-<div class="thumbnail">
-<img src="..." alt="...">
-<div class="caption">
-<h3>Function 3</h3>
-<p>...</p>
-</div>
-</div>
+					<div class="col-sm-6 col-md-4">
+									<div class="portfolio-item wow fadeInUp">
+										<a class="item-link inline-popup-trigger" href="">
+											<span class="cover bg-transparent-9-main"></span>
+											<img class="item-img" src="images/landing_page/app3.jpeg" alt="Friend">
+											<div class="item-info text-white">
+												<h3 class="item-info-title">Compete with Friends</h3>
+												<p class="item-info-text">Compete with Friends</p>
+											</div>
+										</a>
+									</div>
+					</div>
+						<!--end second-->
+						<!--third-->
+					<div class="col-sm-6 col-md-4">
+									<div class="portfolio-item wow fadeInRight">
+										<a class="item-link inline-popup-trigger" href="">
+											<span class="cover bg-transparent-9-main"></span>
+											<img class="item-img" src="images/landing_page/app1.jpeg" alt="Flash Card">
+											<div class="item-info text-white">
+												<h3 class="item-info-title">Flash Card</h3>
+												<p class="item-info-text">Flash Card</p>
+											</div>
+										</a>
+									</div>
 </div>
 <!--end third-->
 </div>
@@ -560,11 +475,10 @@
 			</section>
 			<!-- End section 2 -->
 
-
-			<!-- ==================================
-			///// Begin section 3 (portfolio) /////
-			=================================== -->
-			<section id="section-3" class="portfolio-section no-padding-bottom padding-top-100">
+			<!-- ===========================================
+			///// Begin section team /////
+			============================================ -->
+			<section id="section-team" class="blog-section padding-top-100">
 
 				<div class="container">
 					<div class="row wow fadeIn">
@@ -572,668 +486,7 @@
 						<!-- Left column -->
 						<div class="col-md-6">
 
-							<!-- Begin heading
-							===================
-							* Use class "heading-center" or "heading-right" to align heading.
-							* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
-							* Use class "heading-hover" to enable heading hover effect.
-							* Use class "heading-uppercase" to enable uppercase letters.
-							-->
-							<div class="heading heading-md heading-uppercase heading-hover">
-								<span class="heading-title-ghost">Portfolio</span>
-								<h2 class="heading-title">Portfolio</h2>
-
-								<!-- Begin divider
-								===================
-								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
-								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
-								* Use class "hr-dotted", "hr-dashed" or "hr-double" to shange divider style.
-								-->
-								<hr class="hr-width-1 hr-5x border-main">
-								<!-- End divider -->
-
-							</div>
-							<!-- End heading -->
-
-						</div> <!-- /.col -->
-
-						<!-- Right column -->
-						<div class="col-md-6">
-
-							<p class="lead">
-								<strong>Lorem ipsum dolor</strong> sit amet, consectetur adipisicing elit, sed do eiusmod
-								tempor incididunt ut labore et dolore magna aliqua. <a href="#">View All Portfolio..</a>
-							</p>
-
-						</div> <!-- /.col -->
-
-					</div> <!-- /.row -->
-				</div> <!-- /.container -->
-
-
-				<div class="container-fluid no-padding">
-
-					<!-- Begin isotope
-					===================
-					* Use classes "gutter-1", "gutter-2" or "gutter-3" to add more space between items.
-					* Use class "col-1", "col-2", "col-3", "col-4", "col-5" or "col-6" for columns.
-					-->
-					<div class="isotope popup-gallery col-4">
-
-						<!-- Begin isotope filter
-						=========================== -->
-						<div class="isotope-filter wow fadeIn" data-wow-delay="0.8s">
-
-							<!-- Begin isotope filter toggle button -->
-							<div class="navbar-header">
-								<button type="button" class="navbar-toggle collapsed filter-toggle-btn no-radius text-uppercase" data-toggle="collapse" data-target="#isotope-filter-collapse">
-									<span class="text-center">Filter <i class="fa fa-chevron-down"></i></span>
-								</button>
-							</div>
-							<!-- End isotope filter toggle button -->
-
-							<!-- Begin isotope filter links
-							==================================
-							* Use class "text-center" or "text-right" to align isotope filter links.
-							* Note: class "mlc" = close filter menu when clicking filter link.
-							-->
-							<div class="isotope-filter-links collapse navbar-collapse max-width-1170 margin-auto text-uppercase" id="isotope-filter-collapse">
-								<a class="active no-radius" href="#" data-filter="*">All</a>
-								<a class="no-radius" href="#" data-filter=".photography">Photography</a>
-								<a class="no-radius" href="#" data-filter=".web-design">Web Design</a>
-								<a class="no-radius" href="#" data-filter=".graphics">Graphics</a>
-								<a class="no-radius" href="#" data-filter=".branding, .web-design">Mockups</a>
-							</div>
-							<!-- End isotope filter links -->
-
-						</div>
-						<!-- End isotope filter -->
-
-
-						<!-- Begin isotope items
-						==========================
-						* Note: For grid layout make sure that your images are the same dimensions.
-						* Note: For masonry layout make sure that your images are the different dimensions.
-						-->
-						<div class="isotope-items-wrap wow fadeIn" data-wow-delay="0.4s">
-
-							<!-- Grid sizer (do not remove!!!) -->
-							<div class="grid-sizer"></div>
-
-
-							<!-- //////////////////
-							// Begin isotope item. Note: use class "width2" for alternative item width (works best on first item)
-							/////////////////////// -->
-							<div class="isotope-item photography">
-
-								<!-- Begin portfolio item -->
-								<div class="portfolio-item-wrap">
-									<div class="portfolio-item">
-										<a class="item-link inline-popup-trigger" href="#portfolio-1">
-											<span class="cover bg-transparent-9-main"></span>
-											<img class="item-img" src="assets/img/portfolio/v.2/portfolio-img-1.jpg" alt="image">
-											<div class="item-info text-white">
-												<h3 class="item-info-title">Hardcover Book</h3>
-												<p class="item-info-text">Photography</p>
-											</div>
-										</a>
-									</div>
-
-									<!-- Begin inline popup content. Class "mfp-hide" is required to make dialog hidden -->
-									<div id="portfolio-1" class="inline-popup mfp-hide">
-										<div class="inline-popup-inner">
-
-											<div class="inline-popup-image bg-image" style="background-image: url(assets/img/portfolio/v.2/big/portfolio-img-1.jpg); background-position: 50% 50%;"></div>
-
-											<div class="row margin-top-40">
-												<div class="col-md-8 margin-bottom-20">
-													<h2 class="no-margin-top">Portfolio Single Item 1</h2>
-													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p>
-
-													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquapta. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquipter consequat adipisicing sedari.</p>
-												</div>
-												<div class="col-md-4 margin-bottom-20 padding-left-40">
-													<ul class="list-unstyled">
-														<li>Client: <strong><a href="#" target="_blank">MockCo INC</a></strong></li>
-														<li>Date: <strong><a href="#" target="_blank">01 jan, 2016</a></strong></li>
-														<li>Category <strong><a href="#" target="_blank">Photography</a></strong></li>
-														<li>Copyright ©2016, All Rights Reserved</li>
-													</ul>
-													<a href="#" target="_blank" class="btn btn-primary btn-lg margin-top-20">Launch Project</a>
-												</div>
-											</div> <!-- /.row -->
-
-										</div> <!-- /.inline-popup-inner -->
-
-										<a class="inline-popup-close" href="#"><i class="fa fa-times"></i></a>
-
-									</div>
-									<!-- End inline popup content -->
-
-								</div>
-								<!-- End portfolio item -->
-
-							</div>
-							<!-- End isotope item -->
-
-							<!-- //////////////////
-							// Begin isotope item
-							/////////////////////// -->
-							<div class="isotope-item branding">
-
-								<!-- Begin portfolio item -->
-								<div class="portfolio-item-wrap">
-									<div class="portfolio-item">
-										<a class="item-link inline-popup-trigger" href="#portfolio-2">
-											<span class="cover bg-transparent-9-main"></span>
-											<img class="item-img" src="assets/img/portfolio/v.2/portfolio-img-2.jpg" alt="image">
-											<div class="item-info text-white">
-												<h3 class="item-info-title">Identity MockUp Vol.1</h3>
-												<p class="item-info-text">Branding</p>
-											</div>
-										</a>
-									</div>
-
-									<!-- Begin inline popup content. Class "mfp-hide" is required to make dialog hidden -->
-									<div id="portfolio-2" class="inline-popup mfp-hide">
-										<div class="inline-popup-inner">
-
-											<div class="inline-popup-image bg-image" style="background-image: url(assets/img/portfolio/v.2/big/portfolio-img-2.jpg); background-position: 50% 50%;"></div>
-
-											<div class="row margin-top-40">
-												<div class="col-md-8 margin-bottom-20">
-													<h2 class="no-margin-top">Portfolio Single Item 2</h2>
-													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p>
-
-													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquapta. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquipter consequat adipisicing sedari.</p>
-												</div>
-												<div class="col-md-4 margin-bottom-20 padding-left-40">
-													<ul class="list-unstyled">
-														<li>Client: <strong><a href="#" target="_blank">MockCo INC</a></strong></li>
-														<li>Date: <strong><a href="#" target="_blank">03 jan, 2016</a></strong></li>
-														<li>Category <strong><a href="#" target="_blank">Photography</a></strong></li>
-														<li>Copyright ©2016, All Rights Reserved</li>
-													</ul>
-													<a href="#" target="_blank" class="btn btn-primary btn-lg margin-top-20">Launch Project</a>
-												</div>
-											</div> <!-- /.row -->
-
-										</div> <!-- /.inline-popup-inner -->
-
-										<a class="inline-popup-close" href="#"><i class="fa fa-times"></i></a>
-
-									</div>
-									<!-- End inline popup content -->
-
-								</div>
-								<!-- End portfolio item -->
-
-							</div>
-							<!-- End isotope item -->
-
-							<!-- //////////////////
-							// Begin isotope item
-							/////////////////////// -->
-							<div class="isotope-item web-design">
-
-								<!-- Begin portfolio item -->
-								<div class="portfolio-item-wrap">
-									<div class="portfolio-item">
-										<a class="item-link inline-popup-trigger" href="#portfolio-3">
-											<span class="cover bg-transparent-9-main"></span>
-											<img class="item-img" src="assets/img/portfolio/v.2/portfolio-img-3.jpg" alt="image">
-											<div class="item-info text-white">
-												<h3 class="item-info-title">Brown Paper Bag</h3>
-												<p class="item-info-text">Web Design</p>
-											</div>
-										</a>
-									</div>
-
-									<!-- Begin inline popup content. Class "mfp-hide" is required to make dialog hidden -->
-									<div id="portfolio-3" class="inline-popup mfp-hide">
-										<div class="inline-popup-inner">
-
-											<!-- Begin content carousel (http://www.owlcarousel.owlgraphic.com)
-											====================================================================
-											* Use class "nav-outside" for outside nav.
-											* Use class "nav-outside-top" for outside top nav.
-											* Use class "nav-rounded" for rounded nav.
-											* Use class "dots-outside" for outside dots.
-											* Use class "dots-left" or "dots-right" to align dots.
-											* Use class "dots-rounded" for rounded dots.
-											* Available carousel data attributes:
-													data-items="5".......................(items visible on desktop)
-													data-tablet-landscape="4"............(items visible on mobiles)
-													data-tablet-portrait="3".............(items visible on mobiles)
-													data-mobile-landscape="2"............(items visible on tablets)
-													data-mobile-portrait="1".............(items visible on tablets)
-													data-loop="true".....................(true/false)
-													data-margin="10".....................(space between items)
-													data-center="true"...................(true/false)
-													data-start-position="0"..............(item start position)
-													data-animate-in="fadeIn".............(more animations: http://daneden.github.io/animate.css/)
-													data-animate-out="fadeOut"...........(more animations: http://daneden.github.io/animate.css/)
-													data-mouse-drag="false"..............(true/false)
-													data-touch-drag="false"..............(true/false)
-													data-autoheight="true"...............(true/false)
-													data-autoplay="true".................(true/false)
-													data-autoplay-timeout="5000".........(milliseconds)
-													data-autoplay-hover-pause="true".....(true/false)
-													data-autoplay-speed="800"............(milliseconds)
-													data-drag-end-speed="800"............(milliseconds)
-													data-lazy-load="true"................(true/false)
-													data-nav="true"......................(true/false)
-													data-nav-speed="800".................(milliseconds)
-													data-dots="false"....................(true/false)
-													data-dots-speed="800"................(milliseconds)
-											-->
-											<div class="owl-carousel portfolio-single-carousel dots-outside" data-items="1" data-nav="true">
-
-												<!-- Begin carousel item
-												========================= -->
-												<div class="cc-item">
-													<div class="inline-popup-image bg-image" style="background-image: url(assets/img/portfolio/v.2/big/portfolio-img-3.jpg); background-position: 50% 50%;"></div>
-												</div>
-												<!-- End carousel item -->
-
-												<!-- Begin carousel item
-												========================= -->
-												<div class="cc-item">
-													<div class="inline-popup-image bg-image" style="background-image: url(assets/img/portfolio/v.2/big/portfolio-img-4.jpg); background-position: 50% 50%;"></div>
-												</div>
-												<!-- End carousel item -->
-
-												<!-- Begin carousel item
-												========================= -->
-												<div class="cc-item">
-													<div class="inline-popup-image bg-image" style="background-image: url(assets/img/portfolio/v.2/big/portfolio-img-5.jpg); background-position: 50% 50%;"></div>
-												</div>
-												<!-- End carousel item -->
-
-											</div>
-											<!-- End content carousel -->
-
-											<div class="row margin-top-80">
-												<div class="col-md-8 margin-bottom-20">
-													<h2 class="no-margin-top">Portfolio Single Item 3</h2>
-													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p>
-
-													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquapta. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquipter consequat adipisicing sedari.</p>
-												</div>
-												<div class="col-md-4 margin-bottom-20 padding-left-40">
-													<ul class="list-unstyled">
-														<li>Client: <strong><a href="#" target="_blank">MockCo INC</a></strong></li>
-														<li>Date: <strong><a href="#" target="_blank">04 jan, 2016</a></strong></li>
-														<li>Category <strong><a href="#" target="_blank">Photography</a></strong></li>
-														<li>Copyright ©2016, All Rights Reserved</li>
-													</ul>
-													<a href="#" target="_blank" class="btn btn-primary btn-lg margin-top-20">Launch Project</a>
-												</div>
-											</div> <!-- /.row -->
-
-										</div> <!-- /.inline-popup-inner -->
-
-										<a class="inline-popup-close" href="#"><i class="fa fa-times"></i></a>
-
-									</div>
-									<!-- End inline popup content -->
-
-								</div>
-								<!-- End portfolio item -->
-
-							</div>
-							<!-- End isotope item -->
-
-							<!-- //////////////////
-							// Begin isotope item
-							/////////////////////// -->
-							<div class="isotope-item graphics">
-
-								<!-- Begin portfolio item -->
-								<div class="portfolio-item-wrap">
-									<div class="portfolio-item">
-										<a class="item-link inline-popup-trigger" href="#portfolio-4">
-											<span class="cover bg-transparent-9-main"></span>
-											<img class="item-img" src="assets/img/portfolio/v.2/portfolio-img-4.jpg" alt="image">
-											<div class="item-info text-white">
-												<h3 class="item-info-title">Canvas Tote Bag</h3>
-												<p class="item-info-text">Graphics</p>
-											</div>
-										</a>
-									</div>
-
-									<!-- Begin inline popup content. Class "mfp-hide" is required to make dialog hidden -->
-									<div id="portfolio-4" class="inline-popup mfp-hide">
-										<div class="inline-popup-inner">
-
-											<div class="inline-popup-image bg-image" style="background-image: url(assets/img/portfolio/v.2/big/portfolio-img-4.jpg); background-position: 50% 50%;"></div>
-
-											<div class="row margin-top-40">
-												<div class="col-md-8 margin-bottom-20">
-													<h2 class="no-margin-top">Portfolio Single Item 4</h2>
-													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p>
-
-													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquapta. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquipter consequat adipisicing sedari.</p>
-												</div>
-												<div class="col-md-4 margin-bottom-20 padding-left-40">
-													<ul class="list-unstyled">
-														<li>Client: <strong><a href="#" target="_blank">MockCo INC</a></strong></li>
-														<li>Date: <strong><a href="#" target="_blank">05 jan, 2016</a></strong></li>
-														<li>Category <strong><a href="#" target="_blank">Graphics</a></strong></li>
-														<li>Copyright ©2016, All Rights Reserved</li>
-													</ul>
-													<a href="#" target="_blank" class="btn btn-primary btn-lg margin-top-20">Launch Project</a>
-												</div>
-											</div> <!-- /.row -->
-
-										</div> <!-- /.inline-popup-inner -->
-
-										<a class="inline-popup-close" href="#"><i class="fa fa-times"></i></a>
-
-									</div>
-									<!-- End inline popup content -->
-
-								</div>
-								<!-- End portfolio item -->
-
-							</div>
-							<!-- End isotope item -->
-
-							<!-- //////////////////
-							// Begin isotope item
-							/////////////////////// -->
-							<div class="isotope-item photography">
-
-								<!-- Begin portfolio item -->
-								<div class="portfolio-item-wrap">
-									<div class="portfolio-item">
-										<a class="item-link inline-popup-trigger" href="#portfolio-5">
-											<span class="cover bg-transparent-9-main"></span>
-											<img class="item-img" src="assets/img/portfolio/v.2/portfolio-img-5.jpg" alt="image">
-											<div class="item-info text-white">
-												<h3 class="item-info-title">Rubber Stamp</h3>
-												<p class="item-info-text">Photography</p>
-											</div>
-										</a>
-									</div>
-
-									<!-- Begin inline popup content. Class "mfp-hide" is required to make dialog hidden -->
-									<div id="portfolio-5" class="inline-popup mfp-hide">
-										<div class="inline-popup-inner">
-
-											<!-- Begin embed video (more info about reffering embed videos: https://www.feedthebot.com/pagespeed/defer-videos.htm) -->
-											<div class="embed-responsive embed-responsive-16by9">
-												<iframe data-src="https://www.youtube.com/embed/9UWo5RdXc1o" src="https://player.vimeo.com/video/60616160?"></iframe>
-											</div>
-											<!-- End embed video -->
-
-											<div class="row margin-top-40">
-												<div class="col-md-8 margin-bottom-20">
-													<h2 class="no-margin-top">Portfolio Single Item 5</h2>
-													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p>
-
-													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquapta. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquipter consequat adipisicing sedari.</p>
-												</div>
-												<div class="col-md-4 margin-bottom-20 padding-left-40">
-													<ul class="list-unstyled">
-														<li>Client: <strong><a href="#" target="_blank">MockCo INC</a></strong></li>
-														<li>Date: <strong><a href="#" target="_blank">07 jan, 2016</a></strong></li>
-														<li>Category <strong><a href="#" target="_blank">Photography</a></strong></li>
-														<li>Copyright ©2016, All Rights Reserved</li>
-													</ul>
-													<a href="#" target="_blank" class="btn btn-primary btn-lg margin-top-20">Launch Project</a>
-												</div>
-											</div> <!-- /.row -->
-
-										</div> <!-- /.inline-popup-inner -->
-
-										<a class="inline-popup-close" href="#"><i class="fa fa-times"></i></a>
-
-									</div>
-									<!-- End inline popup content -->
-								</div>
-								<!-- End portfolio item -->
-
-							</div>
-							<!-- End isotope item -->
-
-							<!-- //////////////////
-							// Begin isotope item
-							/////////////////////// -->
-							<div class="isotope-item branding">
-
-								<!-- Begin portfolio item -->
-								<div class="portfolio-item-wrap">
-									<div class="portfolio-item">
-										<a class="item-link inline-popup-trigger" href="#portfolio-6">
-											<span class="cover bg-transparent-9-main"></span>
-											<img class="item-img" src="assets/img/portfolio/v.2/portfolio-img-6.jpg" alt="image">
-											<div class="item-info text-white">
-												<h3 class="item-info-title">Vintage Logo MockUp</h3>
-												<p class="item-info-text">Branding</p>
-											</div>
-										</a>
-									</div>
-
-									<!-- Begin inline popup content. Class "mfp-hide" is required to make dialog hidden -->
-									<div id="portfolio-6" class="inline-popup mfp-hide">
-										<div class="inline-popup-inner">
-
-											<!-- Begin embed video (more info about reffering embed videos: https://www.feedthebot.com/pagespeed/defer-videos.htm) -->
-											<div class="embed-responsive embed-responsive-16by9">
-												<iframe data-src="https://player.vimeo.com/video/79298633?" src="https://player.vimeo.com/video/60616160?"></iframe>
-											</div>
-											<!-- End embed video -->
-
-											<div class="row margin-top-40">
-												<div class="col-md-8 margin-bottom-20">
-													<h2 class="no-margin-top">Portfolio Single Item 6</h2>
-													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p>
-
-													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquapta. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquipter consequat adipisicing sedari.</p>
-												</div>
-												<div class="col-md-4 margin-bottom-20 padding-left-40">
-													<ul class="list-unstyled">
-														<li>Client: <strong><a href="#" target="_blank">MockCo INC</a></strong></li>
-														<li>Date: <strong><a href="#" target="_blank">08 jan, 2016</a></strong></li>
-														<li>Category <strong><a href="#" target="_blank">Branding</a></strong></li>
-														<li>Copyright ©2016, All Rights Reserved</li>
-													</ul>
-													<a href="#" target="_blank" class="btn btn-primary btn-lg margin-top-20">Launch Project</a>
-												</div>
-											</div> <!-- /.row -->
-
-										</div> <!-- /.inline-popup-inner -->
-
-										<a class="inline-popup-close" href="#"><i class="fa fa-times"></i></a>
-
-									</div>
-									<!-- End inline popup content -->
-
-								</div>
-								<!-- End portfolio item -->
-
-							</div>
-							<!-- End isotope item -->
-
-							<!-- //////////////////
-							// Begin isotope item
-							/////////////////////// -->
-							<div class="isotope-item web-design">
-
-								<!-- Begin portfolio item -->
-								<div class="portfolio-item-wrap">
-									<div class="portfolio-item">
-										<a class="item-link inline-popup-trigger" href="#portfolio-7">
-											<span class="cover bg-transparent-9-main"></span>
-											<img class="item-img" src="assets/img/portfolio/v.2/portfolio-img-7.jpg" alt="image">
-											<div class="item-info text-white">
-												<h3 class="item-info-title">Identity MockUp vol.2</h3>
-												<p class="item-info-text">Web Design</p>
-											</div>
-										</a>
-									</div>
-
-									<!-- Begin inline popup content. Class "mfp-hide" is required to make dialog hidden -->
-									<div id="portfolio-7" class="inline-popup mfp-hide">
-										<div class="inline-popup-inner">
-
-											<div class="inline-popup-image bg-image" style="background-image: url(assets/img/portfolio/v.2/big/portfolio-img-7.jpg); background-position: 50% 50%;"></div>
-
-											<div class="row margin-top-40">
-												<div class="col-md-8 margin-bottom-20">
-													<h2 class="no-margin-top">Portfolio Single Item 7</h2>
-													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p>
-
-													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquapta. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquipter consequat adipisicing sedari.</p>
-												</div>
-												<div class="col-md-4 margin-bottom-20 padding-left-40">
-													<ul class="list-unstyled">
-														<li>Client: <strong><a href="#" target="_blank">MockCo INC</a></strong></li>
-														<li>Date: <strong><a href="#" target="_blank">11 jan, 2016</a></strong></li>
-														<li>Category <strong><a href="#" target="_blank">Web Design</a></strong></li>
-														<li>Copyright ©2016, All Rights Reserved</li>
-													</ul>
-													<a href="#" target="_blank" class="btn btn-primary btn-lg margin-top-20">Launch Project</a>
-												</div>
-											</div> <!-- /.row -->
-
-										</div> <!-- /.inline-popup-inner -->
-
-										<a class="inline-popup-close" href="#"><i class="fa fa-times"></i></a>
-
-									</div>
-									<!-- End inline popup content -->
-
-								</div>
-								<!-- End portfolio item -->
-
-							</div>
-							<!-- End isotope item -->
-
-							<!-- //////////////////
-							// Begin isotope item
-							/////////////////////// -->
-							<div class="isotope-item graphics">
-
-								<!-- Begin portfolio item -->
-								<div class="portfolio-item-wrap">
-									<div class="portfolio-item">
-										<a class="item-link inline-popup-trigger" href="#portfolio-8">
-											<span class="cover bg-transparent-9-main"></span>
-											<img class="item-img" src="assets/img/portfolio/v.2/portfolio-img-8.jpg" alt="image">
-											<div class="item-info text-white">
-												<h3 class="item-info-title">Identity MockUp vol.3</h3>
-												<p class="item-info-text">Graphics</p>
-											</div>
-										</a>
-									</div>
-
-									<!-- Begin inline popup content. Class "mfp-hide" is required to make dialog hidden -->
-									<div id="portfolio-8" class="inline-popup mfp-hide">
-										<div class="inline-popup-inner">
-
-											<div class="inline-popup-image bg-image" style="background-image: url(assets/img/portfolio/v.2/big/portfolio-img-8.jpg); background-position: 50% 50%;"></div>
-
-											<div class="row margin-top-40">
-												<div class="col-md-8 margin-bottom-20">
-													<h2 class="no-margin-top">Portfolio Single Item 8</h2>
-													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p>
-
-													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquapta. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquipter consequat adipisicing sedari.</p>
-												</div>
-												<div class="col-md-4 margin-bottom-20 padding-left-40">
-													<ul class="list-unstyled">
-														<li>Client: <strong><a href="#" target="_blank">MockCo INC</a></strong></li>
-														<li>Date: <strong><a href="#" target="_blank">16 jan, 2016</a></strong></li>
-														<li>Category <strong><a href="#" target="_blank">Graphics</a></strong></li>
-														<li>Copyright ©2016, All Rights Reserved</li>
-													</ul>
-													<a href="#" target="_blank" class="btn btn-primary btn-lg margin-top-20">Launch Project</a>
-												</div>
-											</div> <!-- /.row -->
-
-										</div> <!-- /.inline-popup-inner -->
-
-										<a class="inline-popup-close" href="#"><i class="fa fa-times"></i></a>
-
-									</div>
-									<!-- End inline popup content -->
-
-								</div>
-								<!-- End portfolio item -->
-
-							</div>
-							<!-- End isotope item -->
-
-						</div>
-						<!-- End isotope items wrap -->
-
-					</div>
-					<!-- End isotope -->
-
-				</div> <!-- /.container -->
-
-			</section>
-			<!-- End section 3 -->
-
-
-			<!-- ===================================
-			///// Begin call to action section /////
-			==================================== -->
-			<section class="call-to-action-section bg-dark-2">
-
-				<div class="container">
-					<div class="row wow fadeIn">
-
-						<!-- Left column -->
-						<div class="col-md-8 padding-right-40">
-
-							<h2 class="call-to-action-title text-uppercase text-white">Interested in working with Us?</h2>
-
-							<!-- Begin divider
-							===================
-							* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
-							* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
-							* Use class "hr-dotted", "hr-dashed" or "hr-double" to shange divider style.
-							-->
-							<hr class="hr-width-1 hr-5x border-main">
-							<!-- End divider -->
-
-							<p class="lead call-to-action-text text-gray-2">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-								sed do eiusmod tempor incididunt ut labore.
-							</p>
-
-						</div> <!-- /.col -->
-
-						<!-- Right column -->
-						<div class="col-md-4">
-
-							<a href="#section-8" target="_blank" class="btn btn-primary btn-block btn-rounded-5x btn-xlg sm-scroll">Hire Us Now!</a>
-
-						</div> <!-- /.col -->
-
-					</div><!-- /.row -->
-				</div> <!-- /.container -->
-			</section>
-			<!-- End call to action section -->
-
-
-
-
-			<!-- =============================
-			///// Begin section 5 (team) /////
-			============================== -->
-			<section id="section-5" class="team-section padding-top-100">
-
-				<div class="container">
-					<div class="row wow fadeIn">
-
-						<!-- Left column -->
-						<div class="col-md-6">
-
-							<!-- Begin heading
+							<!-- Begin heading 
 							===================
 							* Use class "heading-center" or "heading-right" to align heading.
 							* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
@@ -1244,7 +497,7 @@
 								<span class="heading-title-ghost">The Team</span>
 								<h2 class="heading-title">The Team</h2>
 
-								<!-- Begin divider
+								<!-- Begin divider 
 								===================
 								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
 								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
@@ -1262,8 +515,7 @@
 						<div class="col-md-6">
 
 							<p class="lead">
-								Aliquam id viverra dolor. Duis vel ligula non neque.Lorem ipsum dolor sit amet,
-								consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore. Suckamik saneta isromet.
+								<strong>At Monikos,</strong> we understand that healthcare is changing, and we want to make sure that we do our part in providing a platform that supplements the training of healthcare students to streamline their process in becoming healthcare professionals.
 							</p>
 
 						</div> <!-- /.col -->
@@ -1271,168 +523,215 @@
 					</div> <!-- /.row -->
 				</div> <!-- /.container -->
 
-				<!-- Begin team -->
-				<div class="team wow fadeIn" data-wow-delay="0.3s">
-					<div class="container">
+				<div class="container">
 
-						<!-- Begin content carousel (http://www.owlcarousel.owlgraphic.com)
-						====================================================================
-						* Use class "nav-outside" for outside nav.
-						* Use class "nav-outside-top" for outside top nav.
-						* Use class "nav-rounded" for rounded nav.
-						* Use class "dots-outside" for outside dots.
-						* Use class "dots-left" or "dots-right" to align dots.
-						* Use class "dots-rounded" for rounded dots.
-						* Available carousel data attributes:
-								data-items="5".......................(items visible on desktop)
-								data-tablet-landscape="4"............(items visible on mobiles)
-								data-tablet-portrait="3".............(items visible on mobiles)
-								data-mobile-landscape="2"............(items visible on tablets)
-								data-mobile-portrait="1".............(items visible on tablets)
-								data-loop="true".....................(true/false)
-								data-margin="10".....................(space between items)
-								data-center="true"...................(true/false)
-								data-start-position="0"..............(item start position)
-								data-animate-in="fadeIn".............(more animations: http://daneden.github.io/animate.css/)
-								data-animate-out="fadeOut"...........(more animations: http://daneden.github.io/animate.css/)
-								data-mouse-drag="false"..............(true/false)
-								data-touch-drag="false"..............(true/false)
-								data-autoheight="true"...............(true/false)
-								data-autoplay="true".................(true/false)
-								data-autoplay-timeout="5000".........(milliseconds)
-								data-autoplay-hover-pause="true".....(true/false)
-								data-autoplay-speed="800"............(milliseconds)
-								data-drag-end-speed="800"............(milliseconds)
-								data-lazy-load="true"................(true/false)
-								data-nav="true"......................(true/false)
-								data-nav-speed="800".................(milliseconds)
-								data-dots="false"....................(true/false)
-								data-dots-speed="800"................(milliseconds)
-						-->
-						<div class="owl-carousel team-carousel dots-outside" data-items="4" data-margin="30" data-tablet-landscape="3" data-tablet-portrait="2" data-mobile-landscape="2" data-mobile-portrait="1">
+					<!-- Begin blog list
+					=====================
+					* Use class "blog-list-classic" to enable classic blog list layout.
+					-->
+					<div class="blog-list margin-top-80">
+						<div class="blog-wrap">
 
-							<!-- Begin team box
-							=====================
-							* Use class "team-box-hover" to enable team box hover effect.
-							* Use class "team-box-rounded" to enable team box rounded image.
-							-->
-							<div class="team-box team-box-hover">
+							<!-- Begin blog list item 1 
+							============================ -->
+							<div class="blog-list-item row">
+
+								<!-- Left column -->
+								<div class="col col-md-3 no-padding wow fadeInLeft">
+								<div class="team-box team-box-hover ">
 								<div class="team-image">
-									<img src="assets/img/team/staff-2.jpg" alt="Joseph Reeves">
+									<a class="item-link inline-popup-trigger" href="#portfolio-1"><img src="images/landing_page/patrick.jpg" alt="Patrick"></a>
 								</div>
 
-								<div class="team-info text-center">
-									<h4 class="team-info-title">Joseph Reeves</h4>
-									<p class="team-info-text">Developer</p>
-
-									<!-- Begin social icons -->
-									<ul class="social-icons">
-										<li><a class="btn btn-social-min btn-default btn-sm" href="" target="_blank"><i class="fa fa-facebook"></i></a></li>
-										<li><a class="btn btn-social-min btn-default btn-sm" href="" target="_blank"><i class="fa fa-twitter"></i></a></li>
-										<li><a class="btn btn-social-min btn-default btn-sm" href="" target="_blank"><i class="fa fa-pinterest"></i></a></li>
-										<li><a class="btn btn-social-min btn-default btn-sm" href="" target="_blank"><i class="fa fa-dribbble"></i></a></li>
-									</ul>
-									<!-- End social icons -->
-
-								</div>
 							</div>
-							<!-- End team box -->
+								</div> <!-- /.col -->
 
-							<!-- Begin team box
-							=====================
-							* Use class "team-box-hover" to enable team box hover effect.
-							* Use class "team-box-rounded" to enable team box rounded image.
-							-->
-							<div class="team-box team-box-hover">
+								<!-- Right column -->
+								<div class="col col-md-9 no-padding wow fadeInRight">
+									<div class="bco blog-list-info">
+										<h2 class="blog-list-title"><a class="tem-link inline-popup-trigger" href="#portfolio-1" title="Aenean Odio Metus">Patrick</a></h2>
+										<div class="blog-list-meta">
+											<p class="article-time">Co-founder</p>
+										</div>
+										<p class="blog-list-desc  text-center">
+											Patrick is originally from Austin, Texas. He attended Duke University on a full athletic football scholarship. Before he left for college, his mother was diagnosed with type 2 diabetes. It was during this time period that Patrick started to take notice into what medications she took to control her diabetes and this is what motivated him to want to attend Pharmacy school...
+											<a class="tem-link inline-popup-trigger" href="#portfolio-1"> read more...</a>
+										</p>
+									</div>
+								</div> <!-- /.col -->
+								<!-- Begin inline popup content. Class "mfp-hide" is required to make dialog hidden -->
+									<div id="portfolio-1" class="inline-popup mfp-hide">
+										<div class="inline-popup-inner">
+
+						<!-- 					<div class="inline-popup-image bg-image" style="background-image: url(assets/img/portfolio/v.2/big/portfolio-img-1.jpg); background-position: 50% 50%;"></div> -->
+
+											<div class="row margin-top-40">
+												<div class="col-md-8 margin-bottom-20">
+													<h2 class="no-margin-top">Patrick</h2>
+													<p>Patrick is originally from Austin, Texas. He attended Duke University on a full athletic football scholarship. Before he left for college, his mother was diagnosed with type 2 diabetes. It was during this time period that Patrick started to take notice into what medications she took to control her diabetes and this is what motivated him to want to attend Pharmacy school. Upon graduation, he took a two-year hiatus to enter the work force and complete a post-bac to make himself an eligible candidate for pharmacy school. </p>
+
+													<p>He originally thought he would be heading back to Texas for Pharmacy school to be closer to his family, but when he was accepted into the UNC Eshelman School of Pharmacy, it was hard for him to turn down the then #2 ranked pharmacy school in the country. One of the promise Patrick’s mother made him keep was that no matter what school he chose to attend, that he leaves a positive impact. Hopefully Monikos will fulfill this promise to her.</p>
+												</div>
+												<div class="col-md-4 margin-bottom-20 padding-left-40">
+													<img src="images/landing_page/patrick.jpg" alt="patrick">
+
+													<ul class="social-icons">
+												<li><a class="btn btn-social-min btn-default btn-sm" href="" target="_blank"><i class="fa fa-facebook"></i></a></li>
+												<li><a class="btn btn-social-min btn-default btn-sm" href="" target="_blank"><i class="fa fa-twitter"></i></a></li>
+												<li><a class="btn btn-social-min btn-default btn-sm" href="" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+												<li><a class="btn btn-social-min btn-default btn-sm" href="" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+												</ul>
+												</div>
+											</div> <!-- /.row -->
+
+										</div> <!-- /.inline-popup-inner -->
+
+										<a class="inline-popup-close" href="#"><i class="fa fa-times"></i></a>
+
+									</div>
+							</div> 
+							<!-- End blog list item 1 -->
+
+							<!-- Begin blog list item 2 
+							============================ -->
+							<div class="blog-list-item row">
+
+								<!-- Right column -->
+								<div class="col col-md-3 col-md-push-9 no-padding wow fadeInRight">
+								<div class="team-box team-box-hover ">
 								<div class="team-image">
-									<img src="assets/img/team/staff-3.jpg" alt="Henry Harrison">
+									<a class="item-link inline-popup-trigger" href="#portfolio-2"><img src="assets/img/team/staff-2.jpg" alt="Patrick"></a>
 								</div>
 
-								<div class="team-info text-center">
-									<h4 class="team-info-title">Miranda Harrison</h4>
-									<p class="team-info-text">Designer</p>
-
-									<!-- Begin social icons -->
-									<ul class="social-icons">
-										<li><a class="btn btn-social-min btn-default btn-sm" href="" target="_blank"><i class="fa fa-facebook"></i></a></li>
-										<li><a class="btn btn-social-min btn-default btn-sm" href="" target="_blank"><i class="fa fa-twitter"></i></a></li>
-										<li><a class="btn btn-social-min btn-default btn-sm" href="" target="_blank"><i class="fa fa-pinterest"></i></a></li>
-										<li><a class="btn btn-social-min btn-default btn-sm" href="" target="_blank"><i class="fa fa-dribbble"></i></a></li>
-									</ul>
-									<!-- End social icons -->
-
 								</div>
-							</div>
-							<!-- End team box -->
+								</div> <!-- /.col -->
+								<!-- Left column -->
+								<div class="col col-md-9 col-md-pull-3 no-padding wow fadeInLeft">
+									<div class="bco blog-list-info">
+										<h2 class="blog-list-title text-right"><a class="tem-link inline-popup-trigger" href="#portfolio-2" title="Aenean Odio Metus">Riley</a></h2>
+										<div class="blog-list-meta text-right">
+											<p class="article-time">Co-founder</p>
+										</div>
+										<p class="blog-list-desc text-center">
+											Riley always wanted to work in healthcare, but she was never one to take the traditional path. She graduated from Tufts University with a double degree in Economics and International Relations with a minor in Spanish. During her undergrad years, she took every opportunity to travel, including a year in Buenos Aires during her Junior year. Upon graduation,...
+											<a class="tem-link inline-popup-trigger" href="#portfolio-2"> read more...</a>
+										</p>
+									</div>
+								</div> <!-- /.col -->
 
-							<!-- Begin team box
-							=====================
-							* Use class "team-box-hover" to enable team box hover effect.
-							* Use class "team-box-rounded" to enable team box rounded image.
-							-->
-							<div class="team-box team-box-hover">
-								<div class="team-image">
-									<img src="assets/img/team/staff-4.jpg" alt="Henry Harrison">
-								</div>
+							</div> 
+							<!-- End blog list item 2 -->
 
-								<div class="team-info text-center">
-									<h4 class="team-info-title">Anna Daniel</h4>
-									<p class="team-info-text">Marketing</p>
+							<!-- Begin inline popup content. Class "mfp-hide" is required to make dialog hidden -->
+									<div id="portfolio-2" class="inline-popup mfp-hide">
+										<div class="inline-popup-inner">
 
-									<!-- Begin social icons -->
-									<ul class="social-icons">
-										<li><a class="btn btn-social-min btn-default btn-sm" href="" target="_blank"><i class="fa fa-facebook"></i></a></li>
-										<li><a class="btn btn-social-min btn-default btn-sm" href="" target="_blank"><i class="fa fa-twitter"></i></a></li>
-										<li><a class="btn btn-social-min btn-default btn-sm" href="" target="_blank"><i class="fa fa-pinterest"></i></a></li>
-										<li><a class="btn btn-social-min btn-default btn-sm" href="" target="_blank"><i class="fa fa-dribbble"></i></a></li>
-									</ul>
-									<!-- End social icons -->
+						<!-- 					<div class="inline-popup-image bg-image" style="background-image: url(assets/img/portfolio/v.2/big/portfolio-img-1.jpg); background-position: 50% 50%;"></div> -->
 
-								</div>
-							</div>
-							<!-- End team box -->
+											<div class="row margin-top-40">
+												<div class="col-md-8 margin-bottom-20">
+													<h2 class="no-margin-top">Riley</h2>
+													<p>Riley always wanted to work in healthcare, but she was never one to take the traditional path. She graduated from Tufts University with a double degree in Economics and International Relations with a minor in Spanish. During her undergrad years, she took every opportunity to travel, including a year in Buenos Aires during her Junior year. Upon graduation, she moved to her favorite place, New York City, to work in international finance at a Korean investment fund. As an investment banker, Riley was able to learn about international finance and business, but she didn’t feel that her mentors, especially her female mentors were leading lives that she wanted for herself. </p>
 
-							<!-- Begin team box
-							=====================
-							* Use class "team-box-hover" to enable team box hover effect.
-							* Use class "team-box-rounded" to enable team box rounded image.
-							-->
-							<div class="team-box team-box-hover">
-								<div class="team-image">
-									<a href="#" target="_blank"><img src="assets/img/team/staff-5.jpg" alt="Henry Harrison"></a>
-								</div>
+													<p>Conjuring up her true passion for helping people, making an impact and interest in healthcare, she decided to take another career turn. After much contemplation, she took a leap of faith and started taking post-bac courses at the nearest community college to prepare for pharmacy school. Since that one brave day when she chose to register for the first Biology course, Riley has been blessed to have made it all the way to UNC Eshelman School of Pharmacy, the best pharmacy school in the nation. Now, with her interest entrepreneurship and startups, she is launching Monikos to help fellow pharmacy students better learn and retain drug information.</p>
+												</div>
+												<div class="col-md-4 margin-bottom-20 padding-left-40">
+													<img src="" alt="riley">
 
-								<div class="team-info text-center">
-									<h4 class="team-info-title">Join Us</h4>
-									<p class="team-info-text">Designer Wanted</p>
-									<a href="" class="btn btn-primary btn-sm">Read More!</a>
-								</div>
-							</div>
-							<!-- End team box -->
+													<ul class="social-icons">
+												<li><a class="btn btn-social-min btn-default btn-sm" href="" target="_blank"><i class="fa fa-facebook"></i></a></li>
+												<li><a class="btn btn-social-min btn-default btn-sm" href="" target="_blank"><i class="fa fa-twitter"></i></a></li>
+												<li><a class="btn btn-social-min btn-default btn-sm" href="" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+												<li><a class="btn btn-social-min btn-default btn-sm" href="" target="_blank"><i class="fa fa-dribbble"></i></a></li>
+												</ul>
+												</div>
+											</div> <!-- /.row -->
 
-						</div>
-						<!-- End team carousel -->
+										</div> <!-- /.inline-popup-inner -->
 
-					</div> <!-- /.container -->
-				</div>
-				<!-- End team -->
+										<a class="inline-popup-close" href="#"><i class="fa fa-times"></i></a>
+
+									</div> 
+									<!-- End popup item2 -->
+						</div> <!-- /.blog-wrap -->
+					</div>
+					<!-- End blog-list -->
+
+				</div> <!-- /.container -->
 
 			</section>
-			<!-- End section 5 -->
+			<!-- End section team -->
 
+			<!-- ====================================
+			///// Begin section-video (video promo) /////
+			=========================================
+			* Use class "angle-left-top", "angle-right-top", "angle-left-bottom", "angle-right-bottom" to change section angle.
+			-->
+
+			<!-- Youtube video background
+			NOTE: Replace videoURL with your own (videoURL:'your-youtube-video-URL'). 
+			Do not forget to add your background image for mobile devices (because the video background doesn't work on mobile devices).
+			More info about YTPlayer: https://github.com/pupunzi/jquery.mb.YTPlayer -->
+			<section id="section-video" class="video-section youtube-bg text-white" 
+				style="background-image: url(assets/img/video-bg/promo-video-bg-2.jpg); background-position: 50% 50%;"
+				data-property="{
+			      videoURL: 'https://youtu.be/2pF5A23LVdo?list=PLBFC07F93F12831F3',
+			      containment: 'self',
+			      startAt: 0, 
+			      stopAt: 0,
+			      autoPlay: true,
+			      loop: true,
+			      mute: true,  
+			      showControls: false, 
+			      showYTLogo: false,
+			      realfullscreen: true,
+			      addRaster: false, 
+			      optimizeDisplay: true,
+			      stopMovieOnBlur: true
+				}">
+
+				<!-- Element cover
+				===================
+				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.  
+				-->
+				<span class="cover bg-transparent-8-dark"></span>
+
+				<div class="video-section-caption vertical-align-center">
+
+					<!-- Begin heading 
+					===================
+					* Use class "heading-center" or "heading-right" to align heading.
+					* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
+					* Use class "heading-hover" to enable heading hover effect.
+					* Use class "heading-uppercase" to enable uppercase letters.
+					-->
+					<div class="heading heading-md heading-uppercase heading-center heading-hover wow fadeIn">
+						<span class="heading-title-ghost">Video Promo</span>
+						<h2 class="heading-title">Video Promo</h2>
+						<a class="video-btn bg-main" href="https://www.youtube.com/channel/UCXnvLHEf5t4ncz2DCLRMmpQ" target="_blank"><i class="fa fa-play"></i></a>
+						<p class="heading-tescription lead text-gray-2">
+							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt sumbire itkum.
+						</p>
+					</div>
+					<!-- End heading -->
+
+				</div> <!-- /.vertical-align-center -->
+
+			</section>
+			<!-- End section vedio -->
 
 
 			<!-- =================================
-			///// Begin section 10 (clients) /////
+			///// Begin section clients (clients) /////
 			================================== -->
-			<section id="section-10" class="clients-section">
+			<section id="section-clients" class="clients-section">
 
 				<div class="container">
 					<div class="row">
 
 						<div class="col-md-12">
-
-							<!-- Begin heading
+							
+							<!-- Begin heading 
 							===================
 							* Use class "heading-center" or "heading-right" to align heading.
 							* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
@@ -1440,10 +739,10 @@
 							* Use class "heading-uppercase" to enable uppercase letters.
 							-->
 							<div class="heading heading-md heading-uppercase heading-center heading-hover wow fadeIn">
-								<span class="heading-title-ghost">Sponsors</span>
-								<h2 class="heading-title">Sponsors</h2>
+								<span class="heading-title-ghost">Our Clients</span>
+								<h2 class="heading-title">Our Clients</h2>
 
-								<!-- Begin divider
+								<!-- Begin divider 
 								===================
 								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
 								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
@@ -1498,56 +797,56 @@
 									data-dots-speed="800"................(milliseconds)
 							-->
 							<div class="owl-carousel clients-carousel dots-outside" data-items="5" data-margin="40" data-tablet-landscape="4" data-tablet-portrait="3" data-mobile-landscape="2" data-mobile-portrait="1">
-
-								<!-- Begin carousel item
+								
+								<!-- Begin carousel item 
 								========================= -->
 								<div class="cc-item">
 									<a target="_blank" href="#" class="client"><img src="assets/img/clients/client-1.png" alt="image"></a>
 								</div>
 								<!-- End carousel item -->
-
-								<!-- Begin carousel item
+								
+								<!-- Begin carousel item 
 								========================= -->
 								<div class="cc-item">
 									<a target="_blank" href="#" class="client"><img src="assets/img/clients/client-2.png" alt="image"></a>
 								</div>
 								<!-- End carousel item -->
-
-								<!-- Begin carousel item
+								
+								<!-- Begin carousel item 
 								========================= -->
 								<div class="cc-item">
 									<a target="_blank" href="#" class="client"><img src="assets/img/clients/client-3.png" alt="image"></a>
 								</div>
 								<!-- End carousel item -->
 
-								<!-- Begin carousel item
+								<!-- Begin carousel item 
 								========================= -->
 								<div class="cc-item">
 									<a target="_blank" href="#" class="client"><img src="assets/img/clients/client-4.png" alt="image"></a>
 								</div>
 								<!-- End carousel item -->
 
-								<!-- Begin carousel item
+								<!-- Begin carousel item 
 								========================= -->
 								<div class="cc-item">
 									<a target="_blank" href="#" class="client"><img src="assets/img/clients/client-5.png" alt="image"></a>
 								</div>
 								<!-- End carousel item -->
 
-								<!-- Begin carousel item
+								<!-- Begin carousel item 
 								========================= -->
 								<div class="cc-item">
 									<a target="_blank" href="#" class="client"><img src="assets/img/clients/client-6.png" alt="image"></a>
 								</div>
 								<!-- End carousel item -->
 
-								<!-- Begin carousel item
+								<!-- Begin carousel item 
 								========================= -->
 								<div class="cc-item">
 									<a target="_blank" href="#" class="client"><img src="assets/img/clients/client-7.png" alt="image"></a>
 								</div>
 								<!-- End carousel item -->
-
+								
 							</div>
 							<!-- End content carousel -->
 
@@ -1556,7 +855,166 @@
 				</div> <!-- /.container -->
 
 			</section>
-			<!-- End section 10 -->
+			<!-- End section clients -->
+
+			<!-- =====================================
+			///// Begin section test (testimonials) /////
+			==========================================
+			* Use class "angle-left-top", "angle-right-top", "angle-left-bottom", "angle-right-bottom" to change section angle.
+			* Use class "bg-image-fixed" to make background image fixed (otherwise use class "bg-image").
+			* Use class "bg-image-parallax" to enable background image parallax effect (otherwise use class "bg-image").
+			* Use class "bg-pattern" if you use background patterns (example: http://subtlepatterns.com/). Combine with class "bg-image-fixed".
+			-->
+			<section id="section-test" class="testimonials-section bg-dark bg-image-parallax" style="background-image: url(assets/img/misc/bg-2.jpg);">
+
+				<!-- Element cover
+				===================
+				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.  
+				-->
+				<span class="cover bg-transparent-5-1-dark"></span>
+
+				<div class="container">
+					<div class="row wow fadeIn" data-wow-delay="0.3s">
+						<div class="col-md-12">
+
+							<!-- Begin testimonials
+							========================
+							* Use class "tm-hide-image" to hide testimonial image.
+							* Use class "tm-center" or "tm-right" to align testimonials.
+							-->
+							<div class="testimonial-wrap tm-center max-width-800 margin-auto">
+
+								<!-- Begin content carousel (http://www.owlcarousel.owlgraphic.com)
+								====================================================================
+								* Use class "nav-outside" for outside nav.
+								* Use class "nav-outside-top" for outside top nav.
+								* Use class "nav-rounded" for rounded nav.
+								* Use class "dots-outside" for outside dots.
+								* Use class "dots-left" or "dots-right" to align dots.
+								* Use class "dots-rounded" for rounded dots.
+								* Available carousel data attributes:
+										data-items="5".......................(items visible on desktop)
+										data-tablet-landscape="4"............(items visible on mobiles)
+										data-tablet-portrait="3".............(items visible on mobiles)
+										data-mobile-landscape="2"............(items visible on tablets)
+										data-mobile-portrait="1".............(items visible on tablets)
+										data-loop="true".....................(true/false)
+										data-margin="10".....................(space between items)
+										data-center="true"...................(true/false)
+										data-start-position="0"..............(item start position)
+										data-animate-in="fadeIn".............(more animations: http://daneden.github.io/animate.css/)
+										data-animate-out="fadeOut"...........(more animations: http://daneden.github.io/animate.css/)
+										data-mouse-drag="false"..............(true/false)
+										data-touch-drag="false"..............(true/false)
+										data-autoheight="true"...............(true/false)
+										data-autoplay="true".................(true/false)
+										data-autoplay-timeout="5000".........(milliseconds)
+										data-autoplay-hover-pause="true".....(true/false)
+										data-autoplay-speed="800"............(milliseconds)
+										data-drag-end-speed="800"............(milliseconds)
+										data-lazy-load="true"................(true/false)
+										data-nav="true"......................(true/false)
+										data-nav-speed="800".................(milliseconds)
+										data-dots="false"....................(true/false)
+										data-dots-speed="800"................(milliseconds)
+								-->
+								<div class="owl-carousel testimonial-carousel dots-outside text-white" data-items="1" data-loop="true">
+
+									<!-- Begin testimonial item -->
+									<div class="testimonial-item text-gray-2">
+										<img src="assets/img/testimonial/client-1.png" alt="image">
+										<blockquote>
+											<p>"Duis vel ligula non neque varius eleifend quis id elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse lacus dui, pellentesque ut porta et, consequat sit amet suscipit lacus."</p>
+											<small>Anna Clarkson</small>
+										</blockquote>
+									</div>
+									<!-- End testimonial item -->
+
+									<!-- Begin testimonial item -->
+									<div class="testimonial-item text-gray-2">
+										<img src="assets/img/testimonial/client-2.png" alt="image">
+										<blockquote>
+											<p>"Maecenas sit amet diam iaculis, lobortis tortor sed, bibendum quam. Nam mauris odio, sodales interdum facilisis in, dignissim et massa. In suscipit quam nisi."</p>
+											<small>John Smith</small>
+										</blockquote>
+									</div>
+									<!-- End testimonial item -->
+
+									<!-- Begin testimonial item -->
+									<div class="testimonial-item text-gray-2">
+										<img src="assets/img/testimonial/client-3.png" alt="image">
+										<blockquote>
+											<p>"Proin at tincidunt leo. Morbi ut metus sit amet purus molestie sollicitudin. Maecenas convallis est vitae neque feugiat, in accumsan odio vestibulum. Pellentesque sodales fermentum porttitor."</p>
+											<small>Jack Paterson</small>
+										</blockquote>
+									</div>
+									<!-- End testimonial item -->
+									
+								</div>
+								<!-- End testimonials carousel -->
+
+							</div>
+							<!-- End testimonials -->
+
+						</div> <!-- /.col -->
+					</div> <!-- /.row -->
+				</div> <!-- /.container -->
+
+			</section>
+			<!-- End section test -->
+
+
+
+			<!-- =================================
+			///// Begin section clients (clients) /////
+			================================== -->
+			<section id="section-clients" class="clients-section">
+
+				<div class="container">
+					<div class="row">
+
+						<div class="col-md-12">
+							<div class="heading heading-md heading-uppercase heading-center heading-hover wow fadeIn">
+								<span class="heading-title-ghost">Our Sponsor</span>
+								<h2 class="heading-title">Our Sponsor</h2>
+								<hr class="hr-width-1 hr-5x border-main">
+								<!-- End divider -->
+
+								<p class="heading-tescription lead max-width-800 margin-auto">
+									Join Us
+								</p>
+							</div>
+							<!-- End heading -->
+
+						</div> <!-- /.col -->
+
+						<!-- Left column -->
+						<div class="col-md-12 margin-top-60 wow fadeIn" data-wow-delay="0.3s">
+
+							<div class="owl-carousel clients-carousel dots-outside row" data-items="5" data-margin="40" data-tablet-landscape="4" data-tablet-portrait="3" data-mobile-landscape="2" data-mobile-portrait="1">
+								<!-- Begin carousel item 
+								========================= -->
+								<div class="cc-item">
+									<a target="_blank" href="" class="client"><img src="images/landing_page/cube.png" alt="image"></a>
+								</div>
+								<!-- End carousel item -->
+								
+								<!-- Begin carousel item 
+								========================= -->
+								<div class="cc-item">
+									<a target="_blank" href="" class="client"><img src="images/landing_page/launch.png" alt="image"></a>
+								</div>
+								<!-- End carousel item -->
+								
+							</div>
+							<!-- End content carousel -->
+
+						</div> <!-- /.col-->
+					</div> <!-- /.row -->
+				</div> <!-- /.container -->
+
+			</section>
+			<!-- End section clients -->
 
 
 			<!-- ================================
@@ -1571,7 +1029,7 @@
 
 				<!-- Element cover
 				===================
-				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.
+				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.  
 				-->
 				<span class="cover bg-transparent-9-dark bg-transparent-gradient-1"></span>
 
@@ -1581,7 +1039,7 @@
 						<!-- Left column -->
 						<div class="col-md-7">
 
-							<!-- Begin heading
+							<!-- Begin heading 
 							===================
 							* Use class "heading-center" or "heading-right" to align heading.
 							* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
@@ -1592,7 +1050,7 @@
 								<span class="heading-title-ghost">Contact Us</span>
 								<h2 class="heading-title text-white">Contact Us</h2>
 
-								<!-- Begin divider
+								<!-- Begin divider 
 								===================
 								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
 								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
@@ -1602,7 +1060,8 @@
 								<!-- End divider -->
 
 								<p class="heading-tescription lead text-gray-2">
-									Feel free to get in touch with us with any questions and thoughts!
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
 								</p>
 							</div>
 							<!-- End heading -->
@@ -1637,14 +1096,14 @@
 					<div class="row">
 						<div class="col-md-12">
 
-							<!-- Begin contact form
+							<!-- Begin contact form 
 							========================= -->
 							<form id="contact-form" class="margin-top-80 text-white wow fadeIn" data-wow-delay="0.3s">
 
 								<!-- Begin hidden required fields (https://github.com/agragregra/uniMail) -->
-								<input type="hidden" name="project_name" value="http://weijian.life/mvc/public/shuo.html"> <!-- Change value to your site name -->
-								<input type="hidden" name="admin_email" value="shuow@live.unc.edu"> <!-- Change value to your email address (where a message will be sent) -->
-								<input type="hidden" name="form_subject" value="Message from yourwebsiteaddress.com"> <!-- Change value to your own message subject -->
+								<input type="hidden" name="project_name" value="monikos.org"> <!-- Change value to your site name -->
+								<input type="hidden" name="admin_email" value="monikos.llc@gmail.com"> <!-- Change value to your email address (where a message will be sent) -->
+								<input type="hidden" name="form_subject" value="MONIKOS CONTACT"> <!-- Change value to your own message subject -->
 								<!-- End Hidden Required Fields -->
 
 								<div class="row">
@@ -1687,7 +1146,6 @@
 			<!-- End section 8 -->
 
 
-
 			<!-- ===================
 			///// Begin footer /////
 			========================
@@ -1698,7 +1156,7 @@
 					<div class="row">
 						<div class="col-md-12">
 							<div class="copyright small">
-								<a href="#">Asso - One Page HTML5 Template</a>
+								<a href="#">MONIKOS</a>
 								<p>Copyright 2016 / All rights reserved</p>
 							</div>
 						</div> <!-- /.col -->
@@ -1745,7 +1203,40 @@
 		<!-- Theme custom JS (all your JS customizations) -->
 		<script src="assets/js/custom.js"></script>
 
+		<!-- modal popup -->
+		<script src="assets/vendor/jquery.leanModal.min.js"></script>
+		<script type="text/javascript">
+    $("#modal_trigger").leanModal({top : 200,closeButton: ".modal_close" });
+    
+    $(function(){
 
+        // Calling Register Form
+        $("#register_button").click(function(){
+            $(".social_login").hide();
+            $(".user_register").show();
+            $(".header_title").text('Register');
+            return false;
+        });
+
+        //Going back to Login Forms
+        $("#back_btn").click(function(){
+            //$(".user_login").hide();
+            $(".user_register").hide();
+            $(".social_login").show();
+            $(".header_title").text('Login');
+            return false;
+        });
+
+        $("#program").blur(function(){
+        	// $("#school").addClass("wow fadeInUp")
+        	$("#school").show();
+
+        	return false;
+        });
+
+    })
+
+    </script>
 
 	   <!--==============================
 	   ///// Begin Google Analytics /////
@@ -1757,9 +1248,10 @@
 	   <!--==============================
 	   ///// End Google Analytics /////
 	   ============================== -->
-
-
-
+	<script src="/mvc/public/js/myCtrl.js"></script>
+    <script src ='/mvc/public/js/account/loginCtrl.js' ></script>
+    <script src = '/mvc/public/js/account/accountCtrl.js'></script>
+   
 	</body>
 	<!-- End body -->
 

@@ -8,7 +8,7 @@
 
     <div id=app_content ng-app="myApp" ng-controller="homeCtrl">
 			<a href="#" ng-click="drugDatabase()"> <div class="top-block">
-				<div class="database-block">DATA<br>BASE
+				<div class="database-block">DATA<br/><br/>BASE
     </div> </div> </a> <a href="#" ng-click="listManager()"> <div
     class="bottom-block"> <div class=study-block> STUDY </div> </div> </a>
 
