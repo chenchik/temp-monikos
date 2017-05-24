@@ -60,10 +60,10 @@
 		<!-- <link rel="stylesheet" media="screen" title="yellow-theme" href="assets/css/styles/yellow.css"> -->
 
 		<!-- Theme custom CSS (all your CSS customizations) -->
-		
+
 		<link rel="stylesheet" href="assets/css/custom.css">
 		<link rel="stylesheet" href="assets/css/style.css">
-		
+
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 		<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -73,7 +73,7 @@
 	   <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
 	   <![endif]-->
 
-    	
+
 	</head>
 
 
@@ -101,7 +101,7 @@
                     </header>
 
                     <section class   ="popupBody">
-                        
+
                         <!-- Username & Password Login form -->
 
                         <div class       ="social_login" ng-app="loginApp" ng-controller="loginCtrl"  id="usr_mng_module">
@@ -116,9 +116,8 @@
                                 <br />
 
                                 <div class       ="action_btns">
-                                    <div class       ="one_half"><a  class="btn btn-primary sm-scroll margin-top-10 wow bounceIn" data-wow-delay="0.5s" ng-click= "login()">Log in</a></div>
-                                    <!-- <div class       ="one_half"><a href="#" class="btn back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div> -->
-                                    <div class       ="one_half last"><a id="register_button" class="btn btn-primary sm-scroll margin-top-10 wow bounceIn" data-wow-delay="0.5s" >Register</a></div>
+                                    <div class       ="one_half"><a  class="btn btn-primary sm-scroll margin-top-10 wow bounceIn" data-wow-delay="0.3s" ng-click= "login()">Log in</a></div>
+                                    <div class       ="one_half last"><a id="register_button" class="btn btn-primary sm-scroll margin-top-10 wow bounceIn" data-wow-delay="0.3s" >Register</a></div>
                                 </div>
                             </form>
 
@@ -128,7 +127,7 @@
                         <!-- Register Form -->
                         <div class ="user_register" ng-app="myApp" ng-controller="accountCtrl" id="register_app">
                             <form id="register_form">
-                                
+
                                 <input placeholder="Username" type      ="text" id="un_reg"/>
                                 <br />
                                 <input placeholder="Email" type      ="text" id="email_reg"/>
@@ -139,22 +138,27 @@
                                 <br />
                                 <!-- <p id="program">Nursing</p> -->
 
-            					<select id="program" >
-                					<option selected disabled>select a program</option>
-                					<option ng-repeat="x in programs" id="a{{x.program}}" value="{{x.program}}">{{x.program}}</option>
-            					</select>
-					            <select id="school" ng-click="findSchool()">
-					                <option selected disabled>select a school</option>
-                					<option ng-repeat="x in schoolnames" id="a{{x.schoolid}}" value="{{x.schoolid}}">{{x.schoolname}}</option>
-					            </select>
+
+																<div class="form-group">
+						            					<select id="program" class= "form-control">
+						                					<option selected disabled>select a program</option>
+						                					<option ng-repeat="x in programs" id="a{{x.program}}" value="{{x.program}}">{{x.program}}</option>
+						            					</select>
+																</br>
+											            <select id="school" ng-click="findSchool()" class= "form-control">
+											                <option selected disabled>select a school</option>
+						                					<option ng-repeat="x in schoolnames" id="a{{x.schoolid}}" value="{{x.schoolid}}">{{x.schoolname}}</option>
+											            </select>
+																</div>
+
 
                                 <div class="action_btns">
-                                    <div class="one_half"><a href="#" class="btn back_btn btn-primary sm-scroll margin-top-10" id="back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
-                                    <div class ="one_half last"><a href="" id="register" class="btn btn-primary sm-scroll margin-top-10" ng-click="checkUsername()">Register</a></div>
+                                    <div class="one_half"><a href="#" class="btn back_btn btn-primary margin-top-10" id="back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
+                                    <div class ="one_half last"><a href="" id="register" class="btn btn-primary margin-top-10" ng-click="checkUsername()">Register</a></div>
 
                                 </div>
                             </form>
-                            
+
                         </div>
                     </section>
                 </div>
@@ -200,7 +204,7 @@
 								<h4 class="top-slidingbar-heading text-gray-2">Our Instagram</h4>
 								<hr class="hr-width-1 hr-double margin-top-15">
 
-								<!-- Begin thumbnail list 
+								<!-- Begin thumbnail list
 								==========================
 								* Use class "col-2", "col-3", "col-4" "col-5" or "col-6" for thumbnail list columns.
 								* Use class "gutter-1", "gutter-2", "gutter-3", "gutter-4" or "gutter-5" to add more space between items.
@@ -233,11 +237,11 @@
 
 
 			<!-- ==============
-			///// Begin header 
+			///// Begin header
 			=================== -->
 			<header id="header-wrap">
 
-				<!-- Begin Header content 
+				<!-- Begin Header content
 				==========================
 				* Use class "show-hide-on-scroll" to hide header on scroll down and show on scroll up.
 				* Use class "fixed-top" to set header to fixed position.
@@ -259,7 +263,7 @@
 						</div>
 						<!-- End logo -->
 
-						<!-- Begin navbar 
+						<!-- Begin navbar
 						================== -->
 						<nav class="navbar pull-right">
 
@@ -285,7 +289,7 @@
 							-->
 							<div id="nav-main" class="collapse navbar-collapse nav-uppercase mob-navbar-collapse-dark">
 
-								<!-- Begin navbar-nav 
+								<!-- Begin navbar-nav
 								======================
 								* Use class "nav-pills" to enable nav pills.
 								* Use class "pills-rounded", "pills-rounded-2x", "pills-rounded-3x" or "pills-rounded-4x" for rounded pills (class "nav-pills" is required).
@@ -293,11 +297,11 @@
 								* Use class "nav-border-bottom" to enable menu links with bottom border (class "nav-pills" is required).
 								-->
 								<ul class="nav navbar-nav navbar-right nav-pills">
-									
+
 									<li class="active"><a class="mlc sm-scroll" href="#intro">Home</a></li>
 									<li><span class="nav-link-separator">/</span></li>
 
-									<!-- Begin dropdown 
+									<!-- Begin dropdown
 									====================
 									* Use class "dropdown-hover" to make navigation toggle on desktop hover.
 									* Use class "dropdown-uppercase" to enable dropdown menu uppercase letters.
@@ -401,12 +405,12 @@
 			* Use class "bg-image-parallax" to enable background image parallax effect (otherwise use class "bg-image").
 			-->
 			<section id="intro" class="bg-image-parallax" style="background-image: url(assets/img/intro/intro-bg-2.jpg);">
-				
+
 				<div class="intro-inner">
-				
+
 					<!-- Element cover
 					===================
-					* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info. 
+					* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.
 					-->
 					<span class="cover bg-transparent-2-dark bg-transparent-gradient-2"></span>
 
@@ -425,7 +429,7 @@
 						<div class="margin-top-30">
 							<a id="modal_trigger" href="#modal" class="btn btn-primary sm-scroll margin-top-10 wow bounceIn" data-wow-delay="1s" >Login</a>
 						</div>
-						
+
 					</div>
 					<!-- End intro caption -->
 
@@ -455,11 +459,11 @@
 
 				<!-- Element cover
 				===================
-				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.  
+				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.
 				-->
 				<span class="cover bg-transparent-4-5-dark"></span>
 
-				<div class="container">	
+				<div class="container">
 					<div class="row wow fadeIn">
 
 						<!-- Left column -->
@@ -467,11 +471,11 @@
 
 							<h2 class="call-to-action-title text-uppercase text-gray-2">Pellentesque Dignissim Risus Ante</h2>
 							<p class="lead call-to-action-text text-gray">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit,
 								sed do eiusmod tempor incididunt ut labore.
 							</p>
 							<p class="call-to-action-text lead text-gray margin-top-30"><strong>Cool / Innovative / Creative</strong></p>
-							
+
 						</div> <!-- /.col -->
 
 						<!-- Right column -->
@@ -480,7 +484,7 @@
 							<a href="https://wrapbootstrap.com/user/Themetorium" target="_blank" class="btn btn-primary-bordered btn-rounded-5x btn-xlg btn-block"><i class="fa fa-shopping-cart"></i> Start free trial</a>
 							<br>
 							<a href="#" class="small text-gray">Or Learn More.. <i class="fa fa-graduation-cap"></i></a>
-							
+
 						</div> <!-- /.col -->
 
 					</div><!-- /.row -->
@@ -497,7 +501,7 @@
 					<div class="row">
 						<div class="col-md-12">
 
-							<!-- Begin heading 
+							<!-- Begin heading
 							===================
 							* Use class "heading-center" or "heading-right" to align heading.
 							* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
@@ -508,7 +512,7 @@
 								<span class="heading-title-ghost">About Us</span>
 								<h2 class="heading-title">About Us</h2>
 
-								<!-- Begin divider 
+								<!-- Begin divider
 								===================
 								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
 								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
@@ -606,17 +610,17 @@
 
 				<!-- Element cover
 				===================
-				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.  
+				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.
 				-->
 				<span class="cover bg-transparent-8-5-dark"></span>
 
-				<div class="container">	
+				<div class="container">
 					<div class="row">
 
 						<!-- Left column -->
 						<div class="col-md-6">
 
-							<!-- Begin heading 
+							<!-- Begin heading
 							===================
 							* Use class "heading-center" or "heading-right" to align heading.
 							* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
@@ -627,7 +631,7 @@
 								<span class="heading-title-ghost">Services</span>
 								<h2 class="heading-title">Services</h2>
 
-								<!-- Begin divider 
+								<!-- Begin divider
 								===================
 								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
 								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
@@ -712,7 +716,7 @@
 						<!-- Left column -->
 						<div class="col-md-6">
 
-							<!-- Begin heading 
+							<!-- Begin heading
 							===================
 							* Use class "heading-center" or "heading-right" to align heading.
 							* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
@@ -723,7 +727,7 @@
 								<span class="heading-title-ghost">Portfolio</span>
 								<h2 class="heading-title">Portfolio</h2>
 
-								<!-- Begin divider 
+								<!-- Begin divider
 								===================
 								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
 								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
@@ -760,7 +764,7 @@
 					-->
 					<div class="isotope popup-gallery col-4">
 
-						<!-- Begin isotope filter 
+						<!-- Begin isotope filter
 						=========================== -->
 						<div class="isotope-filter wow fadeIn" data-wow-delay="0.8s">
 
@@ -772,7 +776,7 @@
 							</div>
 							<!-- End isotope filter toggle button -->
 
-							<!-- Begin isotope filter links 
+							<!-- Begin isotope filter links
 							==================================
 							* Use class "text-center" or "text-right" to align isotope filter links.
 							* Note: class "mlc" = close filter menu when clicking filter link.
@@ -805,7 +809,7 @@
 							// Begin isotope item. Note: use class "width2" for alternative item width (works best on first item)
 							/////////////////////// -->
 							<div class="isotope-item photography">
-								
+
 								<!-- Begin portfolio item -->
 								<div class="portfolio-item-wrap">
 									<div class="portfolio-item">
@@ -828,7 +832,7 @@
 											<div class="row margin-top-40">
 												<div class="col-md-8 margin-bottom-20">
 													<h2 class="no-margin-top">Portfolio Single Item 1</h2>
-													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p> 
+													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p>
 
 													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquapta. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquipter consequat adipisicing sedari.</p>
 												</div>
@@ -883,7 +887,7 @@
 											<div class="row margin-top-40">
 												<div class="col-md-8 margin-bottom-20">
 													<h2 class="no-margin-top">Portfolio Single Item 2</h2>
-													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p> 
+													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p>
 
 													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquapta. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquipter consequat adipisicing sedari.</p>
 												</div>
@@ -912,7 +916,7 @@
 							<!-- End isotope item -->
 
 							<!-- //////////////////
-							// Begin isotope item 
+							// Begin isotope item
 							/////////////////////// -->
 							<div class="isotope-item web-design">
 
@@ -968,35 +972,35 @@
 													data-dots-speed="800"................(milliseconds)
 											-->
 											<div class="owl-carousel portfolio-single-carousel dots-outside" data-items="1" data-nav="true">
-												
-												<!-- Begin carousel item 
+
+												<!-- Begin carousel item
 												========================= -->
 												<div class="cc-item">
 													<div class="inline-popup-image bg-image" style="background-image: url(assets/img/portfolio/v.2/big/portfolio-img-3.jpg); background-position: 50% 50%;"></div>
 												</div>
 												<!-- End carousel item -->
-												
-												<!-- Begin carousel item 
+
+												<!-- Begin carousel item
 												========================= -->
 												<div class="cc-item">
 													<div class="inline-popup-image bg-image" style="background-image: url(assets/img/portfolio/v.2/big/portfolio-img-4.jpg); background-position: 50% 50%;"></div>
 												</div>
 												<!-- End carousel item -->
-												
-												<!-- Begin carousel item 
+
+												<!-- Begin carousel item
 												========================= -->
 												<div class="cc-item">
 													<div class="inline-popup-image bg-image" style="background-image: url(assets/img/portfolio/v.2/big/portfolio-img-5.jpg); background-position: 50% 50%;"></div>
 												</div>
 												<!-- End carousel item -->
-												
+
 											</div>
 											<!-- End content carousel -->
 
 											<div class="row margin-top-80">
 												<div class="col-md-8 margin-bottom-20">
 													<h2 class="no-margin-top">Portfolio Single Item 3</h2>
-													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p> 
+													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p>
 
 													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquapta. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquipter consequat adipisicing sedari.</p>
 												</div>
@@ -1025,7 +1029,7 @@
 							<!-- End isotope item -->
 
 							<!-- //////////////////
-							// Begin isotope item 
+							// Begin isotope item
 							/////////////////////// -->
 							<div class="isotope-item graphics">
 
@@ -1051,7 +1055,7 @@
 											<div class="row margin-top-40">
 												<div class="col-md-8 margin-bottom-20">
 													<h2 class="no-margin-top">Portfolio Single Item 4</h2>
-													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p> 
+													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p>
 
 													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquapta. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquipter consequat adipisicing sedari.</p>
 												</div>
@@ -1080,7 +1084,7 @@
 							<!-- End isotope item -->
 
 							<!-- //////////////////
-							// Begin isotope item 
+							// Begin isotope item
 							/////////////////////// -->
 							<div class="isotope-item photography">
 
@@ -1110,7 +1114,7 @@
 											<div class="row margin-top-40">
 												<div class="col-md-8 margin-bottom-20">
 													<h2 class="no-margin-top">Portfolio Single Item 5</h2>
-													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p> 
+													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p>
 
 													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquapta. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquipter consequat adipisicing sedari.</p>
 												</div>
@@ -1138,7 +1142,7 @@
 							<!-- End isotope item -->
 
 							<!-- //////////////////
-							// Begin isotope item 
+							// Begin isotope item
 							/////////////////////// -->
 							<div class="isotope-item branding">
 
@@ -1168,7 +1172,7 @@
 											<div class="row margin-top-40">
 												<div class="col-md-8 margin-bottom-20">
 													<h2 class="no-margin-top">Portfolio Single Item 6</h2>
-													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p> 
+													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p>
 
 													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquapta. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquipter consequat adipisicing sedari.</p>
 												</div>
@@ -1197,7 +1201,7 @@
 							<!-- End isotope item -->
 
 							<!-- //////////////////
-							// Begin isotope item 
+							// Begin isotope item
 							/////////////////////// -->
 							<div class="isotope-item web-design">
 
@@ -1223,7 +1227,7 @@
 											<div class="row margin-top-40">
 												<div class="col-md-8 margin-bottom-20">
 													<h2 class="no-margin-top">Portfolio Single Item 7</h2>
-													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p> 
+													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p>
 
 													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquapta. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquipter consequat adipisicing sedari.</p>
 												</div>
@@ -1278,7 +1282,7 @@
 											<div class="row margin-top-40">
 												<div class="col-md-8 margin-bottom-20">
 													<h2 class="no-margin-top">Portfolio Single Item 8</h2>
-													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p> 
+													<p>This is dummy copy. It is not meant to be read. It has been placed here solely to demonstrate the look and feel of finished, typeset text. Only for show.</p>
 
 													<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliquapta. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi aliquipter consequat adipisicing sedari.</p>
 												</div>
@@ -1323,15 +1327,15 @@
 			==================================== -->
 			<section class="call-to-action-section bg-dark-2">
 
-				<div class="container">	
+				<div class="container">
 					<div class="row wow fadeIn">
-						
+
 						<!-- Left column -->
 						<div class="col-md-8 padding-right-40">
 
 							<h2 class="call-to-action-title text-uppercase text-white">Interested in working with Us?</h2>
 
-							<!-- Begin divider 
+							<!-- Begin divider
 							===================
 							* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
 							* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
@@ -1341,17 +1345,17 @@
 							<!-- End divider -->
 
 							<p class="lead call-to-action-text text-gray-2">
-								Lorem ipsum dolor sit amet, consectetur adipisicing elit, 
+								Lorem ipsum dolor sit amet, consectetur adipisicing elit,
 								sed do eiusmod tempor incididunt ut labore.
 							</p>
-							
+
 						</div> <!-- /.col -->
 
 						<!-- Right column -->
 						<div class="col-md-4">
 
 							<a href="#section-8" target="_blank" class="btn btn-primary btn-block btn-rounded-5x btn-xlg sm-scroll">Hire Us Now!</a>
-							
+
 						</div> <!-- /.col -->
 
 					</div><!-- /.row -->
@@ -1372,7 +1376,7 @@
 
 				<!-- Element cover
 				===================
-				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.  
+				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.
 				-->
 				<span class="cover bg-transparent-9-5-dark"></span>
 
@@ -1380,7 +1384,7 @@
 					<div class="row">
 						<div class="col-md-12">
 
-							<!-- Begin heading 
+							<!-- Begin heading
 							===================
 							* Use class "heading-center" or "heading-right" to align heading.
 							* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
@@ -1391,7 +1395,7 @@
 								<span class="heading-title-ghost">Pricing</span>
 								<h2 class="heading-title">Pricing</h2>
 
-								<!-- Begin divider 
+								<!-- Begin divider
 								===================
 								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
 								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
@@ -1499,8 +1503,8 @@
 								data-dots-speed="800"................(milliseconds)
 						-->
 						<div class="owl-carousel prices-carousel dots-outside nav-outside-top" data-items="4" data-margin="20" data-nav="true" data-tablet-landscape="3" data-tablet-portrait="3" data-mobile-landscape="2" data-mobile-portrait="1">
-							
-							<!-- Begin price box 
+
+							<!-- Begin price box
 							======================
 							* Use class "price-box-dark" for dark style.
 							-->
@@ -1527,8 +1531,8 @@
 								</div>
 							</div>
 							<!-- End price box -->
-							
-							<!-- Begin price box 
+
+							<!-- Begin price box
 							======================
 							* Use class "price-box-dark" for dark style.
 							-->
@@ -1555,7 +1559,7 @@
 								</div>
 							</div>
 							<!-- End price box -->
-							
+
 							<!-- Begin price box (featured)
 							=================================
 							* Use class "price-box-dark" for dark style.
@@ -1584,8 +1588,8 @@
 								</div>
 							</div>
 							<!-- End price box -->
-							
-							<!-- Begin price box 
+
+							<!-- Begin price box
 							======================
 							* Use class "price-box-dark" for dark style.
 							-->
@@ -1612,7 +1616,7 @@
 								</div>
 							</div>
 							<!-- End price box -->
-							
+
 						</div>
 						<!-- End prices carousel -->
 
@@ -1635,7 +1639,7 @@
 						<!-- Left column -->
 						<div class="col-md-6">
 
-							<!-- Begin heading 
+							<!-- Begin heading
 							===================
 							* Use class "heading-center" or "heading-right" to align heading.
 							* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
@@ -1646,7 +1650,7 @@
 								<span class="heading-title-ghost">The Team</span>
 								<h2 class="heading-title">The Team</h2>
 
-								<!-- Begin divider 
+								<!-- Begin divider
 								===================
 								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
 								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
@@ -1664,7 +1668,7 @@
 						<div class="col-md-6">
 
 							<p class="lead">
-								Aliquam id viverra dolor. Duis vel ligula non neque.Lorem ipsum dolor sit amet, 
+								Aliquam id viverra dolor. Duis vel ligula non neque.Lorem ipsum dolor sit amet,
 								consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore. Suckamik saneta isromet.
 							</p>
 
@@ -1713,7 +1717,7 @@
 						-->
 						<div class="owl-carousel team-carousel dots-outside" data-items="4" data-margin="30" data-tablet-landscape="3" data-tablet-portrait="2" data-mobile-landscape="2" data-mobile-portrait="1">
 
-							<!-- Begin team box 
+							<!-- Begin team box
 							=====================
 							* Use class "team-box-hover" to enable team box hover effect.
 							* Use class "team-box-rounded" to enable team box rounded image.
@@ -1740,7 +1744,7 @@
 							</div>
 							<!-- End team box -->
 
-							<!-- Begin team box 
+							<!-- Begin team box
 							=====================
 							* Use class "team-box-hover" to enable team box hover effect.
 							* Use class "team-box-rounded" to enable team box rounded image.
@@ -1767,7 +1771,7 @@
 							</div>
 							<!-- End team box -->
 
-							<!-- Begin team box 
+							<!-- Begin team box
 							=====================
 							* Use class "team-box-hover" to enable team box hover effect.
 							* Use class "team-box-rounded" to enable team box rounded image.
@@ -1794,7 +1798,7 @@
 							</div>
 							<!-- End team box -->
 
-							<!-- Begin team box 
+							<!-- Begin team box
 							=====================
 							* Use class "team-box-hover" to enable team box hover effect.
 							* Use class "team-box-rounded" to enable team box rounded image.
@@ -1830,36 +1834,36 @@
 			-->
 
 			<!-- Youtube video background
-			NOTE: Replace videoURL with your own (videoURL:'your-youtube-video-URL'). 
+			NOTE: Replace videoURL with your own (videoURL:'your-youtube-video-URL').
 			Do not forget to add your background image for mobile devices (because the video background doesn't work on mobile devices).
 			More info about YTPlayer: https://github.com/pupunzi/jquery.mb.YTPlayer -->
-			<section id="section-9" class="video-section youtube-bg text-white" 
+			<section id="section-9" class="video-section youtube-bg text-white"
 				style="background-image: url(assets/img/video-bg/promo-video-bg-2.jpg); background-position: 50% 50%;"
 				data-property="{
 			      videoURL: 'https://youtu.be/2pF5A23LVdo?list=PLBFC07F93F12831F3',
 			      containment: 'self',
-			      startAt: 0, 
+			      startAt: 0,
 			      stopAt: 0,
 			      autoPlay: true,
 			      loop: true,
-			      mute: true,  
-			      showControls: false, 
+			      mute: true,
+			      showControls: false,
 			      showYTLogo: false,
 			      realfullscreen: true,
-			      addRaster: false, 
+			      addRaster: false,
 			      optimizeDisplay: true,
 			      stopMovieOnBlur: true
 				}">
 
 				<!-- Element cover
 				===================
-				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.  
+				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.
 				-->
 				<span class="cover bg-transparent-8-dark"></span>
 
 				<div class="video-section-caption vertical-align-center">
 
-					<!-- Begin heading 
+					<!-- Begin heading
 					===================
 					* Use class "heading-center" or "heading-right" to align heading.
 					* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
@@ -1893,7 +1897,7 @@
 						<!-- Left column -->
 						<div class="col-md-6">
 
-							<!-- Begin heading 
+							<!-- Begin heading
 							===================
 							* Use class "heading-center" or "heading-right" to align heading.
 							* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
@@ -1904,7 +1908,7 @@
 								<span class="heading-title-ghost">Articles</span>
 								<h2 class="heading-title">Articles</h2>
 
-								<!-- Begin divider 
+								<!-- Begin divider
 								===================
 								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
 								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
@@ -1940,7 +1944,7 @@
 					<div class="blog-list margin-top-80">
 						<div class="blog-wrap">
 
-							<!-- Begin blog list item 1 
+							<!-- Begin blog list item 1
 							============================ -->
 							<div class="blog-list-item row wow fadeInUp">
 
@@ -1958,16 +1962,16 @@
 											<a href="#" class="article-category">#web design</a>
 										</div>
 										<p class="blog-list-desc">
-											Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+											Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
 											laboris nisi ut aliquip ex ea commodo consequat...
 										</p>
 									</div>
 								</div> <!-- /.col -->
 
-							</div> 
+							</div>
 							<!-- End blog list item 1 -->
 
-							<!-- Begin blog list item 2 
+							<!-- Begin blog list item 2
 							============================ -->
 							<div class="blog-list-item row wow fadeInUp">
 
@@ -1985,16 +1989,16 @@
 											<a href="#" class="article-category">#development</a>
 										</div>
 										<p class="blog-list-desc">
-											Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+											Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
 											laboris nisi ut aliquip ex ea commodo consequat...
 										</p>
 									</div>
 								</div> <!-- /.col -->
 
-							</div> 
+							</div>
 							<!-- End blog list item 2 -->
 
-							<!-- Begin blog list item 3 
+							<!-- Begin blog list item 3
 							============================ -->
 							<div class="blog-list-item row wow fadeInUp">
 
@@ -2036,28 +2040,28 @@
 											data-dots-speed="800"................(milliseconds)
 									-->
 									<div class="owl-carousel dots-right" data-items="1" data-nav="true">
-										
-										<!-- Begin carousel item 
+
+										<!-- Begin carousel item
 										========================= -->
 										<div class="cc-item">
 											<a href="#" class="bco blog-list-image bg-image" style="background-image: url(assets/img/blog/blog-3.jpg); background-position: 50% 50%;"></a>
 										</div>
 										<!-- End carousel item -->
-										
-										<!-- Begin carousel item 
+
+										<!-- Begin carousel item
 										========================= -->
 										<div class="cc-item">
 											<a href="#" class="bco blog-list-image bg-image" style="background-image: url(assets/img/blog/blog-5.jpg); background-position: 50% 50%;"></a>
 										</div>
 										<!-- End carousel item -->
-										
-										<!-- Begin carousel item 
+
+										<!-- Begin carousel item
 										========================= -->
 										<div class="cc-item">
 											<a href="#" class="bco blog-list-image bg-image" style="background-image: url(assets/img/blog/blog-6.jpg); background-position: 50% 50%;"></a>
 										</div>
 										<!-- End carousel item -->
-										
+
 									</div>
 									<!-- End content carousel -->
 
@@ -2072,16 +2076,16 @@
 											<a href="#" class="article-category">#development</a>
 										</div>
 										<p class="blog-list-desc">
-											Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+											Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
 											laboris nisi ut aliquip ex ea commodo consequat...
 										</p>
 									</div>
 								</div> <!-- /.col -->
 
-							</div> 
+							</div>
 							<!-- End blog list item 3 -->
 
-							<!-- Begin blog list item 4 
+							<!-- Begin blog list item 4
 							============================ -->
 							<div class="blog-list-item row wow fadeInUp">
 
@@ -2099,15 +2103,15 @@
 											<a href="#" class="article-category">#web design</a>
 										</div>
 										<p class="blog-list-desc">
-											Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
+											Dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
 											laboris nisi ut aliquip ex ea commodo consequat...
 										</p>
 									</div>
 								</div> <!-- /.col -->
 
-							</div> 
+							</div>
 							<!-- End blog list item 4 -->
-						
+
 						</div> <!-- /.blog-wrap -->
 					</div>
 					<!-- End blog-list -->
@@ -2134,7 +2138,7 @@
 
 				<!-- Element cover
 				===================
-				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.  
+				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.
 				-->
 				<span class="cover bg-transparent-9-5-dark"></span>
 
@@ -2214,7 +2218,7 @@
 										</blockquote>
 									</div>
 									<!-- End testimonial item -->
-									
+
 								</div>
 								<!-- End testimonials carousel -->
 
@@ -2238,8 +2242,8 @@
 					<div class="row">
 
 						<div class="col-md-12">
-							
-							<!-- Begin heading 
+
+							<!-- Begin heading
 							===================
 							* Use class "heading-center" or "heading-right" to align heading.
 							* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
@@ -2250,7 +2254,7 @@
 								<span class="heading-title-ghost">Our Clients</span>
 								<h2 class="heading-title">Our Clients</h2>
 
-								<!-- Begin divider 
+								<!-- Begin divider
 								===================
 								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
 								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
@@ -2305,56 +2309,56 @@
 									data-dots-speed="800"................(milliseconds)
 							-->
 							<div class="owl-carousel clients-carousel dots-outside" data-items="5" data-margin="40" data-tablet-landscape="4" data-tablet-portrait="3" data-mobile-landscape="2" data-mobile-portrait="1">
-								
-								<!-- Begin carousel item 
+
+								<!-- Begin carousel item
 								========================= -->
 								<div class="cc-item">
 									<a target="_blank" href="#" class="client"><img src="assets/img/clients/client-1.png" alt="image"></a>
 								</div>
 								<!-- End carousel item -->
-								
-								<!-- Begin carousel item 
+
+								<!-- Begin carousel item
 								========================= -->
 								<div class="cc-item">
 									<a target="_blank" href="#" class="client"><img src="assets/img/clients/client-2.png" alt="image"></a>
 								</div>
 								<!-- End carousel item -->
-								
-								<!-- Begin carousel item 
+
+								<!-- Begin carousel item
 								========================= -->
 								<div class="cc-item">
 									<a target="_blank" href="#" class="client"><img src="assets/img/clients/client-3.png" alt="image"></a>
 								</div>
 								<!-- End carousel item -->
 
-								<!-- Begin carousel item 
+								<!-- Begin carousel item
 								========================= -->
 								<div class="cc-item">
 									<a target="_blank" href="#" class="client"><img src="assets/img/clients/client-4.png" alt="image"></a>
 								</div>
 								<!-- End carousel item -->
 
-								<!-- Begin carousel item 
+								<!-- Begin carousel item
 								========================= -->
 								<div class="cc-item">
 									<a target="_blank" href="#" class="client"><img src="assets/img/clients/client-5.png" alt="image"></a>
 								</div>
 								<!-- End carousel item -->
 
-								<!-- Begin carousel item 
+								<!-- Begin carousel item
 								========================= -->
 								<div class="cc-item">
 									<a target="_blank" href="#" class="client"><img src="assets/img/clients/client-6.png" alt="image"></a>
 								</div>
 								<!-- End carousel item -->
 
-								<!-- Begin carousel item 
+								<!-- Begin carousel item
 								========================= -->
 								<div class="cc-item">
 									<a target="_blank" href="#" class="client"><img src="assets/img/clients/client-7.png" alt="image"></a>
 								</div>
 								<!-- End carousel item -->
-								
+
 							</div>
 							<!-- End content carousel -->
 
@@ -2378,7 +2382,7 @@
 
 				<!-- Element cover
 				===================
-				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.  
+				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.
 				-->
 				<span class="cover bg-transparent-9-dark bg-transparent-gradient-1"></span>
 
@@ -2388,7 +2392,7 @@
 						<!-- Left column -->
 						<div class="col-md-7">
 
-							<!-- Begin heading 
+							<!-- Begin heading
 							===================
 							* Use class "heading-center" or "heading-right" to align heading.
 							* Use class "heading-xs", "heading-sm", "heading-md", "heading-lg" or "heading-xlg" to shange heading size.
@@ -2399,7 +2403,7 @@
 								<span class="heading-title-ghost">Contact Us</span>
 								<h2 class="heading-title text-white">Contact Us</h2>
 
-								<!-- Begin divider 
+								<!-- Begin divider
 								===================
 								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
 								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
@@ -2445,7 +2449,7 @@
 					<div class="row">
 						<div class="col-md-12">
 
-							<!-- Begin contact form 
+							<!-- Begin contact form
 							========================= -->
 							<form id="contact-form" class="margin-top-80 text-white wow fadeIn" data-wow-delay="0.3s">
 
@@ -2560,7 +2564,7 @@
 	   ///// Begin Google Analytics /////
 	   ============================== -->
 
-	   <!-- Paste your Google Analytics code here. 
+	   <!-- Paste your Google Analytics code here.
 	   Go to http://www.google.com/analytics/ for more information. -->
 
 	   <!--==============================
@@ -2571,7 +2575,7 @@
 	<script type="text/javascript">
     $("#modal_trigger").leanModal({top : 200,closeButton: ".modal_close" });
     $("#nav_register_button").leanModal({top : 200,closeButton: ".modal_close" });
-    
+
     $(function(){
 
         // Calling Register Form
@@ -2591,7 +2595,6 @@
 
         //Going back to Login Forms
         $("#back_btn").click(function(){
-        	alert('sdf');
             //$(".user_login").hide();
             $(".user_register").hide();
             $(".social_login").show();
