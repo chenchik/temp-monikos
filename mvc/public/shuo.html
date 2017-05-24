@@ -110,19 +110,21 @@
                         <!-- Username & Password Login form -->
 
                         <div class       ="social_login" ng-app="loginApp" ng-controller="loginCtrl"  id="usr_mng_module">
-                            <form id="login_form">
-                                <input placeholder="Username" type      ="text" id="un"/>
+                            <form id="login_form" name="login_form">
+                                <input name="unVal" placeholder="Username" type      ="text" id="un"/>
+                                <!-- <p ng-if="!login_form.unVal.$valid" class="control-label" for="inputError1">Username can not be empty</p> -->
                                 <br />
-                                <input placeholder="Password" type      ="password" id="pw"/>
+                                <input name="pwVal" ng-model="pwVal" ng-required="true" placeholder="Password" type      ="password" id="pw"/>
+                                <!-- <p ng-if="!login_form.pwVal.$valid" class="control-label" for="inputError1">Password can not be empty</p> -->
                                 <!-- <div class       ="checkbox">
                                     <input id        ="remember" type="checkbox" />
                                     <label for       ="remember">Remember me </label>
                                 </div> -->
-                                <br />
 
+                                <br />
                                 <div class       ="action_btns">
-                                    <div class       ="one_half"><a  class="btn btn-primary margin-top-10 wow bounceIn" data-wow-delay="0.5s" ng-click= "login()">Log in</a></div>
-                                    <div class       ="one_half last"><a id="register_button" class="btn btn-primary margin-top-10 wow bounceIn" data-wow-delay="0.5s" >Register</a></div>
+                                    <div id="loginBtn" class ="one_half"><a ng-model="submit" class="btn btn-primary margin-top-10 wow bounceIn" data-wow-delay="0.5s" ng-click= "login()">Log in</a></div>
+                                    <div class       ="one_half last"><a id="register_button" class="btn btn-primary margin-top-10 wow bounceIn" data-wow-delay="0.5s" >Create Account</a></div>
                                 </div>
                             </form>
 
@@ -195,7 +197,7 @@
 				* Use class "header-shadow" to enable header bottom shadow.
 				* Use class "header-md", "header-lg" or "header-xlg" to change header size.
 				-->
-				<div id="header" class="header-md header-dark show-hide-on-scroll transparent eader-shadow">
+				<div id="header" class="header-md header-shadow show-hide-on-scroll transparent eader-shadow">
 					<div id="scrollspy" class="container header-container">
 
 						<!-- Begin logo  -->
@@ -242,18 +244,18 @@
 
 									<li class="active"><a class="mlc sm-scroll" href="#intro">Home</a></li>
 									<li><span class="nav-link-separator">/</span></li>
-									<li><a class="mlc sm-scroll" href="#section-1">Our Story</a></li>
+									<li><a class="mlc sm-scroll" href="#section-about">Our Story</a></li>
 									<li><span class="nav-link-separator">/</span></li>
-									<li><a class="mlc sm-scroll" href="#section-2">Our Product</a></li>
+									<li><a class="mlc sm-scroll" href="#section-product">Our Product</a></li>
 									<li class="dropdown dropdown-uppercase dropdown-menu-color dropdown-hover">
 										<a href="#0" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
 											About Us<span class="caret-2"><i class="fa fa-angle-down"></i></span>
 										</a>
 										<ul class="dropdown-menu">
-											<li><a class="mlc sm-scroll" href="#section-5">Our Team</a></li>
-											<li><a class="mlc sm-scroll" href="#section-9">Video Promo</a></li>
-											<li><a class="mlc sm-scroll" href="#section-7">Testimonials</a></li>
-											<li><a class="mlc sm-scroll" href="#section-10">Our Clients</a></li>
+											<li><a class="mlc sm-scroll" href="#section-team">Our Team</a></li>
+											<li><a class="mlc sm-scroll" href="#section-video">Video Promo</a></li>
+											<li><a class="mlc sm-scroll" href="#section-test">Testimonials</a></li>
+											<li><a class="mlc sm-scroll" href="#section-clients">Our Clients</a></li>
 <!-- 
 											 Begin dropdown (submenu)
 											==============================
@@ -271,10 +273,10 @@
 
 									<li><span class="nav-link-separator">/</span></li>
 
-									<li><a class="mlc sm-scroll" href="#section-10">Sponsors</a></li>
+									<li><a class="mlc sm-scroll" href="#section-sponsors">Sponsors</a></li>
 								
 									<li><span class="nav-link-separator">/</span></li>
-									<li><a class="mlc sm-scroll" href="#section-8">Contact</a></li>
+									<li><a class="mlc sm-scroll" href="#section-contact">Contact</a></li>
 
 								</ul>
 								<!-- End navbar-nav -->
@@ -300,7 +302,7 @@
 			* Use class "angle-left-bottom" or "angle-right-bottom" to change intro bottom angle.
 			* Use class "bg-image-parallax" to enable background image parallax effect (otherwise use class "bg-image").
 			-->
-			<section id="intro" class="bg-image-parallax" style="background-image: url(assets/img/logo.jpg);">
+			<section id="intro" class="bg-image-parallax" style="background-image: url(images/landing_page/intro.jpg);">
 
 				<div class="intro-inner">
 
@@ -312,10 +314,10 @@
 					<span class="cover"></span>
 					<!-- Begin intro caption -->
 					<div class="intro-caption vertical-align-center text-center text-white">
+						<img class="wow fadeIn" style="height:50%; width: 50%" src="images/landing_page/logo2.png">
 						<!-- <p class="intro-description wow fadeIn" data-wow-delay="2.2s">est. 2015</p> -->
 						<div id="sign_up" class="margin-top-30">
-							<a href="/mvc/public/index.php" class="btn btn-white-bordered sm-scroll wow bounceIn" data-wow-delay="0.8s">SIGN UP NOW</a> 
-							<a id="modal_trigger" href="#modal" class="btn btn-primary sm-scroll margin-top-10 wow bounceIn" data-wow-delay="1s">START HERE</a>
+							<a id="modal_trigger" href="#modal" class="btn btn-primary margin-top-10 wow bounceIn" data-wow-delay="1s">START HERE</a>
 						</div>
 					</div>
 					<!-- End intro caption -->
@@ -326,7 +328,7 @@
 					</div>
 
 					<!-- Scroll down arrow -->
-					<a class="scroll-down-arrow sm-scroll text-center text-white" href="#section-1"><span><i class="fa fa-chevron-down"></i></span></a>
+					<a class="scroll-down-arrow sm-scroll text-center text-white" href="#section-about"><span><i class="fa fa-chevron-down"></i></span></a>
 
 				</div>
 
@@ -348,7 +350,7 @@
 <!-- 			 =================================
 			///// Begin section 1 (about us) /////
 			==================================  -->
-			<section id="section-1" class="about-section">
+			<section id="section-about" class="about-section">
 				<div class="container">
 					<div class="row wow fadeIn">
 
@@ -410,7 +412,7 @@
 			* Use class "bg-image-parallax" to enable background image parallax effect (otherwise use class "bg-image").
 			* Use class "bg-pattern" if you use background patterns (example: http://subtlepatterns.com/). Combine with class "bg-image-fixed".
 			-->
-			<section id="section-2" class="services-section bg-dark bg-image-parallax" style="background-image: url(assets/img/unc_med.jpeg);">
+			<section id="section-product" class="services-section bg-dark bg-image-parallax" style="background-image: url(assets/img/unc_med.jpeg);">
 			    <span class="cover bg-transparent-6-5-dark"></span>
 					<div class="row">
 							<div class="heading heading-md heading-uppercase text-white heading-hover wow fadeIn" data-wow-delay="0.2s">
@@ -480,7 +482,7 @@
 			============================================ -->
 			<section id="section-team" class="blog-section padding-top-100">
 
-				<div class="container">
+				<div class="container" >
 					<div class="row wow fadeIn">
 
 						<!-- Left column -->
@@ -600,7 +602,7 @@
 								<div class="col col-md-3 col-md-push-9 no-padding wow fadeInRight">
 								<div class="team-box team-box-hover ">
 								<div class="team-image">
-									<a class="item-link inline-popup-trigger" href="#portfolio-2"><img src="assets/img/team/staff-2.jpg" alt="Patrick"></a>
+									<a class="item-link inline-popup-trigger" href="#portfolio-2"><img src="images/landing_page/riley.jpg" alt="Patrick"></a>
 								</div>
 
 								</div>
@@ -865,7 +867,7 @@
 			* Use class "bg-image-parallax" to enable background image parallax effect (otherwise use class "bg-image").
 			* Use class "bg-pattern" if you use background patterns (example: http://subtlepatterns.com/). Combine with class "bg-image-fixed".
 			-->
-			<section id="section-test" class="testimonials-section bg-dark bg-image-parallax" style="background-image: url(assets/img/misc/bg-2.jpg);">
+			<section id="section-test" class="testimonials-section bg-dark bg-image-parallax" style="background-image: url(images/landing_page/bg-2.jpg);">
 
 				<!-- Element cover
 				===================
@@ -1025,7 +1027,7 @@
 			* Use class "bg-image-parallax" to enable background image parallax effect (otherwise use class "bg-image").
 			* Use class "bg-pattern" if you use background patterns (example: http://subtlepatterns.com/). Combine with class "bg-image-fixed".
 			-->
-			<section id="section-8" class="contact-section bg-dark bg-image-parallax" style="background-image: url(assets/img/misc/bg-1.jpg);">
+			<section id="section-contact" class="contact-section bg-dark bg-image-parallax" style="background-image: url(assets/img/misc/bg-1.jpg);">
 
 				<!-- Element cover
 				===================
@@ -1060,8 +1062,7 @@
 								<!-- End divider -->
 
 								<p class="heading-tescription lead text-gray-2">
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.
+									Pease feel free to eamil us if you have questions.
 								</p>
 							</div>
 							<!-- End heading -->
@@ -1230,6 +1231,13 @@
         $("#program").blur(function(){
         	// $("#school").addClass("wow fadeInUp")
         	$("#school").show();
+
+        	return false;
+        });
+
+        $("#loginBtn").click(function(){
+        	$("input [name='unVal']").attr("ng-model='unVal' ng-required='true'");
+        	$("input [name='pwVal']").attr("ng-model='pwVal' ng-required='true'");
 
         	return false;
         });

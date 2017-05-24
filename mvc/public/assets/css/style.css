@@ -635,7 +635,7 @@ th, td{
   font-size: 120%;
 }
 
-.form-control {
+#modal .form-control {
     width: 90%;
     margin-left: 5%;
 }

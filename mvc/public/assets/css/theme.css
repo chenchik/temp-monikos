@@ -5316,10 +5316,10 @@ ul.social-icons > li + li {
 	padding: 6px 12px;
 	font-size: 14px;
 	line-height: 1.42857143;
-	color: inherit;
-	/*background-color: rgba(139, 145, 150, 0.12);*/
+	/*color: inherit;*/
+	background-color: rgba(139, 145, 150, 0.12);
 	background-image: none;
-	border: 1px solid #DDD;
+	border: 1px solid #535353;
 	border-radius: 4px;
 	-webkit-box-shadow: none;
 	box-shadow: none;
