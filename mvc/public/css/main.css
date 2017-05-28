@@ -83,7 +83,7 @@ body#main_app_module {
 /**-------------------------------------------------------------------------------------------**/
 
 body#database_module {
-    background:#CCC;
+    background:#dfdfdf;
 }
 
 button {
@@ -104,7 +104,7 @@ button {
     top:0;
     width:100%;
     height:65px;
-    background:#777;
+    background:#fa4e51;
     text-align: center;
     box-shadow: 0 0 5px #444;
     z-index: 10;
@@ -115,10 +115,11 @@ button {
     left: 10px;
     font-size: 16px;
     border: 0;
-    background: #606060;
+    background: #ffffff;
     height: 40px;
     margin-top: 13px;
     width: 60px;
+    color:black;
 }
 
 #app_header .logout-btn {
@@ -267,6 +268,27 @@ button {
     margin-right:10px;
 }
 
+.newsearch-bar {
+    display:inline-block;
+    width:13%;
+    margin:auto;
+    border:0;
+    border-bottom: 1px solid #CCC;
+    background:none;
+    height:30px;
+    color: #FFF;
+    margin-right:10px;
+    -webkit-transition: width 0.4s ease-in-out;
+    transition: width 0.4s ease-in-out;
+}
+
+
+.newsearch-bar:focus {
+    border-bottom: 2px solid #FFF;
+    outline: none;
+    width: 30%;
+}
+
 
 .search-bar:focus {
     border-bottom: 2px solid #930000;
@@ -283,7 +305,7 @@ button {
     appearance: none;
     background: transparent url("../images/br_down_white.png") no-repeat right center;
     border: 0;
-    color: #FFF;
+    color: black;
     font-family: 'Raleway', 'sans-serif';
     font-size: 16px;
     margin-top:13px;
@@ -298,11 +320,13 @@ button {
     display:block;
     border: 1px solid #CCC;
     /*    box-shadow: 0vw 0vw 8px #888888;*/
-    margin: 15px auto 15px auto;
+    margin: 20px auto 20px auto;
     background:#FFF;
-    width:100%;
     transition: background 0.5s;
     border-radius: 4px;
+    width:70%;
+    margin-left: 15%;
+
 }
 
 .visible-info {
@@ -316,9 +340,9 @@ button {
 }
 
 .hint-info button{
-    background: #ff3333;
+    background: #fa4e51;
     border:0;
-    border-radius: 4px;
+    border-radius: 6px;
     text-decoration: none;
     color: #FFF;
     font-size:14px;
@@ -371,6 +395,8 @@ button {
 .drug-content {
     font-family: 'Raleway';
     margin:15px;
+    /*display: flex;
+    justify-content: center;*/
 
 }
 
@@ -440,7 +466,7 @@ label.field-name {
     background-color: #fff;
     box-shadow: 4px 4px 80px #000;
     -webkit-box-shadow: 4px 4px 80px #000;
-    -moz-box-shadow:    4px 4px 80px #000;  
+    -moz-box-shadow:    4px 4px 80px #000;
     box-shadow:         4px 4px 80px #000;
 
 }
@@ -659,8 +685,8 @@ button.like-btn:active, button.dislike-btn:active, button.like-btn:focus, button
     -webkit-transform: translate(-50%, -50%);
     -moz-transform: translate(-50%, -50%);
 
-    -webkit-box-shadow: 4px 4px 80px #000; 
-    -moz-box-shadow:    4px 4px 80px #000;  
+    -webkit-box-shadow: 4px 4px 80px #000;
+    -moz-box-shadow:    4px 4px 80px #000;
     box-shadow:         4px 4px 80px #000;
     visibility: hidden;
 

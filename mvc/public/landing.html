@@ -124,7 +124,7 @@
                                 <br />
                                 <div class       ="action_btns">
                                     <div id="loginBtn" class ="one_half"><a ng-model="submit" class="btn btn-primary margin-top-10 wow bounceIn" data-wow-delay="0.5s" ng-click= "login()">Log in</a></div>
-                                    <div class       ="one_half last"><a id="register_button" class="btn btn-primary margin-top-10 wow bounceIn" data-wow-delay="0.5s" >Create Account</a></div>
+                                    <div class       ="last_half"><a id="register_button" class="btn btn-primary margin-top-10 wow bounceIn" data-wow-delay="0.5s" >Create Account</a></div>
                                 </div>
                             </form>
 
@@ -145,17 +145,17 @@
                                 <br />
                                 <!-- <p id="program">Nursing</p> -->
 
-																<div id="reg_form" class="form-group">
-						            					<select id="program" class= "form-control">
+																<!-- <div id="reg_form" > -->
+						            					<select id="program" class= "reg_select">
 						                					<option selected disabled>select a program</option>
 						                					<option ng-repeat="x in programs" id="a{{x.program}}" value="{{x.program}}">{{x.program}}</option>
 						            					</select>
 																</br>
-											            <select id="school" ng-click="findSchool()" class= "form-control" style="display: none">
+											            <select id="school" ng-click="findSchool()" class= "reg_select" style="display: none">
 											                <option selected disabled>select a school</option>
 						                					<option ng-repeat="x in schoolnames" id="a{{x.schoolid}}" value="{{x.schoolid}}">{{x.schoolname}}</option>
 											            </select>
-																</div>
+																<!-- </div> -->
 
 
 
@@ -817,7 +817,7 @@
 								<!-- Begin carousel item 
 								========================= -->
 								<div class="cc-item">
-									<a target="_blank" href="#" class="client"><img src="assets/img/clients/client-3.png" alt="image"></a>
+									<a target="_blank" href="#" class="client"><img src="images/landing_page/user_unc.png" alt="image"></a>
 								</div>
 								<!-- End carousel item -->
 
