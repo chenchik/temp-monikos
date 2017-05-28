@@ -8,6 +8,7 @@
         <div id=app_header>
             <a ng-click="home()"><button class = 'back'>Back</button></a>
 
+
             <a ng-click = 'home()'><img id="toplogo" src="/mvc/public/images/logo_without_words_version_1.png"></a>
 
             <div onclick="toggleMenuNav()" class=menu-info>
@@ -47,6 +48,18 @@
                 </select>
             </div>
         </div>
+
+      <div>
+        <form class="form-inline">
+          <input class="newsearch-bar" type=text placeholder="What are you looking for?" ng-model=searchText[queryBy]>
+          <select class="mb-2 mr-sm-2 mb-sm-0 search-by-drop-down" ng-model="queryBy">
+              <option selected disabled value="$">Search By</option>
+              <option value="$">All</option>
+              <option value="Generic">Generic</option>
+              <option value="Brand">Brand</option>
+          </select>
+        </form>
+      </div>
 
 
         <!--------------------------------CONTENT------------------------------------->
@@ -94,7 +107,7 @@
                         <div style="visibility:hidden;" class='ng-modal show-{{x.DrugId}}'>
                             <div class='ng-modal-overlay'
                                  ng-click='$event.stopPropagation()'>
-                                <!--creates black background overlay--></div> 
+                                <!--creates black background overlay--></div>
                             <div class='ng-modal-dialog'
                                  ng-click="$event.stopPropagation()"><div class='ng-modal-close' ng-click='hidePopup(x.DrugId);$event.stopPropagation()'>X</div>
 
@@ -133,7 +146,7 @@
 
                     </div>
 
-                    
+
                     <div class="expand-info" ng-show="collapsed">
 
                         <audio id="{{'myAudio-' + x['Brand']}}"> <source src="{{x['Brand Audio'] | trustUrl}}" type="audio/wav"></audio>
