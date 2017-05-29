@@ -94,6 +94,7 @@ button {
 #content_wrapper {
     /*for database*/
     padding:0 5px;
+    margin-top: 80px;
 }
 
 /**-----------------------------------------HEADER------------------------------------------**/
@@ -115,11 +116,33 @@ button {
     left: 10px;
     font-size: 16px;
     border: 0;
-    background: #ffffff;
+    /*background: #ffffff;*/
     height: 40px;
     margin-top: 13px;
     width: 60px;
-    color:black;
+    color:white;
+}
+#app_header button.database {
+    position: fixed;
+    left: 90px;
+    font-size: 16px;
+    border: 0;
+    /*background: #ffffff;*/
+    height: 40px;
+    margin-top: 13px;
+    width: 60px;
+    color:white;
+}
+#app_header button.study {
+    position: fixed;
+    left: 170px;
+    font-size: 16px;
+    border: 0;
+    /*background: #ffffff;*/
+    height: 40px;
+    margin-top: 13px;
+    width: 60px;
+    color:white;
 }
 
 #app_header .logout-btn {
@@ -242,41 +265,43 @@ button {
 
 /**--------------------------------------SEARCH BAR----------------------------------------**/
 
+/*#search{
+  display: block;
+  position:fixed;
+  top:50px;
+}*/
+
 .search-bar-wrapper {
-    width: 100%;
-    padding: 0 0 0 10px;
-    margin-top: 65px;
-    height: 45px;
-    background: rgba(31, 31, 31, 0.8);
-    font-size: 16px;
-
+  /*display: block;
+  position:fixed;
+  top:1px;*/
+  z-index: 10;
+  padding: 0 0 0 10px;
+  margin-top: -10px;
+  height: 45px;
+  background: rgb(223, 223, 223);
+  font-size: 18px;
+  text-align: center;
 }
 
-.search-bar {
-    display:inline-block;
-    width:calc(100% - 200px);
-    /* Firefox */
-    width: -moz-calc(100% - 200px);
-    /* WebKit */
-    width: -webkit-calc(100% - 120px);
-    margin:auto;
-    border:0;
-    border-bottom: 1px solid #CCC;
-    background:none;
-    height:30px;
-    color: #FFF;
-    margin-right:10px;
-}
+/*.search-bar{
+  height:45px;
+  font-size: 16px;
+  margin-top: 65px;
+  padding: 0 0 0 10px;
+  width: 30px;
+}*/
+
 
 .newsearch-bar {
     display:inline-block;
-    width:13%;
+    width:18%;
     margin:auto;
     border:0;
     border-bottom: 1px solid #CCC;
     background:none;
     height:30px;
-    color: #FFF;
+    color: black;
     margin-right:10px;
     -webkit-transition: width 0.4s ease-in-out;
     transition: width 0.4s ease-in-out;
@@ -284,9 +309,9 @@ button {
 
 
 .newsearch-bar:focus {
-    border-bottom: 2px solid #FFF;
+    border-bottom: 2px solid #CCC;
     outline: none;
-    width: 30%;
+    width: 40%;
 }
 
 
@@ -329,6 +354,10 @@ button {
 
 }
 
+.drug-block{
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
 .visible-info {
     font-size:18px;
     font-weight:600;
@@ -348,8 +377,8 @@ button {
     font-size:14px;
     font-family: 'Raleway';
     font-weight: 600;
-    width:60px;
-    height:25px;
+    width:70px;
+    height:30px;
     margin-top:-3px;
 }
 
@@ -357,8 +386,8 @@ button {
     background: #bf2626;
     border-radius: 4px;
     display:block;
-    width:60px;
-    height:25px;;
+    width:70px;
+    height:28px;;
     margin-top:-22px;
 }
 
@@ -453,7 +482,7 @@ label.field-name {
     /* A centered div above the overlay with a box shadow. */
     z-index:10000;
     position: fixed;
-    width: 90vw; /* Default */
+    width: 80vw; /* Default */
 
     /* Center the dialog */
     top: 50%;
@@ -473,6 +502,8 @@ label.field-name {
 
 .ng-modal-dialog-content {
     text-align: center;
+    /*width: 80%;
+    margin-left: 10%;*/
 }
 
 .ng-modal-close {

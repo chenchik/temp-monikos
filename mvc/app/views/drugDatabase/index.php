@@ -6,9 +6,9 @@
     <div ng-app="databaseApp" ng-controller="databaseCtrl">
 
         <div id=app_header>
-            <a ng-click="home()"><button class = 'back'>Back</button></a>
-
-
+            <a ng-click="home()"><button class = 'back'>Home</button></a>
+            <a ng-click="database()"><button class = 'database'>Database</button></a>
+            <a ng-click="study()"><button class = 'study'>Study</button></a>
             <a ng-click = 'home()'><img id="toplogo" src="/mvc/public/images/logo_without_words_version_1.png"></a>
 
             <div onclick="toggleMenuNav()" class=menu-info>
@@ -36,20 +36,7 @@
             </div>
         </div>
 
-
-        <div class="search-bar-wrapper">
-            <input class="search-bar" type=text ng-model=searchText[queryBy]>
-            <div class="search-by-wrapper">
-                <select class="search-by-drop-down" ng-model="queryBy">
-                    <option selected disabled value="$">Search By</option>
-                    <option value="$">All</option>
-                    <option value="Generic">Generic</option>
-                    <option value="Brand">Brand</option>
-                </select>
-            </div>
-        </div>
-
-      <div>
+      <!-- <div class = "search-bar form-group row">
         <form class="form-inline">
           <input class="newsearch-bar" type=text placeholder="What are you looking for?" ng-model=searchText[queryBy]>
           <select class="mb-2 mr-sm-2 mb-sm-0 search-by-drop-down" ng-model="queryBy">
@@ -59,13 +46,13 @@
               <option value="Brand">Brand</option>
           </select>
         </form>
-      </div>
+      </div> -->
 
 
         <!--------------------------------CONTENT------------------------------------->
 
         <div id="content_wrapper">
-
+          <br>
             <!--loading gif-->
             <div class="loadingDiv" ng-show="loading">
                 <img class="loadingGif" src="/mvc/public/images/loading.gif">
@@ -81,6 +68,22 @@
                     </ul>
                 </div>
             </div>-->
+
+          <!-- <div id="search"> -->
+            <div class="search-bar-wrapper">
+                <form class="form-inline">
+
+                  <select class="mb-2 mr-sm-2 mb-sm-0 search-by-drop-down" ng-model="queryBy">
+                      <option selected disabled value="$">Search By</option>
+                      <option value="$">All</option>
+                      <option value="Generic">Generic</option>
+                      <option value="Brand">Brand</option>
+                  </select>
+                  &nbsp
+                  <input class="newsearch-bar" type=text placeholder="What are you looking for?" ng-model=searchText[queryBy]>
+                </form>
+            </div>
+          <!-- </div> -->
 
             <div class="drug-block" ng-model="collapsed"
                  ng-click="collapsed=!collapsed"
