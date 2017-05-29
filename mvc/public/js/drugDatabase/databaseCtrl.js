@@ -74,6 +74,7 @@ app.controller('databaseCtrl', ['$scope','$sce', '$http', '$timeout', function($
     $scope.showPopup = function(x) {
         var y = x.toString();
         var temp_name = "show-" + y;
+        console.log(temp_name);
         document.getElementsByClassName(temp_name)[0].style.visibility = "visible";
     }
 
@@ -91,6 +92,7 @@ app.controller('databaseCtrl', ['$scope','$sce', '$http', '$timeout', function($
     $scope.hidePopup2 = function() {
         document.getElementsByClassName("show2")[0].style.visibility = "hidden";
     }
+    
 
     //getting user profile info for header popup
     var id_cookie = getCookie("user_id");
