@@ -51,7 +51,7 @@
       </div> -->
 
 
-        <!--------------------------------CONTENT------------------------------------->
+        <!-- content -->
 
         <div id="content_wrapper">
             <br>
@@ -161,7 +161,7 @@
                             <div class="drug-info-wrap"><label>Class:</label> {{x.Class}}</div>
                             <div class="drug-info-wrap"><label>Indication:</label> {{x.Indication}}</div>
                             <div class="drug-info-wrap"><label>Black Box Warning:</label> {{ x['Black Box Warning'] }}</div>
-                            <!------------------- ADD MORE DRUG INFO HERE!! ------------------->
+                            <!--- ADD MORE DRUG INFO HERE!! -->
                         </div>
                     </div>
                 </div>
