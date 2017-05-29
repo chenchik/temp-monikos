@@ -153,14 +153,129 @@
                         </div>
                         <div class='ng-modal-dialog' ng-click="$event.stopPropagation()">
                             <div class='ng-modal-close' ng-click='hidePopup("info" + x.DrugId);$event.stopPropagation()'>X</div>
-                            <audio id="{{'myAudio-' + x['Brand']}}"> <source src="{{x['Brand Audio'] | trustUrl}}" type="audio/wav"></audio>
 
-                            <div class="drug-info-wrap"><label>Brand:</label> {{x.Brand}}
-                                <div ng-click='$event.stopPropagation()' class=speaker-icon-wrapper><button ng-click="playAudio(x.Brand);$event.stopPropagation()" href=#><img src="/mvc/public/images/speaker.svg"></button></div>
+                            
+                            <div class = "drug_inner" ng-model="collapsed_brand" ng-click='collapsed_brand=!collapsed_brand'>
+                                <audio id="{{'myAudio-' + x['Brand']}}"> <source src="{{x['Brand Audio'] | trustUrl}}" type="audio/wav"></audio>
+                                <div class="drug-info-wrap"><label>Brand:</label> </div>
+                                 <div class="expand-infor" ng-show="collapsed_brand">  &nbsp &nbsp &#8226 {{   x.Brand}}
+                                    <div ng-click='$event.stopPropagation()' class=speaker-icon-wrapper><button ng-click="playAudio(x.Brand);$event.stopPropagation()" href=#><img src="/mvc/public/images/speaker.svg"></button></div>
+                                </div>
+
                             </div>
-                            <div class="drug-info-wrap"><label>Class:</label> {{x.Class}}</div>
-                            <div class="drug-info-wrap"><label>Indication:</label> {{x.Indication}}</div>
-                            <div class="drug-info-wrap"><label>Black Box Warning:</label> {{ x['Black Box Warning'] }}</div>
+
+                            
+
+
+                             <div class = "drug_inner" ng-model="collapsed_class" ng-click='collapsed_class=!collapsed_class'>
+                                <div class="drug-info-wrap"><label>Class:</label> </div>
+                                 <div class="expand-infor" ng-show="collapsed_class">   &#8226
+                                {{x.Class}}</div>
+                             </div>
+
+                            <div class = "drug_inner" ng-model="collapsed_indi" ng-click='collapsed_indi=!collapsed_indi'>
+                                <div class="drug-info-wrap"><label>Indication:</label> </div>
+                                    <div class="expand-infor" ng-show="collapsed_indi">   
+                                        <!-- ADULT PART -->
+                                         <div class = "drug_inner" ng-model="collapsed_adult" ng-click='collapsed_adult=!collapsed_adult; collapsed_indi=True'>
+                                            <div class="drug-info-wrap"><label>&#8226 ADULT:</label> </div>
+                                            <div class="expand-infor" ng-show="collapsed_adult">  
+                                                
+                                                <div class = "drug_inner" ng-model="collapsed_AMI" ng-click='collapsed_AMI=!collapsed_AMI; collapsed_indi=True; collapsed_adult=True'>
+                                                    <div class="drug-info-wrap"><label>Acute myocardial infarction:</label> </div>
+                                                <div class="expand-infor" ng-show="collapsed_AMI">   &#8226
+                                                AMI</div>
+                                                </div>
+
+                                                <div class = "drug_inner" ng-model="collapsed_ADPKD" ng-click='collapsed_ADPKD=!collapsed_ADPKD; collapsed_indi=True; collapsed_adult=True'>
+                                                    <div class="drug-info-wrap"><label>Autosomal dominant polycystic kidney:</label> </div>
+                                                <div class="expand-infor" ng-show="collapsed_ADPKD">   &#8226
+                                                ADPKD</div>
+                                                </div>
+
+                                                <div class = "drug_inner" ng-model="collapsed_DN" ng-click='collapsed_DN=!collapsed_DN; collapsed_indi=True; collapsed_adult=True'>
+                                                    <div class="drug-info-wrap"><label>Diabetic nephropathy:</label> </div>
+                                                <div class="expand-infor" ng-show="collapsed_DN">   &#8226
+                                                DN</div>
+                                                </div>
+
+                                                <div class = "drug_inner" ng-model="collapsed_HF" ng-click='collapsed_HF=!collapsed_HF; collapsed_indi=True; collapsed_adult=True'>
+                                                    <div class="drug-info-wrap"><label>Hear failure:</label> </div>
+                                                <div class="expand-infor" ng-show="collapsed_HF">   &#8226
+                                                HF</div>
+                                                </div>
+
+                                                 <div class = "drug_inner" ng-model="collapsed_Hype" ng-click='collapsed_Hype=!collapsed_Hype; collapsed_indi=True; collapsed_adult=True'>
+                                                    <div class="drug-info-wrap"><label>Diabetic nephropathy:</label> </div>
+                                                <div class="expand-infor" ng-show="collapsed_Hype">   &#8226
+                                                Hype</div>
+                                                </div>
+
+                                                 <div class = "drug_inner" ng-model="collapsed_HT" ng-click='collapsed_HT=!collapsed_HT; collapsed_indi=True; collapsed_adult=True'>
+                                                 <div class="drug-info-wrap"><label>Hypertension – Transplantation:</label> </div>
+                                                <div class="expand-infor" ng-show="collapsed_HT">   &#8226
+                                                HT</div>
+                                                </div>
+
+                                                <div class = "drug_inner" ng-model="collapsed_KDN" ng-click='collapsed_KDN=!collapsed_KDN; collapsed_indi=True; collapsed_adult=True'>
+                                                <div class="drug-info-wrap"><label>Kidney disease, Nondiabetic:</label> </div>
+                                                <div class="expand-infor" ng-show="collapsed_KDN">   &#8226
+                                                KDN</div>
+                                                </div>
+
+                                                 <div class = "drug_inner" ng-model="collapsed_MP" ng-click='collapsed_MP=!collapsed_MP; collapsed_indi=True; collapsed_adult=True'>
+                                                <div class="drug-info-wrap"><label>Migraine; Prophylaxis:</label> </div>
+                                                <div class="expand-infor" ng-show="collapsed_MP">   &#8226
+                                                MP</div>
+                                                </div>
+
+
+                                            </div>
+                                        </div>
+                                        <!-- PEDIATRIC PART -->
+                                        <div class = "drug_inner" ng-model="collapsed_P" ng-click='collapsed_P=!collapsed_P; collapsed_indi=True; collapsed_adult=True'>
+                                                    <div class="drug-info-wrap"><label> &#8226 PEDIATRICS:</label> </div>
+                                                <div class="expand-infor" ng-show="collapsed_P">   &#8226
+                                                P</div>
+                                        </div>
+
+                                    </div>
+
+                            </div>
+
+                             <div class = "drug_inner" ng-model="collapsed_ra" ng-click='collapsed_ra=!collapsed_ra'>
+                                <div class="drug-info-wrap"><label>Renal Adjustments:</label> </div>
+                                 <div class="expand-infor" ng-show="collapsed_ra">   &#8226
+                                RA</div>
+                             </div>
+
+
+                            <div class = "drug_inner" ng-model="collapsed_ha" ng-click='collapsed_ha=!collapsed_ha'>
+                                <div class="drug-info-wrap"><label>Hepatic Adjustments:</label> </div>
+                                 <div class="expand-infor" ng-show="collapsed_ha">   &#8226
+                                HA</div>
+                             </div>
+
+
+                             <div class = "drug_inner" ng-model="collapsed_se" ng-click='collapsed_se=!collapsed_se'>
+                                <div class="drug-info-wrap"><label>Side Effects:</label> </div>
+                                 <div class="expand-infor" ng-show="collapsed_se">   &#8226
+                                SE</div>
+                             </div>
+                            
+                             <div class = "drug_inner" ng-model="collapsed_moa" ng-click='collapsed_moa=!collapsed_moa'>
+                                <div class="drug-info-wrap"><label>Mechanism of Action:</label> </div>
+                                 <div class="expand-infor" ng-show="collapsed_moa">   &#8226
+                                MOA</div>
+                             </div>
+
+                            <div class = "drug_inner" ng-model="collapsed_bbw" ng-click='collapsed_bbw=!collapsed_bbw'>
+                                <div class="drug-info-wrap"><label>Black Box Warning:</label> </div>
+                                 <div class="expand-infor" ng-show="collapsed_bbw">   &#8226
+                                BBW</div>
+                             </div>
+                            
+                            
                             <!--- ADD MORE DRUG INFO HERE!! -->
                         </div>
                     </div>
