@@ -1,6 +1,6 @@
 //Created by Danila Chenchik, Joseph Son Monikos LLC
 
-var app = angular.module('myApp', []);
+var app = angular.module('myApp', ['ui.select', 'ngSanitize']);
 
 app.controller('accountCtrl', function ($scope, $http) {
     var url7 = "/db/get_programs.php";
@@ -12,34 +12,41 @@ app.controller('accountCtrl', function ($scope, $http) {
             switch ($scope.programs[i].program) {
                 case "do":
                     $scope.programs[i].program = "D.O";
+                    $scope.programs[i].programId=i;
                     break;
                 case "nursing":
                     $scope.programs[i].program = "Nursing";
+                    $scope.programs[i].programId = i;
                     break;
                 case "pharmacy":
                     $scope.programs[i].program = "Pharmacy";
+                    $scope.programs[i].programId = i;
                     break;
                 case "med":
                     $scope.programs[i].program = "Medicine";
+                    $scope.programs[i].programId = i;
                     break;
                 case "pa":
                     $scope.programs[i].program = "PA";
+                    $scope.programs[i].programId =i ;
                     break;
                 case "dental":
                     $scope.programs[i].program = "Dental";
+                    $scope.programs[i].programId = i;
                     break;
             }
         }
+        $scope.selectedProgram = $scope.programs[0];
         console.log($scope.programs);
     })
-
     $scope.closeError = function () {
 
     }
 
     $scope.findSchool = function () {
-        var pro = $('#program').val();
+        var pro = $('#program').text();
         var url;
+
         if (pro == "Nursing") {
             var url = "/db/get_nursing_schools.php";
         } else if (pro == "Pharmacy") {
@@ -57,10 +64,16 @@ app.controller('accountCtrl', function ($scope, $http) {
             console.log('ww');
             console.log(response);
             $scope.schoolnames = response.data.records;
+            $scope.selectedSchool = $scope.schoolnames[0];
+
             console.log($scope.schoolnames);
         });
     }
 
+    $scope.test = function () {
+       var schoolid = document.getElementById('schoolid').innerHTML;
+        alert(schoolid);
+    }
 
     function showError(str) {
         $('#errorMessage').slideDown('fast');
@@ -172,9 +185,11 @@ app.controller('accountCtrl', function ($scope, $http) {
         var un = document.getElementById('un_reg').value;
         var email = document.getElementById('email_reg').value;
         var pw = document.getElementById('pw_reg').value;
-        var schoolid = document.getElementById('school').value;
-        var tempname = "a" + schoolid;
-        var schoolname = document.getElementById(tempname).innerHTML;
+        var schoolid = document.getElementById('schoolid').text;
+        alert(schoolid);
+        // var tempname = "a" + schoolid;
+        // var schoolname = document.getElementById(tempname).innerHTML;
+        var schoolname = document.getElementById('school').text;
 
 
         var url = "/db/create_account.php";
