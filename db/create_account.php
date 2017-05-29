@@ -7,16 +7,16 @@ header("Content-Type: application/json; charset=UTF-8");
 
 require_once 'db_creds.php';
  
-
+$pw_md5=md5($_POST["password"]);
 $sql = "INSERT INTO Users (id, username, email, password, schoolid, schoolname)
-VALUES (NULL, '".$_POST["username"]."', '".$_POST["email"]."', '".$_POST["password"]."', '".$_POST["schoolid"]."', '".$_POST["schoolname"]."')";
+VALUES (NULL, '".$_POST["username"]."', '".$_POST["email"]."', '".$pw_md5."', '".$_POST["schoolid"]."', '".$_POST["schoolname"]."')";
 
 if ($conn->query($sql) === TRUE) {
     echo '[{
     "response": 200,
     "username": "'.$_POST["username"].'",
     "email": "'.$_POST["email"].'",
-    "password": "'.$_POST["password"].'"}]';
+    "password": "'.$pw_md5.'"}]';
 } else {
     echo '[{"response":"'.$conn->error.'"}]';
 }

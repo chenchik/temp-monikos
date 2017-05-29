@@ -7,8 +7,9 @@ header("Content-Type: application/json; charset=UTF-8");
 
 require_once 'db_creds.php';
 
+$pw_md5=md5($_POST["password"]);
 
-$sql = "SELECT * FROM Users WHERE username LIKE '".$_POST["username"]."' AND password LIKE '".$_POST["password"]."'";
+$sql = "SELECT * FROM Users WHERE username LIKE '".$_POST["username"]."' AND password LIKE '".$pw_md5."'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
@@ -25,7 +26,7 @@ if ($result->num_rows > 0) {
     "login-status": "logged-in",
     "username": "'.$rs["username"].'",
     "user_id": "'.$rs["id"].'",
-    "password": "'.$rs["password"].'"}]';
+    "password": "'.$pw_md5.'"}]';
 } else {
     echo '[{"response": 400}]';
 }
