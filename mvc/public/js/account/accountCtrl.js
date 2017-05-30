@@ -76,7 +76,7 @@ app.controller('accountCtrl', function ($scope, $http) {
     }
 
     function showError(str) {
-        $('#errorMessage').slideDown('fast');
+        $('#errorMessage').show();
         $('.errorText').html(str);
     }
 
@@ -113,6 +113,13 @@ app.controller('accountCtrl', function ($scope, $http) {
             return false;
         }
     }
+    function validateSchool(str) {
+        if(str!=null){return true;}
+        else{
+            showError("Please select a school.")
+            return false;
+        }
+    }
 
     function checkAplhaNumeric(str, field) {
         var Exp = /^([0-9]|[a-z])+([0-9a-z]+)$/i;
@@ -146,10 +153,15 @@ app.controller('accountCtrl', function ($scope, $http) {
         var email = document.getElementById('email_reg').value;
         var pw = document.getElementById('pw_reg').value;
         var pw2 = document.getElementById('pw2_reg').value;
+        var schoolname = document.getElementById('school').innerHTML;
+
         if (!fieldChecker(pw, 'password')) {
             return false;
         }
         if (!passwordSameChecker(pw,pw2)){
+            return false;
+        }
+        if (!validateSchool(schoolname)){
             return false;
         }
         var url = "/db/check_username.php";
@@ -185,11 +197,11 @@ app.controller('accountCtrl', function ($scope, $http) {
         var un = document.getElementById('un_reg').value;
         var email = document.getElementById('email_reg').value;
         var pw = document.getElementById('pw_reg').value;
-        var schoolid = document.getElementById('schoolid').text;
-        alert(schoolid);
+        var schoolid = document.getElementById('schoolid').innerHTML;
+        //alert(schoolid);
         // var tempname = "a" + schoolid;
         // var schoolname = document.getElementById(tempname).innerHTML;
-        var schoolname = document.getElementById('school').text;
+        var schoolname = document.getElementById('school').innerHTML;
 
 
         var url = "/db/create_account.php";

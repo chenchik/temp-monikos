@@ -81,6 +81,9 @@ select{
 
 .user_register .checkbox {margin-bottom: 10px; clear: both; overflow: hidden;}
 .reg_select{display: block; width:90%; padding: 10px; border:1px solid #DDD; color:#666;}
+
+/*Error Message*/
+#errorMessage p {color: #FF5A5F;font-size: 80%}
 /*
 html,
 body {

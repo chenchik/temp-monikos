@@ -119,9 +119,11 @@
                     <section class   ="popupBody">
                         
                         <!-- Username & Password Login form -->
-
-                        <div class       ="social_login" ng-app="loginApp" ng-controller="loginCtrl"  id="usr_mng_module">
-                            <form id="login_form" name="login_form">
+                        <div id="errorMessage">
+                        	<p class="errorText text-center"></p>
+                        </div>
+                        <div class       ="social_login" ng-app="loginApp" ng-controller="loginCtrl"  id="login_form">
+                            <form  name="login_form">
                                 <input name="unVal" placeholder="Username" type      ="text" id="un"/>
                                 <!-- <p ng-if="!login_form.unVal.$valid" class="control-label" for="inputError1">Username can not be empty</p> -->
                                 <br />
@@ -192,14 +194,16 @@
                                 <div class="action_btns">
                                     <div class="one_half"><a href="#" class="btn back_btn btn-primary margin-top-10" id="back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
                                     <div class ="one_half last"><a href="" id="register" class="btn btn-primary margin-top-10" ng-click="checkUsername()">Register</a></div>
-
                                 </div>
                             </form>
                             
                         </div>
+
+
                     </section>
                 </div>
         <!-- End Popup  -->
+        
 
 		<!-- Begin preloader -->
 		<div id="preloader">
@@ -1231,8 +1235,9 @@
 
         // Calling Register Form
         $("#register_button").click(function(){
-            $(".social_login").hide();
-            $(".user_register").show();
+        	$("#errorMessage").hide();
+            $("#login_form").hide();
+            $("#register_app").show();
             $(".header_title").text('Register');
             return false;
         });
@@ -1240,25 +1245,27 @@
         //Going back to Login Forms
         $("#back_btn").click(function(){
             //$(".user_login").hide();
-            $(".user_register").hide();
-            $(".social_login").show();
+            $("#register_app").hide();
+            $("#login_form").show();
             $(".header_title").text('Login');
             return false;
         });
 
-        $("#program").blur(function(){
-        	// $("#school").addClass("wow fadeInUp")
-        	$("#school").show();
 
-        	return false;
-        });
+        // $("#program").blur(function(){
+        // 	// $("#school").addClass("wow fadeInUp")
+        // 	$("#school").show();
 
-        $("#loginBtn").click(function(){
-        	$("input [name='unVal']").attr("ng-model='unVal' ng-required='true'");
-        	$("input [name='pwVal']").attr("ng-model='pwVal' ng-required='true'");
+        // 	return false;
+        // });
 
-        	return false;
-        });
+        // $("#loginBtn").click(function(){
+        // 	$("input [name='unVal']").attr("ng-model='unVal' ng-required='true'");
+        // 	$("input [name='pwVal']").attr("ng-model='pwVal' ng-required='true'");
+
+        // 	return false;
+        // });
+
 
     })
 
