@@ -45,8 +45,7 @@ app.controller('loginCtrl', function($scope, $http, $location) {
     }
 
     function showError(str){
-        
-        $('#errorMessage').slideDown('fast');
+        $('#errorMessage').show();
         $('.errorText').html(str);
         $scope.loading = false;
     }

@@ -15,6 +15,8 @@
 		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 		<!-- jQuery js -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+		<!-- ngSanitize -->
+		<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.js"></script>
 		<!-- anuglar controllers -->
 		<script src="/mvc/public/js/myCtrl.js"></script>
     	<script src="/mvc/public/js/checklist-model.js"></script>
@@ -22,6 +24,13 @@
     	<script src ='/mvc/public/js/account/loginCtrl.js' ></script>
     	<script src = '/mvc/public/js/account/accountCtrl.js'></script>
     	<script src="assets/vendor/jquery.leanModal.min.js"></script>
+    	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.js"></script>
+    	<script src="http://cdnjs.cloudflare.com/ajax/libs/es5-shim/2.2.0/es5-shim.js"></script>
+    <script>
+      document.createElement('ui-select');
+      document.createElement('ui-select-match');
+      document.createElement('ui-select-choices');
+    </script>
 		<!-- Title -->
 		<title>Monikos</title>
 
@@ -69,6 +78,8 @@
 		<!-- Theme custom CSS (all your CSS customizations) -->
 		<link rel="stylesheet" href="assets/css/custom.css">
 		<link rel="stylesheet" href="assets/css/style.css">
+		<!-- ui select css -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.css" />
 
 
 		<!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -108,9 +119,11 @@
                     <section class   ="popupBody">
                         
                         <!-- Username & Password Login form -->
-
-                        <div class       ="social_login" ng-app="loginApp" ng-controller="loginCtrl"  id="usr_mng_module">
-                            <form id="login_form" name="login_form">
+                        <div id="errorMessage">
+                        	<p class="errorText text-center"></p>
+                        </div>
+                        <div class       ="social_login" ng-app="loginApp" ng-controller="loginCtrl"  id="login_form">
+                            <form  name="login_form">
                                 <input name="unVal" placeholder="Username" type      ="text" id="un"/>
                                 <!-- <p ng-if="!login_form.unVal.$valid" class="control-label" for="inputError1">Username can not be empty</p> -->
                                 <br />
@@ -145,31 +158,52 @@
                                 <br />
                                 <!-- <p id="program">Nursing</p> -->
 
-																<!-- <div id="reg_form" > -->
-						            					<select id="program" class= "reg_select">
-						                					<option selected disabled>select a program</option>
-						                					<option ng-repeat="x in programs" id="a{{x.program}}" value="{{x.program}}">{{x.program}}</option>
-						            					</select>
-																</br>
-											            <select id="school" ng-click="findSchool()" class= "reg_select" style="display: none">
-											                <option selected disabled>select a school</option>
-						                					<option ng-repeat="x in schoolnames" id="a{{x.schoolid}}" value="{{x.schoolid}}">{{x.schoolname}}</option>
-											            </select>
-																<!-- </div> -->
+								<!-- <div id="reg_form" > -->
+									<ui-select ng-model="selectedProgram">
+    									<ui-select-match >
+        									<span placeholder="Select Your Program" ng-bind="$select.selected.program" id="program"></span>
+    									</ui-select-match>
+    									<ui-select-choices  repeat="x in (programs | filter: $select.search) track by x.programId">
+        									<span ng-bind="x.program"></span>
+    									</ui-select-choices>
+  									</ui-select>
+
+  									<ui-select ng-model="selectedSchool" ng-click=findSchool()>
+    									<ui-select-match>
+        									<span id="school" ng-bind="$select.selected.schoolname" ></span>
+        									<span style="display: none" id="schoolid" ng-bind="$select.selected.schoolid"></span>
+    									</ui-select-match>
+    									<ui-select-choices  repeat="x in (schoolnames | filter: $select.search) track by x.schoolid">
+        									<span  ng-bind="x.schoolname"></span>
+    									</ui-select-choices>
+  									</ui-select>
+
+						           <!--  <select id="program" class= "reg_select">
+						                <option selected disabled>select a program</option>
+						                <option ng-repeat="x in programs" id="a{{x.program}}" value="{{x.program}}">{{x.program}}</option>
+						            </select> -->
+								<!-- </br> -->
+									<!-- <select id="school" ng-click="findSchool()" class= "reg_select">
+										<option selected disabled>select a school</option>
+						                <option ng-repeat="x in schoolnames" id="a{{x.schoolid}}" value="{{x.schoolid}}">{{x.schoolname}}</option>
+									</select> -->
+								<!-- </div> -->
 
 
 
                                 <div class="action_btns">
                                     <div class="one_half"><a href="#" class="btn back_btn btn-primary margin-top-10" id="back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
                                     <div class ="one_half last"><a href="" id="register" class="btn btn-primary margin-top-10" ng-click="checkUsername()">Register</a></div>
-
                                 </div>
                             </form>
                             
                         </div>
+
+
                     </section>
                 </div>
         <!-- End Popup  -->
+        
 
 		<!-- Begin preloader -->
 		<div id="preloader">
@@ -674,10 +708,10 @@
 			NOTE: Replace videoURL with your own (videoURL:'your-youtube-video-URL'). 
 			Do not forget to add your background image for mobile devices (because the video background doesn't work on mobile devices).
 			More info about YTPlayer: https://github.com/pupunzi/jquery.mb.YTPlayer -->
-			<section id="section-video" class="video-section youtube-bg text-white" 
+			<!-- <section id="section-video" class="video-section youtube-bg text-white" 
 				style="background-image: url(assets/img/video-bg/promo-video-bg-2.jpg); background-position: 50% 50%;"
 				data-property="{
-			      videoURL: 'https://youtu.be/2pF5A23LVdo?list=PLBFC07F93F12831F3',
+			      videoURL: 'https://youtu.be/shmACcIxdUA',
 			      containment: 'self',
 			      startAt: 0, 
 			      stopAt: 0,
@@ -690,15 +724,15 @@
 			      addRaster: false, 
 			      optimizeDisplay: true,
 			      stopMovieOnBlur: true
-				}">
+				}"> -->
 
 				<!-- Element cover
 				===================
 				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.  
 				-->
-				<span class="cover bg-transparent-8-dark"></span>
+				<!-- <span class="cover bg-transparent-8-dark"></span>
 
-				<div class="video-section-caption vertical-align-center">
+				<div class="video-section-caption vertical-align-center"> -->
 
 					<!-- Begin heading 
 					===================
@@ -707,15 +741,16 @@
 					* Use class "heading-hover" to enable heading hover effect.
 					* Use class "heading-uppercase" to enable uppercase letters.
 					-->
-					<div class="heading heading-md heading-uppercase heading-center heading-hover wow fadeIn">
+					<!-- <div class="heading heading-md heading-uppercase heading-center heading-hover wow fadeIn">
 						<span class="heading-title-ghost">Video Promo</span>
 						<h2 class="heading-title">Video Promo</h2>
 						<a class="video-btn bg-main" href="https://www.youtube.com/channel/UCXnvLHEf5t4ncz2DCLRMmpQ" target="_blank"><i class="fa fa-play"></i></a>
 						<p class="heading-tescription lead text-gray-2">
-							Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmodtempor incididunt sumbire itkum.
+							Try out Monikos!
 						</p>
-					</div>
+					</div> -->
 					<!-- End heading -->
+					<iframe width="1280" height="720" src="https://www.youtube.com/embed/shmACcIxdUA?rel=0?ecver=1" frameborder="0" allowfullscreen></iframe>
 
 				</div> <!-- /.vertical-align-center -->
 
@@ -835,19 +870,6 @@
 								</div>
 								<!-- End carousel item -->
 
-								<!-- Begin carousel item 
-								========================= -->
-								<div class="cc-item">
-									<a target="_blank" href="#" class="client"><img src="assets/img/clients/client-6.png" alt="image"></a>
-								</div>
-								<!-- End carousel item -->
-
-								<!-- Begin carousel item 
-								========================= -->
-								<div class="cc-item">
-									<a target="_blank" href="#" class="client"><img src="assets/img/clients/client-7.png" alt="image"></a>
-								</div>
-								<!-- End carousel item -->
 								
 							</div>
 							<!-- End content carousel -->
@@ -1213,8 +1235,9 @@
 
         // Calling Register Form
         $("#register_button").click(function(){
-            $(".social_login").hide();
-            $(".user_register").show();
+        	$("#errorMessage").hide();
+            $("#login_form").hide();
+            $("#register_app").show();
             $(".header_title").text('Register');
             return false;
         });
@@ -1222,25 +1245,27 @@
         //Going back to Login Forms
         $("#back_btn").click(function(){
             //$(".user_login").hide();
-            $(".user_register").hide();
-            $(".social_login").show();
+            $("#register_app").hide();
+            $("#login_form").show();
             $(".header_title").text('Login');
             return false;
         });
 
-        $("#program").blur(function(){
-        	// $("#school").addClass("wow fadeInUp")
-        	$("#school").show();
 
-        	return false;
-        });
+        // $("#program").blur(function(){
+        // 	// $("#school").addClass("wow fadeInUp")
+        // 	$("#school").show();
 
-        $("#loginBtn").click(function(){
-        	$("input [name='unVal']").attr("ng-model='unVal' ng-required='true'");
-        	$("input [name='pwVal']").attr("ng-model='pwVal' ng-required='true'");
+        // 	return false;
+        // });
 
-        	return false;
-        });
+        // $("#loginBtn").click(function(){
+        // 	$("input [name='unVal']").attr("ng-model='unVal' ng-required='true'");
+        // 	$("input [name='pwVal']").attr("ng-model='pwVal' ng-required='true'");
+
+        // 	return false;
+        // });
+
 
     })
 
