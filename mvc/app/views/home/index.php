@@ -44,19 +44,19 @@
 
 			<div class="flex-container">
 				<div ng-click="drugDatabase()" class="flex-item">
-					<img class="flex-image" src="/mvc/public/images/study.png" width="140px" height="140px">
+					<img class="flex-image" src="/mvc/public/images/study.png" width="130px" height="140px">
 					<br>DATABSE<br>
 					<p class="intro-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer elementum in sem id congue. Sed vehicula eros</p>
 				</div>
 
 				<div ng-click="listManager()" class="flex-item">
-					<img class="flex-image" src="/mvc/public/images/study.png" width="140px" height="140px">
+					<img class="flex-image" src="/mvc/public/images/study.png" width="130px" height="140px">
 					<br>STUDY<br>
 					<p class="intro-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer elementum in sem id congue. Sed vehicula eros</p>
 				</div>
 
-				<div class="flex-item">
-					<img class="flex-image" src="/mvc/public/images/study.png" width="140px" height="140px">
+				<div ng-click="social()" class="flex-item">
+					<img class="flex-image" src="/mvc/public/images/study.png" width="130px" height="140px">
 					<br>SOCIAL<br>
 					<p class="intro-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer elementum in sem id congue. Sed vehicula eros</p>
 				</div>

@@ -398,7 +398,7 @@ button {
 
 .visible {
     display: block;
-    
+
     -webkit-transform: scale(1);
 	-moz-transform: scale(1);
 	-ms-transform: scale(1);
@@ -495,20 +495,20 @@ label.field-name {
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
-        
+
     z-index:10000;
     position: fixed;
     width: 50vw;
     height: 20vw;
-    
+
     /* Center the dialog */
     top: 50%;
     left: 50%;
     margin-left: -25vw;
     margin-top: -10vw;
-    
+
     overflow:auto;
-    
+
     border-radius: 4px;
     background-color: #fff;
     box-shadow: 4px 4px 80px #000;
@@ -529,19 +529,19 @@ label.field-name {
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
-        
+
     z-index:10000;
     position: fixed;
     width: 50vw;
-    
+
     /* Center the dialog */
     top: 50%;
     left: 50%;
     margin-left: -25vw;
     margin-top: -10vw;
-    
+
     overflow:auto;
-    
+
     border-radius: 4px;
     background-color: #fff;
     box-shadow: 4px 4px 80px #000;
@@ -1066,6 +1066,7 @@ span#notificationIndicator {
   font-weight: 600;
   font-size: 140%;
   color: #fa4e51;
+  transition: box-shadow 0.3s ease-in-out;
 }
 
 .flex-item:hover{
@@ -1079,7 +1080,8 @@ span#notificationIndicator {
 }
 
 .flex-image{
-  margin: -12%;
+  margin: -15%;
+  margin-bottom: -8%;
 }
 
 .intro-text{
