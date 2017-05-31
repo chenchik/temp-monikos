@@ -1067,6 +1067,7 @@ span#notificationIndicator {
   font-size: 140%;
   color: #fa4e51;
   transition: box-shadow 0.3s ease-in-out;
+
 }
 
 .flex-item:hover{
@@ -1079,9 +1080,15 @@ span#notificationIndicator {
   display:block;
 }
 
+#app_content a{
+  cursor: pointer;
+}
+
+
 .flex-image{
-  margin: -15%;
-  margin-bottom: -8%;
+  margin-top: -5%;
+  margin-bottom: 2%;
+
 }
 
 .intro-text{
@@ -1090,7 +1097,7 @@ span#notificationIndicator {
   text-align: center;
   padding-top: 5%;
   font-weight: normal;
-  line-height: 140%;
+  line-height: 150%;
 }
 
 footer {
