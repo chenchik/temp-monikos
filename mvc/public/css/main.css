@@ -1088,8 +1088,9 @@ span#notificationIndicator {
   color: black;
   font-size: 70%;
   text-align: center;
-  padding-top: 3%;
+  padding-top: 5%;
   font-weight: normal;
+  line-height: 140%;
 }
 
 footer {
@@ -1098,8 +1099,10 @@ footer {
     bottom: 0;
     width: 100%;
     text-align: center;
+    font-size: 120%;
 }
 
 footer a:hover{
   text-decoration: none;
+  color: #fa4e51;
 }
