@@ -1026,3 +1026,78 @@ span#notificationIndicator {
     top: 8px;
     right: 29px;
 }
+
+.section_content{
+  width: 300px;
+  height:300px;
+  border: 2px solid #fa4e51;
+  /*margin-top: 15%;*/
+}
+
+.section{
+  width: auto;
+  height: auto;
+  display: -webkit-flex;
+  display: flex;
+  align-items:center;
+  -webkit-align-items: center;
+  justify-content:space-around;
+}
+
+
+.flex-container {
+    display: -webkit-flex;
+    display: flex;
+    -webkit-align-items: center;
+    align-items: center;
+    justify-content:space-around;
+    width: 90%;
+    margin-left: 5%;
+    height: 100%;
+}
+
+.flex-item {
+  width: 320px;
+  height:320px;
+  border: 2px solid #fa4e51;
+  text-align: center;
+  padding: 3%;
+  margin: 2%;
+  font-weight: 600;
+  font-size: 140%;
+  color: #fa4e51;
+}
+
+.flex-item:hover{
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 12px 40px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+}
+
+#app_content{
+  background-color: white;
+  display:block;
+}
+
+.flex-image{
+  margin: -12%;
+}
+
+.intro-text{
+  color: black;
+  font-size: 70%;
+  text-align: center;
+  padding-top: 3%;
+  font-weight: normal;
+}
+
+footer {
+    position: fixed;
+    height: 100px;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+}
+
+footer a:hover{
+  text-decoration: none;
+}
