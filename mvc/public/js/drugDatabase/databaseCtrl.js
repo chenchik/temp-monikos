@@ -9,10 +9,10 @@ app.filter("trustUrl", ['$sce', function ($sce) {
     };
 }]);
 
-app.controller('databaseCtrl', ['$scope','$sce', '$http', '$timeout', function($scope, $sce, $http, $timeout) {
+app.controller('databaseCtrl', ['$scope', '$sce', '$http', '$timeout', function ($scope, $sce, $http, $timeout) {
 
     //go to challenge from header popup
-    function gotoChallenge(url){
+    function gotoChallenge(url) {
         window.location = url;
     }
 
@@ -20,24 +20,26 @@ app.controller('databaseCtrl', ['$scope','$sce', '$http', '$timeout', function($
     function getCookie(cname) {
         var name = cname + "=";
         var ca = document.cookie.split(';');
-        for(var i = 0; i <ca.length; i++) {
+        for (var i = 0; i < ca.length; i++) {
             var c = ca[i];
-            while (c.charAt(0)==' ') {
+            while (c.charAt(0) == ' ') {
                 c = c.substring(1);
             }
             if (c.indexOf(name) == 0) {
-                return c.substring(name.length,c.length);
+                return c.substring(name.length, c.length);
             }
         }
         return "";
     }
-    
+
     //get notif info in header
-    $scope.getNotifications = function(){
+    $scope.getNotifications = function () {
         var username = getCookie('username');
-        var data = $.param({user : username});
+        var data = $.param({
+            user: username
+        });
         var config = {
-            headers : {
+            headers: {
                 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
             }
         };
@@ -45,61 +47,90 @@ app.controller('databaseCtrl', ['$scope','$sce', '$http', '$timeout', function($
 
         $http.post(url, data, config)
             .then(function (response) {
-            console.log(response);
+                console.log(response);
 
-            $('#notificationIndicator').html(response.data.records.length);
-            //if theres no challenges dont show anything
-            if(!response.data.records.length){
-                $('#notificationIndicator').css({'display':'none'});
-            }else{
-                $('#noNotificationsText').css({'display':'none'});
-                $('#notificationsBlock').css({'display':'block'});
-                for(var notif in response.data.records){
-                    var _url = response.data.records[notif]['url'];
-                    var elemm = document.createElement('p');
-                    elemm.innerHTML = 'challenge:' + response.data.records[notif]['challengegame'] + ', bet:'+ response.data.records[notif]['bet'] + ', who:' + response.data.records[notif]['user1'];
-                    elemm.className = 'notificationText';
-                    elemm.onclick = function() { 
-                        window.location = _url 
-                    };
-                    document.getElementById("notificationsBlock").appendChild(elemm);
+                $('#notificationIndicator').html(response.data.records.length);
+                //if theres no challenges dont show anything
+                if (!response.data.records.length) {
+                    $('#notificationIndicator').css({
+                        'display': 'none'
+                    });
+                } else {
+                    $('#noNotificationsText').css({
+                        'display': 'none'
+                    });
+                    $('#notificationsBlock').css({
+                        'display': 'block'
+                    });
+                    for (var notif in response.data.records) {
+                        var _url = response.data.records[notif]['url'];
+                        var elemm = document.createElement('p');
+                        elemm.innerHTML = 'challenge:' + response.data.records[notif]['challengegame'] + ', bet:' + response.data.records[notif]['bet'] + ', who:' + response.data.records[notif]['user1'];
+                        elemm.className = 'notificationText';
+                        elemm.onclick = function () {
+                            window.location = _url
+                        };
+                        document.getElementById("notificationsBlock").appendChild(elemm);
+                    }
                 }
-            }
-        }); 
+            });
 
     }
     $scope.getNotifications();
 
-    //hint popup controls
-    $scope.showPopup = function(x) {
+    //hint and drug info popup controls
+    $scope.showPopup = function (x) {
         var y = x.toString();
         var temp_name = "show-" + y;
         console.log(temp_name);
-        document.getElementsByClassName(temp_name)[0].style.visibility = "visible";
+        var elem = document.getElementsByClassName(temp_name)[0];
+        elem.style.visibility = "visible";
+
+        var css = document.createElement("style");
+        css.type = "text/css"
+        css.innerHTML = ".ng-modal-dialog {-webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); transform: scale(1); opacity: 1; }";
+        document.body.appendChild(css);
+        
+        var csshint = document.createElement("style");
+        csshint.type = "text/css"
+        csshint.innerHTML = ".ng-modal-dialog-hint {-webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); transform: scale(1); opacity: 1; }";
+        document.body.appendChild(csshint);
     }
 
-    $scope.hidePopup = function(x) {
+    $scope.hidePopup = function (x) {
         var y = x.toString();
         var temp_name = "show-" + y;
         document.getElementsByClassName(temp_name)[0].style.visibility = "hidden";
+
+        var css = document.createElement("style");
+        css.type = "text/css"
+        css.innerHTML = ".ng-modal-dialog { -webkit-transform: scale(0.8); -moz-transform: scale(0.8);-ms-transform: scale(0.8);transform: scale(0.8);opacity: 0;-webkit-transition: all 0.3s;-moz-transition: all 0.3s;transition: all 0.3s;}";
+        document.body.appendChild(css);
+        
+        var csshint = document.createElement("style");
+        csshint.type = "text/css"
+        csshint.innerHTML = ".ng-modal-dialog-hint { -webkit-transform: scale(0.8); -moz-transform: scale(0.8);-ms-transform: scale(0.8);transform: scale(0.8);opacity: 0;-webkit-transition: all 0.3s;-moz-transition: all 0.3s;transition: all 0.3s;}";
+        document.body.appendChild(csshint);
     }
-    
+
     //mnemonic suggestion popup controls
-    $scope.showPopup2 = function() {
+    $scope.showPopup2 = function () {
         var temp_obj = document.getElementsByClassName("show2")[0];
         temp_obj.style.visibility = "visible";
     }
-    $scope.hidePopup2 = function() {
+    $scope.hidePopup2 = function () {
         document.getElementsByClassName("show2")[0].style.visibility = "hidden";
     }
-    
+
 
     //getting user profile info for header popup
     var id_cookie = getCookie("user_id");
     console.log(id_cookie);
-    var data = $.param({id : id_cookie });
+    var data = $.param({
+        id: id_cookie
+    });
     var config = {
-        headers : {
+        headers: {
             'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
         }
     };
@@ -107,59 +138,63 @@ app.controller('databaseCtrl', ['$scope','$sce', '$http', '$timeout', function($
 
     $http.post(url, data, config)
         .then(function (response) {
-        console.log(response);
-        $scope.capsules = response.data.records;
-   
-    }); 
-    
-    
+            console.log(response);
+            $scope.capsules = response.data.records;
+
+        });
+
+
     $scope.queryBy = '$'; //sets queryBy for search bar
     $scope.trustAsHtml = $sce.trustAsHtml; //put trustashtml in scope for mnemonic hint
-    
+
     //get drug list
     var url = "/db/get_drugs.php";
     $scope.loading = true; //loading animation
     $http.get(url)
         .then(function (response) {
-        console.log(response);
-        $('#cssload-pgloading').css({'opacity':'0.0'});
-        $(".dark-load").css({'opacity':'0.0'})
-        $scope.loading = false;
-        $scope.names = response.data.records;
-        console.log($scope.names);
-        
-    });
+            console.log(response);
+            $('#cssload-pgloading').css({
+                'opacity': '0.0'
+            });
+            $(".dark-load").css({
+                'opacity': '0.0'
+            })
+            $scope.loading = false;
+            $scope.names = response.data.records;
+            console.log($scope.names);
+
+        });
 
 
     //header home button
-    $scope.home = function(){
+    $scope.home = function () {
         //create new database controller
         window.location = window.location.origin + "/mvc/public/home";
     }
 
 
     //audio controls
-    $scope.playAudio = function(myAudio) {
+    $scope.playAudio = function (myAudio) {
         var myAudio = 'myAudio-' + myAudio;
         var x = document.getElementById(myAudio);
         x.play();
     }
-    $scope.pauseAudio = function(myAudio) {
+    $scope.pauseAudio = function (myAudio) {
         var x = document.getElementById(myAudio);
         x.pause(myAudio);
     }
-    
 
-    $scope.updateLikes = function(likeCount, id){        
+
+    $scope.updateLikes = function (likeCount, id) {
         //plus one animation
         $('.plusone-like').fadeIn(400).fadeOut(400);
-        
+
         var url = "/db/update_drug_likes.php";
-        
+
         var likes = parseInt(likeCount, 10);
         likes = likes + 1;
         likes = likes.toString();
-        
+
         //id is index of drug in get_drugs json: also drugid
         //update like count in view
         var id = parseInt(id, 10);
@@ -173,7 +208,7 @@ app.controller('databaseCtrl', ['$scope','$sce', '$http', '$timeout', function($
             drugid: id
         });
         var config = {
-            headers : {
+            headers: {
                 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
             }
         };
@@ -181,20 +216,20 @@ app.controller('databaseCtrl', ['$scope','$sce', '$http', '$timeout', function($
 
         $http.post(url, data, config)
             .then(function (response) {
-            console.log(response);
-            $scope.response = response;
+                console.log(response);
+                $scope.response = response;
 
-        }); 
-        
+            });
+
     }
 
 
-    $scope.updateDislikes = function(dislikeCount, id){
+    $scope.updateDislikes = function (dislikeCount, id) {
         //plus one animation
         $('.plusone-dislike').fadeIn(400).fadeOut(400);
 
         var url = "/db/update_drug_dislikes.php";
-        
+
         var dislikes = parseInt(dislikeCount, 10);
         dislikes = dislikes + 1;
         dislikes = dislikes.toString();
@@ -212,18 +247,18 @@ app.controller('databaseCtrl', ['$scope','$sce', '$http', '$timeout', function($
             drugid: id
         });
         var config = {
-            headers : {
+            headers: {
                 'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
             }
         };
-        
-        
-        
+
+
+
         $http.post(url, data, config)
             .then(function (response) {
-            console.log(response);
-            $scope.response = response;
-        }); 
+                console.log(response);
+                $scope.response = response;
+            });
 
 
     }

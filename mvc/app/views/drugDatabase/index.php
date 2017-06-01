@@ -110,7 +110,7 @@
                         <div class='ng-modal-overlay' ng-click='$event.stopPropagation()'>
                             <!--creates black background overlay-->
                         </div>
-                        <div class='ng-modal-dialog' ng-click="$event.stopPropagation()">
+                        <div class='ng-modal-dialog-hint' ng-click="$event.stopPropagation()">
                             <div class='ng-modal-close' ng-click='hidePopup(x.DrugId);$event.stopPropagation()'>X</div>
 
                             <div class='ng-modal-dialog-content'>
