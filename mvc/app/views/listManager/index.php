@@ -1,6 +1,8 @@
 <!-- Created by Jenny Zhang, Nik Gunawan Monikos LLC -->
 
 <link rel="stylesheet" type="text/css" href="/mvc/public/css/listM.css">
+<!-- <link rel="stylesheet" type="text/css" href="/mvc/public/css/listM.css"> -->
+
 
 <meta name='viewport' content="width=device-width, initial-scale=1" />
 
@@ -9,33 +11,36 @@
 
 <body ng-app="myApp" ng-controller="myCtrl" id="main_app_module">
 
-    <div id='app_header'>
-        <a href = '#' ng-click='home()'><button class = 'back'>Back</button></a>
-        <a href ="#" ng-click="home()"><img id="toplogo" src="/mvc/public/images/logo_without_words_version_1.png"></a>
+  <div id=app_header>
+      <a ng-click="indextest()"><button class = 'back'>Home</button></a>
+      <a ng-click="drugDatabase()"><button class = 'database'>Database</button></a>
+      <a ng-click="listManager()"><button class = 'study'>Study</button></a>
+      <a ng-click = 'home()'><img id="toplogo" src="/mvc/public/images/logo_without_words_version_1.png"></a>
 
-        <div onclick="toggleMenuNav()" class=menu-info>
-            <span id="notificationIndicator"></span>
-            <img src=/mvc/public/images/man-user.png>
-        </div>
-        <div id='menu-popup' class='menu-popup'>
-            <div class=notif-info>
-                <h2>Notifications</h2>
-                <p id="noNotificationsText">There are no notifications at this moment.</p>
-                <div style="display:none" id="notificationsBlock">
-                    <!--append notifications in here-->
-                </div>
-            </div>
-            <div class=user-info>
-                <img src="/mvc/public/images/user_icon.png">
-                <div class=user-info-sub>
-                    <div class=username-info>{{capsules[0].username}}</div>
-                    <div class=email-info>({{capsules[0].email}})</div>
-                    <div class=capsule-info>{{capsules[0].capsules}} Capsules</div>
-                    <a href="#" onclick="logout()"><div class=logout-btn>logout</div></a>
-                </div>
-            </div>
-        </div>
-    </div>
+      <div onclick="toggleMenuNav()" class=menu-info>
+          <span id="notificationIndicator"></span>
+          <img src=/mvc/public/images/man-user.png>
+      </div>
+
+      <div id='menu-popup' class='menu-popup'>
+          <div class=notif-info>
+              <h2>Notifications</h2>
+              <p id="noNotificationsText">There are no notifications at this moment.</p>
+              <div style="display:none" id="notificationsBlock">
+
+              </div>
+          </div>
+          <div class=user-info>
+              <img src="/mvc/public/images/user_icon.png">
+              <div class=user-info-sub>
+                  <div class=username-info>{{capsules[0].username}}</div>
+                  <div class=email-info>({{capsules[0].email}})</div>
+                  <div class=capsule-info>{{capsules[0].capsules}} Capsules</div>
+                  <a href="#" onclick="logout()"><div class=logout-btn>logout</div></a>
+              </div>
+          </div>
+      </div>
+  </div>
 
 
 

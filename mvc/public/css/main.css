@@ -1113,3 +1113,8 @@ footer a:hover{
   text-decoration: none;
   color: #fa4e51;
 }
+
+.break{
+  padding-top: 2%;
+  margin-bottom: 10%;
+}

@@ -45,7 +45,7 @@
 			<div class="flex-container">
 				<div ng-click="drugDatabase()" class="flex-item">
 					<img class="flex-image" src="/mvc/public/images/database.png" width="100px" height="100px">
-					<br>DATABSE<br>
+					<br>DATABASE<br>
 					<p class="intro-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer elementum in sem id congue. Sed vehicula eros</p>
 				</div>
 
@@ -56,7 +56,7 @@
 				</div>
 
 				<div ng-click="social()" class="flex-item">
-					<img class="flex-image" src="/mvc/public/images/social.png" width="100px" height="100px">
+					<img class="flex-image break" src="/mvc/public/images/social.png" width="100px" height="80px">
 					<br>SOCIAL<br>
 					<p class="intro-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer elementum in sem id congue. Sed vehicula eros</p>
 				</div>

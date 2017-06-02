@@ -164,7 +164,7 @@
 
                             </div>
 
-                            
+
 
 
                              <div class = "expand_info" ng-model="collapsed_class" ng-click='collapsed_class=!collapsed_class'>
@@ -175,12 +175,12 @@
 
                             <div class = "drug_inner" ng-model="collapsed_indi" ng-click='collapsed_indi=!collapsed_indi'>
                                 <div class="drug-info-wrap"><label>Indication:</label> </div>
-                                    <div class="expand-info" ng-show="collapsed_indi">   
+                                    <div class="expand-info" ng-show="collapsed_indi">
                                         <!-- ADULT PART -->
                                          <div class = "drug_inner" ng-model="collapsed_adult" ng-click='collapsed_adult=!collapsed_adult; collapsed_indi=True'>
                                             <div class="drug-info-wrap"><label>&#8226 ADULT:</label> </div>
-                                            <div class="expand-info" ng-show="collapsed_adult">  
-                                                
+                                            <div class="expand-info" ng-show="collapsed_adult">
+
                                                 <div class = "drug_inner" ng-model="collapsed_AMI" ng-click='collapsed_AMI=!collapsed_AMI; collapsed_indi=True; collapsed_adult=True'>
                                                     <div class="drug-info-wrap"><label>Acute myocardial infarction:</label> </div>
                                                 <div class="expand-info" ng-show="collapsed_AMI">   &#8226
@@ -262,7 +262,7 @@
                                  <div class="expand-info" ng-show="collapsed_se">   &#8226
                                 SE</div>
                              </div>
-                            
+
                              <div class = "drug_inner" ng-model="collapsed_moa" ng-click='collapsed_moa=!collapsed_moa'>
                                 <div class="drug-info-wrap"><label>Mechanism of Action:</label> </div>
                                  <div class="expand-info" ng-show="collapsed_moa">   &#8226
@@ -275,8 +275,8 @@
                                 BBW</div>
                              </div>
                              </div>
-                            
-                            
+
+
                             <!--- ADD MORE DRUG INFO HERE!! -->
                         </div>
                     </div>

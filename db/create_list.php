@@ -7,6 +7,7 @@ header("Content-Type: application/json; charset=UTF-8");
 
 require_once 'db_creds.php';
 
+
 $drugs = "";
 $i = 0;
 $numItems = count($_POST["drugs"]);
@@ -14,7 +15,7 @@ foreach($_POST["drugs"] as $vals){
 	if(++$i === $numItems) {
     	$drugs .= $vals;
   	}else{
-	  	$drugs .= $vals . ",";	
+	  	$drugs .= $vals . ",";
   	}
 }
 
