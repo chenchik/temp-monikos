@@ -74,10 +74,11 @@
                     </div>
                 </div>
 
-                <!--<button class ='select' ng-click='selectlist($index, this)'>SELECT</button>-->
+
                 <button class ='selectList' ng-click='selectList($index)'>SELECT</button>
 
                 <button class='deleteList' ng-click='deleteList($index)'>DELETE LIST</button>
+
             </div>
 
         </div>
@@ -133,7 +134,7 @@
                                 <div class= 'scrollableCreateDrugList'>
 
                                     <div ng-repeat="drug in drugs">
-                                        <div class="item col-xs-6 col-sm-6">
+                                        <div class="item col-xs-3 col-sm-3">
                                             <div class = 'checkboxes'>
 
                                                 <input type="checkbox" name="var_id[]" autocomplete="off" checklist-model="listform.drugs" checklist-value="drug.Generic" id='drug-{{$index}}' required>
