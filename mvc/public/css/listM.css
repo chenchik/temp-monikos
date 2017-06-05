@@ -76,6 +76,13 @@ label {
     padding: 2px;
 }
 
+
+.add-list-block{
+  display: flex;
+  justify-content: center;
+}
+
+
 .add-list-block button {
      font-family: 'Raleway',sans-serif;
 	color:#8d99ae;
@@ -89,18 +96,44 @@ label {
     border-radius: 10px;
 	font-weight: 300;
   transition: box-shadow 0.3s ease-in-out;
-  transition: border-color 0.3s ease-in-out;
 }
 
+.add-list-block input {
+     font-family: 'Raleway',sans-serif;
+	color:#8d99ae;
+    font-size: 13px;
+	margin-top: 50px;
+    padding: 10px;
+	width:20%;
+	line-height: 15px;
+    letter-spacing: 1px;
+    border: 2px #ccc solid;
+    border-radius: 10px;
+	font-weight: 300;
+  transition: box-shadow 0.3s ease-in-out;
+  height: 40px;
+  text-align: center;
+}
 
 .add-list-block button:hover{
   box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;
-  border-color: #fa4e51;
+  /*border-color: #fa4e51;*/
+}
+
+.add-list-block input:hover{
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+  /*border-color: #fa4e51;*/
 }
 
 .add-list-block label {
     color:#8d99ae;
+}
+
+.listButton{
+ margin-right: 1%;
+ margin-left: 1%;
 }
 
 .list-name-header{
@@ -142,38 +175,27 @@ h1.list-m-header {
     text-transform: uppercase;
     font-size: 18px !important;
     letter-spacing: 2px;
+    margin-top: 5% !important;
 
 }
 
-h1.school-list {
-        margin-top: 50px !important;
+.school-list{
+  margin-top: 5% !important;
 }
-
-h1.your-list {
-        margin-top: 20px !important;
-}
-
 
 
 .list-collection-block {
-    margin: 5px;
-    padding:5px;
-    /*border-top:  2px solid #8d99ae;*/
+  margin: 5px;
+  padding:5px;
+  /*border-top:  2px solid #8d99ae;*/
     /*border-bottom: 1px solid #8d99ae;*/
 	font-family: 'Raleway',sans-serif;
 	line-height: normal;
 	color: #464a53;
-  width: 70%;
+  width: 80%;
   margin-left: 15%;
-    padding-bottom: 3%;
-/*	overflow-y: scroll;*/
-/*	max-height: 475px;*/
-}
-
-.your-list-group{
-  width:70%;
-  margin-left: 15%;
-  margin-bottom: 5%;
+  padding-bottom: 3%;
+  margin-bottom: 50px;
 }
 
 .list-collection-block-short{
@@ -189,6 +211,35 @@ h1.your-list {
   padding-top: 2%;
   padding-bottom: 1%;
   border-radius: 20px;
+  cursor: pointer;
+  float: left;
+  width: 25%;
+  margin: 2%;
+  height:auto;
+  overflow-y: scroll;
+  transition: border-bottom 0.4s ease-in-out;
+}
+
+.list-block:hover{
+  border-bottom: 1px solid #fa4e51;
+}
+
+.selectList:hover{
+  font-weight: bold;
+}
+
+.deleteList:hover{
+  font-weight: bold;
+}
+
+.list-block,.deleteList{
+  transition: font-weight 0.4s ease-in-out;
+}
+
+
+
+.clear{
+  clear: both;
 }
 
 .select {
@@ -214,6 +265,7 @@ h1.your-list {
 	font-weight: 300;
 }
 
+
 #app_content {
     display:block;
     width:100vw;
@@ -234,16 +286,38 @@ h1.your-list {
 	position: fixed;
 	bottom:0;
 	width: 100%;
-	height:50px;
-	background-color: #fa4e51;
-	color:white;
+	height:80px;
+	/*background-color: #fa4e51;*/
+  background-color: white;
+	color:#fa4e51;
 	font-family: 'Raleway',sans-serif;
 	font-size: 30px;
 	letter-spacing: 5px;
 	padding: 5px;
 	z-index: 25;
 	font-weight: 900;
-	box-shadow: 0 0 5px #444;
+  padding: 20px;
+
+	/*box-shadow: 0 0 5px #444;*/
+}
+
+.play p{
+  border-radius: 25px;
+  border: 1px solid #fa4e51;
+  width: 20%;
+  text-align: center;
+  margin-left: 40%;
+  margin-bottom: 3%;
+  transition: box-shadow 0.4s ease-in-out;
+  transition: background-color 0.4s ease-in-out;
+  transition: color 0.4s ease-in-out;
+}
+
+.play p:hover{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+  background-color: #fa4e51;
+  color: white;
 }
 
 /**********CREATOR************/

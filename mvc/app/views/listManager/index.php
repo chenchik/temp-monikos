@@ -1,4 +1,4 @@
-<!-- Created by Jenny Zhang, Nik Gunawan Monikos LLC -->
+<!-- Created by Zhenwei Zhang Monikos LLC -->
 
 <link rel="stylesheet" type="text/css" href="/mvc/public/css/listM.css">
 <!-- <link rel="stylesheet" type="text/css" href="/mvc/public/css/listM.css"> -->
@@ -50,9 +50,10 @@
         <div class='add-list-block'>
             <!--create new list button go here -->
 
-            <button onclick="openNav()">
-                <label>CREATE NEW LIST</label>
+            <button class="listButton" onclick="openNav()">
+                <label>CREATE NEW LISTS</label>
             </button>
+            <input type="search" class="form-control listButton" id="searchlist" placeholder="SEARCH LISTS">
         </div>
 
         <div id="errorMessage" style="display:none">
@@ -67,12 +68,14 @@
                 <h1 class = "list_name_header">
                     {{list.name}}</h1>
 
+
                 <div class='list-info-block' >
                     <div class='list-drugs'>
                         {{list.drugs}}
                         <br>
                     </div>
                 </div>
+                <br>
 
 
                 <button class ='selectList' ng-click='selectList($index)'>SELECT</button>
@@ -83,7 +86,9 @@
 
         </div>
 
-        <h1 class="list-m-header school-list">School's List</h1>
+        <br>
+        <br>
+        <h1 class="list-m-header clear">School's List</h1>
 
         <div class='list-collection-block'>
 
@@ -98,6 +103,8 @@
                         <br>
                     </div>
                 </div>
+
+                <br>
 
                 <!--<button class ='select' ng-click='selectlist($index, this)'>SELECT</button>-->
               <button class ='selectList' ng-click='selectSchoolList($index)'>SELECT</button>
@@ -161,6 +168,7 @@
 
     <div class = 'play' ng-click="launchGame()">
         <p>PLAY</p>
+        <br>
     </div>
 
 </body>
