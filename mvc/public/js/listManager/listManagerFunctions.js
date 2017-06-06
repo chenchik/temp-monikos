@@ -33,13 +33,12 @@ $(function() {
     }).show();
   });
 
-  $('#searchlist').on('keyup', function() {
-    var pattern = $(this).val();
-    $('.list-collection-block .list_block').filter(function() {
-      // console.log($(this.childNodes[1]));
-      console.log($('.list_name_header').text());
-      return $('.list_name_header').text().match(new RegExp(
-        pattern, 'i'));
-    }).show();
-  });
+  // $('#searchlist').on('keyup', function() {
+  //   var pattern = $(this).val();
+  //   $('.list-collection-block .list_block').filter(function() {
+  //     console.log($('.list_name_header').text());
+  //     return $('.list_name_header').text().match(new RegExp(
+  //       pattern, 'i'));
+  //   }).show();
+  // });
 });
