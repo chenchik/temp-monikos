@@ -1,7 +1,8 @@
 <!-- Created by Zhenwei Zhang Monikos LLC -->
 
+
 <link rel="stylesheet" type="text/css" href="/mvc/public/css/listM.css">
-<!-- <link rel="stylesheet" type="text/css" href="/mvc/public/css/listM.css"> -->
+<!-- <link rel="stylesheet" type="text/css" href="/mvc/public/css/modal/component.css"> -->
 
 
 <meta name='viewport' content="width=device-width, initial-scale=1" />
@@ -62,6 +63,7 @@
         </div>
 
         <h1 class="list-m-header your-list">Your List</h1>
+        <hr class="hr-red">
         <div class='list-collection-block custom-list-collection-block'>
             <div ng-class="list_block" class="list_block" ng-repeat="list in lists track by $index">
 
@@ -80,7 +82,9 @@
 
                 <button class ='selectList' ng-click='selectList($index)'>SELECT</button>
 
-                <button class='deleteList' ng-click='deleteList($index)'>DELETE LIST</button>
+                <button class='deleteList' ng-click='deleteList($index)'>DELETE</button>
+
+                <button class='deleteList' ng-click='viewList($index)'>VIEW</button>
 
             </div>
 
@@ -89,6 +93,24 @@
         <br>
         <br>
         <h1 class="list-m-header clear">School's List</h1>
+        <!-- <button class="md-trigger" data-modal="modal-8">Fade</button>
+
+        <div class="md-modal md-effect-9" id="modal-8">
+          <div class="md-content">
+            <h3>Modal Dialog</h3>
+            <div>
+              <p>This is a modal window. You can do the following things with it:</p>
+              <ul>
+                <li><strong>Read:</strong> modal windows will probably tell you something important so don't forget to read what they say.</li>
+                <li><strong>Look:</strong> a modal window enjoys a certain kind of attention; just look at it and appreciate its presence.</li>
+                <li><strong>Close:</strong> click on the button below to close the modal.</li>
+              </ul>
+              <button class="md-close">Close me!</button>
+            </div>
+          </div>
+        </div> -->
+
+        <hr class="hr-red">
 
         <div class='list-collection-block'>
 
@@ -170,5 +192,9 @@
         <p>PLAY</p>
         <br>
     </div>
+
+
+    <!-- <script src='/mvc/public/js/modal/classie.js'></script>
+    <script src='/mvc/public/js/modal/modalEffects.js'></script> -->
 
 </body>
