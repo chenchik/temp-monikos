@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 /* Created by Danila Chenchik Monikos LLC  */
 
@@ -12,10 +12,10 @@ class Home extends Controller {
 
 
 	public function index($name = '', $otherName = ''){
-		
+
 		//refers to user model
 		//we can do $this->model becuase this class extends Controller, and ->model is incliuded in controller
-		
+
 		//creates the user
 		$user = $this->model('User');
 		$user->name = $name;
@@ -37,7 +37,7 @@ class Home extends Controller {
 	}
 
 	public function drugDatabase(){
-		$this->view('drugDatabase/index');	
+		$this->view('drugDatabase/index');
 	}
 
 	public function listManager(){
@@ -46,6 +46,10 @@ class Home extends Controller {
 
 	public function indextest(){
 		$this->view('home/index-test');
+	}
+
+	public function social(){
+		$this->view('social/index');
 	}
 
 
