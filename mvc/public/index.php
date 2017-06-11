@@ -23,7 +23,7 @@
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="/mvc/public/css/loading.css">
 	<!-- ///////////////BOOTSTRAP///////////// -->
-	
+	<meta charset="utf-8"/>
 	<meta name='viewport' content="width=device-width, initial-scale=1" />
 
 	<script>
