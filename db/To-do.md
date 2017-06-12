@@ -6,7 +6,7 @@
 
 * check_username.php
 * ~~create_account.php~~
-* create_challenge.php
+* ~~create_challenge.php~~
 * create_list.php
 * ~~db_creds.php~~
 * ~~db_init.php~~

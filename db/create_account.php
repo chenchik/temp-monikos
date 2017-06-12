@@ -24,7 +24,7 @@ $creds=["username"=>$_POST["username"],
 	];
 
 $collection=$client->monikos->Users;
-$result=$collection->insertOne($creds);
+$result=$collection->insert($creds);
 
 
 // if ($conn->query($sql) === TRUE) {
