@@ -13,11 +13,11 @@
 * ~~create_account.php~~
 * ~~create_challenge.php~~
 * ~~create_list.php~~
-* create_challenge.php
+* ~~create_challenge.php~~
 * ~~create_list.php~~
 * ~~db_creds.php~~
 * ~~db_init.php~~
-* delete_challenge.php
+* delete_challenge.php (working)
 * ~~delete_list.php~~
 * determine_winner.php
 * do_login_old.php
