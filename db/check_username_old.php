@@ -5,21 +5,18 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-require_once 'db_init.php';
+require_once 'db_creds.php';
 
-$collection=$client->monikos->Users;
-
-$result=$collection->find(["username"=>$_POST['username']]);
-
+$result = $conn->query("SELECT * FROM Users WHERE username = '" . $_POST['username'] . "'");
 
 $outp = "";
 $count = 0;
-foreach ($result as $name) {
-	$count++;
-	if ($outp != "") {$outp .= ",";}
-	$outp .= '{"id":"'  . $name["_id"] . '",';
+while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
+    $count++;
+    if ($outp != "") {$outp .= ",";}
+    $outp .= '{"id":"'  . $rs["id"] . '",';
     $outp .= '"user":true,';
-    $outp .= '"username":"'. $name["username"]. '"}';
+    $outp .= '"username":"'. $rs["username"]     . '"}';
 }
 if($count){
 	$outp ='{"records":['.$outp.']}';	
@@ -35,5 +32,5 @@ if($count){
 }
 
 echo($outp);
-
+$conn->close();
 ?>

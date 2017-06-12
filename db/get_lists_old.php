@@ -13,7 +13,7 @@ $result = $conn->query($sql);
 $outp = "";
 while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
     if ($outp != "") {$outp .= ",";}
-    $outp .= '{"list_id":"'  . $rs["_id"] . '",';
+    $outp .= '{"list_id":"'  . $rs["lid"] . '",';
     $outp .= '"list_name":"'   . $rs["name"]        . '",';
     $outp .= '"drugnames":"'. $rs["drugnames"]     . '"}';
 }

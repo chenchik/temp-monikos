@@ -26,7 +26,6 @@ $creds=["username"=>$_POST["username"],
 $collection=$client->monikos->Users;
 $result=$collection->insert($creds);
 
-
 // if ($conn->query($sql) === TRUE) {
 //     echo '[{
 //     "response": 200,

@@ -116,7 +116,7 @@
                             <div class='ng-modal-dialog-content'>
                                 <div class=hint-message>
                                     <!--need trustAsHtml because mnemonic has html-->
-                                    <div ng-bind-html="trustAsHtml(x.Mnemonic)"></div>
+                                    <div ng-bind-html="trustAsHtml(x.Hint)"></div>
                                 </div>
                                 <div class=ng-modal-content-footer>
                                     <div class=plusone-wrapper>
@@ -134,8 +134,8 @@
                                         <div class=dislike-btn-shadow></div>
                                     </div>
                                     <div class=likes-dislikes-wrapper>
-                                        <div class=likes-count>{{x.HintLikes}}</div>
-                                        <div class=dislikes-count>{{x.HintDislikes}}</div>
+                                        <div class=likes-count>{{x.Likes}}</div>
+                                        <div class=dislikes-count>{{x.Dislikes}}</div>
                                     </div>
                                 </div>
 

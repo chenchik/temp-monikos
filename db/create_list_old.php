@@ -5,13 +5,12 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-require_once 'db_init.php';
+require_once 'db_creds.php';
 
 
 $drugs = "";
 $i = 0;
 $numItems = count($_POST["drugs"]);
-
 foreach($_POST["drugs"] as $vals){
 	if(++$i === $numItems) {
     	$drugs .= $vals;
@@ -19,23 +18,18 @@ foreach($_POST["drugs"] as $vals){
 	  	$drugs .= $vals . ",";
   	}
 }
-$collection=$client->monikos->Lists;
-$list=["lid"=>NULL,
-		"uid"=>$_POST["user_id"],
-		"name"=>$_POST["name"],
-		"drugids"=>11,
-		"drugnames"=>$drugs,
-		];
-$result=$collection->insertOne($list);
 
+$sql = "INSERT INTO Lists (lid, uid, name, drugids, drugnames)
+VALUES (NULL, '".$_POST["user_id"]."', '".$_POST["name"]."', '11', '".$drugs."')";
 
-if ($result->getInsertedCount()) {
+if ($conn->query($sql) === TRUE) {
     echo '[{
     "response": 200,
     "name": "'.$_POST["name"].'"}]';
 } else {
-    echo '[{"response":"Please check server error log."}]';
+    echo '[{"response":"'.$conn->error.'"}]';
 }
 
-
+$conn->close();
+echo($result);
 ?>
