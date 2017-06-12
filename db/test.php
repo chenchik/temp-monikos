@@ -19,8 +19,8 @@ $result=$collection->find();
 
 foreach ($result as $drug) {
     if ($outp != "") {$outp .= ",";}
-    $outp .= '{"Generic":'  . $drug["Generic"] . ',';
-    $outp .= '"DrugId":'   . $drug["_id"]        . ',';
+    $outp .= '{"Generic":"'  . $drug["Generic"] . '",';
+    $outp .= '"DrugId":"'   . $drug["_id"]        . '",';
     $outp .= '"Brand":'   . json_encode($drug["Brand"])        . ',';
     $outp .= '"Class":'   . json_encode($drug["Class"])        . ',';
     $outp .= '"Indication":'   . json_encode($drug["Indication and Dosage"])        . ',';

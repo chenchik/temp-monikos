@@ -5,18 +5,16 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-require_once 'db_creds.php';
+require_once 'db_init.php';
 
-$sql = "DELETE FROM Lists WHERE lid = " . $_POST['lid'];
+$collection=$client->monikos->Lists;
+$result=$collection->delete(['_id'=>$_POST['lid']]);
 
-if ($conn->query($sql) === TRUE) {
+if ($result->getDeletedCount()) {
     echo '[{
     "response": 200,
-    "liddeleted": "'.$_POST["id"].'"}]';
+    "liddeleted": "'.$_POST["lid"].'"}]';
 } else {
-    echo '[{"response":"'.$conn->error.'"}]';
+    echo '[{"response":"Please check server error log"}]';
 }
-
-$conn->close();
-echo($result);
 ?>
