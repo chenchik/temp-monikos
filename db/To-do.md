@@ -2,6 +2,8 @@
 
 ### plz cross out all the files that alerady work with mongodb, and keep note for bugs and progress.  
 
+
+
 # !!NOTE!!:  
 ####Since mongodb generates its own _id field, we can use _id as specifier for list and challenge when modifying delete_list.php or delete_challenge.php. Take create list for example, when creating a list, I left "lid" as NULL. and when get list, give list_id the value of _id, and when delete list, use _id as the parameter to find the entry. Theoretically this will work. ------ by weijian 
 
@@ -9,13 +11,10 @@
 
 * ~~check_username.php~~
 * ~~create_account.php~~
-<<<<<<< HEAD
 * ~~create_challenge.php~~
 * create_list.php
-=======
 * create_challenge.php
 * ~~create_list.php~~
->>>>>>> 13b960f9cb0397e63ff676ca7683313007959594
 * ~~db_creds.php~~
 * ~~db_init.php~~
 * delete_challenge.php
