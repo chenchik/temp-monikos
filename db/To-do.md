@@ -14,7 +14,7 @@
 * ~~create_challenge.php~~
 * ~~create_list.php~~
 * ~~create_challenge.php~~
-* ~~create_list.php~~
+
 * ~~db_creds.php~~
 * ~~db_init.php~~
 * delete_challenge.php (working)
