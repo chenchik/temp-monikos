@@ -2,38 +2,25 @@
 /*Created by Danila Chenchik, Joseph Son Monikos LLC*/
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
-require_once 'db_creds.php';
-$result = $conn->query("SELECT schoolid,schoolname FROM Programs WHERE program = 'med' ORDER BY schoolname");
-//encodes string to utf8
-function utf8_encode_deep(&$input) {
-    if (is_string($input)) {
-        $input = utf8_encode($input);
-    } else if (is_array($input)) {
-        foreach ($input as &$value) {
-            utf8_encode_deep($value);
-        }
-        unset($value);
-    } else if (is_object($input)) {
-        $vars = array_keys(get_object_vars($input));
-        foreach ($vars as $var) {
-            utf8_encode_deep($input->$var);
-        }
-    }
-}
-$outp = "";
-while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
-    
-    if ($outp != "") {$outp .= ",";}
-    utf8_encode_deep($rs["schoolid"]);
-    $rs["schoolid"] = json_encode($rs["schoolid"]);
-    utf8_encode_deep($rs["schoolname"]);
-    $rs["schoolname"] = json_encode($rs["schoolname"]);
-   
-    $outp .= '{"schoolid":'  . $rs["schoolid"] . ',';
-    $outp .= '"schoolname":'. $rs["schoolname"]     . '}';
-   
-}
-$outp ='{"records":['.$outp.']}';
-$conn->close();
-echo($outp);
+require_once 'db_init.php';
+
+$collection=$client->monikos->Programs;
+
+$result = $collection->find(
+    ["program" => "med"],
+    [
+        'projection'=>["schoolid"=>1,"schoolname"=>1],
+        'sort'=>["schoolname"=>1],
+    ]
+);
+
+ $outp = "";
+ foreach ($result as $school) {
+     if ($outp != "") {$outp .= ",";}
+     $outp .= '{"schoolid":'  . json_encode($school["schoolid"]) . ',';
+     $outp .= '"_id":"'.$school["_id"].'",';
+     $outp .= '"schoolname":'. json_encode($school["schoolname"])     . '}';
+ }
+ $outp ='{"records":['.$outp.']}';
+ echo($outp);
 ?>

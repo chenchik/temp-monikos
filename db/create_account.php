@@ -20,7 +20,9 @@ $creds=["username"=>$_POST["username"],
 		"email"=>$_POST["email"],
 		"password"=>$pw_md5,
 		"schoolid"=>$_POST["schoolid"],
-		"schoolname"=>$_POST["schoolname"]
+		"schoolname"=>$_POST["schoolname"],
+		"fbid"=>NULL,
+		"capsules"=>"200"
 	];
 
 $collection=$client->monikos->Users;

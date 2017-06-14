@@ -14,12 +14,12 @@ require_once 'db_init.php';
 
 $collection=$client->monikos->Users;
 
-$result=$collection->findOne(["username"=>"starwars"]);
+$result=$collection->findOne(["_id"=> new MongoDB\BSON\ObjectID('593daa1e1e3fc711a9000060')]);
 
 
 
-echo $result["username"];
-
+echo $result["_id"];
+var_dump($result);
 
 
 // if ($conn->query($sql) === TRUE) {

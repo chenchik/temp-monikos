@@ -9,7 +9,7 @@ require_once 'db_init.php';
 
 $collection=$client->monikos->Challenge;
 
-$result=$collection->find(["_id"=>$_POST['challengeid']]);
+$result=$collection->find(["_id"=>new MongoDB\BSON\ObjectID($_POST['challengeid'])]);
 
 $outp = "";
 
