@@ -28,7 +28,7 @@
             "symfony/dependency-injection": "",
             "symfony/http-kernel": ""
         },
-        "time": "2016-07-28 16:56:28",
+        "time": "2016-07-28T16:56:28+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -117,7 +117,7 @@
         "suggest": {
             "guzzlehttp/guzzle": "Guzzle 5 has moved to a new package name. The package you have installed, Guzzle 3, is deprecated."
         },
-        "time": "2015-03-18 18:23:50",
+        "time": "2015-03-18T18:23:50+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -193,7 +193,7 @@
             "monolog/monolog": "Adds support for logging HTTP requests and responses",
             "symfony/yaml": "Eases the ability to write manifests for creating jobs in AWS Import/Export"
         },
-        "time": "2016-07-25 18:03:20",
+        "time": "2016-07-25T18:03:20+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -245,7 +245,7 @@
         "suggest": {
             "ext-mbstring": "For best performance"
         },
-        "time": "2016-05-18 14:26:46",
+        "time": "2016-05-18T14:26:46+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -318,7 +318,7 @@
             "symfony/config": "",
             "symfony/yaml": ""
         },
-        "time": "2016-08-05 08:37:39",
+        "time": "2016-08-05T08:37:39+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -373,7 +373,7 @@
         "require-dev": {
             "phpunit/phpunit": "~4.0|~5.0"
         },
-        "time": "2015-11-04 20:07:17",
+        "time": "2015-11-04T20:07:17+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -421,7 +421,7 @@
         "require-dev": {
             "phpunit/phpunit": "4.*"
         },
-        "time": "2015-11-06 14:35:42",
+        "time": "2015-11-06T14:35:42+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -487,7 +487,7 @@
         "require": {
             "php": ">=5.5.9"
         },
-        "time": "2016-08-08 11:46:08",
+        "time": "2016-08-08T11:46:08+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -537,7 +537,7 @@
         "suggest": {
             "ext-libsodium": "Provides a modern crypto API that can be used to generate random bytes."
         },
-        "time": "2016-03-18 20:34:03",
+        "time": "2016-03-18T20:34:03+00:00",
         "type": "library",
         "installation-source": "dist",
         "autoload": {
@@ -595,7 +595,7 @@
             "symfony/process": "Required to use the composer class (2.8.*|3.0.*).",
             "symfony/var-dumper": "Improves the dd function (2.8.*|3.0.*)."
         },
-        "time": "2016-08-05 14:49:58",
+        "time": "2016-08-05T14:49:58+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -643,7 +643,7 @@
             "illuminate/contracts": "5.2.*",
             "php": ">=5.5.9"
         },
-        "time": "2016-08-01 13:49:14",
+        "time": "2016-08-01T13:49:14+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -699,7 +699,7 @@
             "illuminate/filesystem": "Required to use the migrations (5.2.*).",
             "illuminate/pagination": "Required to paginate the result set (5.2.*)."
         },
-        "time": "2016-08-25 07:01:20",
+        "time": "2016-08-25T07:01:20+00:00",
         "type": "library",
         "extra": {
             "branch-alias": {
@@ -729,6 +729,66 @@
             "laravel",
             "orm",
             "sql"
+        ]
+    },
+    {
+        "name": "mongodb/mongodb",
+        "version": "1.1.2",
+        "version_normalized": "1.1.2.0",
+        "source": {
+            "type": "git",
+            "url": "https://github.com/mongodb/mongo-php-library.git",
+            "reference": "a307dd60e71e1291c60927ea4f3a1905146063f5"
+        },
+        "dist": {
+            "type": "zip",
+            "url": "https://api.github.com/repos/mongodb/mongo-php-library/zipball/a307dd60e71e1291c60927ea4f3a1905146063f5",
+            "reference": "a307dd60e71e1291c60927ea4f3a1905146063f5",
+            "shasum": ""
+        },
+        "require": {
+            "ext-mongodb": "^1.2.0",
+            "php": ">=5.4"
+        },
+        "require-dev": {
+            "phpunit/phpunit": "^4.8"
+        },
+        "time": "2017-02-16T18:40:32+00:00",
+        "type": "library",
+        "installation-source": "dist",
+        "autoload": {
+            "psr-4": {
+                "MongoDB\\": "src/"
+            },
+            "files": [
+                "src/functions.php"
+            ]
+        },
+        "notification-url": "https://packagist.org/downloads/",
+        "license": [
+            "Apache-2.0"
+        ],
+        "authors": [
+            {
+                "name": "Jeremy Mikola",
+                "email": "jmikola@gmail.com"
+            },
+            {
+                "name": "Hannes Magnusson",
+                "email": "bjori@mongodb.com"
+            },
+            {
+                "name": "Derick Rethans",
+                "email": "github@derickrethans.nl"
+            }
+        ],
+        "description": "MongoDB driver library",
+        "homepage": "https://jira.mongodb.org/browse/PHPLIB",
+        "keywords": [
+            "database",
+            "driver",
+            "mongodb",
+            "persistence"
         ]
     }
 ]
