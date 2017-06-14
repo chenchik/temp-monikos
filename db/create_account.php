@@ -25,21 +25,22 @@ $creds=["username"=>$_POST["username"],
 		"capsules"=>"200"
 	];
 
+
 $collection=$client->monikos->Users;
 
-$result=$collection->insert($creds);
+$result=$collection->insertOne($creds);
 
-
-// if ($conn->query($sql) === TRUE) {
-//     echo '[{
-//     "response": 200,
-//     "username": "'.$_POST["username"].'",
-//     "email": "'.$_POST["email"].'",
-//     "password": "'.$pw_md5.'"}]';
-// } else {
-//     echo '[{"response":"'.$conn->error.'"}]';
-// }
-// $conn->close();
-
+/*
+if () {
+     echo '[{
+     "response": 200,
+     "username": "'.$_POST["username"].'",
+     "email": "'.$_POST["email"].'",
+     "password": "'.$pw_md5.'"}]';
+} else {
+     echo '[{"response":"500"}]';
+}
+$conn->close();
+*/
 
 ?>
