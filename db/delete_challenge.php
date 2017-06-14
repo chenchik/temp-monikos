@@ -10,7 +10,7 @@ require_once 'db_init.php';
 // $sql = "DELETE FROM Challenge WHERE challengeid = " . $_POST['challengeid'];
 
 $collection=$client->monikos->Challenge;
-$result=$collection->remove(['_id'=>$_POST['challengeid']])
+$result=$collection->delete(['_id'=>new MongoDB\BSON\ObjectID($_POST['challengeid'])]);
 
 // if ($conn->query($sql) === TRUE) {
 //     echo '[{

@@ -22,10 +22,21 @@ $challenge =['challengeid'=>NULL,
 			 "url"=>'/dummyval'
 			 ];
 $collection=$client->monikos->Challenge;
-$result=$collection->insert($challenge);
+$result=$collection->insertOne($challenge);
 // echo sizeof($result);
 
 
+if ($result->getInsertedCount()) {
+    echo '[{
+    "response": 200,
+    "challengeid": "'.$POST["challengeid"].'",
+    "user1": "'.$POST["user1"].'",
+    "user2": "'.$POST["user2"].'",
+    "game": "'.$POST["game"].'",
+    "bet": "'.$_POST["bet"].'"}]';
+} else {
+    echo '[{"response":"Please check server error log."}]';
+}
 // // // if ($conn->query($sql) === TRUE) {
 
 // // // 	$last_id = $conn->insert_id;
