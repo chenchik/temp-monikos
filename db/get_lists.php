@@ -10,9 +10,9 @@ require_once 'db_init.php';
 $collection=$client->monikos->Lists;
 $result=$collection->find(
 	["uid"=>new MongoDB\BSON\ObjectID($_POST["user_id"])]
-	)
+	);
 
-$outp = "";
+$outp = '';
 foreach ($result as $document) {
 	if ($outp != "") {$outp .= ",";}
 	$outp .= '{"list_id":"'  . $document["_id"] . '",';
