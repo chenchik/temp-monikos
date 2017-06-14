@@ -12,27 +12,15 @@ require_once 'db_init.php';
 // VALUES (NULL, '".$_POST["username"]."', '".$_POST["email"]."', '".$pw_md5."', '".$_POST["schoolid"]."', '".$_POST["schoolname"]."')";
 
 
-$collection=$client->monikos->Drugs;
+$collection=$client->monikos->Users;
 
-$result=$collection->find();
+$result=$collection->findOne(["username"=>"starwars"]);
 
 
-foreach ($result as $drug) {
-    if ($outp != "") {$outp .= ",";}
-    $outp .= '{"Generic":"'  . $drug["Generic"] . '",';
-    $outp .= '"DrugId":"'   . $drug["_id"]        . '",';
-    $outp .= '"Brand":'   . json_encode($drug["Brand"])        . ',';
-    $outp .= '"Class":'   . json_encode($drug["Class"])        . ',';
-    $outp .= '"Indication":'   . json_encode($drug["Indication and Dosage"])        . ',';
-    $outp .= '"Side Effects":'   . json_encode($drug["Side Effects"])        . ',';
-    $outp .= '"Black Box Warning":'   . json_encode($drug["Black Box Warning"])        . ',';
-    $outp.='"Renal Adjustment":'.json_encode($drug["Renal Adjustment"]).',';
-    $outp.='"Hepatic Adjustment":'.json_encode($drug["Hepatic Adjustment"]).',';
-    $outp.='"Mechanism of Action":'.json_encode($drug["Mechanism of Action"]).',';
-    $outp.='"Resources":'.json_encode($drug["Resources"]).'}';
-}
 
-echo $outp;
+echo $result["username"];
+
+
 
 // if ($conn->query($sql) === TRUE) {
 //     echo '[{

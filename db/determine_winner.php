@@ -5,23 +5,26 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-require_once 'db_creds.php';
+require_once 'db_init.php';
 
-$result = $conn->query("SELECT * FROM Challenge WHERE challengeid LIKE '".$_POST['challengeid'] ."'");
+$collection=$client->monikos->Challenge;
+
+$result=$collection->find(["_id"=>$_POST['challengeid']]);
 
 $outp = "";
-while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
-    if ($outp != "") {$outp .= ",";}
-    $outp .= '{"challengeid":"'  . $rs["challengeid"] . '",';
+
+foreach ($result as $key) {
+	if ($outp != "") {$outp .= ",";}
+	$outp .= '{"challengeid":"'  . $key["_id"] . '",';
     $outp .= '"details":"determiningwinner",';
-    $outp .= '"bet":"'   . $rs["bet"] . '",';
-    $outp .= '"user1":"'   . $rs["user1"] . '",';
-    $outp .= '"user2":"'   . $rs["user2"] . '",';
-    $outp .= '"user1score":"'   . $rs["user1score"] . '",';
-    $outp .= '"user2score":"'. $rs["user2score"]     . '"}';
+    $outp .= '"bet":"'   . $key["bet"] . '",';
+    $outp .= '"user1":"'   . $key["user1"] . '",';
+    $outp .= '"user2":"'   . $key["user2"] . '",';
+    $outp .= '"user1score":"'   . $key["user1score"] . '",';
+    $outp .= '"user2score":"'. $key["user2score"]     . '"}';
 }
 //$outp ='{"records":['.$outp.']}';
 echo($outp);
-$conn->close();
+
 //echo($result);
 ?>

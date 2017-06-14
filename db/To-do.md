@@ -19,11 +19,11 @@
 * ~~db_init.php~~
 * delete_challenge.php (working)
 * ~~delete_list.php~~
-* determine_winner.php
-* do_login_old.php
+* ~~determine_winner.php~~
+* ~~do_login_old.php~~
   * old version for mysql
 * ~~do_login.php~~
-* do_username_login.php
+* ~~do_username_login.php~~
 * email_hint.php
 * fb_login.php
 * get_capsule_info.php
