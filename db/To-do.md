@@ -49,9 +49,10 @@ php_mongo documentation:https://docs.mongodb.com/php-library/master/reference/me
 * ~~get_nursing_schools.php~~
 * ~~get_pa_schools.php~~
 * ~~get_pharm_schools.php~~
-* get_programs.php
+* ~~get_programs.php~~
 * get_schools_list.php
 * get_schools.php
+  ^^obsolete file^^
 * get_specific_list.php
 * get_specific_school_list.php
 * get_user_profile.php
