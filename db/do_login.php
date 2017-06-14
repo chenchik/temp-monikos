@@ -25,7 +25,7 @@ if(sizeof($result)==0){
     "response": 200,
     "login-status": "logged-in",
     "username": "'.$result["username"].'",
-    "user_id": "'.$result["id"].'",
+    "user_id": "'.$result["_id"].'",
     "password": "'.$pw_md5.'"}]';
  }
 // $sql = "SELECT * FROM Users WHERE username LIKE '".$_POST["username"]."' AND password LIKE '".$pw_md5."'";
