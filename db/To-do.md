@@ -43,7 +43,7 @@ php_mongo documentation:https://docs.mongodb.com/php-library/master/reference/me
 * get_drugs_old.php
 * get_drugs.php
   * This would output a json encoded object of all drugs, still need to change code in js file so that it can handle the json code
-* get_lists.php
+* ~~get_lists.php~~
 * ~~get_med_schools.php~~
 * get_notifications.php
 * ~~get_nursing_schools.php~~
