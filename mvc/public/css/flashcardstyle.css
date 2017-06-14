@@ -1,28 +1,29 @@
 
  @import 'https://fonts.googleapis.com/css?family=Raleway:300,500,900';
- 
- /******Header********/	
-#app_header {
-    display: block;
-    position:fixed;
-    top:0;
-    width:100%;
-    height:65px;
-    background:#777;
-    text-align: center;
-    box-shadow: 0 0 5px #444;
-    z-index: 10;
-}
+
+ /******Header********/
+ #app_header {
+     display: block;
+     position:fixed;
+     top:0;
+     width:100%;
+     height:65px;
+     background:#fa4e51;
+     text-align: center;
+     box-shadow: 0 0 5px #444;
+     z-index: 10;
+ }
 
 #app_header button.backbtn {
     position: fixed;
     left: 10px;
     font-size: 16px;
     border: 0;
-    background: #606060;
+    background: white;
     height: 40px;
     margin-top: 13px;
     width: 60px;
+    color:black;
 }
 
 body {
@@ -30,7 +31,8 @@ body {
   margin-top: 65px;
   overflow-y: auto;
   padding-top: 0px;
-  background-color: #ABB7B7;
+  /*background-color: #ABB7B7;*/
+  background-color: white;
 
 }
 
@@ -47,16 +49,16 @@ body {
 	padding: 2px;
 }
 /******Header END********/
- 
+
  button.btnBlue  {
     background: #3071A9;
     color:white;
-    font-family: 'Raleway'; 
+    font-family: 'Raleway';
     font-weight: 600;
     font-size: 12px;
     width:100%;
-   	height: 19vh; 
-    text-align: center;   
+   	height: 19vh;
+    text-align: center;
   	border-radius: 2px;
   	text-overflow: ellipsis;
     white-space: initial;
@@ -64,17 +66,17 @@ body {
     transition: all 0.3s ease 0s;
     border-radius: 20px;
 }
- 
+
  .stage {
-  -webkit-perspective: 1000; 
+  -webkit-perspective: 1000;
 
 
 }
 
-/* 
+/*
 @media only screen and (max-width:518px) {
     .stage {
-  -webkit-perspective: 1000; 
+  -webkit-perspective: 1000;
 
     }
 
@@ -83,14 +85,14 @@ body {
 
 
 .flashcard {
-  height: 65vh;  
-  width: 55vh; 
+  height: 65vh;
+  width: 55vh;
   margin: auto;
-/* 
+/*
   box-shadow: 2px 2px 2px #000;
  */
-  -webkit-transform-style: preserve-3d;  
-  transition: all 0.3s;               
+  -webkit-transform-style: preserve-3d;
+  transition: all 0.3s;
   -webkit-transition: all 0.3s;
   border-radius: 45px;
   font-family: 'Raleway',sans-serif;
@@ -101,7 +103,7 @@ body {
 
 .flipped, .back {
   transform: rotateX(180deg);
-  -webkit-transform: rotateX(180deg); 
+  -webkit-transform: rotateX(180deg);
     font-family: 'Raleway',sans-serif;
 
 }
@@ -112,37 +114,39 @@ body {
 }
 
 .front{
-  height: 65vh;  
-  width: 55vh; 
-  position: absolute;   
-  text-align: center;   
-  -webkit-backface-visibility: hidden;    
-  background-color: #2ecc71;
+  height: 65vh;
+  width: 55vh;
+  position: absolute;
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+  /*background-color: #2ecc71;*/
+  border: 1px solid #fa4e51;
   font-family: 'Raleway',sans-serif;
   word-wrap: break-word;
   font-size: xx-small;
-  color: #ffffff;
+  /*color: #ffffff;*/
   border-radius: 45px;
-/* 
+/*
   box-shadow: 3px 3px 3px #888888;
  */
-   
+
 }
 
 .back {
-  height: 65vh;  
-  width: 55vh; 
-  position: absolute;    
-  text-align: center;   
-  -webkit-backface-visibility: hidden;       
-  background-color: #3071a9;
+  height: 65vh;
+  width: 55vh;
+  position: absolute;
+  text-align: center;
+  -webkit-backface-visibility: hidden;
+  /*background-color: #3071a9;*/
+  border: 1px solid #fa4e51;
   text-align: center;
     font-family: 'Raleway',sans-serif;
   word-wrap: break-word;
   font-size: xx-small;
-  color: #ffffff;
+  /*color: #ffffff;*/
   border-radius: 45px;
-/* 
+/*
   box-shadow: 3px 3px 3px #888888;
  */
 }
@@ -158,7 +162,7 @@ div.myButton input {
 div.myButton2 input {
     background:url(http://www.sesamestreet.org/sites/all/themes/sesametheme/img/bridge/next_button.png) no-repeat;
     cursor:pointer;
-	padding-left : 60px; 
+	padding-left : 60px;
 	float:left;
     border: none;
     -moz-transform: scaleX(-1);
@@ -171,14 +175,14 @@ div.myButton2 input {
 
 .submit_btn {
 	width: 50%;
-	background-color:#777;
+	background-color:#fa4e51;
 	border-radius: 10px;
 	color: aliceblue;
 	margin: 2px;
 }
 .next_btn{
 	width: 50%;
-	background-color:#777;
+	background-color:#fa4e51;
 	border-radius: 10px;
 	color: aliceblue;
 	margin: 2px;
@@ -205,18 +209,18 @@ div.myButton2 input {
 
 
 .front p, .back p {
-  margin-top: 25%;       
+  margin-top: 25%;
   font-size: 3em;
 }
 
-/******Header********/	
+/******Header********/
 #app_header {
     display: block;
     position:fixed;
     top:0;
     width:100%;
     height:65px;
-    background:#777;
+    background:#fa4e51;
     text-align: center;
     box-shadow: 0 0 5px #444;
     z-index: 10;
@@ -227,10 +231,11 @@ div.myButton2 input {
     left: 10px;
     font-size: 16px;
     border: 0;
-    background: #606060;
+    background:white;
     height: 40px;
     margin-top: 13px;
     width: 60px;
+    color: black;
 }
 
 #app_header button{
@@ -246,3 +251,34 @@ div.myButton2 input {
 	padding: 2px;
 }
 /******Header END********/
+
+.progress-bar{
+  background-color: #fa4e51 !important;
+  font-size: 16px;
+}
+
+.progress{
+  height:30px;
+  margin: 10px;
+}
+
+#percentpb{
+  margin-top: 5px;
+}
+
+/*.fa-angle-left{
+  width: 250px;
+  height:250px;
+}*/
+
+.leftsign{
+  position: absolute;
+  top: 40%;
+  left: 5%;
+}
+
+.rightsign{
+  position: absolute;
+  top: 40%;
+  left: 95%;
+}

@@ -9,6 +9,7 @@
    <title>Flashcard</title>
 
   <link rel="stylesheet" href="/mvc/public/css/flashcardstyle.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen" title="no title">
 
   <script>
     function gotoGamelist(){
@@ -71,13 +72,22 @@
 
         <div class="container" style = "margin-top: 80px">
           <div class="progress" >
-            <div id = "pb" class="progress-bar" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
+            <div id = "pb" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
               <div id = "percentpb">{{percent}} </div>
             </div>
           </div>
         </div>
-
-<div class="stage"  >
+        <div class="leftsign">
+          <button onclick="prevCard();" >
+          <i class="fa fa-angle-left fa-5x" aria-hidden="true"  style="color:grey"></i>
+          </button>
+        </div>
+        <div class="rightsign">
+          <button id="nextBtn" onclick="nextCard();">
+          <i class="fa fa-angle-right fa-5x" aria-hidden="true" style="color:grey"></i>
+          </button>
+        </div>
+<div class="stage">
   <div class="flashcard">
     <div class="front">
       <p id = "front" >{{front}}</p>

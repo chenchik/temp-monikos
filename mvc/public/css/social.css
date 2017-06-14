@@ -124,7 +124,6 @@ ul{
   left: 10%;
   transition: box-shadow 0.4s ease-in-out;
   transition: background-color 0.4s ease-in-out;
-  /*transition: color 0.3s ease-in-out;*/
 }
 
 .challenge:hover{
@@ -140,7 +139,6 @@ ul{
 
 .ranking-item{
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-  /*background-color: rgba(255, 197, 198, 0.13);*/
   width: 80%;
   margin-left: 10%;
   margin-bottom: 2%;
@@ -168,20 +166,14 @@ ul{
   height: 30px;
   width: 30px;
   font-size: 80%;
-  /*right: 80%;*/
   padding: 10px;
   text-align: center;
   margin-right: 5%;
   float: right;
-  /*margin-top: -8px;*/
-  /*margin-top: -10px;*/
-  /*position: relative;*/
-  /*right: 20%;*/
 }
 
 .friend{
   width: 30%;
-  /*background-color: grey;*/
   height: 150px;
   text-align: center;
   border-radius: 10px;
