@@ -5,21 +5,21 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-require_once 'db_creds.php';
+require_once 'db_init.php';
 
-$sql = "SELECT * FROM Lists WHERE lid LIKE '".$_POST["lid"]."'";
-$result = $conn->query($sql);
+$collection=$client->monikos->Lists;
+$result=$collection->find(
+	["lid"=>new MongoDB\BSON\ObjectID($_POST["lid"])]
+	);
 
 $outp = "";
-while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
-    if ($outp != "") {$outp .= ",";}
-    $outp .= '{"list_id":"'  . $rs["lid"] . '",';
-    $outp .= '"list_name":"'   . $rs["name"]        . '",';
-    $outp .= '"drugnames":"'. $rs["drugnames"]     . '"}';
+foreach ($result as $spe) {
+	if ($outp != "") {$outp .= ",";}
+	$outp .= '{"list_id":"'  . $spe["_id"] . '",';
+    $outp .= '"list_name":"'   . $spe["name"]. '",';
+    $outp .= '"drugnames":"'. $spe["drugnames"]. '"}';
 }
-
+// $outp ='{"records":['.$outp.']}';
 echo($outp);
-
-$conn->close();
 
 ?>

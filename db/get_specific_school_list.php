@@ -5,21 +5,21 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-require_once 'db_creds.php';
+require_once 'db_init.php';
 
-$sql = "SELECT * FROM SchoolLists WHERE lid LIKE '".$_POST["lid"]."'";
-$result = $conn->query($sql);
+$collection=$client->monikos->SchoolLists;
+$result=$collection->find(
+	["lid"=>new MongoDB\BSON\ObjectID($_POST["lid"])]
+	);
 
-$outp = "";
-while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
-    if ($outp != "") {$outp .= ",";}
-    $outp .= '{"list_id":"'  . $rs["lid"] . '",';
-    $outp .= '"list_name":"'   . $rs["name"]        . '",';
-    $outp .= '"drugnames":"'. $rs["drugnames"]     . '"}';
+$outp = '';
+foreach ($result as $spe_sch_lis) {
+	if ($outp != "") {$outp .= ",";}
+	$outp .= '{"list_id":"'  . $spe_sch_lis["_id"] . '",';
+    $outp .= '"list_name":"'   . $spe_sch_lis["name"]. '",';
+    $outp .= '"drugnames":"'. $spe_sch_lis["drugnames"]. '"}';
 }
-
+// $outp ='{"records":['.$outp.']}';
 echo($outp);
-
-$conn->close();
 
 ?>

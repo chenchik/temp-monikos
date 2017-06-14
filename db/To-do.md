@@ -27,7 +27,7 @@ php_mongo documentation:https://docs.mongodb.com/php-library/master/reference/me
 * ~~create_challenge.php~~
 * ~~db_creds.php~~
 * ~~db_init.php~~
-* delete_challenge.php (working)
+* ~~delete_challenge.php~~
 * ~~delete_list.php~~
 * ~~determine_winner.php~~
 * ~~do_login_old.php~~
@@ -45,16 +45,16 @@ php_mongo documentation:https://docs.mongodb.com/php-library/master/reference/me
   * This would output a json encoded object of all drugs, still need to change code in js file so that it can handle the json code
 * ~~get_lists.php~~
 * ~~get_med_schools.php~~
-* get_notifications.php
+* ~~get_notifications.php~~ (empty bug issue)
 * ~~get_nursing_schools.php~~
 * ~~get_pa_schools.php~~
 * ~~get_pharm_schools.php~~
 * ~~get_programs.php~~
 * get_schools_list.php
-* get_schools.php
+* ~~get_schools.php~~
   ^^obsolete file^^
-* get_specific_list.php
-* get_specific_school_list.php
+* ~~get_specific_list.php~~
+* ~~get_specific_school_list.php~~
 * get_user_profile.php
 * send_email_user2.php
 * test.php
