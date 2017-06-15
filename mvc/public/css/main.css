@@ -644,15 +644,15 @@ label.field-name {
 }
 
 .plusone-like {
-    margin-left:5vw;
+    margin-left:3vw;
     margin-top:-24px;
     color: #3273ff;
 }
 
 .plusone-dislike {
-    margin-left:46vw;
+    margin-left: 25vw;
     margin-top: -24px;
-    color: #ff3333;
+    color: #ff2121;
 }
 
 .link-wrap {
