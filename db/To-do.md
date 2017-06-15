@@ -63,6 +63,7 @@ php_mongo documentation:https://docs.mongodb.com/php-library/master/reference/me
 * update_challenge_being_challenged.php
 * update_challenge_capsules.php
 * update_challenge_challenging.php
-* update_drug_dislikes.php
-* update_drug_likes.php
-* update_drugs.php
+* ~~update_drug_dislikes.php~~
+* ~~update_drug_likes.php~~
+* ~~update_drugs.php~~
+^^obsolete file^^

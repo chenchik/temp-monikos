@@ -126,7 +126,7 @@
                                     </div>
 
                                     <div class=btn-wrapper ng-click="$event.stopPropagation()">
-                                        <button class=like-btn ng-click="updateLikes(x.HintLikes, x.DrugId);$event.stopPropagation()"><div class="link-wrap"><img src=/mvc/public/images/thumb-up-button.png> Like</div></button> <button ng-click="updateDislikes(x.HintDislikes, x.DrugId);$event.stopPropagation()" class=dislike-btn><div class="link-wrap"><img src=/mvc/public/images/thumb-down-button.png>Dislike</div></button>
+                                        <button class=like-btn ng-click="updateLikes(x.Likes, x.DrugId);$event.stopPropagation()"><div class="link-wrap"><img src=/mvc/public/images/thumb-up-button.png> Like</div></button> <button ng-click="updateDislikes(x.Dislikes, x.DrugId);$event.stopPropagation()" class=dislike-btn><div class="link-wrap"><img src=/mvc/public/images/thumb-down-button.png>Dislike</div></button>
                                     </div>
                                     <div class=btn-shadow-wrapper>
                                         <!--button shadow effect-->

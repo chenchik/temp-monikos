@@ -5,21 +5,20 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-require_once 'db_creds.php';
+require_once 'db_init.php';
+
+$collection = $client -> monikos -> Drugs2;
+$result = $collection->updateOne(
+    ['_id' => new MongoDB\BSON\ObjectID($_POST["drugid"])],
+    ['$set' => ['Likes' => $_POST["likes"]]]
+);
  
-
-$sql = "UPDATE Drug SET HintLikes = '" .$_POST['likes']. "'WHERE DrugId = '" .$_POST['drugid']. "'";
-
-
-if ($conn->query($sql) === TRUE) {
+if ($result->getModifiedCount() === 1) {
     echo '[{
     "response": 200,
     "id": "'.$_POST["drugid"].'",
-    "dislikes": "'.$_POST["dislikes"].'"}]';
+    "likes": "'.$_POST["likes"].'"}]';
 } else {
-    echo '[{"response":"'.$conn->error.'"}]';
+    echo '[{"response":"500"}]';
 }
-
-$conn->close();
-echo($result);
 ?>

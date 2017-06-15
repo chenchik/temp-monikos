@@ -194,14 +194,16 @@ app.controller('databaseCtrl', ['$scope', '$sce', '$http', '$timeout', function 
         var likes = parseInt(likeCount, 10);
         likes = likes + 1;
         likes = likes.toString();
-
-        //id is index of drug in get_drugs json: also drugid
-        //update like count in view
-        var id = parseInt(id, 10);
-        var i = id - 1; //because need index in array counting that starts with 0
-        var tempHintLikes = parseInt($scope.names[i].HintLikes, 10);
-        $scope.names[i].HintLikes = tempHintLikes + 1;
+        
         id = id.toString();
+        
+        var key;
+        for(i=0;i<$scope.names.length;i++){
+            if($scope.names[i].DrugId == id){
+                key = i;
+            }
+        }
+        $scope.names[key].Likes = likes;
 
         var data = $.param({
             likes: likes,
@@ -227,20 +229,22 @@ app.controller('databaseCtrl', ['$scope', '$sce', '$http', '$timeout', function 
     $scope.updateDislikes = function (dislikeCount, id) {
         //plus one animation
         $('.plusone-dislike').fadeIn(400).fadeOut(400);
-
         var url = "/db/update_drug_dislikes.php";
 
         var dislikes = parseInt(dislikeCount, 10);
         dislikes = dislikes + 1;
         dislikes = dislikes.toString();
 
-        //id is index of drug in get_drugs json: also drugid
-        //update like count in view
-        var id = parseInt(id, 10);
-        var i = id - 1; //because need index in array counting that starts with 0
-        var tempHintDislikes = parseInt($scope.names[i].HintDislikes, 10);
-        $scope.names[i].HintDislikes = tempHintDislikes + 1;
         id = id.toString();
+        
+        var key;
+        for(i=0;i<$scope.names.length;i++){
+            if($scope.names[i].DrugId == id){
+                key = i;
+            }
+        }
+
+        $scope.names[key].Dislikes = dislikes;    
 
         var data = $.param({
             dislikes: dislikes,
