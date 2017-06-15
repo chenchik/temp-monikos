@@ -12,7 +12,7 @@ app.controller('accountCtrl', function ($scope, $http) {
             switch ($scope.programs[i].program) {
                 case "do":
                     $scope.programs[i].program = "D.O";
-                    $scope.programs[i].programId=i;
+                    $scope.programs[i].programId = i;
                     break;
                 case "nursing":
                     $scope.programs[i].program = "Nursing";
@@ -28,7 +28,7 @@ app.controller('accountCtrl', function ($scope, $http) {
                     break;
                 case "pa":
                     $scope.programs[i].program = "PA";
-                    $scope.programs[i].programId =i ;
+                    $scope.programs[i].programId = i;
                     break;
                 case "dental":
                     $scope.programs[i].program = "Dental";
@@ -71,7 +71,7 @@ app.controller('accountCtrl', function ($scope, $http) {
     }
 
     $scope.test = function () {
-       var schoolid = document.getElementById('schoolid').innerHTML;
+        var schoolid = document.getElementById('schoolid').innerHTML;
         alert(schoolid);
     }
 
@@ -107,15 +107,18 @@ app.controller('accountCtrl', function ($scope, $http) {
     }
 
     function passwordSameChecker(str, str2) {
-        if(str===str2){return true;}
-        else{
+        if (str === str2) {
+            return true;
+        } else {
             showError("Please enter the same password.")
             return false;
         }
     }
+
     function validateSchool(str) {
-        if(str!=null){return true;}
-        else{
+        if (str != null) {
+            return true;
+        } else {
             showError("Please select a school.")
             return false;
         }
@@ -158,10 +161,10 @@ app.controller('accountCtrl', function ($scope, $http) {
         if (!fieldChecker(pw, 'password')) {
             return false;
         }
-        if (!passwordSameChecker(pw,pw2)){
+        if (!passwordSameChecker(pw, pw2)) {
             return false;
         }
-        if (!validateSchool(schoolname)){
+        if (!validateSchool(schoolname)) {
             return false;
         }
         var url = "/db/check_username.php";
@@ -187,7 +190,7 @@ app.controller('accountCtrl', function ($scope, $http) {
                 } else if (!response.data.records[0].email) {
                     showError("Please enter a valid email.");
                 } else {
-                   $scope.createAccount();
+                    $scope.createAccount();
                 }
             });
 
@@ -225,19 +228,21 @@ app.controller('accountCtrl', function ($scope, $http) {
                 console.log(response);
                 $scope.response = response;
                 if (response.data[0].response == 200) {
-                   $scope.login();
+                    $scope.login();
                 } else {
                     alert("error in creating account");
                 }
             });
-        
+
     }
     $scope.login = function () {
-        window.location = window.location.origin + "/mvc/public/account/login";
+        document.getElementById('register_app').style.display = "none";
+        document.getElementById('login_form').style.display = "inline";
+        document.getElementsByClassName('header_title')[0].innerHTML = "Login";
     }
 });
 
-angular.bootstrap(document.getElementById('register_app'),['myApp']);
+angular.bootstrap(document.getElementById('register_app'), ['myApp']);
 
 $(document).ready(function () {
     $('#errorBtn').on('click', function () {

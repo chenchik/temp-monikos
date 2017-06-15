@@ -30,8 +30,8 @@ $collection=$client->monikos->Users;
 
 $result=$collection->insertOne($creds);
 
-/*
-if () {
+
+if ($result->getInsertedId() != null) {
      echo '[{
      "response": 200,
      "username": "'.$_POST["username"].'",
@@ -40,7 +40,7 @@ if () {
 } else {
      echo '[{"response":"500"}]';
 }
-$conn->close();
-*/
+
+
 
 ?>
