@@ -2,6 +2,7 @@
 
 <body id="database_module">
     <script src="/mvc/public/js/drugDatabase/databaseCtrl.js"></script>
+    <script src="/mvc/public/js/ui-bootstrap-tpls-2.5.0.min.js"></script>
 
     <div ng-app="databaseApp" ng-controller="databaseCtrl">
 
@@ -158,58 +159,78 @@
                             <div class = "drug_inner" ng-model="collapsed_brand" ng-click='collapsed_brand=!collapsed_brand'>
                                 <audio id="{{'myAudio-' + x['Brand']}}"> <source src="{{x['Brand Audio'] | trustUrl}}" type="audio/wav"></audio>
                                 <div class="drug-info-wrap"><label>Brand:</label> </div>
-                                 <div class="expand-info" ng-show="collapsed_brand">  &nbsp &nbsp &#8226 {{   x.Brand}}
+                                 <div class="expand-info" ng-show="collapsed_brand">  &nbsp &nbsp  {{   x.Brand}}
                                     <div ng-click='$event.stopPropagation()' class=speaker-icon-wrapper><button ng-click="playAudio(x.Brand);$event.stopPropagation()" href=#><img src="/mvc/public/images/speaker.svg"></button></div>
                                 </div>
 
                             </div>
                              <div class = "expand_info" ng-model="collapsed_class" ng-click='collapsed_class=!collapsed_class'>
                                 <div class="drug-info-wrap"><label>Class:</label> </div>
-                                 <div class="expand-info" ng-show="collapsed_class">   &#8226
+                                 <div class="expand-info" ng-show="collapsed_class">   
                                 {{x.Class}}</div>
                              </div>
 
                             <div class = "drug_inner" ng-model="collapsed_indi" ng-click='collapsed_indi=!collapsed_indi'>
                                 <div class="drug-info-wrap"><label>Indication:</label> </div>
-                                    <div class="expand-info" ng-show="collapsed_indi">
+                                    <ul class="expand-info" ng-show="collapsed_indi">
                                         <!-- ADULT PART -->
-                                         <div class = "drug_inner" ng-model="collapsed_adult" ng-click='collapsed_adult=!collapsed_adult; collapsed_indi=True'>
-                                            <div class="drug-info-wrap"><label>&#8226 ADULT:</label> </div>
+                                         <li class = "drug_inner" ng-model="collapsed_adult" ng-click='collapsed_adult=!collapsed_adult; collapsed_indi=True'>
+                                            <div class="drug-info-wrap"><label> ADULT:</label> </div>
                                             <div class="expand-info" ng-show="collapsed_adult">
-                                            &#8226{{x.Indication.Adult}}
-                                                <!-- <div class = "drug_inner" ng-model="collapsed_AMI" ng-click='collapsed_AMI=!collapsed_AMI; collapsed_indi=True; collapsed_adult=True'>
-                                                    <div class="drug-info-wrap"><label>Acute myocardial infarction:</label> </div>
-                                                <div class="expand-info" ng-show="collapsed_AMI">   &#8226
-                                                AMI</div>
-                                                </div> -->
+                                                <ul>
+                                                   <li ng-repeat='(key,val) in x.Indication.Adult'>{{key}}:
+                                                    <ul>
+                                                        <li ng-repeat='arrayItem in val'>
+                                                            {{arrayItem}}
+                                                        </li>
+                                                    </ul>
+                                                   </li> 
+                                                </ul>
                                             </div>
-                                        </div>
+                                        </li>
                                         <!-- PEDIATRIC PART -->
-                                        <div class = "drug_inner" ng-model="collapsed_P" ng-click='collapsed_P=!collapsed_P; collapsed_indi=True; collapsed_adult=True'>
-                                                    <div class="drug-info-wrap"><label> &#8226 PEDIATRICS:</label> </div>
-                                                <div class="expand-info" ng-show="collapsed_P">   &#8226
-                                                {{x.Indication.Pediatric}}</div>
-                                        </div>
+                                        <li class = "drug_inner" ng-model="collapsed_P" ng-click='collapsed_P=!collapsed_P; collapsed_indi=True; collapsed_adult=True'>
+                                                    <div class="drug-info-wrap"><label>  PEDIATRICS:</label> </div>
+                                                <div class="expand-info" ng-show="collapsed_P">                                      
+                                                    <ul>
+                                                   <li ng-repeat='(key,val) in x.Indication.Pediatric'>{{key}}:
+                                                    <ul>
+                                                        <li ng-repeat='arrayItem in val'>
+                                                            {{arrayItem}}
+                                                        </li>
+                                                    </ul>
+                                                   </li> 
+                                                    </ul>
+                                                </div>
+                                        </li>
                                     <!-- Geriatric PART -->
-                                        <div class = "drug_inner" ng-model="collapsed_g" ng-click='collapsed_g=!collapsed_g; collapsed_indi=True; collapsed_adult=True'>
-                                                    <div class="drug-info-wrap"><label> &#8226 Geriatric:</label> </div>
-                                                <div class="expand-info" ng-show="collapsed_P">   &#8226
-                                                {{x.Indication.Geriatric}}</div>
-                                        </div>
-                                    </div>
-
+                                        <li class = "drug_inner" ng-model="collapsed_g" ng-click='collapsed_g=!collapsed_g; collapsed_indi=True; collapsed_adult=True'>
+                                                    <div class="drug-info-wrap"><label>  Geriatric:</label> </div>
+                                                <div class="expand-info" ng-show="collapsed_P">
+                                                    <ul>
+                                                   <li ng-repeat='(key,val) in x.Indication.Geriatric'>{{key}}:
+                                                    <ul>
+                                                        <li ng-repeat='arrayItem in val'>
+                                                            {{arrayItem}}
+                                                        </li>
+                                                    </ul>
+                                                   </li> 
+                                                    </ul>
+                                                </div>
+                                        </li>
+                                    </ul>
                             </div>
 
                              <div class = "drug_inner" ng-model="collapsed_ra" ng-click='collapsed_ra=!collapsed_ra'>
                                 <div class="drug-info-wrap"><label>Renal Adjustments:</label> </div>
-                                 <div class="expand-info" ng-show="collapsed_ra">   &#8226
+                                 <div class="expand-info" ng-show="collapsed_ra">   
                                 {{x['Renal Adjustment']}}</div>
                              </div>
 
 
                             <div class = "drug_inner" ng-model="collapsed_ha" ng-click='collapsed_ha=!collapsed_ha'>
                                 <div class="drug-info-wrap"><label>Hepatic Adjustments:</label> </div>
-                                 <div class="expand-info" ng-show="collapsed_ha">   &#8226
+                                 <div class="expand-info" ng-show="collapsed_ha">   
                                 {{x['Hepatic Adjustment']}}</div>
                              </div>
 
@@ -221,13 +242,13 @@
 
                              <div class = "drug_inner" ng-model="collapsed_moa" ng-click='collapsed_moa=!collapsed_moa'>
                                 <div class="drug-info-wrap"><label>Mechanism of Action:</label> </div>
-                                 <div class="expand-info" ng-show="collapsed_moa">   &#8226
+                                 <div class="expand-info" ng-show="collapsed_moa">   
                                 {{x['Mechanism of Action']}}</div>
                              </div>
 
                             <div class = "drug_inner" ng-model="collapsed_bbw" ng-click='collapsed_bbw=!collapsed_bbw'>
                                 <div class="drug-info-wrap"><label>Black Box Warning:</label> </div>
-                                 <div class="expand-info" ng-show="collapsed_bbw">   &#8226
+                                 <div class="expand-info" ng-show="collapsed_bbw">   
                                 {{x['Black Box Warning']}}</div>
                              </div>
                              </div>
