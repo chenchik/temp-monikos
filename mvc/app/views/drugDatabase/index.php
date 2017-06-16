@@ -159,15 +159,27 @@
                             <div class = "drug_inner" ng-model="collapsed_brand" ng-click='collapsed_brand=!collapsed_brand'>
                                 <audio id="{{'myAudio-' + x['Brand']}}"> <source src="{{x['Brand Audio'] | trustUrl}}" type="audio/wav"></audio>
                                 <div class="drug-info-wrap"><label>Brand:</label> </div>
-                                 <div class="expand-info" ng-show="collapsed_brand">  &nbsp &nbsp  {{   x.Brand}}
-                                    <div ng-click='$event.stopPropagation()' class=speaker-icon-wrapper><button ng-click="playAudio(x.Brand);$event.stopPropagation()" href=#><img src="/mvc/public/images/speaker.svg"></button></div>
+                                 <div class="expand-info" ng-show="collapsed_brand">  &nbsp &nbsp
+                                                <ul>
+                                                   <li ng-repeat="arrayItem in x['Brand']">
+                                                   {{arrayItem}}
+                                                   <span ng-click='$event.stopPropagation()' class=speaker-icon-wrapper><button ng-click="playAudio(x.Brand);$event.stopPropagation()" href=#><img src="/mvc/public/images/speaker.svg"></button></span>
+                                                   </li> 
+
+                                                </ul>
+                                    
                                 </div>
 
                             </div>
                              <div class = "expand_info" ng-model="collapsed_class" ng-click='collapsed_class=!collapsed_class'>
                                 <div class="drug-info-wrap"><label>Class:</label> </div>
                                  <div class="expand-info" ng-show="collapsed_class">   
-                                {{x.Class}}</div>
+                                                <ul>
+                                                   <li ng-repeat="arrayItem in x['Class']">
+                                                   {{arrayItem}}
+                                                   </li> 
+                                                </ul>
+                                </div>
                              </div>
 
                             <div class = "drug_inner" ng-model="collapsed_indi" ng-click='collapsed_indi=!collapsed_indi'>
@@ -222,36 +234,79 @@
                             </div>
 
                              <div class = "drug_inner" ng-model="collapsed_ra" ng-click='collapsed_ra=!collapsed_ra'>
-                                <div class="drug-info-wrap"><label>Renal Adjustments:</label> </div>
-                                 <div class="expand-info" ng-show="collapsed_ra">   
-                                {{x['Renal Adjustment']}}</div>
+                                <div class="drug-info-wrap"><label>Renal Adjustments:</label></div>
+                                <div class="expand-info" ng-show="collapsed_ra">   
+                                    <ul>
+                                        <li ng-repeat="arrayItem in x['Renal Adjustment']">
+                                            {{arrayItem}}
+                                        </li>
+                                    </ul>
+                                </div>
                              </div>
 
 
                             <div class = "drug_inner" ng-model="collapsed_ha" ng-click='collapsed_ha=!collapsed_ha'>
                                 <div class="drug-info-wrap"><label>Hepatic Adjustments:</label> </div>
-                                 <div class="expand-info" ng-show="collapsed_ha">   
-                                {{x['Hepatic Adjustment']}}</div>
+                                <div class="expand-info" ng-show="collapsed_ha">   
+                                    <ul>
+                                        <li ng-repeat="arrayItem in x['Hepatic Adjustment']">
+                                            {{arrayItem}}
+                                        </li>
+                                    </ul>
+                                </div>
                              </div>
 
 
                              <div class = "drug_inner" ng-model="collapsed_se" ng-click='collapsed_se=!collapsed_se'>
                                 <div class="drug-info-wrap"><label>Side Effects:</label> </div>
-                                 <div class="expand-info" ng-show="collapsed_se"> {{x['Side Effects']}}</div>
+                                 <div class="expand-info" ng-show="collapsed_se"> 
+                                    <ul>
+                                        <li ng-repeat="(key,val) in x['Side Effects']">{{key}}:
+                                            <ul>
+                                                <li ng-repeat='arrayItem in val'>
+                                                            {{arrayItem}}
+                                                </li>
+                                            </ul>
+                                        </li> 
+                                    </ul>
+                                 </div>
                              </div>
 
                              <div class = "drug_inner" ng-model="collapsed_moa" ng-click='collapsed_moa=!collapsed_moa'>
                                 <div class="drug-info-wrap"><label>Mechanism of Action:</label> </div>
-                                 <div class="expand-info" ng-show="collapsed_moa">   
-                                {{x['Mechanism of Action']}}</div>
+                                <div class="expand-info" ng-show="collapsed_moa">   
+                                    <ul>
+                                        <li ng-repeat="arrayItem in x['Mechanism of Action']">
+                                            {{arrayItem}}
+                                        </li>
+                                    </ul>
+                                </div>
                              </div>
 
                             <div class = "drug_inner" ng-model="collapsed_bbw" ng-click='collapsed_bbw=!collapsed_bbw'>
                                 <div class="drug-info-wrap"><label>Black Box Warning:</label> </div>
-                                 <div class="expand-info" ng-show="collapsed_bbw">   
-                                {{x['Black Box Warning']}}</div>
+                                <div class="expand-info" ng-show="collapsed_bbw">   
+                                    <ul>
+                                        <li ng-repeat="arrayItem in x['Black Box Warning']">
+                                            {{arrayItem}}
+                                        </li>
+                                    </ul>
+                                </div>
                              </div>
                              </div>
+
+                            <div class = "drug_inner" ng-model="collapsed_rs" ng-click='collapsed_rs=!collapsed_rs'>
+                                <div class="drug-info-wrap"><label>Resources:</label> </div>
+                                <div class="expand-info" ng-show="collapsed_rs">   
+                                    <ul>
+                                        <li ng-repeat="arrayItem in x['Resources']">
+                                            {{arrayItem}}
+                                        </li>
+                                    </ul>
+                                </div>
+                             </div>
+                             </div>
+
 
 
                             <!--- ADD MORE DRUG INFO HERE!! -->
