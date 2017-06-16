@@ -1,6 +1,6 @@
 //Nik Gunawan, Danusha Chenchick
 
-var app = angular.module('databaseApp', ['ngAnimate']);
+var app = angular.module('databaseApp', ['ngAnimate'],['ui.bootstrap']);
 
 //filter to validate audio file path
 app.filter("trustUrl", ['$sce', function ($sce) {
@@ -10,7 +10,7 @@ app.filter("trustUrl", ['$sce', function ($sce) {
 }]);
 
 app.controller('databaseCtrl', ['$scope', '$sce', '$http', '$timeout', function ($scope, $sce, $http, $timeout) {
-
+    $scope.isCollapsed = true;
     //go to challenge from header popup
     function gotoChallenge(url) {
         window.location = url;

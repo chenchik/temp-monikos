@@ -4,3 +4,23 @@ db/To-do.md
 mvc/app/views/.DS_Store
 
 mvc/public/js/.DS_Store
+
+.DS_Store
+
+mvc/.DS_Store
+
+mvc/app/.DS_Store
+
+mvc/app/views/.DS_Store
+
+mvc/public/.DS_Store
+
+mvc/public/js/.DS_Store
+
+mvc/vendor/.DS_Store
+
+mvc/vendor/aws/.DS_Store
+
+mvc/vendor/aws/aws-sdk-php/.DS_Store
+
+mvc/vendor/aws/aws-sdk-php/src/.DS_Store
