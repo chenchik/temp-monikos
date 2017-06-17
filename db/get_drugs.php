@@ -3,7 +3,7 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 require_once 'db_init.php';
-$collection=$client->monikos->Drugs;
+$collection=$client->monikos->Drugs2;
 
 $result=$collection->find();
 
@@ -12,9 +12,9 @@ $outp = "";
 
 foreach ($result as $drug) {
     if ($outp != "") {$outp .= ",";}
-    $outp .= '{"Generic":"'  . $drug["Generic"] . '",';
+    $outp .= '{"Generic":"'  . $drug['Generic'] . '",';
     $outp .= '"DrugId":"'   . $drug["_id"]        . '",';
-    $outp .= '"Brand":'   . json_encode($drug["Brand"])        . ',';
+    $outp .= '"Brand":'   . json_encode($drug['Brand'])        . ',';
     $outp .= '"Class":'   . json_encode($drug["Class"])        . ',';
     $outp .= '"Indication":'   . json_encode($drug["Indication and Dosage"])        . ',';
     $outp .= '"Side Effects":'   . json_encode($drug["Side Effects"])        . ',';
