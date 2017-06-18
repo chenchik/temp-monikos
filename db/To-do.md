@@ -16,7 +16,7 @@ php_mongo documentation:https://docs.mongodb.com/php-library/master/reference/me
   ```
 
   where '593daa1e1e3fc711a9000060' is the parameter of ObjectId() in mongoDB ——weijian 
-
+* similar to the upper method, if u want to find a document with a pattern such as 'LIKE' query in SQL. use    new MongoDB\BSON\Regex() 
 
 #FILEs
 
@@ -60,7 +60,7 @@ php_mongo documentation:https://docs.mongodb.com/php-library/master/reference/me
   * code used to test 
 * ~~update_capsules.php~~
 * ~~update_challenge_being_challenged.php~~
-* update_challenge_capsules.php
+* ~~update_challenge_capsules.php~~
 * ~~update_challenge_challenging.php~~
 * ~~update_drug_dislikes.php~~
 * ~~update_drug_likes.php~~
