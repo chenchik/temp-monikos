@@ -212,6 +212,8 @@ var app = angular.module('myApp', []);
           }
       };
 
+      console.log("pillCtrl - HELLO THERE!!");
+        
       var url = "/db/get_user_profile.php";
       $http.post(url, data, config)
           .then(function (response) {

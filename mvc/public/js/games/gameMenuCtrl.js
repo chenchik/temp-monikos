@@ -51,6 +51,7 @@ gameMenuApp.controller('gameMenuCtrl', function($scope, $http){
         }
     };
 
+    console.log("gameMenuCtrl - HELLO THERE!!")
     var url = "/db/get_user_profile.php";
 
     $http.post(url, data, config)
