@@ -52,18 +52,16 @@ php_mongo documentation:https://docs.mongodb.com/php-library/master/reference/me
 * ~~get_programs.php~~
 * get_schools_list.php
 * ~~get_schools.php~~
-  ^^obsolete file^^
 * ~~get_specific_list.php~~
 * ~~get_specific_school_list.php~~
-* get_user_profile.php
+* ~~get_user_profile.php~~
 * send_email_user2.php
 * test.php
   * code used to test 
-* update_capsules.php
+* ~~update_capsules.php~~
 * update_challenge_being_challenged.php
 * update_challenge_capsules.php
 * update_challenge_challenging.php
 * ~~update_drug_dislikes.php~~
 * ~~update_drug_likes.php~~
 * ~~update_drugs.php~~
-^^obsolete file^^

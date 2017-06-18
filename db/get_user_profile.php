@@ -12,7 +12,7 @@ $result = $collection -> findOne(["_id" => new MongoDB\BSON\ObjectID($_POST["id"
 //$result = $collection -> findOne(["_id" => new MongoDB\BSON\ObjectID("5944d3274f417e1f84007538")]);
 
 $outp = "";  
-$outp .= '{"id":'  . json_encode($_POST["id"]) . ',';
+$outp .= '{"id":'  . json_encode($result["_id"]) . ',';
 $outp .= '"username":'  . json_encode($result["username"]) . ',';
 $outp .= '"email":'  . json_encode($result["email"]) . ',';
 $outp .= '"capsules":'. json_encode($result["capsules"]) . '}';
