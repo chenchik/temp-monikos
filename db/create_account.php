@@ -22,7 +22,7 @@ $creds=["username"=>$_POST["username"],
 		"schoolid"=>$_POST["schoolid"],
 		"schoolname"=>$_POST["schoolname"],
 		"fbid"=>NULL,
-		"capsules"=>"200"
+		"capsules"=>200
 	];
 
 
@@ -38,7 +38,7 @@ if ($result->getInsertedId() != null) {
      "email": "'.$_POST["email"].'",
      "password": "'.$pw_md5.'"}]';
 } else {
-     echo '[{"response":"500"}]';
+     echo '[{"response":"400"}]';
 }
 
 

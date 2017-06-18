@@ -1,6 +1,6 @@
 //Nik Gunawan, Danusha Chenchick
 
-var app = angular.module('databaseApp', ['ngAnimate'],['ui.bootstrap']);
+var app = angular.module('databaseApp', ['ngAnimate','ui.bootstrap']);
 
 //filter to validate audio file path
 app.filter("trustUrl", ['$sce', function ($sce) {

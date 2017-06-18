@@ -5,32 +5,44 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-require_once 'db_creds.php';
+require_once 'db_init.php';
 
-$output = "";
-$sql = "UPDATE Users SET capsules = capsules + " .$_POST['capsules']. " WHERE id = '" .$_POST['id'] . "'";
-if ($conn->query($sql) === TRUE) {
+$collection = $client -> monikos -> Users;
 
-    $result = $conn->query("SELECT id,username,capsules FROM Users WHERE id = " .$_POST['id']);
+$before = $collection->findOne(
+    ['_id' => new MongoDB\BSON\ObjectID($_POST['id'])]
+);
+$cap = $before['capsules'] + $_POST['capsules'];
+$update = $colleciton->updateOne(
+    ['_id'=> new MongoDB\BSON\ObjectID($_POST['id'])],
+    ['$set' => ['capsules' => $cap]]
+);  
+$count = $update->getModifiedCount();
+$after= $collection->findOne(
+    ['_id' => new MongoDB\BSON\ObjectID($_POST['id'])]
+);
 
-	$outp = "";
-	while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
-	    if ($outp != "") {$outp .= ",";}
-	   
-	    $rs["id"] = json_encode($rs["id"]);
-	    $rs["capsules"] = json_encode($rs["capsules"]);
+/* test user
+$before = $collection->findOne(
+    ['_id' => new MongoDB\BSON\ObjectID("5946b1984f417e1f84007542")]
+);
+$sum = $before['capsules'] + 2;
+$update = $collection->updateOne(
+    ['_id'=> new MongoDB\BSON\ObjectID("5946b1984f417e1f84007542")],
+    ['$set' => ['capsules' => $sum]]
+);
+$count = $update->getModifiedCount();
+$after = $collection->findOne(
+    ['_id' => new MongoDB\BSON\ObjectID("5946b1984f417e1f84007542")]
+)*/
 
-
-	    $outp .= '{"id":'  . $rs["id"] . ',';
-	    $outp .= '"capsules":'. $rs["capsules"]     . '}';
-	   
-	}
+if ($count === 1) {
+	$outp = "";	   
+    $outp .= '{"id":'  . json_encode($after['_id']) . ',';
+    $outp .= '"capsules":'. json_encode($after['capsules'])   . '}';
 	$outp ='{"records":['.$outp.']}';
 	echo $outp;
-
 } else {
-	echo '[{"response":"'.$conn->error.'"}]';
+	echo '[{"response":"400"}]';
 }
-
-$conn->close();
 ?>
