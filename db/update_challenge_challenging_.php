@@ -10,14 +10,17 @@ require_once 'db_init.php';
 $collection = $client -> monikos -> Challenge;
 $result = $collection->updateOne(
     ['_id' => new MongoDB\BSON\ObjectID($_POST["challengeid"])],
-    ['$set' => ['user2score' => $_POST["user2score"]]]
+    ['$set' => ['user1score' => $_POST["user1score"]]],
+    ['$set' => ['url'=> $POST['url']]]
+// or $set two in one ()
 );
  
 if ($result->getModifiedCount() === 1) {
     echo '[{
     "response": 200,
     "challengeid": "'.$_POST["challengeid"].'",
-    "user2score": "'.$_POST["user2score"].'"}]';
+    "url:": "'.$POST["url"].'",
+    "user1score": "'.$_POST["user1score"].'"}]';
 } else {
     echo '[{"response":"500"}]';
 }

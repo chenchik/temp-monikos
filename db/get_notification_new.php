@@ -12,7 +12,7 @@ $result=$collection->find(
 	["user2"=>new MongoDB\BSON\ObjectID($_POST["user"])]
 	);
 
-echo sizeof($result);
+
 
 $outp = "";
 foreach ($result as $noti) {

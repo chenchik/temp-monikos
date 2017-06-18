@@ -50,7 +50,7 @@ php_mongo documentation:https://docs.mongodb.com/php-library/master/reference/me
 * ~~get_pa_schools.php~~
 * ~~get_pharm_schools.php~~
 * ~~get_programs.php~~
-* get_schools_list.php
+* get_schools_list.php (do we still need this?)
 * ~~get_schools.php~~
 * ~~get_specific_list.php~~
 * ~~get_specific_school_list.php~~
@@ -59,9 +59,9 @@ php_mongo documentation:https://docs.mongodb.com/php-library/master/reference/me
 * test.php
   * code used to test 
 * ~~update_capsules.php~~
-* update_challenge_being_challenged.php
+* ~~update_challenge_being_challenged.php~~
 * update_challenge_capsules.php
-* update_challenge_challenging.php
+* ~~update_challenge_challenging.php~~
 * ~~update_drug_dislikes.php~~
 * ~~update_drug_likes.php~~
 * ~~update_drugs.php~~

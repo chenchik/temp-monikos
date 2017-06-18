@@ -14,7 +14,7 @@ require_once 'db_init.php';
 $challenge =['challengeid'=>NULL,
 			 "user1"=>$_POST["user1"],
 			 "user2"=>$_POST["user2"],
-			 "game"=>$_POST["game"],
+			 "challengegame"=>$_POST["game"],
 			 "bet"=>$_POST["bet"],
 			 "user1score"=> -1,
 			 "user2score"=> -1,
