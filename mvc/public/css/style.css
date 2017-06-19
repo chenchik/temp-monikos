@@ -1,24 +1,25 @@
 @import 'https://fonts.googleapis.com/css?family=Raleway:300,500,900';
 
 button.btnBlue  {
-    background: #3071A9;
-    color:white;
-    font-family: 'Raleway'; 
+    border: 2px solid #fa4e51;
+    background: #fff;
+    /*color:white;*/
+    font-family: 'Raleway';
     font-weight: 600;
-    font-size: 12px;
+    font-size: 18px;
     width:100%;
-   	height: 19vh; 
-    text-align: center;   
-  	border-radius: 2px;
+   	height: 26vh;
+    text-align: center;
+  	border-radius: 5px;
   	text-overflow: ellipsis;
     white-space: initial;
     word-wrap: break-word;
     transition: all 0.3s ease 0s;
-    border-radius: 20px;
+    border-radius: 5px;
 }
 
 
-/* 
+/*
 
 body {
 	background-image: url('completed.png');
@@ -62,7 +63,7 @@ p#donedone {
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#00ffffff',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 }
 
-/******Header********/	
+/******Header********/
 #app_header {
     display: block;
     position:fixed;
@@ -143,10 +144,10 @@ p#donedone {
 /**Inside the app header***/
 #tryagain {
 	/**margin-left:10vh; **/
-	font-size:20px; 
-	border: 5px solid lightgray; 
-	background-color: #0099ff; 
-	height: 6vh; 
+	font-size:20px;
+	border: 5px solid lightgray;
+	background-color: #0099ff;
+	height: 6vh;
 	width: 17vh;
 }
 

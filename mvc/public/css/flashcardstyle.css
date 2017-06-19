@@ -86,7 +86,11 @@ body {
 
 .flashcard {
   height: 65vh;
-  width: 55vh;
+  width: 75vh;
+  /*left:-20%;
+  top: 20%;*/
+  /*height:60%;
+  width:50%;*/
   margin: auto;
 /*
   box-shadow: 2px 2px 2px #000;
@@ -115,7 +119,9 @@ body {
 
 .front{
   height: 65vh;
-  width: 55vh;
+  width: 75vh;
+  /*left:-20%;*/
+  top: 13%;
   position: absolute;
   text-align: center;
   -webkit-backface-visibility: hidden;
@@ -134,7 +140,9 @@ body {
 
 .back {
   height: 65vh;
-  width: 55vh;
+  width: 75vh;
+  /*left:-20%;*/
+  top: -9%;
   position: absolute;
   text-align: center;
   -webkit-backface-visibility: hidden;
@@ -273,12 +281,12 @@ div.myButton2 input {
 
 .leftsign{
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 5%;
 }
 
 .rightsign{
   position: absolute;
-  top: 40%;
+  top: 50%;
   left: 95%;
 }

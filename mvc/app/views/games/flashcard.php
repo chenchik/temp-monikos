@@ -34,7 +34,7 @@
 
         <div id = "toggle" onclick="toggleMenuNav()" class=menu-info>
         	<span id="updated-capsules-indicator" style="display:none;float:left"></span>
-        	<img src=/mvc/public/images/dc_settings.png>
+        	<img src=/mvc/public/images/icon.png>
         </div>
         <div id='menu-popup' class='menu-popup'>
             <div class=notif-info>
@@ -69,6 +69,7 @@
             <p id="completeMessageText">Congratulations, you finished this round. </p>
         </div>
 
+        <br>
 
         <div class="container" style = "margin-top: 80px">
           <div class="progress" >
@@ -100,11 +101,11 @@
   </div>
 </div>
 
- <div class = 'btn_footer'>
+ <!-- <div class = 'btn_footer'>
 	<div class='btn_wrap'>
 		<div class='submit_btn'><button class = "button button5" onclick="prevCard();" > < </button></div>
 		<div class='next_btn'><button id="nextBtn" class = "button button5" onclick="nextCard();"> > </button></div>
 	</div>
-</div>
+</div> -->
 
 </body>
