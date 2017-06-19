@@ -40,11 +40,11 @@
 	</div>
 
 	<div class = 'app_content'>
-	
+
 
 		<!--dummy object for checking if in challenge mode-->
-		
-		
+
+
 		<p id="challengeFlag" style="display:none"><?=$data['challengeFlag']?></p>
 		<!---->
 		<div id="challengeInfoBar" ng-show="checkIfInChallengeMode() && !checkIfBeingChallenged()">
@@ -101,11 +101,16 @@
 	 	</div>
     <!-- /app_body -->
 
-		<div class = 'btn_footer'>
+		<!-- <div class = 'btn_footer'>
 
 			<button id ='new_round' onClick="window.location.reload()">PLAY NEW ROUND</button>
 
+		</div> -->
+
+		<div class = 'btn_footer'>
+			<button id ='new_round' onClick="window.location.reload()">PLAY NEW ROUND</button>
 		</div>
+
 	</div>
 
 </body>
