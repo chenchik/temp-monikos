@@ -5,22 +5,17 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 <!-- Created by Nik Gunawan Monikos LLC-->
 
 <html>
-    <head>
-        <link rel="stylesheet" type="text/css" href="/mvc/public/css/main.css">
 
-    </head>
+<head>
+    <link rel="stylesheet" type="text/css" href="/mvc/public/css/main.css">
 
+</head>
 
+<body class='email-page'>
 
-    <body class='email-page'>
+    <?php
 
-
-        <?php
-
-        require_once 'db_creds.php';
-
-
-
+        require_once 'db_init.php';
 
         $name = $_POST['name'];
         $drug = $_POST['drug'];
@@ -28,7 +23,6 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
         $from = 'From: Monikos'; 
         $to = 'monikos.llc@gmail.com'; 
         $subject = 'New Mnemonic Suggestion';
-
         $body = "From: $name\n Message:\n $mnemonic Drug: $drug";
  
         if ($_POST['submit']) {
@@ -41,28 +35,24 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
             $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
             $headers .= 'From: <monikosguide@monikos.com>' . "\r\n";
             
-            if(mail($to, $subject, $message)){
+            if(mail($to, $subject, $message, $headers)){
                 echo '<p>Thanks, your hint has been sent!</p>';
-
-                //code to update capsules
-                //$sql = "UPDATE Users SET capsules = capsules + 200 WHERE id= '" .$_COOKIE['user_id'] ."'";
+                $collection = $client -> monikos -> Users;
+                $find = $collection -> findOne(
+                    ['username' => $name]
+                );
+                $new = $find['capsules'] + 200;
+                $result = $collection->updateOne(
+                    ['username'=> $name],
+                    ['$set'=>['capsules'=> $new]]
+                );
             } else {
                 echo "failed to send email :(";
             }
         }
-
-        /*if ($conn->query($sql) === TRUE) {
-        } else {
-            echo '[{"response":"'.$conn->error.'"}]';
-        }*/
-
-
-        $conn->close();
-
         ?>
 
         <a class=back-btn href=../mvc/public/home/drugDatabase>Back</a>
-
-    </body>
+</body>
 
 </html>

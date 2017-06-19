@@ -1,6 +1,6 @@
 //Nik Gunawan, Danusha Chenchick
 
-var app = angular.module('databaseApp', ['ngAnimate','ui.bootstrap']);
+var app = angular.module('databaseApp', ['ngAnimate', 'ui.bootstrap']);
 
 //filter to validate audio file path
 app.filter("trustUrl", ['$sce', function ($sce) {
@@ -10,6 +10,10 @@ app.filter("trustUrl", ['$sce', function ($sce) {
 }]);
 
 app.controller('databaseCtrl', ['$scope', '$sce', '$http', '$timeout', function ($scope, $sce, $http, $timeout) {
+    $scope.printCookie = function (cookie) {
+        var x = getCookie(cookie);
+        return x;
+    }
     $scope.isCollapsed = true;
     //go to challenge from header popup
     function gotoChallenge(url) {
@@ -90,7 +94,7 @@ app.controller('databaseCtrl', ['$scope', '$sce', '$http', '$timeout', function 
         css.type = "text/css"
         css.innerHTML = ".ng-modal-dialog {-webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); transform: scale(1); opacity: 1; }";
         document.body.appendChild(css);
-        
+
         var csshint = document.createElement("style");
         csshint.type = "text/css"
         csshint.innerHTML = ".ng-modal-dialog-hint {-webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); transform: scale(1); opacity: 1; }";
@@ -106,7 +110,7 @@ app.controller('databaseCtrl', ['$scope', '$sce', '$http', '$timeout', function 
         css.type = "text/css"
         css.innerHTML = ".ng-modal-dialog { -webkit-transform: scale(0.8); -moz-transform: scale(0.8);-ms-transform: scale(0.8);transform: scale(0.8);opacity: 0;-webkit-transition: all 0.3s;-moz-transition: all 0.3s;transition: all 0.3s;}";
         document.body.appendChild(css);
-        
+
         var csshint = document.createElement("style");
         csshint.type = "text/css"
         csshint.innerHTML = ".ng-modal-dialog-hint { -webkit-transform: scale(0.8); -moz-transform: scale(0.8);-ms-transform: scale(0.8);transform: scale(0.8);opacity: 0;-webkit-transition: all 0.3s;-moz-transition: all 0.3s;transition: all 0.3s;}";
@@ -194,12 +198,12 @@ app.controller('databaseCtrl', ['$scope', '$sce', '$http', '$timeout', function 
         var likes = parseInt(likeCount, 10);
         likes = likes + 1;
         likes = likes.toString();
-        
+
         id = id.toString();
-        
+
         var key;
-        for(i=0;i<$scope.names.length;i++){
-            if($scope.names[i].DrugId == id){
+        for (i = 0; i < $scope.names.length; i++) {
+            if ($scope.names[i].DrugId == id) {
                 key = i;
             }
         }
@@ -236,15 +240,15 @@ app.controller('databaseCtrl', ['$scope', '$sce', '$http', '$timeout', function 
         dislikes = dislikes.toString();
 
         id = id.toString();
-        
+
         var key;
-        for(i=0;i<$scope.names.length;i++){
-            if($scope.names[i].DrugId == id){
+        for (i = 0; i < $scope.names.length; i++) {
+            if ($scope.names[i].DrugId == id) {
                 key = i;
             }
         }
 
-        $scope.names[key].Dislikes = dislikes;    
+        $scope.names[key].Dislikes = dislikes;
 
         var data = $.param({
             dislikes: dislikes,
