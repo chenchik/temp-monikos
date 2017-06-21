@@ -28,3 +28,9 @@ mvc/vendor/aws/aws-sdk-php/src/.DS_Store
 mvc/app/.DS_Store
 
 mvc/app/views/.DS_Store
+
+mvc/app/.DS_Store
+
+mvc/app/views/.DS_Store
+
+db/db_init.php
