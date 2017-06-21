@@ -8,18 +8,18 @@ header("Content-Type: application/json; charset=UTF-8");
 require_once 'db_init.php';
 
 $collection = $client->monikos->Users;
-
+$id=new MongoDB\BSON\ObjectID($_POST['id']);
 $before = $collection->findOne(
-    ['_id' => new MongoDB\BSON\ObjectID($_POST['id'])]
+    ['_id' => $id]
 );
 $cap = $before['capsules'] + $_POST['capsules'];
-$update = $colleciton->updateOne(
-    ['_id'=> new MongoDB\BSON\ObjectID($_POST['id'])],
+$update = $collection->updateOne(
+    ['_id'=> $id],
     ['$set' => ['capsules' => $cap]]
 );  
 $count = $update->getModifiedCount();
 $after= $collection->findOne(
-    ['_id' => new MongoDB\BSON\ObjectID($_POST['id'])]
+    ['_id' => $id]
 );
 
 /* test user

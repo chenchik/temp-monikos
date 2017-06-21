@@ -12,28 +12,35 @@ require_once 'db_init.php';
 // VALUES (NULL, '".$_POST["username"]."', '".$_POST["email"]."', '".$pw_md5."', '".$_POST["schoolid"]."', '".$_POST["schoolname"]."')";
 
 
-$collection=$client->monikos->Users;
 
-$result=$collection->findOne(["username"=> "mongo"]);
+$collection = $client->monikos->Users;
+// $id=new MongoDB\BSON\ObjectID($_POST['id']);
+
+$before = $collection->findOne(
+    ["username"=>"mongo"]
+);
+
+$cap = 203;
+$update = $collection->updateOne(
+    ["_id"=>new MongoDB\BSON\ObjectID("5947fddb1e3fc7d27f650392")],
+    ['$set' => ['capsules' => 203]]
+);  
+$count = $update->getModifiedCount();
+var_dump($update);
+$after= $collection->findOne(
+    ["username"=>"mongo"]
+);
+
+if ($count === 1) {
+	$outp = "";	   
+    $outp .= '{"id":'  . json_encode($after['_id']) . ',';
+    $outp .= '"capsules":'. json_encode($after['capsules'])   . '}';
+	$outp ='{"records":['.$outp.']}';
+	echo $outp;
+} else {
+	echo '[{"response":"400"}]';
+}
 
 
-
-echo $result["_id"];
-var_dump($result);
-
-
-// if ($conn->query($sql) === TRUE) {
-//     echo '[{
-//     "response": 200,
-//     "username": "'.$_POST["username"].'",
-//     "email": "'.$_POST["email"].'",
-//     "password": "'.$pw_md5.'"}]';
-// } else {
-//     echo '[{"response":"'.$conn->error.'"}]';
-// }
-// $conn->close();
-// foreach ($result as $entry) {
-//     echo $entry['_id'], ': ', $entry['username'], "\n";
-// }
 
 ?>
