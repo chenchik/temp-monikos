@@ -9,7 +9,7 @@ require_once 'db_init.php';
 
 $collection=$client->monikos->Lists;
 $result=$collection->find(
-	["lid"=>new MongoDB\BSON\ObjectID($_POST["lid"])]
+	["_id"=>new MongoDB\BSON\ObjectID($_POST["lid"])]
 	);
 
 $outp = "";

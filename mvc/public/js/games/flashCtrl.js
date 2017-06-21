@@ -28,9 +28,9 @@ app.controller('flashCtrl', function($scope, $http) {
 
       var listurl = "";
       if (!schoolrequest) {
-        listurl = "/db/get_specific_list_old.php";
+        listurl = "/db/get_specific_list.php";
       } else {
-        listurl = "/db/get_specific_school_list_.php";
+        listurl = "/db/get_specific_school_list.php";
       }
       $http.post(listurl, data, config)
         .then(function(response) {
@@ -76,7 +76,7 @@ app.controller('flashCtrl', function($scope, $http) {
 
 
 
-    var url = "/db/get_drugs_old.php";
+    var url = "/db/get_drugs.php";
     $http.get(url)
       .then(function(response) {
         $scope.names = response;

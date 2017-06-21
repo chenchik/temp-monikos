@@ -10,8 +10,7 @@ require_once 'db_init.php';
 $collection = $client -> monikos -> Challenge;
 $result = $collection->updateOne(
     ['_id' => new MongoDB\BSON\ObjectID($_POST["challengeid"])],
-    ['$set' => ['user1score' => $_POST["user1score"]]],
-    ['$set' => ['url'=> $POST['url']]]
+    ['$set' => ['user1score' => $_POST["user1score"]],['url'=> $POST['url']]]
 // or $set two in one ()
 );
  

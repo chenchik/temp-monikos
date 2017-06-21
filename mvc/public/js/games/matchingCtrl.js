@@ -268,9 +268,9 @@ app.controller('matchingCtrl', function($scope, $http) {
       //var listurl = "http://monikos.xpyapvzutk.us-east-1.elasticbeanstalk.com/get_specific_list.php";
       var listurl = "";
       if (!schoolrequest) {
-        listurl = "/db/get_specific_list_old.php";
+        listurl = "/db/get_specific_list.php";
       } else {
-        listurl = "/db/get_specific_school_list_old.php";
+        listurl = "/db/get_specific_school_list.php";
       }
 
       $http.post(listurl, data, config)
@@ -285,7 +285,7 @@ app.controller('matchingCtrl', function($scope, $http) {
             }
           } else {
             $scope.select = response.data.drugnames.split(",");
-            //console.log("SELCT " + $scope.select[0]);
+            // console.log("SELCT " + $scope.select[0]);
             $scope.getAllTheDrugs();
           }
         });
