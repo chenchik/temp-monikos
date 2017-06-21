@@ -69,6 +69,16 @@ app.controller('accountCtrl', function ($scope, $http) {
             console.log($scope.schoolnames);
         });
     }
+    
+    $scope.findYear = function () {
+        var arr = [];
+        var year = 2017;
+        for(i=0;i<20;i++){
+            arr[i] = year;
+            year++;
+        }
+        $scope.years = arr;
+    }
 
     $scope.test = function () {
         var schoolid = document.getElementById('schoolid').innerHTML;
@@ -201,10 +211,8 @@ app.controller('accountCtrl', function ($scope, $http) {
         var email = document.getElementById('email_reg').value;
         var pw = document.getElementById('pw_reg').value;
         var schoolid = document.getElementById('schoolid').innerHTML;
-        //alert(schoolid);
-        // var tempname = "a" + schoolid;
-        // var schoolname = document.getElementById(tempname).innerHTML;
         var schoolname = document.getElementById('school').innerHTML;
+        var year = document.getElementById('year').innerHTML;
 
 
         var url = "/db/create_account.php";
@@ -214,7 +222,8 @@ app.controller('accountCtrl', function ($scope, $http) {
             password: pw,
             email: email,
             schoolid: schoolid,
-            schoolname: schoolname
+            schoolname: schoolname,
+            year: year
         });
         var config = {
             headers: {

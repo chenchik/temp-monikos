@@ -498,14 +498,14 @@ label.field-name {
 
     z-index:10000;
     position: fixed;
-    width: 50vw;
-    height: 20vw;
+    width: 70vw;
+    height: 40vw;
 
     /* Center the dialog */
     top: 50%;
     left: 50%;
-    margin-left: -25vw;
-    margin-top: -10vw;
+    margin-left: -35vw;
+    margin-top: -20vw;
 
     overflow:auto;
 

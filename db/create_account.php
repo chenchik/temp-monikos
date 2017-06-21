@@ -21,6 +21,7 @@ $creds=["username"=>$_POST["username"],
 		"password"=>$pw_md5,
 		"schoolid"=>$_POST["schoolid"],
 		"schoolname"=>$_POST["schoolname"],
+        "year"=>$_POST["year"],
 		"fbid"=>NULL,
 		"capsules"=>200
 	];
