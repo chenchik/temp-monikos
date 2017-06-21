@@ -7,7 +7,7 @@ header("Content-Type: application/json; charset=UTF-8");
 
 require_once 'db_init.php';
 
-$collection = $client -> monikos -> Users;
+$collection = $client->monikos->Users;
 
 $before = $collection->findOne(
     ['_id' => new MongoDB\BSON\ObjectID($_POST['id'])]

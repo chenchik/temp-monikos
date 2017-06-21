@@ -296,7 +296,7 @@ app.controller('matchingCtrl', function($scope, $http) {
 
 
   $scope.getAllTheDrugs = function() {
-    var url = "/db/get_drugs.php";
+    var url = "/db/get_drugs_old.php";
     $http.get(url)
       .then(function(response) {
         console.log(response);
@@ -304,16 +304,21 @@ app.controller('matchingCtrl', function($scope, $http) {
         //console.log("IS SELECT STILL THE SAME " + $scope.select);
         $scope.names = response.data.records.slice(1, 30);
         $scope.allDrugs = response.data.records;
-        //console.log($scope.names);
-        //console.log($scope.allDrugs);
-        //console.log($scope.allDrugs[0].Brand)
+        // console.log($scope.names);
+        // console.log($scope.allDrugs);
+        console.log($scope.select);
+        console.log($scope.select[0]);
+         console.log($scope.select[0][0]);
+
+
 
         if ($scope.select[0][0].toUpperCase() == $scope.select[0][0]) {
           var d;
           for (d = 0; d < $scope.select.length; d++) {
             //console.log("before if statement " + $scope.select[d]);
             for (var x = 0; x < $scope.allDrugs.length; x++) {
-              if ($scope.allDrugs[x].Brand == $scope.select[d]) {
+              if ($scope.allDrugs[x].Brand[0] == $scope.select[d]) {
+                // console.log(222);
                 //console.log("after if statement " + $scope.allDrugs[x].Generic);
                 var a = $scope.allDrugs[x];
                 $scope.finalList.push($scope.allDrugs[x]);
@@ -324,6 +329,7 @@ app.controller('matchingCtrl', function($scope, $http) {
 
           }
         } else {
+          // console.log(2);
           for (d = 0; d < $scope.select.length; d++) {
             //console.log("before if statement " + $scope.select[d]);
             for (var x = 0; x < $scope.allDrugs.length; x++) {
@@ -341,9 +347,11 @@ app.controller('matchingCtrl', function($scope, $http) {
 
 
 
-        //console.log("final list " + $scope.finalList[0]);
+        console.log("final list " + $scope.finalList);
 
         $scope.names = $scope.finalList;
+
+        console.log("names:"+$scope.names);
 
 
         //console.log("length of names " + $scope.names.length);
