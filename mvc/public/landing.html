@@ -188,19 +188,18 @@
                         <ui-select-choices repeat="x in (schoolnames | filter: $select.search) track by x.schoolid">
                             <span ng-bind="x.schoolname"></span>
                         </ui-select-choices>
-                        
-                    </ui-select >
-                    
+                    </ui-select>
+
                     <ui-select ng-model="selectedYear" ng-click=findYear()>
                         <ui-select-match placeholder="Graduation Year">
-                            <span id = "year">{{$select.selected}}</span>
+                            <span id="year">{{$select.selected}}</span>
                         </ui-select-match>
                         <ui-select-choices repeat='x in years | filter: $select.search'>
                             {{x}}
                         </ui-select-choices>
                     </ui-select>
-                    
-                    
+
+
                     <!--  <select id="program" class= "reg_select">
 						                <option selected disabled>select a program</option>
 						                <option ng-repeat="x in programs" id="a{{x.program}}" value="{{x.program}}">{{x.program}}</option>
