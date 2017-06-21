@@ -35,7 +35,7 @@
 
         <div id = "toggle" onclick="toggleMenuNav()" class=menu-info>
         	<span id="updated-capsules-indicator" style="display:none;float:left"></span>
-        	<img src=/mvc/public/images/icon.png>
+        	<img src=/mvc/public/images/icon_game.png>
         </div>
         <div id='menu-popup' class='menu-popup'>
             <div class=notif-info>
@@ -80,12 +80,12 @@
           </div>
         </div>
         <div class="leftsign">
-          <button onclick="prevCard();" >
+          <button class = "button button5" onclick="prevCard();" >
           <i class="fa fa-angle-left fa-5x" aria-hidden="true"  style="color:grey"></i>
           </button>
         </div>
         <div class="rightsign">
-          <button id="nextBtn" onclick="nextCard();">
+          <button id="nextBtn" class = "button button5" onclick="nextCard();">
           <i class="fa fa-angle-right fa-5x" aria-hidden="true" style="color:grey"></i>
           </button>
         </div>
@@ -102,7 +102,7 @@
   </div>
 </div>
 
- <!-- <div class = 'btn_footer'>
+<!--  <div class = 'btn_footer'>
 	<div class='btn_wrap'>
 		<div class='submit_btn'><button class = "button button5" onclick="prevCard();" > < </button></div>
 		<div class='next_btn'><button id="nextBtn" class = "button button5" onclick="nextCard();"> > </button></div>
