@@ -151,7 +151,7 @@
                     <!--SUGGESTION POPUP FORM-->
                     <div class="suggestion-popup show2" ng-click='$event.stopPropagation()'>
                         <div class='ng-modal-close ng-modal-close-suggestion' ng-click='hidePopup2()'>X</div>
-                        <form method="post" action="../../../db/email_hint.php" id="mnemonic-form" >
+                        <form method="post" action="../../../db/email_hint.php" id="mnemonic-form">
                             <label>Username:</label><input name='name' type="text" value="{{printCookie('username')}}">
                             <label>Drug:                           </label>
                             <select class=drug-form-list name='drug'>
@@ -250,10 +250,20 @@
 
                                 <div class="drug_inner" ng-model="collapsed_ra" ng-click='collapsed_ra=!collapsed_ra'>
                                     <div class="drug-info-wrap"><label>Renal Adjustments:</label></div>
-                                    <div class="expand-info" ng-show="collapsed_ra">
+                                    <div class="expand-info" ng-show="collapsed_ra" ng>
                                         <ul>
-                                            <li ng-repeat="arrayItem in x['Renal Adjustment']">
-                                                {{arrayItem}}
+                                            <li ng-repeat='(key,val) in x["Renal Adjustment"] track by $index' >
+                                                {{key}}
+                                                <ul>
+                                                    <li ng-repeat='(key,val) in val'>
+                                                        {{key}}
+                                                        <ul>
+                                                            <li ng-repeat='arrayItem in val'>
+                                                                {{arrayItem}}
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
