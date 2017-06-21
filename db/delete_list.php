@@ -6,9 +6,9 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 require_once 'db_init.php';
-$lid=$_POST['lid'],
+$lid=$_POST['lid'];	
 $collection=$client->monikos->Lists;
-$result=$collection->delete(['_id'=>new MongoDB\BSON\ObjectID($lid)]);
+$result=$collection->deleteOne(['_id'=>new MongoDB\BSON\ObjectID($lid)]);
 
 if ($result->getDeletedCount()) {
     echo '[{
