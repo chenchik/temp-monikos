@@ -283,10 +283,12 @@ div.myButton2 input {
   position: absolute;
   top: 50%;
   left: 5%;
+  z-index: 10;
 }
 
 .rightsign{
   position: absolute;
   top: 50%;
   left: 95%;
+  z-index: 10;
 }

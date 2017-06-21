@@ -14,7 +14,7 @@ require_once 'db_init.php';
 
 $collection=$client->monikos->Users;
 
-$result=$collection->findOne(["_id"=> new MongoDB\BSON\ObjectID('593daa1e1e3fc711a9000060')]);
+$result=$collection->findOne(["username"=> "mongo"]);
 
 
 
