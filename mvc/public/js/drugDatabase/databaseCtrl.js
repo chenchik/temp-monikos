@@ -15,6 +15,10 @@ app.controller('databaseCtrl', ['$scope', '$sce', '$http', '$timeout', function(
     var x = getCookie(cookie);
     return x;
   }
+  
+  $scope.test = function(){
+      console.log("working!");
+  }
   $scope.isCollapsed = true;
   //go to challenge from header popup
   function gotoChallenge(url) {
