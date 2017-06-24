@@ -252,14 +252,22 @@
                                     <div class="drug-info-wrap"><label>Renal Adjustments:</label></div>
                                     <div class="expand-info" ng-show="collapsed_ra" ng>
                                         <ul>
-                                            <li ng-repeat='(key,val) in x["Renal Adjustment"] track by $index' >
-                                                {{key}}
-                                                <ul>
-                                                    <li ng-repeat='(key,val) in val'>
-                                                        {{key}}
-                                                        <ul>
-                                                            <li ng-repeat='arrayItem in val'>
-                                                                {{arrayItem}}
+                                            <li ng-repeat="(key1, val1) in x['Renal Adjustment']">
+                                                
+                                                <p ng-if="goOneMoreLevelDown(x['Renal Adjustment'])">{{key1}}</p>
+                                                <p ng-if="!goOneMoreLevelDown(x['Renal Adjustment'])">{{val1}}</p>
+                                                
+                                                <ul ng-if="goOneMoreLevelDown(x['Renal Adjustment'])">
+                                                    <li ng-repeat="(key2,val2) in val1 track by $index">
+
+                                                        <p ng-if="goOneMoreLevelDown(val1)">{{key2}}</p>
+                                                        <p ng-if="!goOneMoreLevelDown(val1)">{{val2}}</p>
+                                                        
+                                                        <ul ng-if="goOneMoreLevelDown(val1)">
+                                                            <li ng-repeat='(key3,val3) in val2 track by $index'>
+                                                                
+                                                                <p ng-if="goOneMoreLevelDown(val2)">{{key3}}</p>
+                                                                <p ng-if="!goOneMoreLevelDown(val2)">{{val3}}</p>
                                                             </li>
                                                         </ul>
                                                     </li>

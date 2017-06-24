@@ -15,9 +15,10 @@ app.controller('databaseCtrl', ['$scope', '$sce', '$http', '$timeout', function(
     var x = getCookie(cookie);
     return x;
   }
-  
-  $scope.test = function(){
-      console.log("working!");
+  $scope.goOneMoreLevelDown = function(theString){
+      
+      //is theString is a plain object ? if yes return true : other return false
+      return ($.isPlainObject(theString)) ? true : false;
   }
   $scope.isCollapsed = true;
   //go to challenge from header popup
@@ -282,7 +283,6 @@ app.controller('databaseCtrl', ['$scope', '$sce', '$http', '$timeout', function(
         console.log(response);
         $scope.response = response;
       });
-
 
   }
 
