@@ -1,35 +1,38 @@
 /*@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro:400,700,700italic,400italic);*/
 
+
 /*body {font-family: 'Source Sans Pro', sans-serif; font-size: 14px; color: #666;}*/
 
 #lean_overlay {
     position: fixed;
-    z-index:100;
+    z-index: 100;
     top: 0px;
     left: 0px;
-    height:100%;
-    width:100%;
-    background: #000;
+    height: 100%;
+    width: 100%;
+    background: rgba(0,0,0,.2);
     display: none;
+}
+
+.popupContainer {
+    position:absolute;
+    width: 330px;
+    height: auto;
+    left: 45%;
+    top: 100px!important;
+    background: #FFF;
     color: black;
+    z-index:1000;
+
+    /*overflow: hidden;*/
 }
 
-.popupContainer{
-	position:absolute;
-	width:330px;
-	height: auto;
-	left:45%;
-	top:100px!important;
-	background: #FFF;
-  color: black;
-  /*overflow: hidden;*/
+select {}
+
+#modal_trigger {
+    width: 180px;
 }
 
-select{
-
-}
-
-#modal_trigger {width:180px;}
 
 /*.btn {padding:10px 20px; background: #F4F4F2;}
 .btn_red {background: #ED6347; color: #FFF;}
@@ -37,53 +40,232 @@ select{
 .btn:hover {background: #E4E4E2;}
 .btn_red:hover {background: #C12B05;}*/
 
+
 /*a.btn { text-align: center; text-decoration: none; margin-left: 3%; margin-right: 3%; margin-top: 3%; margin-bottom: 3%}*/
+
+
 /*a.btn_red {color: #FFF;}*/
 
-.one_half {width:40%; display: block; float:left;padding-inline-lift:10%;margin-left:5%} 
-.last_half {width:50%; display: block; float:left;}
-.last_half a {padding-inline-start: 8%;padding-inline-end: 8%;}
-.one_half a {padding-inline-start: 15%;padding-inline-end: 15%}
-.one_half,.last_half{margin-bottom: 8%}
-/*#register_form{padding-bottom: 10%}*/
-/* Popup Styles*/
-.popupHeader {font-size:16px; text-transform: uppercase;}
-.popupHeader {background:#F4F4F2; position:relative; padding:10px 20px; border-bottom:1px solid #DDD; font-weight:bold;}
-.popupHeader .modal_close {position: absolute; right: 0; top:0; padding:10px 15px; background:#E4E4E2; cursor: pointer; color:#aaa; font-size:16px;}
+.one_half {
+    width: 40%;
+    display: block;
+    float: left;
+    padding-inline-lift: 10%;
+    margin-left: 5%
+}
 
-.popupBody {padding:20px;}
+.last_half {
+    width: 50%;
+    display: block;
+    float: left;
+}
+
+.last_half a {
+    padding-inline-start: 8%;
+    padding-inline-end: 8%;
+}
+
+.one_half a {
+    padding-inline-start: 15%;
+    padding-inline-end: 15%
+}
+
+.one_half,
+.last_half {
+    margin-bottom: 8%
+}
+
+
+/*#register_form{padding-bottom: 10%}*/
+
+
+/* Popup Styles*/
+
+.popupHeader {
+    font-size: 16px;
+    text-transform: uppercase;
+}
+
+.popupHeader {
+    background: #F4F4F2;
+    position: relative;
+    padding: 10px 20px;
+    border-bottom: 1px solid #DDD;
+    font-weight: bold;
+}
+
+.popupHeader .modal_close {
+    position: absolute;
+    right: 0;
+    top: 0;
+    padding: 10px 15px;
+    background: #E4E4E2;
+    cursor: pointer;
+    color: #aaa;
+    font-size: 16px;
+}
+
+.popupBody {
+    padding: 20px;
+}
+
 
 /* Social Login Form */
-.social_login {}
-.social_login label {display: block; margin-bottom:1px;padding-left: 30%}
-.social_login input[type="text"],.user_login input[type="email"], .user_login input[type="password"] {display: block; width:90%; margin-left: 5%; padding: 10px;padding-left: 10%; border:1px solid #DDD; color:#666;}
-.social_login input[type="password"],.password_login input[type="password"] {display: block; width:90%; margin-left: 5%; padding: 10px;padding-left: 10%; border:1px solid #DDD; color:#666;}
-.social_login input[type="checkbox"] {float:left; margin-right:5px;}
-.social_login input[type="checkbox"]+label {float:left;}
-/* User Login Form */
-.user_login {display: block;}
-.user_login label {display: block; margin-bottom:5px;}
-.user_login input[type="text"], .user_login input[type="email"], .user_login input[type="password"] {display: block; width:90%;  margin-left: 5%;padding: 10px; border:1px solid #DDD; color:#666;}
-.user_login input[type="checkbox"] {float:left; margin-right:5px;}
-.user_login input[type="checkbox"]+label {float:left;}
 
-.user_login .checkbox {margin-bottom: 10px; clear: both; overflow: hidden;}
-.forgot_password {display:block; margin: 20px 0 10px; clear: both; overflow: hidden; text-decoration: none; color:#ED6347;}
+.social_login {}
+
+.social_login label {
+    display: block;
+    margin-bottom: 1px;
+    padding-left: 30%
+}
+
+.social_login input[type="text"],
+.user_login input[type="email"],
+.user_login input[type="password"] {
+    display: block;
+    width: 90%;
+    margin-left: 5%;
+    padding: 10px;
+    padding-left: 10%;
+    border: 1px solid #DDD;
+    color: #666;
+}
+
+.social_login input[type="password"],
+.password_login input[type="password"] {
+    display: block;
+    width: 90%;
+    margin-left: 5%;
+    padding: 10px;
+    padding-left: 10%;
+    border: 1px solid #DDD;
+    color: #666;
+}
+
+.social_login input[type="checkbox"] {
+    float: left;
+    margin-right: 5px;
+}
+
+.social_login input[type="checkbox"]+label {
+    float: left;
+}
+
+
+/* User Login Form */
+
+.user_login {
+    display: block;
+}
+
+.user_login label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.user_login input[type="text"],
+.user_login input[type="email"],
+.user_login input[type="password"] {
+    display: block;
+    width: 90%;
+    margin-left: 5%;
+    padding: 10px;
+    border: 1px solid #DDD;
+    color: #666;
+}
+
+.user_login input[type="checkbox"] {
+    float: left;
+    margin-right: 5px;
+}
+
+.user_login input[type="checkbox"]+label {
+    float: left;
+}
+
+.user_login .checkbox {
+    margin-bottom: 10px;
+    clear: both;
+    overflow: hidden;
+}
+
+.forgot_password {
+    display: block;
+    margin: 20px 0 10px;
+    clear: both;
+    overflow: hidden;
+    text-decoration: none;
+    color: #ED6347;
+}
+
 
 /* User Register Form */
-.user_register {display: none;}
-.user_register label {display: block; margin-bottom:5px;}
-.user_register input {height:10%}
-.user_register input[type="text"], .user_register input[type="email"], .user_register input[type="password"] {display: block; width:90%; margin-left: 5%; padding: 10px; border:1px solid #DDD; color:#666;}
-.user_register input[type="password2"] {display: block; width:90%; padding: 10px; border:1px solid #DDD; color:#666;}
-.user_register input[type="checkbox"] {float:left; margin-right:5px;}
-.user_register input[type="checkbox"]+label {float:left;}
 
-.user_register .checkbox {margin-bottom: 10px; clear: both; overflow: hidden;}
-.reg_select{display: block; width:90%; padding: 10px; border:1px solid #DDD; color:#666;}
+.user_register {
+    display: none;
+}
+
+.user_register label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.user_register input {
+    height: 10%
+}
+
+.user_register input[type="text"],
+.user_register input[type="email"],
+.user_register input[type="password"] {
+    display: block;
+    width: 90%;
+    margin-left: 5%;
+    padding: 10px;
+    border: 1px solid #DDD;
+    color: #666;
+}
+
+.user_register input[type="password2"] {
+    display: block;
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #DDD;
+    color: #666;
+}
+
+.user_register input[type="checkbox"] {
+    float: left;
+    margin-right: 5px;
+}
+
+.user_register input[type="checkbox"]+label {
+    float: left;
+}
+
+.user_register .checkbox {
+    margin-bottom: 10px;
+    clear: both;
+    overflow: hidden;
+}
+
+.reg_select {
+    display: block;
+    width: 90%;
+    padding: 10px;
+    border: 1px solid #DDD;
+    color: #666;
+}
+
 
 /*Error Message*/
-#errorMessage p {color: #FF5A5F;font-size: 80%}
+
+#errorMessage p {
+    color: #FF5A5F;
+    font-size: 80%
+}
+
+
 /*
 html,
 body {
@@ -111,10 +293,12 @@ a {
   color: #F05F40;
 }*/
 
+
 /*a:hover,
 a:focus {
   color: #eb3812;
 }*/
+
 
 /*
 h1,
@@ -493,185 +677,161 @@ header .header-content .header-content-inner p {
   header .header-content {
     /*position: relative;
     /*top: 50%;*/
-    padding: 20%;
-  }
-  header .header-content .header-content-inner {
+
+padding: 20%;
+
+}
+header .header-content .header-content-inner {
     max-width: 1000px;
     margin-left: auto;
     margin-right: auto;
-  }
-  header .header-content .header-content-inner h1 {
+}
+header .header-content .header-content-inner h1 {
     font-size: 50px;
-  }
-  header .header-content .header-content-inner p {
+}
+header .header-content .header-content-inner p {
     font-size: 18px;
     max-width: 80%;
     margin-left: auto;
     margin-right: auto;
-  }
 }
 
-  .header_title{
+}
+.header_title {
     color:black;
-  }
-
-  #contributors{
-      /*background:rgb(230,230,230);
+}
+#contributors {
+    /*background:rgb(230,230,230);
       background: transparent\9;
       background:rgba(230,230,230,0.9);
       filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4ce6e6e6,endColorstr=#4ce6e6e6);
       zoom: 1;*/
-      /*padding-top: 5%;
+    /*padding-top: 5%;
       padding-bottom: 5%;*/
-      text-align: center;
-  }
-
-  .fa-shopping-cart{
+    text-align: center;
+}
+.fa-shopping-cart {
     margin-right: 2%;
     display:inline;
     position: relative;
     /*//left: -10px;*/
     margin: 10px;
-  }
-
-
-  #products ul {
-	margin: 1.5em 0;
-	padding: 0;
-	list-style: none;
-	overflow: hidden;
 }
-
+#products ul {
+    margin: 1.5em 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+}
 #products li {
-	float: left;
-	width: 30%;
-	margin: 0 1%;
-	display: block;
+    float: left;
+    width: 30%;
+    margin: 0 1%;
+    display: block;
 }
-
 .product-image {
-	margin: 0 auto 1em auto;
-	background: red;
-	width: 150px;
-	height: 150px;
-	overflow: hidden;
-	border-radius: 50%;
-  border: none;
-
+    margin: 0 auto 1em auto;
+    background: red;
+    width: 150px;
+    height: 150px;
+    overflow: hidden;
+    border-radius: 50%;
+    border: none;
 }
-
 .product-description {
-	padding: 1em;
-	/*background: red;*/
-	color: black;
-	border-radius: 5px;
+    padding: 1em;
+    /*background: red;*/
+    color: black;
+    border-radius: 5px;
 }
-
 .product-name {
-	text-align: center;
-	color: black;
-	margin: 0;
-	font-size: 1.4em;
-	padding-bottom: 0.2em;
-	border-bottom: 1px dotted;
-	text-transform: uppercase;
-	letter-spacing: 0.1em;
-  font-weight: 600;
+    text-align: center;
+    color: black;
+    margin: 0;
+    font-size: 1.4em;
+    padding-bottom: 0.2em;
+    border-bottom: 1px dotted;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 600;
 }
-
 .product-price {
-	width: 4em;
-	height: 4em;
-	font-size: 1.2em;
-	text-align: center;
-	margin: 1em auto;
-	background: white;
-	/*color: #800;*/
-	line-height: 4;
-	border-radius: 50%;
+    width: 4em;
+    height: 4em;
+    font-size: 1.2em;
+    text-align: center;
+    margin: 1em auto;
+    background: white;
+    /*color: #800;*/
+    line-height: 4;
+    border-radius: 50%;
 }
-
-.add-to-cart .qty{
-  width:30px;
-  border: 1px white;
+.add-to-cart .qty {
+    width:30px;
+    border: 1px white;
 }
-
 #test {
-  background-color: #E0DEE0;
+    background-color: #E0DEE0;
 }
-
-.product-image img{
-  width: 100%;
-  height:100%;
+.product-image img {
+    width: 100%;
+    height:100%;
 }
-
-table{
+table {
     margin: auto;
     border: 1px solid white;
     border-collapse: collapse;
 }
-
-th, td{
-  padding: 15px;
+th,
+td {
+    padding: 15px;
 }
-
-#content{
-	/*margin-top: -60%;*/
-	margin-left: -10%;
-	background:rgb(230,230,230);
+#content {
+    /*margin-top: -60%;*/
+    margin-left: -10%;
+    background:rgb(230, 230, 230);
     background: transparent\9;
-    background:rgba(230,230,230,0.9);
-    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4ce6e6e6,endColorstr=#4ce6e6e6);
+    background:rgba(230, 230, 230, 0.9);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr=#4ce6e6e6, endColorstr=#4ce6e6e6);
     zoom: 1;
     padding: 10%;
     border-radius: 20px;
     width:120%;
 }
-
-#content h1,h2,h3{
-	/*color: black;*/
-	font-weight: bold;
+#content h1,
+h2,
+h3 {
+    /*color: black;*/
+    font-weight: bold;
 }
-
-#post_form{
-  color: black;
+#post_form {
+    color: black;
 }
-
-#post_form label{
-  font-size: 120%;
+#post_form label {
+    font-size: 120%;
 }
-
 #modal .form-control {
     width: 80%;
     margin-left: 5%;
 }
-
-#modal .btn{
-
+#modal .btn {}
+.dropdown ul {
+    margin-left: 41%;
+    text-align: center;
 }
-
-.dropdown ul{
-  margin-left: 41%;
-  text-align: center;
+.dropdown li:hover {
+    background-color: #FB7020;
 }
-
-.dropdown li:hover{
-  background-color: #FB7020;
+#fileToUpload {
+    margin-left: 40%;
 }
-
-#fileToUpload{
-  margin-left: 40%;
+#post_button {
+    width: 50%;
+    margin-left: 25%;
 }
-
-#post_button{
-  width: 50%;
-  margin-left: 25%;
+#test {
+    height:220%;
 }
-
-#test{
-  height:220%;
-}
-
-#site{
-  height:auto;
+#site {
+    height:auto;
 }

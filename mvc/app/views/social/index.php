@@ -1,7 +1,12 @@
 <link rel="stylesheet" type="text/css" href="/mvc/public/css/social.css">
+<link rel="stylesheet" type="text/css" href="/mvc/public/css/main.css">
+<link rel="stylesheet" href="/mvc/public/assets/css/style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen" title="no title">
 <script src="/mvc/public/js/social/socialCtrl.js"></script>
 <meta name='viewport' content="width=device-width, initial-scale=1" />
+<script src="/mvc/public/js/ui-bootstrap-tpls-2.5.0.min.js"></script>
+
+
 
 <body id="main_app_module" ng-app='socialApp' ng-controller='socialCtrl'>
 
@@ -49,12 +54,9 @@
             <div id="home" class="tab-pane fade in active">
                 <h3>Manage Friend</h3>
                 <div class='add-list-block'>
-                    <button class="listButton" ng-click="getFriends()">
-                        Add new Friends
-                    </button>
+                    <button ng-click=showPopup() | $event.stopPropagation()> Add new Friends </button>
                     <input type="search" class="form-control listButton" id="searchlist" placeholder="Search Friends">
                 </div>
-
                 <div class="friends">
                     <div class="friend">
                         <p>
@@ -90,8 +92,6 @@
 
                     </div>
                 </div>
-
-
             </div>
             <div id="menu1" class="tab-pane fade">
 
@@ -127,6 +127,21 @@
                 </div>
             </div>
         </div>
-    </div>
-
+        <div id='lean_overlay' ng-click='$event.stopPropagation()'>
+            <!-- add friends popup -->
+            <div id="modal" class="popupContainer" ng-click='$event.stopPropagation()'>
+                <header class="popupHeader">
+                    <span class="header_title">Add a Friend</span>
+                    <span id="login_close" class="modal_close" ng-click="hidePopup()"><i class="fa fa-times"></i></span>
+                </header>
+                <section class="popupBody">
+                    <!-- fr_un means friend's username -->
+                    <form name="login_form">
+                        <input placeholder="Search by Username" type="text" id="fr_un" />
+                    </form>
+                </section>
+                <button ng-click=addFriend() | $event.stopPropagation()> Add Friend </button>
+            </div>
+            <!--creates black background overlay-->
+        </div>
 </body>
