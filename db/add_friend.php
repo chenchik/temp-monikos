@@ -1,52 +1,47 @@
 <?php 
 
-// $dir = '../../vendor/';
-
-
-// require_once $dir . 'autoload.php';
-
-
-// echo $dir . 'autoload.php';
-
-// if (is_readable($dir . 'autoload.php')) {
-//     echo 'The file is readable';
-// } else {
-//     echo 'The file is not readable';
-// }
-
-// echo extension_loaded("mongodb") ? "yesloaded\n" : "not loaded\n";
-//  $client = new MongoDB\Client("mongodb://root:kc3irtapdnayeli29r@104.236.241.100:27017");
 require_once 'db_init.php';
- $collection = $client->monikos->Users;
+$collection = $client->monikos->Users;
 
-  // $result = $collection->insertOne( [ 'yo' => 'ganxie', 'shangdi' => 'sos' ] );
+$username = $_POST['un'];
+$friend_username = $_POST['fr_un'];
 
-// echo "Inserted with Object ID '{$result->getInsertedId()}'";
+$user = $collection->findOne(["username" => $username]);
+$friends = $user['friends'];
+$friends = $friends ->getArrayCopy();
 
-// $collection = $client->demo->beers;
+$exists = $collection->count(["username" => $friend_username]);
 
- $result = $collection->find( [ 'username' => 'greer' ] );
+$same = false;
+if($username == $friend_username){
+    $same = true;
+    echo "You can't add yourself as a friend!";
+}
 
- foreach ($result as $entry) {
-  $flag = True;
-   foreach ($entry['friend_list'] as $friend){
-     echo $friend['username'];
-     if ($friend['username']==$entry['username']){
-      $flag = False;
-     }
-// $dup = $friend->findOne(['username'=>$entry['username']]).count(); 
-    // if ($friend['username'] )
-   }
+$already_friend = false;
+if($exists==1){
+    foreach ($friends as $friend){
+        if ($friend == $friend_username){
+            $already_friend = true;
+            echo "Already in your friend's list";
+            break;
+        } 
+    }
+}else{
+    echo "This friend doesn't exist";
+}
 
- if ($flag){
-         echo $entry['username'], ': ', "\n<br><br>";
-     $collection->updateOne(array("_id"=>$entry['_id']),array('$addToSet' => array("friend_list"=>$entry)));
-      }
-  // if ($entry->find('friend_list'=>))
-     // echo $entry['username'], ': ', "\n<br><br>";
-     // $collection->updateOne(array("_id"=>$entry['_id']),array('$addToSet' => array("friend_list"=>$entry)));
+if ($same == false && $already_friend == false && $exists == 1){
     
-
- }
+array_push($friends,$friend_username);
+$update = $collection->updateOne(
+    ["username"=>$username],
+    ['$set' => ["friends" => $friends]]
+);
+$mod = $update->getModifiedCount();
+if($mod == 1){
+    echo $friend_username." added to your friends list!";
+}
+}
 
 ?>

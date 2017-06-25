@@ -15,9 +15,8 @@ function getCookie(cname) {
     return "";
 }
 var id_cookie = getCookie("user_id");
-var data = $.param({
-    id: id_cookie
-});
+var un_cookie = getCookie("username");
+
 var config = {
     headers: {
         'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
@@ -35,9 +34,9 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
 
     $scope.addFriend = function () {
         var fr_un = document.getElementById('fr_un').value;
-        console.log(fr_un);
         var fr_data = $.param({
-            fr_un: fr_un
+            fr_un: fr_un,
+            un: un_cookie
         });
         $http.post('/db/add_friend.php', fr_data, config).then(function (response) {
             $log.info(response.data);
@@ -51,6 +50,10 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
     $scope.hidePopup = function(){
         document.getElementById('lean_overlay').style.display = "none";
     }
+    
+    var data = $.param({
+        id: id_cookie
+    });
 
     $http.post("/db/get_user_profile.php", data, config).then(function (response) {
         console.log(response);
