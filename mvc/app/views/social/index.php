@@ -57,32 +57,10 @@
                     <button ng-click=showPopup() | $event.stopPropagation()> Add new Friends </button>
                     <input type="search" class="form-control listButton" id="searchlist" placeholder="Search Friends">
                 </div>
-                <div class="friends">
+                <div class="friends" ng-repeat="friend in friends">
                     <div class="friend">
                         <p>
-                            Zhenwei Zhang
-                        </p>
-                        <button class='selectList'>SELECT</button>
-
-                        <button class='selectList'>VIEW</button>
-
-                        <button class='selectList'>DELETE</button>
-
-                    </div>
-                    <div class="friend">
-                        <p>
-                            Zhenwei Zhang
-                        </p>
-                        <button class='selectList'>SELECT</button>
-
-                        <button class='selectList'>VIEW</button>
-
-                        <button class='selectList'>DELETE</button>
-
-                    </div>
-                    <div class="friend">
-                        <p>
-                            Zhenwei Zhang
+                            {{friend.username}}
                         </p>
                         <button class='selectList'>SELECT</button>
 

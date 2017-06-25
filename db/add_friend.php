@@ -28,7 +28,7 @@ if($exists==1){
         } 
     }
 }else{
-    echo "This friend doesn't exist";
+    echo "This user doesn't exist";
 }
 
 if ($same == false && $already_friend == false && $exists == 1){

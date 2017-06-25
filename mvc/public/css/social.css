@@ -1,195 +1,201 @@
-.container{
-  margin-top: 10%;
+.container {
+    margin-top: 10%;
 }
 
-.nav-tabs{
-  font-size: 120%;
+.nav-tabs {
+    font-size: 120%;
 }
 
-li{
-  color: black;
-  margin: 0 20px 0 20px;
+li {
+    color: black;
+    margin: 0 20px 0 20px;
 }
 
-.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus, .nav-tabs>li.active>a:hover{
-  color: white;
-  background-color: #fa4e51;
+.nav-tabs>li.active>a,
+.nav-tabs>li.active>a:focus,
+.nav-tabs>li.active>a:hover {
+    color: white;
+    background-color: #fa4e51;
 }
 
-a{
-  color: black;
+a {
+    color: black;
 }
 
-.nav-tabs>li>a:hover{
-  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);*/
-  cursor: pointer;
-  background-color: rgba(254, 81, 84, 0.88);
-  color: white;
+.nav-tabs>li>a:hover {
+    /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);*/
+    cursor: pointer;
+    background-color: rgba(254, 81, 84, 0.88);
+    color: white;
 }
 
-.tab-content{
-  /*border: 1px solid #fa4e51;*/
-  margin-top: 2%;
-  height: 600px;
-  /*background-color: #fa4e51;*/
+.tab-content {
+    /*border: 1px solid #fa4e51;*/
+    margin-top: 2%;
+    height: 600px;
+    /*background-color: #fa4e51;*/
 }
 
-h3{
-  text-align: center;
-  padding-top: 2%;
+h3 {
+    text-align: center;
+    padding-top: 2%;
 }
 
-.challenge-title{
+.challenge-title {
     margin-left: 15%;
     margin-bottom: 5%;
 }
 
-p{
-  padding: 3%;
-  font-size: 120%;
+p {
+    padding: 3%;
+    font-size: 120%;
 }
 
-ul{
-  display: flex;
-  justify-content: center;
+ul {
+    display: flex;
+    justify-content: center;
 }
 
-.listButton{
- margin-right: 1%;
- margin-left: 1%;
+.listButton {
+    margin-right: 1%;
+    margin-left: 1%;
 }
 
-.add-list-block{
-  display: flex;
-  justify-content: center;
+.add-list-block {
+    display: flex;
+    justify-content: center;
 }
-
 
 .add-list-block button {
-     font-family: 'Raleway',sans-serif;
-	color:#8d99ae;
+    font-family: 'Raleway', sans-serif;
+    color: #8d99ae;
     font-size: 13px;
-	margin-top: 20px;
+    margin-top: 20px;
     padding: 10px;
-	width:20%;
-	line-height: 10px;
+    width: 20%;
+    line-height: 10px;
     letter-spacing: 1px;
     border: 2px #ccc solid;
     border-radius: 10px;
-	font-weight: 200;
-  transition: box-shadow 0.3s ease-in-out;
+    font-weight: 200;
+    transition: box-shadow 0.3s ease-in-out;
 }
 
 .add-list-block input {
-     font-family: 'Raleway',sans-serif;
-	color:#8d99ae;
+    font-family: 'Raleway', sans-serif;
+    color: #8d99ae;
     font-size: 13px;
-	margin-top: 20px;
+    margin-top: 20px;
     padding: 10px;
-	width:20%;
-	line-height: 10px;
+    width: 20%;
+    line-height: 10px;
     letter-spacing: 1px;
     border: 2px #ccc solid;
     border-radius: 10px;
-	font-weight: 300;
-  transition: box-shadow 0.3s ease-in-out;
-  height: 40px;
-  text-align: center;
+    font-weight: 300;
+    transition: box-shadow 0.3s ease-in-out;
+    height: 40px;
+    text-align: center;
 }
 
-.add-list-block button:hover{
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-  cursor: pointer;
-  /*border-color: #fa4e51;*/
+.add-list-block button:hover {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+    /*border-color: #fa4e51;*/
 }
 
-.add-list-block input:hover{
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-  cursor: pointer;
-  /*border-color: #fa4e51;*/
+.add-list-block input:hover {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+    /*border-color: #fa4e51;*/
 }
 
 .add-list-block label {
-    color:#8d99ae;
+    color: #8d99ae;
 }
 
-.challenge{
-  /*border-color: #fa4e51;*/
-  border: 1px solid #fa4e51;
-  color: black;
-  border-radius: 15px;
-  padding: 10px;
-  font-size: 12px;
-  position: relative;
-  left: 10%;
-  transition: box-shadow 0.4s ease-in-out;
-  transition: background-color 0.4s ease-in-out;
+.challenge {
+    /*border-color: #fa4e51;*/
+    border: 1px solid #fa4e51;
+    color: black;
+    border-radius: 15px;
+    padding: 10px;
+    font-size: 12px;
+    position: relative;
+    left: 10%;
+    transition: box-shadow 0.4s ease-in-out;
+    transition: background-color 0.4s ease-in-out;
 }
 
-.challenge:hover{
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-  cursor: pointer;
-  background-color: #fa4e51;
-  color: white;
+.challenge:hover {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    cursor: pointer;
+    background-color: #fa4e51;
+    color: white;
 }
 
-.title{
-  display: inline;
-}
-
-.ranking-item{
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-  width: 80%;
-  margin-left: 10%;
-  margin-bottom: 2%;
-  border: 1px solid #fa4e51;
-  border-radius: 10px;
-  height: 80px;
-}
-
-.ranking-list{
-  margin-top: 5%;
+.title {
     display: inline;
-
 }
 
-.ranking-item p{
-  margin-left: 10px;
-  display: inline;
+.ranking-item {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    width: 80%;
+    margin-left: 10%;
+    margin-bottom: 2%;
+    border: 1px solid #fa4e51;
+    border-radius: 10px;
+    height: 80px;
 }
 
-.ranking-circle{
-  border-radius: 50%;
-  background-color: #fa4e51;
-  color: white;
-  position: relative;
-  height: 30px;
-  width: 30px;
-  font-size: 80%;
-  padding: 10px;
-  text-align: center;
-  margin-right: 5%;
-  float: right;
+.ranking-list {
+    margin-top: 5%;
+    display: inline;
 }
 
-.friend{
-  width: 30%;
-  height: 150px;
-  text-align: center;
-  border-radius: 10px;
-  border: 1px solid #fa4e51;
+.ranking-item p {
+    margin-left: 10px;
+    display: inline;
 }
 
-.friends{
-  margin-top: 5%;
-  display: flex;
-  justify-content:space-around;
+.ranking-circle {
+    border-radius: 50%;
+    background-color: #fa4e51;
+    color: white;
+    position: relative;
+    height: 30px;
+    width: 30px;
+    font-size: 80%;
+    padding: 10px;
+    text-align: center;
+    margin-right: 5%;
+    float: right;
+}
+
+.friend {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
+    width: 20%;
+    float: left;
+    margin-left: 2%;
+    margin-bottom: 2%;
+    height: 150px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #fa4e51;
+}
+
+.friends {
+    margin-top: 5%;
+    margin-left: 8.5%;
+    display: block;
+    justify-content: space-around;
+    
 }
 
 .selectlist {
-	color: #999;
+    color: #999;
 }
 
-.friend p{
-  margin-top: 10%;
+.friend p {
+    margin-top: 10%;
 }

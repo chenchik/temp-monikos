@@ -25,13 +25,17 @@ var config = {
 
 app.controller('socialCtrl', function ($scope, $http, $log) {
 
-    $scope.getFriends = function () {
-        $http.post('/db/get_friends.php', data, config).then(function (response) {
-            $log.info(response.data.records);
-            $scope.friends = response.data.records;
-        });
-    }
-
+    var data = $.param({
+        id: id_cookie
+    });
+    
+    
+    $http.post('/db/get_friends.php', data, config).then(function (response) {
+        $log.info(response.data.records);
+        $scope.friends = response.data.records;
+    });
+    
+    
     $scope.addFriend = function () {
         var fr_un = document.getElementById('fr_un').value;
         var fr_data = $.param({
@@ -50,10 +54,6 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
     $scope.hidePopup = function(){
         document.getElementById('lean_overlay').style.display = "none";
     }
-    
-    var data = $.param({
-        id: id_cookie
-    });
 
     $http.post("/db/get_user_profile.php", data, config).then(function (response) {
         console.log(response);
