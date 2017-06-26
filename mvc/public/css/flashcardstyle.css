@@ -67,98 +67,11 @@ body {
     border-radius: 20px;
 }
 
- .stage {
-  -webkit-perspective: 1000;
-
-
-}
-
-/*
-@media only screen and (max-width:518px) {
-    .stage {
-  -webkit-perspective: 1000;
-
-    }
-
-}
- */
-
-
-.flashcard {
-  height: 65vh;
-  width: 75vh;
-  /*left:-20%;
-  top: 20%;*/
-  /*height:60%;
-  width:50%;*/
-  margin: auto;
-/*
-  box-shadow: 2px 2px 2px #000;
- */
-  -webkit-transform-style: preserve-3d;
-  transition: all 0.3s;
-  -webkit-transition: all 0.3s;
-  border-radius: 45px;
-  font-family: 'Raleway',sans-serif;
-  word-wrap: break-word;
-
-
-}
-
-.flipped, .back {
-  transform: rotateX(180deg);
-  -webkit-transform: rotateX(180deg);
-    font-family: 'Raleway',sans-serif;
-
-}
 
 .backbtn{
 	position: fixed;
 	left:10px;
 }
-
-.front{
-  height: 65vh;
-  width: 75vh;
-  /*left:-20%;*/
-  top: 13%;
-  position: absolute;
-  text-align: center;
-  -webkit-backface-visibility: hidden;
-  /*background-color: #2ecc71;*/
-  border: 1px solid #fa4e51;
-  font-family: 'Raleway',sans-serif;
-  word-wrap: break-word;
-  font-size: xx-small;
-  /*color: #ffffff;*/
-  border-radius: 45px;
-/*
-  box-shadow: 3px 3px 3px #888888;
- */
-
-}
-
-.back {
-  height: 65vh;
-  width: 75vh;
-  /*left:-20%;*/
-  top: -9%;
-  position: absolute;
-  text-align: center;
-  -webkit-backface-visibility: hidden;
-  /*background-color: #3071a9;*/
-  border: 1px solid #fa4e51;
-  text-align: center;
-    font-family: 'Raleway',sans-serif;
-  word-wrap: break-word;
-  font-size: xx-small;
-  /*color: #ffffff;*/
-  border-radius: 45px;
-/*
-  box-shadow: 3px 3px 3px #888888;
- */
-}
-
 
 div.myButton input {
     background:url(http://www.sesamestreet.org/sites/all/themes/sesametheme/img/bridge/next_button.png) no-repeat;
@@ -291,4 +204,19 @@ div.myButton2 input {
   top: 50%;
   left: 95%;
   z-index: 10;
+}
+
+@media only screen and (max-width: 500px) {
+  .rightsign{
+    position: absolute;
+    top: 50%;
+    left: 80%;
+    z-index: 10;
+  }
+  .leftsign{
+    position: absolute;
+    top: 50%;
+    left: 5%;
+    z-index: 10;
+  }
 }

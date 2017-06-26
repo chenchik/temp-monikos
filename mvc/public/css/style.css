@@ -326,3 +326,7 @@ div#finishedBackToMenuButton {
     margin-top: 15px;
     border-radius: 5px;
 }
+
+#game1{
+  width: auto;
+}

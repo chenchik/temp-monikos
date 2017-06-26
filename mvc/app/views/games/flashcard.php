@@ -5,6 +5,8 @@
 	<meta name='viewport' content="width=device-width, initial-scale=1" />
 
     <script src = '/mvc/public/js/games/flashCtrl.js'></script>
+    <link href="/mvc/public/css/metro-responsive.css" rel="stylesheet">
+    <link href='/mvc/public/css/rotating-card.css' rel='stylesheet' />
 
    <title>Flashcard</title>
 
@@ -89,7 +91,7 @@
           <i class="fa fa-angle-right fa-5x" aria-hidden="true" style="color:grey"></i>
           </button>
         </div>
-<div class="stage">
+<!-- <div class="stage">
   <div class="flashcard">
     <div class="front">
       <p id = "front" >{{front}}</p>
@@ -100,7 +102,117 @@
     </div>
 
   </div>
+</div> -->
+
+<div class="tile-container" style="width:85%;margin-left:15%;margin-top:2%;margin-bottom:10%;">
+
+    <div class="tile-small tile-square-x  flip manual-flip" data-role="tile">
+      <div class="card" onclick="rotateCard(this)">
+          <div class="front card-small bg-lightGreen">
+              Brand
+          </div>
+          <div class="back card-small bg-lightGreen">
+                  <h5>Brand shows up here</h5>
+          </div>
+      </div>
+    </div>
+    <div class="tile-small tile-wide-x  flip manual-flip" data-role="tile">
+      <div class="card" onclick="rotateCard(this)">
+          <div class="front card-small bg-lightRed">
+              Generic
+          </div>
+          <div class="back card-small bg-lightRed">
+                  <h5>Generic shows up here</h5>
+          </div>
+      </div>
+    </div>
+    <div class="tile-small tile-big-x  flip manual-flip" data-role="tile">
+      <div class="card" onclick="rotateCard(this)">
+          <div class="front card-small bg-orange">
+              Class
+          </div>
+          <div class="back card-small bg-orange">
+                  <h5>Class shows up here</h5>
+          </div>
+      </div>
+    </div>
+    <div class="tile-large tile-wide-x tile-super-y flip manual-flip" data-role="tile">
+      <div class="card" onclick="rotateCard(this)">
+          <div class="front card-super bg-lighterBlue">
+              Indication
+          </div>
+          <div class="back card-super bg-lighterBlue">
+                  <h5>Indication shows up here</h5>
+          </div>
+      </div>
+    </div>
+    <div class="tile-big tile-wide-x tile-wide-y  flip manual-flip" data-role="tile">
+      <div class="card" onclick="rotateCard(this)">
+          <div class="front card-wide bg-cyan">
+              Side Effect
+          </div>
+          <div class="back card-wide bg-cyan">
+                  <h5>Side Effect shows up here</h5>
+          </div>
+      </div>
+    </div>
+    <div class="tile tile-wide-x  flip manual-flip" data-role="tile">
+      <div class="card" onclick="rotateCard(this)">
+          <div class="front card-normal bg-lightGreen">
+              MDA
+          </div>
+          <div class="back card-normal bg-lightGreen">
+                  <h5>MDA shows up here</h5>
+          </div>
+      </div>
+    </div>
+    <div class="tile tile-wide-x flip manual-flip" data-role="tile">
+      <div class="card" onclick="rotateCard(this)">
+          <div class="front card-normal bg-lightRed">
+              BBW
+          </div>
+          <div class="back card-normal bg-lightRed">
+                  <h5>BBW shows up here</h5>
+          </div>
+      </div>
+    </div>
+    <div class="tile-wide tile-wide-x flip manual-flip" data-role="tile">
+      <div class="card" onclick="rotateCard(this)">
+          <div class="front card-wide bg-orange">
+              Hepatic
+          </div>
+          <div class="back card-wide bg-orange">
+                  <h5>Hepatic shows up here</h5>
+          </div>
+      </div>
+    </div>
+    <div class="tile-wide tile-wide-x flip manual-flip" data-role="tile">
+      <div class="card" onclick="rotateCard(this)">
+          <div class="front card-wide bg-lightGreen">
+              Renal
+          </div>
+          <div class="back card-wide bg-lightGreen">
+                  <h5>Renal shows up here</h5>
+          </div>
+      </div>
+    </div>
+
 </div>
+
+<script type="text/javascript">
+
+    function rotateCard(btn){
+        var $card = $(btn).closest('.flip');
+        console.log($card);
+        if($card.hasClass('hover')){
+            $card.removeClass('hover');
+        } else {
+            $card.addClass('hover');
+        }
+    }
+</script>
+
+
 
 <!--  <div class = 'btn_footer'>
 	<div class='btn_wrap'>
