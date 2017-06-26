@@ -28,14 +28,14 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
     var data = $.param({
         id: id_cookie
     });
-    
-    
+
+
     $http.post('/db/get_friends.php', data, config).then(function (response) {
         $log.info(response.data.records);
         $scope.friends = response.data.records;
     });
-    
-    
+
+
     $scope.addFriend = function () {
         var fr_un = document.getElementById('fr_un').value;
         var fr_data = $.param({
@@ -48,11 +48,25 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
     }
 
     $scope.showPopup = function () {
-       document.getElementById('lean_overlay').style.display = "block"; 
+        document.getElementById('modal-wrapper').style.visibility = "visible";
+
+
+        var css = document.createElement("style");
+        css.type = "text/css"
+        css.innerHTML =
+            ".add-friend {webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); transform: scale(1); opacity: 1; }";
+        document.body.appendChild(css);
+
     }
-    
-    $scope.hidePopup = function(){
-        document.getElementById('lean_overlay').style.display = "none";
+
+    $scope.hidePopup = function () {
+        document.getElementById('modal-wrapper').style.visibility = "hidden";
+
+        var css = document.createElement("style");
+        css.type = "text/css"
+        css.innerHTML =
+            ".add-friend { -webkit-transform: scale(0.7); -moz-transform: scale(0.7);-ms-transform: scale(0.7);transform: scale(0.7);opacity: 0;-webkit-transition: all 0.3s;-moz-transition: all 0.3s;transition: all 0.3s;}";
+        document.body.appendChild(css);
     }
 
     $http.post("/db/get_user_profile.php", data, config).then(function (response) {

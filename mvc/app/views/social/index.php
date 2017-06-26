@@ -105,21 +105,23 @@
                 </div>
             </div>
         </div>
-        <div id='lean_overlay' ng-click='$event.stopPropagation()'>
-            <!-- add friends popup -->
-            <div id="modal" class="popupContainer" ng-click='$event.stopPropagation()'>
-                <header class="popupHeader">
-                    <span class="header_title">Add a Friend</span>
-                    <span id="login_close" class="modal_close" ng-click="hidePopup()"><i class="fa fa-times"></i></span>
-                </header>
-                <section class="popupBody">
-                    <!-- fr_un means friend's username -->
-                    <form name="login_form">
-                        <input placeholder="Search by Username" type="text" id="fr_un" />
-                    </form>
-                </section>
-                <button ng-click=addFriend() | $event.stopPropagation()> Add Friend </button>
-            </div>
-            <!--creates black background overlay-->
+    </div>
+    <!-- add friends popup -->
+    <div id="modal-wrapper" style="visibility:hidden;">
+        <div id="modal" class="add-friend" ng-click='$event.stopPropagation()'>
+            <header class="popupHeader">
+                <span class="header_title">Add a Friend</span>
+                <span id="login_close" class="modal_close" ng-click="hidePopup()"><i class="fa fa-times"></i></span>
+            </header>
+            <section class="popupBody">
+                <!-- fr_un means friend's username -->
+                <form name="login_form">
+                    <input placeholder="Search by Username" type="text" id="fr_un" />
+                </form>
+            </section>
+            <button ng-click=addFriend() | $event.stopPropagation()> Add Friend </button>
         </div>
+        <div id='lean_overlay' ng-click='$event.stopPropagation()'> </div>
+    </div>
+
 </body>
