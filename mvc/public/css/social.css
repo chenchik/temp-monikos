@@ -6,6 +6,11 @@
     font-size: 120%;
 }
 
+#result-msg {
+    color: #FF5A5F;
+    font-size: 80%
+}
+
 .add-friend {
 	-webkit-transform: scale(0.7);
 	-moz-transform: scale(0.7);

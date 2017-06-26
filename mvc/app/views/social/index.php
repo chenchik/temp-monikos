@@ -114,14 +114,15 @@
                 <span id="login_close" class="modal_close" ng-click="hidePopup()"><i class="fa fa-times"></i></span>
             </header>
             <section class="popupBody">
+                <p id="result-msg" class="text-center" ng-bind="result"></p>
                 <!-- fr_un means friend's username -->
                 <form name="login_form">
                     <input placeholder="Search by Username" type="text" id="fr_un" />
                 </form>
             </section>
-            <div id = "container">
-            <button ng-click=addFriend() | $event.stopPropagation() id="submit"> Add Friend </button>
-                </div>
+            <div id="container">
+                <button ng-click=addFriend() | $event.stopPropagation() id="submit"> Add Friend </button>
+            </div>
         </div>
         <div id='lean_overlay_social' ng-click='$event.stopPropagation()'> </div>
     </div>

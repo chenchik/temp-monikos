@@ -24,7 +24,6 @@ var config = {
 };
 
 app.controller('socialCtrl', function ($scope, $http, $log) {
-
     var data = $.param({
         id: id_cookie
     });
@@ -43,7 +42,7 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
             un: un_cookie
         });
         $http.post('/db/add_friend.php', fr_data, config).then(function (response) {
-            $log.info(response.data);
+            $scope.result = response.data;
         });
     }
 

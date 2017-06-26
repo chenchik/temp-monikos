@@ -989,7 +989,7 @@ div#notificationsBlock {
 div#errorMessage {
     position: fixed;
     z-index: 5;
-    text-align: center;
+    text-align: left;
     width: 300px;
     font-family: 'Raleway',sans-serif;
     font-size: 20px;
