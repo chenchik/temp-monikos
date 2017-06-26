@@ -123,7 +123,7 @@
             <button ng-click=addFriend() | $event.stopPropagation() id="submit"> Add Friend </button>
                 </div>
         </div>
-        <div id='lean_overlay' ng-click='$event.stopPropagation()'> </div>
+        <div id='lean_overlay_social' ng-click='$event.stopPropagation()'> </div>
     </div>
 
 </body>
