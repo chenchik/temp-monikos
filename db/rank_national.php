@@ -24,64 +24,9 @@ echo "National No."."$data: "."\n";
  
 echo $value->username." has ".$value->capsules." amount of capsules!"."\n\n";
 
-  // var_dump( $value );
-  // var_dump($value->username);
 }
 
 
 
-
-// $cursor = $client->$monikos->$Users->find(
-//     [],
-//     [
-//         // 'collation' => ['locale' => 'de'],
-//         'sort' => ['username' => 1],
-//     ]
-// );
- // $cursor = $client->monikos->Users->find();
- // $cursor = $cursor->sort(array("capsules" => -1));
-
-
-
-// $filter = array();
-// $options = array(
-//     "sort" => array("capsules" => 1),);
-  // $result = $collection->insertOne( [ 'yo' => 'ganxie', 'shangdi' => 'sos' ] );
-
-// echo "Inserted with Object ID '{$result->getInsertedId()}'";
-
-// $collection = $client->demo->beers;
-
-//  $result = $collection->find( [ 'username' => 'testyear' ] );
-// // avoid redundant friend
-//  foreach ($result as $entry) {
-//   $flag = True;
-//    foreach ($entry['friend_list'] as $friend){
-//      echo $friend['username'];
-//      if ($friend['username']==$entry['username']){
-//       $flag = False;
-//      }
-
-//    }
-
-//    if ($flag){
-//          echo $entry['username'], ': ', "\n<br><br>";
-//      $collection->updateOne(array("_id"=>$entry['_id']),array('$addToSet' => array("friend_list"=>$entry)));
-//    }
-  
-
-
-
-
-
-
-
-
-  // if ($entry->find('friend_list'=>))
-     // echo $entry['username'], ': ', "\n<br><br>";
-     // $collection->updateOne(array("_id"=>$entry['_id']),array('$addToSet' => array("friend_list"=>$entry)));
-    
-
- // }
 
 ?>
