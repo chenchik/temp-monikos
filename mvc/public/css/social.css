@@ -6,6 +6,25 @@
     font-size: 120%;
 }
 
+input[type=text] {
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    background-color: white;
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+}
+
+input[type=text]:focus {
+    width: 100%;
+}
+
+
+form{
+    margin-bottom: 0px;
+}
 li {
     color: black;
     margin: 0 20px 0 20px;
@@ -73,6 +92,26 @@ ul {
     margin-top: 20px;
     padding: 10px;
     width: 20%;
+    line-height: 10px;
+    letter-spacing: 1px;
+    border: 2px #ccc solid;
+    border-radius: 10px;
+    font-weight: 200;
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+#container {
+    display: flex;
+    justify-content: center;
+}
+
+
+#submit {
+    font-family: 'Raleway', sans-serif;
+    color: #8d99ae;
+    font-size: 13px;
+    padding: 10px;
+    margin-bottom: 20px;
     line-height: 10px;
     letter-spacing: 1px;
     border: 2px #ccc solid;

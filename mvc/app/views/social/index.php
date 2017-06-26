@@ -119,7 +119,9 @@
                     <input placeholder="Search by Username" type="text" id="fr_un" />
                 </form>
             </section>
-            <button ng-click=addFriend() | $event.stopPropagation()> Add Friend </button>
+            <div id = "container">
+            <button ng-click=addFriend() | $event.stopPropagation() id="submit"> Add Friend </button>
+                </div>
         </div>
         <div id='lean_overlay' ng-click='$event.stopPropagation()'> </div>
     </div>
