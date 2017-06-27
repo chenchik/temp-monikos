@@ -3,8 +3,14 @@
 require_once 'db_init.php';
 $collection = $client->monikos->Users;
 
-$username = $_POST['un'];
-$friend_username = $_POST['fr_un'];
+// $username = $_POST['un'];
+// $friend_username = $_POST['fr_un'];
+$username = 'Boehlert';
+$friend_username = 'lzheng';
+$friend_doc = $collection->findOne(["username" => $friend_username]);
+
+
+
 
 $user = $collection->findOne(["username" => $username]);
 $friends = $user['friends'];
@@ -21,7 +27,7 @@ if($username == $friend_username){
 $already_friend = false;
 if($exists==1){
     foreach ($friends as $friend){
-        if ($friend == $friend_username){
+        if (($friend->name) == $friend_username){
             $already_friend = true;
             echo "Already in your friend's list";
             break;
@@ -32,8 +38,10 @@ if($exists==1){
 }
 
 if ($same == false && $already_friend == false && $exists == 1){
-    
-array_push($friends,$friend_username);
+$friend_obj = (object)array('name'=>$friend_username,'capsules'=>$friend_doc->capsules,'school'=>$friend_doc->schoolname,'year'=>$friend_doc->year);
+var_dump($friend_obj);
+
+array_push($friends,$friend_obj);
 $update = $collection->updateOne(
     ["username"=>$username],
     ['$set' => ["friends" => $friends]]
