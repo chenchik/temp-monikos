@@ -10,9 +10,22 @@ header("Content-Type: application/json; charset=UTF-8");
 $manager = new \MongoDB\Driver\Manager('mongodb://root:kc3irtapdnayeli29r@104.236.241.100:27017');
 $database = 'monikos.Users';
 //this is the filter for the database. 
-$filter = [
-    'schoolname'=>'Adams State University, Alamosa', //NEED TO REVISE: $filter=['schoolname'=>''] here should be replaced by the  logged user's schoolname
 
+//$username = $_POST['username'];
+$username = "bruh";
+
+$filter = [
+    'username' => $username
+];
+$query = new MongoDB\Driver\Query($filter);
+$cursor = $manager -> executeQuery($database,$query);
+$school = "";
+foreach($cursor as $data => $value){
+    $school = $value->schoolname;
+};
+
+$filter = [
+    'schoolname'=>$school
 ];
 $query = new \MongoDB\Driver\Query(
         $filter, 
@@ -21,20 +34,16 @@ $query = new \MongoDB\Driver\Query(
 
 $cursor = $manager->executeQuery( $database, $query );
 
+$outp ="";
 foreach($cursor as $data => $value){
-  // echo "Here is the national ranking: ";
-  $data=$data+1;
-  echo $value->schoolname." No."."$data: "."\n";
- 
-  echo $value->username." has ".$value->capsules." amount of capsules!"."\n\n";
-
-
+    $rank = $value->username." has ".$value->capsules." capsules"; 
+    $data++;
+    if ($outp != "") {$outp .= ",";}
+    $outp .= '{"content":'.json_encode($rank);
+    $outp .= ', "number":'.json_encode($data);
+    $outp .= "}";
 }
-
-
-
-
-
-
+$outp ='{"records":['.$outp.']}';
+echo $outp;
 
 ?>

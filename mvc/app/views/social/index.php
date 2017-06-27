@@ -46,7 +46,7 @@
     <div class="container">
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#home"><i class="fa fa-address-book" aria-hidden="true"></i>  &nbsp Manage Friends</a></li>
-            <li><a data-toggle="tab" href="#menu1"><i class="fa fa-trophy" aria-hidden="true"></i> &nbsp Your Ranking</a></li>
+            <li><a data-toggle="tab" href="#menu1" ng-click="getNatlRank() ; getSchoolRank()"><i class="fa fa-trophy" aria-hidden="true"></i> &nbsp Rankings</a></li>
 
         </ul>
 
@@ -74,35 +74,25 @@
             <div id="menu1" class="tab-pane fade">
 
                 <!-- <div class="title"> -->
-                <h3 class=challenge-title>Your Ranking<button class="challenge" type="button" name="button">See Ranking with Friends</button></h3>
-                <!-- </div> -->
+                <h3 class=challenge-title>
+                    <button class="challenge" type="button" name="button">See National Ranking</button>
+                    <button class="challenge" type="button" name="button">See School Ranking</button>
+                </h3>
 
-                <div class="ranking-list">
+                <div class="ranking-list" ng-repeat="x in national">
                     <div class="ranking-item">
                         <br>
-                        <p>Zhenwei Zhang<span class="badge ranking-circle">1</span></p>
-                    </div>
-
-                    <div class="ranking-item">
-                        <br>
-                        <p>Weijian Li<span class="badge ranking-circle">2</span></p>
-                    </div>
-
-                    <div class="ranking-item">
-                        <br>
-                        <p>Serena Tan<span class="badge ranking-circle">3</span></p>
-                    </div>
-
-                    <div class="ranking-item">
-                        <br>
-                        <p>Shuo Wang<span class="badge ranking-circle">4</span></p>
-                    </div>
-
-                    <div class="ranking-item">
-                        <br>
-                        <p>Joseph<span class="badge ranking-circle">5</span></p>
+                        <p>{{x.content}}<span class="badge ranking-circle">{{x.number}}</span></p>
                     </div>
                 </div>
+                
+                <div class="ranking-list" ng-repeat="x in school">
+                    <div class="ranking-item">
+                        <br>
+                        <p>{{x.content}}<span class="badge ranking-circle">{{x.number}}</span></p>
+                    </div>
+                </div>
+                
             </div>
         </div>
     </div>

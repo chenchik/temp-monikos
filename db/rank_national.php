@@ -1,6 +1,4 @@
 <?php 
-
-
 require_once 'db_init.php';
   
 
@@ -17,16 +15,15 @@ $query = new \MongoDB\Driver\Query(
 
 $cursor = $manager->executeQuery( $database, $query );
 
+$outp = "";
 foreach($cursor as $data => $value){
-  // echo "Here is the national ranking: ";
-  $data=$data+1;
-echo "National No."."$data: "."\n";
- 
-echo $value->username." has ".$value->capsules." amount of capsules!"."\n\n";
-
+    $data++;
+    $rank = $value->username." has ".$value->capsules." capsules";
+    if ($outp != "") {$outp .= ",";}
+    $outp .= '{"content":'.json_encode($rank);
+    $outp .= ', "number":'.json_encode($data);
+    $outp .= "}";
 }
-
-
-
-
+$outp ='{"records":['.$outp.']}';
+echo $outp;
 ?>

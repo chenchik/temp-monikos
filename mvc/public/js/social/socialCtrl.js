@@ -27,13 +27,29 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
     var data = $.param({
         id: id_cookie
     });
-
+    
+     var un_data = $.param({
+        un: un_cookie 
+     });
 
     $http.post('/db/get_friends.php', data, config).then(function (response) {
         $log.info(response.data.records);
         $scope.friends = response.data.records;
     });
-
+    
+    $scope.getNatlRank = function(){
+        $http.get("/db/rank_national.php").then(function(response){
+            $scope.national = response.data.records;
+            console.log(response.data);
+        })
+    }
+    
+    $scope.getSchoolRank = function(){
+        $http.post("/db/rank_school_temp.php", un_data,config).then(function(response){
+            $scope.school = response.data.records;
+            console.log(response.data);
+        })
+    }
 
     $scope.addFriend = function () {
         var fr_un = document.getElementById('fr_un').value;
@@ -66,6 +82,8 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
         css.innerHTML =
             ".add-friend { -webkit-transform: scale(0.7); -moz-transform: scale(0.7);-ms-transform: scale(0.7);transform: scale(0.7);opacity: 0;-webkit-transition: all 0.3s;-moz-transition: all 0.3s;transition: all 0.3s;}";
         document.body.appendChild(css);
+        
+        $scope.result = "";
     }
 
     $http.post("/db/get_user_profile.php", data, config).then(function (response) {
