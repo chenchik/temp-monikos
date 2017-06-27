@@ -104,94 +104,94 @@
   </div>
 </div> -->
 
-<div class="tile-container" style="width:85%;margin-left:15%;margin-top:2%;margin-bottom:10%;">
+<div class="tile-container" style="width:85%;margin-left:15%;margin-top:3%;margin-bottom:10%;">
 
     <div class="tile-small tile-square-x  flip manual-flip" data-role="tile">
       <div class="card" onclick="rotateCard(this)">
-          <div class="front card-small bg-lightGreen">
+          <div class="front card-small">
               Brand
           </div>
-          <div class="back card-small bg-lightGreen">
+          <div class="back card-small">
                   <h5>Brand shows up here</h5>
           </div>
       </div>
     </div>
     <div class="tile-small tile-wide-x  flip manual-flip" data-role="tile">
       <div class="card" onclick="rotateCard(this)">
-          <div class="front card-small bg-lightRed">
+          <div class="front card-small">
               Generic
           </div>
-          <div class="back card-small bg-lightRed">
+          <div class="back card-small">
                   <h5>Generic shows up here</h5>
           </div>
       </div>
     </div>
     <div class="tile-small tile-big-x  flip manual-flip" data-role="tile">
       <div class="card" onclick="rotateCard(this)">
-          <div class="front card-small bg-orange">
+          <div class="front card-small">
               Class
           </div>
-          <div class="back card-small bg-orange">
+          <div class="back card-small">
                   <h5>Class shows up here</h5>
           </div>
       </div>
     </div>
     <div class="tile-large tile-wide-x tile-super-y flip manual-flip" data-role="tile">
       <div class="card" onclick="rotateCard(this)">
-          <div class="front card-super bg-lighterBlue">
+          <div class="front card-super">
               Indication
           </div>
-          <div class="back card-super bg-lighterBlue">
+          <div class="back card-super">
                   <h5>Indication shows up here</h5>
           </div>
       </div>
     </div>
     <div class="tile-big tile-wide-x tile-wide-y  flip manual-flip" data-role="tile">
       <div class="card" onclick="rotateCard(this)">
-          <div class="front card-wide bg-cyan">
+          <div class="front card-wide">
               Side Effect
           </div>
-          <div class="back card-wide bg-cyan">
+          <div class="back card-wide">
                   <h5>Side Effect shows up here</h5>
           </div>
       </div>
     </div>
     <div class="tile tile-wide-x  flip manual-flip" data-role="tile">
       <div class="card" onclick="rotateCard(this)">
-          <div class="front card-normal bg-lightGreen">
+          <div class="front card-normal ">
               MDA
           </div>
-          <div class="back card-normal bg-lightGreen">
+          <div class="back card-normal">
                   <h5>MDA shows up here</h5>
           </div>
       </div>
     </div>
     <div class="tile tile-wide-x flip manual-flip" data-role="tile">
       <div class="card" onclick="rotateCard(this)">
-          <div class="front card-normal bg-lightRed">
+          <div class="front card-normal">
               BBW
           </div>
-          <div class="back card-normal bg-lightRed">
+          <div class="back card-normal">
                   <h5>BBW shows up here</h5>
           </div>
       </div>
     </div>
     <div class="tile-wide tile-wide-x flip manual-flip" data-role="tile">
       <div class="card" onclick="rotateCard(this)">
-          <div class="front card-wide bg-orange">
+          <div class="front card-wide">
               Hepatic
           </div>
-          <div class="back card-wide bg-orange">
+          <div class="back card-wide">
                   <h5>Hepatic shows up here</h5>
           </div>
       </div>
     </div>
     <div class="tile-wide tile-wide-x flip manual-flip" data-role="tile">
       <div class="card" onclick="rotateCard(this)">
-          <div class="front card-wide bg-lightGreen">
+          <div class="front card-wide">
               Renal
           </div>
-          <div class="back card-wide bg-lightGreen">
+          <div class="back card-wide">
                   <h5>Renal shows up here</h5>
           </div>
       </div>
