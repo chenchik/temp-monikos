@@ -52,7 +52,6 @@
 
         <div class="tab-content">
             <div id="home" class="tab-pane fade in active">
-                <h3>Manage Friend</h3>
                 <div class='add-list-block'>
                     <button ng-click=showPopup() | $event.stopPropagation()> Add new Friends </button>
                     <input type="search" class="form-control listButton" id="searchlist" placeholder="Search Friends">
@@ -72,24 +71,23 @@
                 </div>
             </div>
             <div id="menu1" class="tab-pane fade">
+                
+                <div class='add-list-block'>
+                    <button ng-click=showNatl() > National </button>
+                     <button ng-click=showSchool() class="form-control listButton"> School </button>
+                </div>
 
-                <!-- <div class="title"> -->
-                <h3 class=challenge-title>
-                    <button class="challenge" type="button" name="button">See National Ranking</button>
-                    <button class="challenge" type="button" name="button">See School Ranking</button>
-                </h3>
-
-                <div class="ranking-list" ng-repeat="x in national">
-                    <div class="ranking-item">
+                <div class="ranking-list natl" ng-repeat="x in national"  style="display:none;">
+                    <div class="ranking-item natl">
                         <br>
                         <p>{{x.content}}<span class="badge ranking-circle">{{x.number}}</span></p>
                     </div>
                 </div>
                 
-                <div class="ranking-list" ng-repeat="x in school">
+                <div class="ranking-list school" ng-repeat="y in school" style="display:none;">
                     <div class="ranking-item">
                         <br>
-                        <p>{{x.content}}<span class="badge ranking-circle">{{x.number}}</span></p>
+                        <p>{{y.content}}<span class="badge ranking-circle">{{y.number}}</span></p>
                     </div>
                 </div>
                 

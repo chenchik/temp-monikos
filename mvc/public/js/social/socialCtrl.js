@@ -64,7 +64,7 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
 
     $scope.showPopup = function () {
         document.getElementById('modal-wrapper').style.visibility = "visible";
-
+        
 
         var css = document.createElement("style");
         css.type = "text/css"
@@ -84,6 +84,40 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
         document.body.appendChild(css);
         
         $scope.result = "";
+    }
+    
+    $scope.showNatl = function(){
+        var arr = document.getElementsByClassName("ranking-list school");
+        console.log(arr);
+        var length = arr.length;
+        console.log(length);
+        for(i=0;i<length;i++){
+            arr[i].style.display = "none";
+        }
+        var arr = document.getElementsByClassName("ranking-list natl");
+        console.log(arr);
+        var length = arr.length;
+        console.log(length);
+        for(i=0;i<length;i++){
+            arr[i].style.display = "block";
+        }
+    }
+    
+    $scope.showSchool = function(){
+       var arr = document.getElementsByClassName("ranking-list natl");
+        console.log(arr);
+        var length = arr.length;
+        console.log(length);
+        for(i=0;i<length;i++){
+            arr[i].style.display = "none";
+        }
+        var arr = document.getElementsByClassName("ranking-list school");
+        console.log(arr);
+        var length = arr.length;
+        console.log(length);
+        for(i=0;i<length;i++){
+            arr[i].style.display = "block";
+        }
     }
 
     $http.post("/db/get_user_profile.php", data, config).then(function (response) {
