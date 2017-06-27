@@ -6,7 +6,7 @@ $collection = $client->monikos->Users;
 $username = $_POST['un'];
 $friend_username = $_POST['fr_un'];
 // $username = 'Boehlert';
-// $friend_username = 'Darryl';
+// $friend_username = 'patrick';
 
 
 
@@ -39,7 +39,7 @@ if ($same == false && $already_friend == false && $exists == 1){
     $friend_doc = $collection->findOne(["username" => $friend_username]);
     $friend_obj = (object)array('name'=>$friend_username,'capsules'=>$friend_doc->capsules,'school'=>$friend_doc->schoolname,'year'=>$friend_doc->year);
     // var_dump($friend_obj);
-    
+
     array_push($friends,$friend_obj);
     $update = $collection->updateOne(
         ["username"=>$username],
