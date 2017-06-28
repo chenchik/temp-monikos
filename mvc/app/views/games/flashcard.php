@@ -141,7 +141,7 @@
           <div class="front card-super">
               Indication
           </div>
-          <div class="back card-super">
+          <div class="back back-card-super">
                   <h5 id="indication_b">Indication shows up here</h5>
           </div>
       </div>
@@ -151,7 +151,7 @@
           <div class="front card-wide">
               Side Effect
           </div>
-          <div class="back card-wide">
+          <div class="back back-card-wide">
                   <h5 id="sideEffect_b">Side Effect shows up here</h5>
           </div>
       </div>
@@ -161,7 +161,7 @@
           <div class="front card-normal ">
               MDA
           </div>
-          <div class="back card-normal">
+          <div class="back back-card-normal">
                   <h5 id="mda_b">MDA shows up here</h5>
           </div>
       </div>
@@ -171,7 +171,7 @@
           <div class="front card-normal">
               BBW
           </div>
-          <div class="back card-normal">
+          <div class="back back-card-normal">
                   <h5 id="bbw_b">BBW shows up here</h5>
           </div>
       </div>
