@@ -41,15 +41,22 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
         $http.get("/db/rank_national.php").then(function(response){
             $scope.national = response.data.records;
             console.log(response.data);
-        })
-    }
+        });
+    };
     
     $scope.getSchoolRank = function(){
-        $http.post("/db/rank_school_temp.php", un_data,config).then(function(response){
+        $http.post("/db/rank_school.php", un_data,config).then(function(response){
             $scope.school = response.data.records;
             console.log(response.data);
-        })
-    }
+        });
+    };
+    
+    $scope.getFriendRank = function(){
+        $http.post("/db/rank_friend.php", un_data,config).then(function(response){
+            $scope.friend_rank = response.data.records;
+            console.log(response.data);
+        });
+    };
 
     $scope.addFriend = function () {
         var fr_un = document.getElementById('fr_un').value;
@@ -68,8 +75,6 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
 
     $scope.showPopup = function () {
         document.getElementById('modal-wrapper').style.visibility = "visible";
-        
-
         var css = document.createElement("style");
         css.type = "text/css"
         css.innerHTML =
@@ -80,7 +85,6 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
 
     $scope.hidePopup = function () {
         document.getElementById('modal-wrapper').style.visibility = "hidden";
-
         var css = document.createElement("style");
         css.type = "text/css"
         css.innerHTML =
@@ -91,15 +95,36 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
     }
     
     $scope.showNatl = function(){
+        var arr = document.getElementsByClassName("ranking-list pals");
+        var length = arr.length;
+        for(i=0;i<length;i++){
+            arr[i].style.display = "none";
+        }
         var arr = document.getElementsByClassName("ranking-list school");
-        console.log(arr);
+        var length = arr.length;
+        for(i=0;i<length;i++){
+            arr[i].style.display = "none";
+        }
+        var arr = document.getElementsByClassName("ranking-list natl");
+        var length = arr.length;
+        for(i=0;i<length;i++){
+            arr[i].style.display = "block";
+        }
+    }
+    
+    $scope.showSchool = function(){
+       var arr = document.getElementsByClassName("ranking-list pals");
+        var length = arr.length;
+        for(i=0;i<length;i++){
+            arr[i].style.display = "none";
+        }
+        var arr = document.getElementsByClassName("ranking-list natl");
         var length = arr.length;
         console.log(length);
         for(i=0;i<length;i++){
             arr[i].style.display = "none";
         }
-        var arr = document.getElementsByClassName("ranking-list natl");
-        console.log(arr);
+        var arr = document.getElementsByClassName("ranking-list school");
         var length = arr.length;
         console.log(length);
         for(i=0;i<length;i++){
@@ -107,22 +132,24 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
         }
     }
     
-    $scope.showSchool = function(){
-       var arr = document.getElementsByClassName("ranking-list natl");
-        console.log(arr);
+    $scope.showFriendRank = function(){
+        var arr = document.getElementsByClassName("ranking-list school");
         var length = arr.length;
-        console.log(length);
         for(i=0;i<length;i++){
             arr[i].style.display = "none";
         }
-        var arr = document.getElementsByClassName("ranking-list school");
-        console.log(arr);
+        var arr = document.getElementsByClassName("ranking-list natl");
         var length = arr.length;
-        console.log(length);
+        for(i=0;i<length;i++){
+            arr[i].style.display = "none";
+        }
+        var arr = document.getElementsByClassName("ranking-list pals");
+        var length = arr.length;
         for(i=0;i<length;i++){
             arr[i].style.display = "block";
         }
     }
+    
     
     $scope.showResult = function(){
         document.getElementById('errorMessage').style.visibility = "visible";

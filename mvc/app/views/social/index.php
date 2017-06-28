@@ -46,7 +46,7 @@
     <div class="container">
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#home"><i class="fa fa-address-book" aria-hidden="true"></i>  &nbsp Manage Friends</a></li>
-            <li><a data-toggle="tab" href="#menu1" ng-click="getNatlRank() ; getSchoolRank()"><i class="fa fa-trophy" aria-hidden="true"></i> &nbsp Rankings</a></li>
+            <li><a data-toggle="tab" href="#menu1" ng-click="getNatlRank() ; getSchoolRank() ; getFriendRank()"><i class="fa fa-trophy" aria-hidden="true"></i> &nbsp Rankings</a></li>
 
         </ul>
 
@@ -72,6 +72,7 @@
                 <div class='add-list-block'>
                     <button ng-click=showNatl()> National </button>
                     <button ng-click=showSchool() class="form-control listButton"> School </button>
+                    <button ng-click=showFriendRank() class="form-control listButton"> Friends </button>
                 </div>
 
                 <div class="ranking-list natl" ng-repeat="x in national" style="display:none;">
@@ -85,6 +86,13 @@
                     <div class="ranking-item">
                         <br>
                         <p>{{y.content}}<span class="badge ranking-circle">{{y.number}}</span></p>
+                    </div>
+                </div>
+                
+                <div class="ranking-list pals" ng-repeat="z in friend_rank" style="display:none;">
+                    <div class="ranking-item">
+                        <br>
+                        <p>{{z.content}}<span class="badge ranking-circle">{{z.number}}</span></p>
                     </div>
                 </div>
 
