@@ -61,7 +61,7 @@
                         <p>
                             {{friend.username}}
                         </p>
-<!--                         <button class='selectList'>SELECT</button>
+                        <!--                         <button class='selectList'>SELECT</button>
  -->
                         <button class='selectList'>VIEW</button>
 
@@ -71,26 +71,26 @@
                 </div>
             </div>
             <div id="menu1" class="tab-pane fade">
-                
+
                 <div class='add-list-block'>
-                    <button ng-click=showNatl() > National </button>
-                     <button ng-click=showSchool() class="form-control listButton"> School </button>
+                    <button ng-click=showNatl()> National </button>
+                    <button ng-click=showSchool() class="form-control listButton"> School </button>
                 </div>
 
-                <div class="ranking-list natl" ng-repeat="x in national"  style="display:none;">
+                <div class="ranking-list natl" ng-repeat="x in national" style="display:none;">
                     <div class="ranking-item natl">
                         <br>
                         <p>{{x.content}}<span class="badge ranking-circle">{{x.number}}</span></p>
                     </div>
                 </div>
-                
+
                 <div class="ranking-list school" ng-repeat="y in school" style="display:none;">
                     <div class="ranking-item">
                         <br>
                         <p>{{y.content}}<span class="badge ranking-circle">{{y.number}}</span></p>
                     </div>
                 </div>
-                
+
             </div>
         </div>
     </div>
@@ -102,17 +102,21 @@
                 <span id="login_close" class="modal_close" ng-click="hidePopup()"><i class="fa fa-times"></i></span>
             </header>
             <section class="popupBody">
-                <p id="result-msg" class="text-center" ng-bind="result"></p>
                 <!-- fr_un means friend's username -->
                 <form name="login_form">
                     <input placeholder="Search by Username" type="text" id="fr_un" />
                 </form>
             </section>
             <div id="container">
-                <button ng-click=addFriend() | $event.stopPropagation() id="submit"> Add Friend </button>
+                <button ng-click=addFriend();showResult() id="submit"> Add Friend </button>
             </div>
         </div>
         <div id='lean_overlay_social' ng-click='$event.stopPropagation()'> </div>
+        <div id="errorMessage" style="visibility:hidden;">
+            <img id="errorLogo" src="/mvc/public/images/white_logo.png">
+            <p class="errorText" ng-bind="result"></p>
+            <div id='errorBtn'><button id="innerErrorBtn" class="button button5" ng-click="hideResult()">Okay</button></div>
+        </div>
     </div>
 
 </body>

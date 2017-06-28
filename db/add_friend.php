@@ -25,7 +25,7 @@ if($username == $friend_username){
 $already_friend = false;
 if($exists==1){
     foreach ($friends as $friend){
-        if (($friend->name) == $friend_username){
+        if (($friend->username) == $friend_username){
             $already_friend = true;
             echo "Already in your friend's list";
             break;

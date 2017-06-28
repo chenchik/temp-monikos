@@ -988,9 +988,9 @@ div#notificationsBlock {
 
 div#errorMessage {
     position: fixed;
-    z-index: 5;
+    z-index: 500;
     text-align: left;
-    width: 300px;
+    width: 210px;
     font-family: 'Raleway',sans-serif;
     font-size: 20px;
     background: #333;

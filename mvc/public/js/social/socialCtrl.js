@@ -119,6 +119,21 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
             arr[i].style.display = "block";
         }
     }
+    
+    $scope.showResult = function(){
+        var fr_un = document.getElementById('fr_un').value;
+        var success_msg = fr_un + " added to your friends list!";
+        if($scope.result == success_msg){
+            console.log("test");
+        } else {
+            console.log($scope.result);
+        }
+        document.getElementById('errorMessage').style.visibility = "visible";
+    }
+    
+    $scope.hideResult = function(){
+        document.getElementById('errorMessage').style.visibility = "hidden";
+    }
 
     $http.post("/db/get_user_profile.php", data, config).then(function (response) {
         console.log(response);
