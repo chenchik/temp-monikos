@@ -112,7 +112,7 @@
               Brand
           </div>
           <div class="back card-small">
-                  <h5>Brand shows up here</h5>
+                  <h5 id="brand_b">Brand shows up here</h5>
           </div>
       </div>
     </div>
@@ -122,7 +122,7 @@
               Generic
           </div>
           <div class="back card-small">
-                  <h5>Generic shows up here</h5>
+                  <h5 id="generic_b">Generic shows up here</h5>
           </div>
       </div>
     </div>
@@ -132,7 +132,7 @@
               Class
           </div>
           <div class="back card-small">
-                  <h5>Class shows up here</h5>
+                  <h5 id="class_b">Class shows up here</h5>
           </div>
       </div>
     </div>
@@ -142,7 +142,7 @@
               Indication
           </div>
           <div class="back card-super">
-                  <h5>Indication shows up here</h5>
+                  <h5 id="indication_b">Indication shows up here</h5>
           </div>
       </div>
     </div>
@@ -152,7 +152,7 @@
               Side Effect
           </div>
           <div class="back card-wide">
-                  <h5>Side Effect shows up here</h5>
+                  <h5 id="sideEffect_b">Side Effect shows up here</h5>
           </div>
       </div>
     </div>
@@ -162,7 +162,7 @@
               MDA
           </div>
           <div class="back card-normal">
-                  <h5>MDA shows up here</h5>
+                  <h5 id="mda_b">MDA shows up here</h5>
           </div>
       </div>
     </div>
@@ -172,7 +172,7 @@
               BBW
           </div>
           <div class="back card-normal">
-                  <h5>BBW shows up here</h5>
+                  <h5 id="bbw_b">BBW shows up here</h5>
           </div>
       </div>
     </div>
@@ -182,7 +182,7 @@
               Hepatic
           </div>
           <div class="back card-wide">
-                  <h5>Hepatic shows up here</h5>
+                  <h5 id="hepatic_b">Hepatic shows up here</h5>
           </div>
       </div>
     </div>
@@ -192,7 +192,7 @@
               Renal
           </div>
           <div class="back card-wide">
-                  <h5>Renal shows up here</h5>
+                  <h5 id="renal_b">Renal shows up here</h5>
           </div>
       </div>
     </div>
