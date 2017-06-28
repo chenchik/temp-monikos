@@ -125,6 +125,7 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
         }
     }
     
+    
     $scope.showSchool = function(){
        var arr = document.getElementsByClassName("ranking-list pals");
         var length = arr.length;
@@ -176,9 +177,13 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
     $scope.hideResult = function(option){
         console.log(option);
         if(option == "deleted"){
-            document.getElementsByClassName('deleted')[0].style.visibility= "hidden";            
+            document.getElementsByClassName('deleted')[0].style.visibility= "hidden"; 
+            window.location.reload();
         }else{
             document.getElementsByClassName('added')[0].style.visibility = "hidden"; 
+            if($scope.result.endsWith("!")){
+                 window.location.reload();
+            }
         }
         changeFontRed();
         $scope.deleted = "";
