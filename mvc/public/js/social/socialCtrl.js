@@ -1,3 +1,5 @@
+//Created by Joseph Son Monikos LLC
+
 var app = angular.module('socialApp', []);
 
 function getCookie(cname) {
@@ -66,9 +68,9 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
         });
         $http.post('/db/add_friend.php', fr_data, config).then(function (response) {
             $scope.result = response.data;
-            var success_msg = fr_un + " added to your friends list!";
+            var success_msg = fr_un + " added to your friends list.";
             if(response.data.startsWith(success_msg)){
-                document.getElementsByClassName("errorText")[0].style.color = "#33FC3E";
+                changeFontWhite();
             }
         });
     }
@@ -79,8 +81,9 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
             un: un_cookie
         });
         $http.post('/db/delete_friend.php', del_data, config).then(function (response) {
-            console.log(response.data);
+            $scope.deleted = response.data;
         });
+           
     }
 
     $scope.showPopup = function () {
@@ -161,15 +164,41 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
     }
     
     
-    $scope.showResult = function(){
-        document.getElementById('errorMessage').style.visibility = "visible";
+    $scope.showResult = function(option){
+        if(option == "deleted"){
+            changeFontWhite();
+            document.getElementsByClassName('deleted')[0].style.visibility= "visible";
+        }else{
+           document.getElementsByClassName('added')[0].style.visibility = "visible"; 
+        }
     }
     
-    $scope.hideResult = function(){
-        document.getElementById('errorMessage').style.visibility = "hidden";
-        
-         document.getElementsByClassName("errorText")[0].style.color = "#F63E17";
+    $scope.hideResult = function(option){
+        console.log(option);
+        if(option == "deleted"){
+            document.getElementsByClassName('deleted')[0].style.visibility= "hidden";            
+        }else{
+            document.getElementsByClassName('added')[0].style.visibility = "hidden"; 
+        }
+        changeFontRed();
+        $scope.deleted = "";
+        $scope.result = "";
     }
+    
+    function changeFontWhite(){
+        var length = document.getElementsByClassName('errorText').length;
+        for(var i=0;i<length;i++){
+            document.getElementsByClassName('errorText')[i].style.color = "#FFF";
+        }
+    }
+    
+    function changeFontRed(){
+        var length = document.getElementsByClassName('errorText').length;
+        for(var i=0;i<length;i++){
+            document.getElementsByClassName('errorText')[i].style.color = "#F63E17";
+        }
+    }
+    
 
     $http.post("/db/get_user_profile.php", data, config).then(function (response) {
         console.log(response);

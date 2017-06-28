@@ -1,3 +1,5 @@
+<!-- Created by Zhenwei Zhang, Joseph Son Monikos LLC -->
+
 <link rel="stylesheet" type="text/css" href="/mvc/public/css/social.css">
 <link rel="stylesheet" type="text/css" href="/mvc/public/css/main.css">
 <link rel="stylesheet" href="/mvc/public/assets/css/style.css">
@@ -56,16 +58,23 @@
                     <button ng-click=showPopup() | $event.stopPropagation()> Add new Friends </button>
                     <input type="search" class="form-control listButton" id="searchlist" placeholder="Search Friends">
                 </div>
+
                 <div class="friends" ng-repeat="friend in friends">
                     <div class="friend">
                         <p>
                             {{friend.username}}
                         </p>
                         <button class='selectList'>VIEW</button>
-                        <button class='selectList' ng-click=deleteFriend(friend.username)>DELETE</button>
-
+                        <button class='selectList' ng-click="deleteFriend(friend.username);showResult('deleted')">DELETE</button>
                     </div>
                 </div>
+
+                <div id="errorMessage" class="deleted" style="visibility:hidden;">
+                    <img id="errorLogo" src="/mvc/public/images/white_logo.png">
+                    <p class="errorText" ng-bind="deleted"></p>
+                    <div id='errorBtn'><button id="innerErrorBtn" class="button button5" ng-click="hideResult('deleted')">Okay</button></div>
+                </div>
+
             </div>
             <div id="menu1" class="tab-pane fade">
 
@@ -88,7 +97,7 @@
                         <p>{{y.content}}<span class="badge ranking-circle">{{y.number}}</span></p>
                     </div>
                 </div>
-                
+
                 <div class="ranking-list pals" ng-repeat="z in friend_rank" style="display:none;">
                     <div class="ranking-item">
                         <br>
@@ -113,14 +122,14 @@
                 </form>
             </section>
             <div id="container">
-                <button ng-click=addFriend();showResult() id="submit"> Add Friend </button>
+                <button ng-click="addFriend();showResult('added')" id="submit"> Add Friend </button>
             </div>
         </div>
         <div id='lean_overlay_social' ng-click='$event.stopPropagation()'> </div>
-        <div id="errorMessage" style="visibility:hidden;">
+        <div id="errorMessage" class="added"style="visibility:hidden;">
             <img id="errorLogo" src="/mvc/public/images/white_logo.png">
             <p class="errorText" ng-bind="result"></p>
-            <div id='errorBtn'><button id="innerErrorBtn" class="button button5" ng-click="hideResult()">Okay</button></div>
+            <div id='errorBtn'><button id="innerErrorBtn" class="button button5" ng-click="hideResult('added')">Okay</button></div>
         </div>
     </div>
 

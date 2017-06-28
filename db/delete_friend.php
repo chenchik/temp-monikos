@@ -19,7 +19,7 @@ foreach($friends as $friend){
         ['username'=>$username],
         ['$pull'=>['friends'=>['username'=>$friend_del]]]
 		);
-	echo $friend_del." deleted"." from your friend list";
+	echo $friend_del." deleted"." from your friend list. Refresh your browser to see your changes!";
 	break;
 }
 }
