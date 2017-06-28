@@ -47,7 +47,7 @@ if ($same == false && $already_friend == false && $exists == 1){
 );
 $mod = $update->getModifiedCount();
 if($mod == 1){
-    echo $friend_username." added to your friends list. Refresh your browser to see your changes!";
+    echo $friend_username." added to your friends list. Your browser will be refreshed to reflect your changes!";
 }
 }
 
