@@ -68,8 +68,18 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
             $scope.result = response.data;
             var success_msg = fr_un + " added to your friends list!";
             if(response.data.startsWith(success_msg)){
-                document.getElementsByClassName("errorText")[0].style.color = "#FFF";
+                document.getElementsByClassName("errorText")[0].style.color = "#33FC3E";
             }
+        });
+    }
+    
+    $scope.deleteFriend = function(del){
+        var del_data = $.param({
+            delete: del,
+            un: un_cookie
+        });
+        $http.post('/db/delete_friend.php', del_data, config).then(function (response) {
+            console.log(response.data);
         });
     }
 

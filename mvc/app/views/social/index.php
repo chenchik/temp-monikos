@@ -62,7 +62,7 @@
                             {{friend.username}}
                         </p>
                         <button class='selectList'>VIEW</button>
-                        <button class='selectList'>DELETE</button>
+                        <button class='selectList' ng-click=deleteFriend(friend.username)>DELETE</button>
 
                     </div>
                 </div>
