@@ -13,7 +13,7 @@ $outp = "";
 
 foreach($friends as $fr){
     if ($outp != "") {$outp .= ",";}
-    $outp .= '{"username":'  . json_encode($fr) . '}';
+    $outp .= '{"username":'  . json_encode($fr['username']) . '}';
 }
 $outp ='{"records":['.$outp.']}';
 echo $outp;

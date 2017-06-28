@@ -61,10 +61,7 @@
                         <p>
                             {{friend.username}}
                         </p>
-                        <!--                         <button class='selectList'>SELECT</button>
- -->
                         <button class='selectList'>VIEW</button>
-
                         <button class='selectList'>DELETE</button>
 
                     </div>

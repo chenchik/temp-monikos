@@ -59,6 +59,10 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
         });
         $http.post('/db/add_friend.php', fr_data, config).then(function (response) {
             $scope.result = response.data;
+            var success_msg = fr_un + " added to your friends list!";
+            if(response.data.startsWith(success_msg)){
+                document.getElementsByClassName("errorText")[0].style.color = "#FFF";
+            }
         });
     }
 
@@ -121,18 +125,13 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
     }
     
     $scope.showResult = function(){
-        var fr_un = document.getElementById('fr_un').value;
-        var success_msg = fr_un + " added to your friends list!";
-        if($scope.result == success_msg){
-            console.log("test");
-        } else {
-            console.log($scope.result);
-        }
         document.getElementById('errorMessage').style.visibility = "visible";
     }
     
     $scope.hideResult = function(){
         document.getElementById('errorMessage').style.visibility = "hidden";
+        
+         document.getElementsByClassName("errorText")[0].style.color = "#F63E17";
     }
 
     $http.post("/db/get_user_profile.php", data, config).then(function (response) {
