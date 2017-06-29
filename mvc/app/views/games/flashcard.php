@@ -159,17 +159,17 @@
     <div class="tile tile-wide-x  flip manual-flip" data-role="tile">
       <div class="card" onclick="rotateCard(this)">
           <div class="front card-normal ">
-              MDA
+              Mechanism of Action
           </div>
           <div class="back back-card-normal">
-                  <h5 id="mda_b">MDA shows up here</h5>
+                  <h5 id="moa_b">MOA shows up here</h5>
           </div>
       </div>
     </div>
     <div class="tile tile-wide-x flip manual-flip" data-role="tile">
       <div class="card" onclick="rotateCard(this)">
           <div class="front card-normal">
-              BBW
+              Black Box Warning
           </div>
           <div class="back back-card-normal">
                   <h5 id="bbw_b">BBW shows up here</h5>
@@ -179,7 +179,7 @@
     <div class="tile-wide tile-wide-x flip manual-flip" data-role="tile">
       <div class="card" onclick="rotateCard(this)">
           <div class="front card-wide">
-              Hepatic
+              Hepatic Considerations
           </div>
           <div class="back card-wide">
                   <h5 id="hepatic_b">Hepatic shows up here</h5>
@@ -189,7 +189,7 @@
     <div class="tile-wide tile-wide-x flip manual-flip" data-role="tile">
       <div class="card" onclick="rotateCard(this)">
           <div class="front card-wide">
-              Renal
+              Renal Considerations
           </div>
           <div class="back card-wide">
                   <h5 id="renal_b">Renal shows up here</h5>

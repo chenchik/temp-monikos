@@ -116,7 +116,7 @@ app.controller('flashCtrl', function($scope, $http) {
         document.getElementById("indication_b").innerHTML = indicationList;
         document.getElementById("renal_b").innerHTML =$scope.finalList[index - 1]["Renal Adjustment"];
         document.getElementById("hepatic_b").innerHTML =$scope.finalList[index - 1]["Hepatic Adjustment"];
-        document.getElementById("mda_b").innerHTML =$scope.finalList[index - 1]["Mechanism of Action"]
+        document.getElementById("moa_b").innerHTML =$scope.finalList[index - 1]["Mechanism of Action"]
         document.getElementById("bbw_b").innerHTML =$scope.finalList[index - 1]["Black Box Warning"];
         document.getElementById("sideEffect_b").innerHTML =sideList;
 
@@ -213,7 +213,7 @@ app.controller('flashCtrl', function($scope, $http) {
         document.getElementById("indication_b").innerHTML = indicationList;
         document.getElementById("renal_b").innerHTML =$scope.finalList[index - 1]["Renal Adjustment"];
         document.getElementById("hepatic_b").innerHTML =$scope.finalList[index - 1]["Hepatic Adjustment"];
-        document.getElementById("mda_b").innerHTML =$scope.finalList[index - 1]["Mechanism of Action"]
+        document.getElementById("moa_b").innerHTML =$scope.finalList[index - 1]["Mechanism of Action"]
         document.getElementById("bbw_b").innerHTML =$scope.finalList[index - 1]["Black Box Warning"];
         document.getElementById("sideEffect_b").innerHTML =sideList;
 
@@ -288,7 +288,7 @@ app.controller('flashCtrl', function($scope, $http) {
         document.getElementById("indication_b").innerHTML = indicationList;
         document.getElementById("renal_b").innerHTML =$scope.finalList[index - 1]["Renal Adjustment"];
         document.getElementById("hepatic_b").innerHTML =$scope.finalList[index - 1]["Hepatic Adjustment"];
-        document.getElementById("mda_b").innerHTML =$scope.finalList[index - 1]["Mechanism of Action"]
+        document.getElementById("moa_b").innerHTML =$scope.finalList[index - 1]["Mechanism of Action"]
         document.getElementById("bbw_b").innerHTML =$scope.finalList[index - 1]["Black Box Warning"];
         document.getElementById("sideEffect_b").innerHTML =sideList;
 
