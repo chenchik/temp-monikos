@@ -81,6 +81,13 @@ body {
 	padding-top: 18px !important;
 }
 
+.back-card-small{
+  height: 70px;
+	overflow: scroll;
+	padding: 5px;
+	text-align: center;
+}
+
 .card-normal{
 	padding-top: 60px;
 }
@@ -92,6 +99,12 @@ body {
 .card-big{
 	height:470px;
 	padding-top: 200px;
+}
+
+.back-card-big{
+	height:470px;
+	overflow: scroll;
+  padding: 8px;
 }
 
 .card-wide{
@@ -117,13 +130,23 @@ body {
 }
 
 ul {
-    padding: 0;
+    padding: 10px;
     list-style-position: inside;
 }
 
 .back h5{
-  font-size: 18px;
+  font-size: 16px;
   padding: 8px;
+	line-height: 140%;
+}
+
+.column{
+	float: left !important;
+	width: 390px !important;
+}
+
+.clear{
+	clear: both;
 }
 
 
@@ -1095,7 +1118,7 @@ ul {
   width: 150px;
 }
 .tile-wide-x {
-  width: 310px;
+  width: 380px;
 }
 .tile-large-x {
   width: 310px;

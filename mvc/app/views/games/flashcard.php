@@ -35,37 +35,10 @@
 
 
 
-        <div id = "toggle" onclick="toggleMenuNav()" class=menu-info>
+        <!-- <div id = "toggle" onclick="toggleMenuNav()" class=menu-info>
         	<span id="updated-capsules-indicator" style="display:none;float:left"></span>
         	<img src=/mvc/public/images/icon_game.png>
-        </div>
-        <div id='menu-popup' class='menu-popup'>
-            <div class=notif-info>
-                <h2>Front</h2>
-                <form action="">
-					<input id="fBrand" type="checkbox" name="vehicle" value="Brand"checked >Brand<br>
-					<input id="fGeneric" type="checkbox" name="vehicle" value="Generic" >Generic<br>
-					<input id="fClass" type="checkbox" name="vehicle" value="Class" >Class<br>
-					<input id="fIndication" type="checkbox" name="vehicle" value="Indication" >Indication<br>
-					<input id="fBlackBoxWarning" type="checkbox" name="vehicle" value="BlackBoxWarning" >Black Box Warning<br>
-
-				</form>
-            </div>
-            <div class=notif-info>
-                <h2>Back</h2>
-                <form action="">
-					<input id="bBrand" type="checkbox" name="vehicle" value="Brand" >Brand<br>
-					<input id="bGeneric" type="checkbox" name="vehicle" value="Generic" checked>Generic<br>
-					<input id="bClass" type="checkbox" name="vehicle" value="Class">Class<br>
-					<input id="bIndication" type="checkbox" name="vehicle" value="Indication">Indication<br>
-					<input id="bBlackBoxWarning" type="checkbox" name="vehicle" value="BlackBoxWarning">Black Box Warning<br>
-				</form>
-		    <input type="button" value="Submit" onclick = "redo()"/>
-
-
-            </div>
-        </div>
-
+        </div> -->
 	</div>
 
         <div id="completeMessage" style="display:none">
@@ -74,7 +47,7 @@
 
         <br>
 
-        <div class="container" style = "margin-top: 80px">
+        <div class="container" style = "margin-top: 55px">
           <div class="progress" >
             <div id = "pb" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
               <div id = "percentpb">{{percent}} </div>
@@ -104,14 +77,14 @@
   </div>
 </div> -->
 
-<div class="tile-container" style="width:85%;margin-left:15%;margin-top:3%;margin-bottom:10%;">
+<div class="tile-container" style="width:90%;margin-left:10%;margin-top:12px;margin-bottom:10%;">
 
-    <div class="tile-small tile-square-x  flip manual-flip" data-role="tile">
+    <div class="tile-small tile-wide-x  flip manual-flip" data-role="tile">
       <div class="card" onclick="rotateCard(this)">
           <div class="front card-small">
               Brand
           </div>
-          <div class="back card-small">
+          <div class="back back-card-small">
                   <h5 id="brand_b">Brand shows up here</h5>
           </div>
       </div>
@@ -121,32 +94,96 @@
           <div class="front card-small">
               Generic
           </div>
-          <div class="back card-small">
+          <div class="back back-card-small">
                   <h5 id="generic_b">Generic shows up here</h5>
           </div>
       </div>
     </div>
-    <div class="tile-small tile-big-x  flip manual-flip" data-role="tile">
+    <div class="tile-small tile-wide-x  flip manual-flip" data-role="tile">
       <div class="card" onclick="rotateCard(this)">
           <div class="front card-small">
               Class
           </div>
-          <div class="back card-small">
+          <div class="back back-card-small">
                   <h5 id="class_b">Class shows up here</h5>
           </div>
       </div>
     </div>
-    <div class="tile-large tile-wide-x tile-super-y flip manual-flip" data-role="tile">
-      <div class="card" onclick="rotateCard(this)">
-          <div class="front card-super">
-              Indication
+    <div class="column-section clear">
+      <div class="column">
+        <div class="tile-large tile-wide-x tile-super-y flip manual-flip" data-role="tile">
+          <div class="card" onclick="rotateCard(this)">
+              <div class="front card-super">
+                  Indication
+              </div>
+              <div class="back back-card-super">
+                      <h5 id="indication_b">Indication shows up here</h5>
+              </div>
           </div>
-          <div class="back back-card-super">
-                  <h5 id="indication_b">Indication shows up here</h5>
-          </div>
+        </div>
       </div>
+
+      <div class="column">
+        <div class="tile-big tile-wide-x tile-big-y  flip manual-flip" data-role="tile">
+          <div class="card" onclick="rotateCard(this)">
+              <div class="front card-big">
+                  Side Effect
+              </div>
+              <div class="back back-card-big">
+                      <h5 id="sideEffect_b">Side Effect shows up here</h5>
+              </div>
+          </div>
+        </div>
+        <div class="tile tile-wide-x flip manual-flip" data-role="tile">
+          <div class="card" onclick="rotateCard(this)">
+              <div class="front card-normal">
+                  Hepatic
+              </div>
+              <div class="back card-normal">
+                      <h5 id="hepatic_b">Hepatic shows up here</h5>
+              </div>
+          </div>
+        </div>
+
+      </div>
+      <div class="column">
+        <div class="tile tile-wide-x  flip manual-flip" data-role="tile">
+          <div class="card" onclick="rotateCard(this)">
+              <div class="front card-normal ">
+                  MDA
+              </div>
+              <div class="back back-card-normal">
+                      <h5 id="mda_b">MDA shows up here</h5>
+              </div>
+          </div>
+        </div>
+        <div class="tile tile-wide-x flip manual-flip" data-role="tile">
+          <div class="card" onclick="rotateCard(this)">
+              <div class="front card-normal">
+                  BBW
+              </div>
+              <div class="back back-card-normal">
+                      <h5 id="bbw_b">BBW shows up here</h5>
+              </div>
+          </div>
+        </div>
+        <div class="tile-wide tile-wide-x flip manual-flip" data-role="tile">
+          <div class="card" onclick="rotateCard(this)">
+              <div class="front card-wide">
+                  Renal
+              </div>
+              <div class="back card-wide">
+                      <h5 id="renal_b">Renal shows up here</h5>
+              </div>
+          </div>
+        </div>
+
+      </div>
+
     </div>
-    <div class="tile-big tile-wide-x tile-wide-y  flip manual-flip" data-role="tile">
+
+
+    <!-- <div class="tile-big tile-wide-x tile-wide-y  flip manual-flip" data-role="tile">
       <div class="card" onclick="rotateCard(this)">
           <div class="front card-wide">
               Side Effect
@@ -195,7 +232,7 @@
                   <h5 id="renal_b">Renal shows up here</h5>
           </div>
       </div>
-    </div>
+    </div> -->
 
 </div>
 

@@ -179,12 +179,12 @@ div.myButton2 input {
 }
 
 .progress{
-  height:30px;
-  margin: 10px;
+  height:24px;
+  margin: 8px;
 }
 
 #percentpb{
-  margin-top: 5px;
+  margin-top: 3px;
 }
 
 /*.fa-angle-left{
