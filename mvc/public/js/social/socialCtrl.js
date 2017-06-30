@@ -87,11 +87,21 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
     }
 
     $scope.showPopup = function (option) {
-        if (option == "view") {
-                document.getElementById('view-friend').style.visibility = "visible";
+        if (option == "add") {
+                 document.getElementById('modal-wrapper').style.visibility = "visible";
         }
         else {
-            document.getElementById('modal-wrapper').style.visibility = "visible";
+            var length = $scope.friends.length;
+            for(var i=0;i<length;i++){
+                if($scope.friends[i].username == option){
+                    $scope.friend_username = option;
+                    $scope.friend_school = $scope.friends[i].school;
+                    $scope.friend_year = $scope.friends[i].year;
+                    $scope.friend_caps = $scope.friends[i].capsules;
+                    break;
+                }
+            }
+            document.getElementById('view-friend').style.visibility = "visible";
         }
         var css = document.createElement("style");
         css.type = "text/css"
@@ -101,11 +111,11 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
     }
 
     $scope.hidePopup = function (option) {
-        if (option == "view"){
-            document.getElementById('view-friend').style.visibility = "hidden";
-            $scope.result = "";
-        }else{
+        if (option == "add"){
             document.getElementById('modal-wrapper').style.visibility = "hidden";
+            $scope.result = "";
+        }else{            
+            document.getElementById('view-friend').style.visibility = "hidden";
             $scope.result = "";
         }
         var css = document.createElement("style");

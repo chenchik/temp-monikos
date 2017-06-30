@@ -1,4 +1,4 @@
-<!-- Created by Zhenwei Zhang, Joseph Son Monikos LLC -->
+<!-- Created by Joseph Son, Zhenwei Zhang Monikos LLC -->
 
 <link rel="stylesheet" type="text/css" href="/mvc/public/css/social.css">
 <link rel="stylesheet" type="text/css" href="/mvc/public/css/main.css">
@@ -55,7 +55,7 @@
         <div class="tab-content">
             <div id="home" class="tab-pane fade in active">
                 <div class='add-list-block'>
-                    <button ng-click=showPopup() | $event.stopPropagation()> Add new Friends </button>
+                    <button ng-click=showPopup("add") | $event.stopPropagation()> Add new Friends </button>
                     <input type="search" class="form-control listButton" id="searchlist" placeholder="Search Friends">
                 </div>
 
@@ -64,19 +64,19 @@
                         <p>
                             {{friend.username}}
                         </p>
-                        <button class='selectList' ng-click="showPopup('view')">VIEW</button>
+                        <button class='selectList' ng-click="showPopup(friend.username)">VIEW</button>
                         <button class='selectList' ng-click="deleteFriend(friend.username);showResult('deleted')">DELETE</button>
                         <div id="view-friend" style="visibility:hidden;">
                             <div id="modal" class="add-friend" ng-click='$event.stopPropagation()'>
                                 <header class="popupHeader">
                                     <span class="header_title">Friend Profile</span>
-                                    <span id="login_close" class="modal_close" ng-click="hidePopup('view')"><i class="fa fa-times"></i></span>
+                                    <span id="login_close" class="modal_close" ng-click="hidePopup()"><i class="fa fa-times"></i></span>
                                 </header>
                                 <section class="popupBody" id="friend-profile">
-                                    <b>Username:</b> {{friend.username}} <br>
-                                    <b>School:</b> {{friend.school}} <br>
-                                    <b>Year:</b> {{friend.year}} <br>
-                                    <b>Capsules:</b> {{friend.capsules}} 
+                                    <b>Username:</b> <span ng-bind="friend_username"></span> <br>
+                                    <b>School:</b> <span ng-bind="friend_school"></span> <br>
+                                    <b>Year:</b> <span ng-bind="friend_year"></span><br>
+                                    <b>Capsules:</b> <span ng-bind="friend_caps"></span> 
                                 </section>
                             </div>
                             <div id='lean_overlay_social' ng-click='$event.stopPropagation()'> </div>
@@ -128,7 +128,7 @@
         <div id="modal" class="add-friend" ng-click='$event.stopPropagation()'>
             <header class="popupHeader">
                 <span class="header_title">Add a Friend</span>
-                <span id="login_close" class="modal_close" ng-click="hidePopup()"><i class="fa fa-times"></i></span>
+                <span id="login_close" class="modal_close" ng-click="hidePopup('add')"><i class="fa fa-times"></i></span>
             </header>
             <section class="popupBody">
                 <!-- fr_un means friend's username -->
