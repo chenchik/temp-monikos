@@ -19,7 +19,7 @@ $exists = $collection->count(["username" => $friend_username]);
 $same = false;
 if($username == $friend_username){
     $same = true;
-    echo "You can't add yourself as a friend!";
+    echo "You can't add yourself as a friend";
 }
 
 $already_friend = false;
@@ -27,7 +27,7 @@ if($exists==1){
     foreach ($friends as $friend){
         if (($friend['username']) == $friend_username){
             $already_friend = true;
-            echo "Already in your friend's list";
+            echo "Already in your friends list";
             break;
         } 
     }
@@ -47,7 +47,7 @@ if ($same == false && $already_friend == false && $exists == 1){
 );
 $mod = $update->getModifiedCount();
 if($mod == 1){
-    echo $friend_username." added to your friends list. Your browser will be refreshed to reflect your changes!";
+    echo $friend_username." added to your friends list";
 }
 }
 

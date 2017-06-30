@@ -22,6 +22,12 @@
 	transition: all 0.3s;
 }
 
+#friend-profile{
+    font-family: 'Raleway', sans-serif;
+    text-align:left;
+    font-size:16px;
+}
+
 .add-friend {
     z-index:100;
 

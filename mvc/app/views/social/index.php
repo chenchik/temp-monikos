@@ -64,8 +64,23 @@
                         <p>
                             {{friend.username}}
                         </p>
-                        <button class='selectList'>VIEW</button>
+                        <button class='selectList' ng-click="showPopup('view')">VIEW</button>
                         <button class='selectList' ng-click="deleteFriend(friend.username);showResult('deleted')">DELETE</button>
+                        <div id="view-friend" style="visibility:hidden;">
+                            <div id="modal" class="add-friend" ng-click='$event.stopPropagation()'>
+                                <header class="popupHeader">
+                                    <span class="header_title">Friend Profile</span>
+                                    <span id="login_close" class="modal_close" ng-click="hidePopup('view')"><i class="fa fa-times"></i></span>
+                                </header>
+                                <section class="popupBody" id="friend-profile">
+                                    <b>Username:</b> {{friend.username}} <br>
+                                    <b>School:</b> {{friend.school}} <br>
+                                    <b>Year:</b> {{friend.year}} <br>
+                                    <b>Capsules:</b> {{friend.capsules}} 
+                                </section>
+                            </div>
+                            <div id='lean_overlay_social' ng-click='$event.stopPropagation()'> </div>
+                        </div>
                     </div>
                 </div>
 
@@ -126,11 +141,10 @@
             </div>
         </div>
         <div id='lean_overlay_social' ng-click='$event.stopPropagation()'> </div>
-        <div id="errorMessage" class="added"style="visibility:hidden;">
+        <div id="errorMessage" class="added" style="visibility:hidden;">
             <img id="errorLogo" src="/mvc/public/images/white_logo.png">
             <p class="errorText" ng-bind="result"></p>
             <div id='errorBtn'><button id="innerErrorBtn" class="button button5" ng-click="hideResult('added')">Okay</button></div>
         </div>
     </div>
-
 </body>
