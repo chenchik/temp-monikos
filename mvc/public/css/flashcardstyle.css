@@ -181,6 +181,7 @@ div.myButton2 input {
 .progress{
   height:24px;
   margin: 8px;
+
 }
 
 #percentpb{
@@ -195,7 +196,7 @@ div.myButton2 input {
 .leftsign{
   position: absolute;
   top: 50%;
-  left: 5%;
+  left: 3%;
   z-index: 10;
 }
 

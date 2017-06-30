@@ -142,7 +142,7 @@ ul {
 
 .column{
 	float: left !important;
-	width: 390px !important;
+	width: 340px !important;
 }
 
 .clear{
@@ -1118,7 +1118,7 @@ ul {
   width: 150px;
 }
 .tile-wide-x {
-  width: 380px;
+  width: 330px;
 }
 .tile-large-x {
   width: 310px;

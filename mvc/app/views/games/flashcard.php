@@ -23,7 +23,7 @@
 
 </head>
 
-<body ng-app="myApp" ng-controller="flashCtrl" id="main_app_module">
+<body ng-app="myApp" ng-controller="flashCtrl" id="main_app_module" style="width:100%;">
 
 	<div id=app_header>
 
@@ -77,7 +77,7 @@
   </div>
 </div> -->
 
-<div class="tile-container" style="width:90%;margin-left:10%;margin-top:12px;margin-bottom:10%;">
+<div class="tile-container" style="width:99%;margin-left:15%;margin-top:12px;margin-bottom:10%;">
 
     <div class="tile-small tile-wide-x  flip manual-flip" data-role="tile">
       <div class="card" onclick="rotateCard(this)">
