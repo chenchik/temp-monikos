@@ -97,7 +97,7 @@
 
                 <div class='add-list-block'>
                     <button ng-click=showNatl()> National </button>
-                    <button ng-click=showSchool() class="form-control listButton"> School </button>
+                    <button ng-click=showSchool() class="form-control listButton" ng-bind="user_school" style="width:auto;"> </button>
                     <button ng-click=showFriendRank() class="form-control listButton"> Friends </button>
                 </div>
 

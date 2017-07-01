@@ -225,6 +225,8 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
 
     $http.post("/db/get_user_profile.php", data, config).then(function (response) {
         console.log(response);
+        $scope.user_school = response.data.records[0].school;
+        console.log($scope.user_school);
         $scope.capsules = response.data.records;
     });
 

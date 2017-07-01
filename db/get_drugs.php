@@ -10,8 +10,10 @@ $result=$collection->find();
 
 $outp = "";
 
+
+
 foreach ($result as $drug) {
-    
+    if($drug['Generic'] == "enoxaparin"){
     if ($outp != "") {$outp .= ",";}
     $outp .= '{"Generic":"'  . $drug['Generic'] . '",';
     $outp .= '"DrugId":"'   . $drug["_id"]        . '",';
@@ -35,11 +37,12 @@ foreach ($result as $drug) {
     $outp.='"Hint":'.json_encode($drug["Hint"]).',';
     $outp.='"Likes":'.json_encode($drug["Likes"]).',';
     $outp.='"Dislikes":'.json_encode($drug["Dislikes"]).'}';
-    
+    }
 }
 $outp ='{"records":['.$outp.']}';
 
 // $conn->close();
 
 echo($outp);
+
 ?>

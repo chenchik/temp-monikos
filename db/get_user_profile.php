@@ -15,6 +15,7 @@ $outp = "";
 $outp .= '{"id":'  . json_encode($result["_id"]) . ',';
 $outp .= '"username":'  . json_encode($result["username"]) . ',';
 $outp .= '"email":'  . json_encode($result["email"]) . ',';
+$outp .= '"school":' . json_encode($result["schoolname"]) . ',';
 $outp .= '"capsules":'. json_encode($result["capsules"]) . '}';
 $outp ='{"records":['.$outp.']}';
 
