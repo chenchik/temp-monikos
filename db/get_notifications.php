@@ -5,22 +5,26 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-require_once 'db_creds.php';
+require_once 'db_init.php';
 
-$sql = "SELECT * FROM Challenge WHERE user2 LIKE '".$_POST["user"]."'";
-$result = $conn->query($sql);
+$collection=$client->monikos->Challenge;
+$result=$collection->find(
+	["user2"=>$_POST["user"]]
+	);
+
+
 
 $outp = "";
-while($rs = $result->fetch_array(MYSQLI_ASSOC)) {
-    if ($outp != "") {$outp .= ",";}
-    $outp .= '{"Challengeid":"'  . $rs["challengeid"] . '",';
-    $outp .= '"user2":"'   . $rs["user2"]        . '",';
-    $outp .= '"user1":"'   . $rs["user1"]        . '",';
-    $outp .= '"bet":"'   . $rs["bet"]        . '",';
-    $outp .= '"challengegame":"'   . $rs["challengegame"]        . '",';
-    $outp .= '"url":"'. $rs["url"]     . '"}';
+foreach ($result as $noti) {
+	if ($outp != "") {$outp .= ",";}
+	$outp .= '{"Challengeid":"'  . $noti["_id"] . '",';
+    $outp .= '"user2":"'   . $noti["user2"]. '",';
+    $outp .= '"user1":"'. $noti["user1"]. '",';
+    $outp .= '"bet":"'. $noti["bet"]	. '",';
+    $outp .= '"challengegame":"'.$noti["challengegame"]		.'",';
+    $outp .= '"url":"'. $noti["url"]. '"}';
 }
+
 $outp ='{"records":['.$outp.']}';
 echo($outp);
-$conn->close();
 ?>

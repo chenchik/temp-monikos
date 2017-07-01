@@ -19,7 +19,7 @@ $challenge =['challengeid'=>NULL,
 			 "user1score"=> -1,
 			 "user2score"=> -1,
 			 "winner"=> NULL,
-			 "url"=>'/dummyval'
+			 "url"=>$_POST["url"]
 			 ];
 $collection=$client->monikos->Challenge;
 $result=$collection->insertOne($challenge);
@@ -29,10 +29,10 @@ $result=$collection->insertOne($challenge);
 if ($result->getInsertedCount()) {
     echo '[{
     "response": 200,
-    "challengeid": "'.$POST["challengeid"].'",
-    "user1": "'.$POST["user1"].'",
-    "user2": "'.$POST["user2"].'",
-    "game": "'.$POST["game"].'",
+    "challengeid": "'.$_POST["challengeid"].'",
+    "user1": "'.$_POST["user1"].'",
+    "user2": "'.$_POST["user2"].'",
+    "game": "'.$_POST["game"].'",
     "bet": "'.$_POST["bet"].'"}]';
 } else {
     echo '[{"response":"Please check server error log."}]';
