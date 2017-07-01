@@ -1,8 +1,13 @@
 .container {
-    margin-top: 10%;
+    margin-top: 7%;
 }
 
 .nav-tabs {
+    margin-left:1px;
+    margin-top:13px;
+    width:100%;
+    position:fixed;
+    background:white;
     font-size: 120%;
 }
 
@@ -86,8 +91,13 @@ form{
     margin-bottom: 0px;
 }
 li {
+    width:100%;
     color: black;
-    margin: 0 20px 0 20px;
+}
+
+.nav>li>a{
+    padding-top:20px;
+    padding-bottom:20px;
 }
 
 .nav-tabs>li.active>a,
@@ -110,7 +120,7 @@ a {
 
 .tab-content {
     /*border: 1px solid #fa4e51;*/
-    margin-top: 2%;
+    margin-top: 8%;
     height: 600px;
     /*background-color: #fa4e51;*/
 }
@@ -141,6 +151,7 @@ ul {
 }
 
 .add-list-block {
+    margin-bottom: 5%;
     display: flex;
     justify-content: center;
 }
@@ -238,23 +249,26 @@ ul {
 }
 
 .ranking-item {
+    display:table;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 3px 10px 0 rgba(0, 0, 0, 0.19);
-    width: 80%;
-    margin-left: 10%;
-    margin-bottom: 2%;
+    width: 60%;
+    margin-left: 20%;
+    margin-bottom: 1%;
     border: 1px solid #fa4e51;
     border-radius: 10px;
-    height: 80px;
+    height: 10px;
 }
 
 .ranking-list {
-    margin-top: 5%;
+    margin-top: 1%;
     display: inline;
 }
 
 .ranking-item p {
+    display: table-cell;
+    vertical-align:middle;
+    text-align:center;
     margin-left: 10px;
-    display: inline;
 }
 
 .ranking-circle {

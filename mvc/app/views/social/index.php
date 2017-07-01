@@ -43,14 +43,16 @@
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="container">
+        
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#home"><i class="fa fa-address-book" aria-hidden="true"></i>  &nbsp Manage Friends</a></li>
             <li><a data-toggle="tab" href="#menu1" ng-click="getNatlRank() ; getSchoolRank() ; getFriendRank()"><i class="fa fa-trophy" aria-hidden="true"></i> &nbsp Rankings</a></li>
 
         </ul>
+        
+    </div>
+
+    <div class="container">
 
         <div class="tab-content">
             <div id="home" class="tab-pane fade in active">
