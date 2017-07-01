@@ -574,8 +574,10 @@ app.controller('matchingCtrl', function($scope, $http) {
     }
     var challengeid = urlArr[challengeidUrlPosition];
     var senderUrl = urlArr.join("/");
+    console.log(senderUrl);
+    console.log(urlArr[challengeidUrlPosition]);
     $scope.updateChallengeChallenging(challengeid, senderUrl);
-    console.log(senderUrl+";"+challengeid);
+
   }
 
   $scope.updateChallengeChallenging = function(id, senderUrl) {
@@ -598,7 +600,7 @@ app.controller('matchingCtrl', function($scope, $http) {
     $http.post(url, data, config)
       .then(function(response) {
         console.log(response);
-        //window.open('mailto:danushac@gmail.com?subject=Monikos_Challenge&body=You have been challenged go to this url to access the challenge ' + senderUrl);
+        // window.open('mailto:danushac@gmail.com?subject=Monikos_Challenge&body=You have been challenged go to this url to access the challenge ' + senderUrl);
         $scope.sendEmail(senderUrl);
       });
   }
@@ -724,7 +726,6 @@ app.controller('matchingCtrl', function($scope, $http) {
         var score2 = parseInt(usr2score);
         $scope.deleteChallenge(id, usr1, usr2, usr1score, usr2score,
           thebet, score1, score2);
-
       });
   }
 

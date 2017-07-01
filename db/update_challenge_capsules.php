@@ -9,7 +9,6 @@ require_once 'db_init.php';
 
 if($_POST['user1score'] < $_POST['user2score']){
 	$output="";
-	
 	$collection= $client->minokos->Users;
 	$previous = $collection -> findOne(
 		['username'=> new MongoDB\BSON\Regex($_POST['user2'])]

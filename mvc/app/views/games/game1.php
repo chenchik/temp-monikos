@@ -45,7 +45,7 @@
             <div class="completeButton" id="finishedBackToMenuButton" onclick="gotoGamelist()">MENU</div>
         </div>
         <p id="challengeFlag" style="display:none"><?=$data['challengeFlag']?></p>
-        <p id="datalid" style="display:none">"<?=$data['lid']?>"</p>
+        <p id="datalid" style="display:none"><?=$data['lid']?></p>
 
         <div id="challengeInfoBar" ng-show="checkIfInChallengeMode() && !checkIfBeingChallenged()">
             <p class="col-md-4 col-sm-4 col-xs-4 challengeInfoText userText">Challenging: <?=$data['user2']?></p>

@@ -19,7 +19,7 @@ $challenge =['challengeid'=>NULL,
 			 "user1score"=> -1,
 			 "user2score"=> -1,
 			 "winner"=> NULL,
-			 "url"=>$_POST["url"]
+			 "url"=>'/dummyval'
 			 ];
 $collection=$client->monikos->Challenge;
 $result=$collection->insertOne($challenge);
@@ -29,7 +29,7 @@ $result=$collection->insertOne($challenge);
 if ($result->getInsertedCount()) {
     echo '[{
     "response": 200,
-    "challengeid": "'.$_POST["challengeid"].'",
+    "challengeid": "'.$result->getInsertedId().'",
     "user1": "'.$_POST["user1"].'",
     "user2": "'.$_POST["user2"].'",
     "game": "'.$_POST["game"].'",
@@ -52,5 +52,5 @@ if ($result->getInsertedCount()) {
 // // // }
 
 // // $conn->close();
-// echo($result);
+//echo($result);
 ?>
