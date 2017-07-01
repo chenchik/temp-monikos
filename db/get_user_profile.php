@@ -6,7 +6,7 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 require_once 'db_init.php';
-$collection = $client -> monikos -> Users;
+$collection = $client->monikos->Users;
 
 $result = $collection -> findOne(["_id" => new MongoDB\BSON\ObjectID($_POST["id"])]);
 //$result = $collection -> findOne(["_id" => new MongoDB\BSON\ObjectID("5944d3274f417e1f84007538")]);

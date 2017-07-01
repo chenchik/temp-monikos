@@ -16,7 +16,7 @@
   <script>
     function gotoGamelist(){
 
-        window.location = window.location.origin + "/mvc/public/games/menu/" +  "<?=$data['lid']?>";
+        window.location = window.location.origin + "/mvc/public/games/menu/" +  <?=$data['lid']?>;
     }
 
 </script>

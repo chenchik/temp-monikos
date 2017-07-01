@@ -575,7 +575,7 @@ app.controller('matchingCtrl', function($scope, $http) {
     var challengeid = urlArr[challengeidUrlPosition];
     var senderUrl = urlArr.join("/");
     $scope.updateChallengeChallenging(challengeid, senderUrl);
-    console.log(senderUrl);
+    console.log(senderUrl+";"+challengeid);
   }
 
   $scope.updateChallengeChallenging = function(id, senderUrl) {

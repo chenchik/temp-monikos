@@ -7,7 +7,7 @@ header("Content-Type: application/json; charset=UTF-8");
 
 require_once 'db_init.php';
 
-$collection = $client -> monikos -> Drugs2;
+$collection = $client->monikos->Drugs2;
 $result = $collection->updateOne(
     ['_id' => new MongoDB\BSON\ObjectID($_POST["drugid"])],
     ['$set' => ['Likes' => $_POST["likes"]]]
