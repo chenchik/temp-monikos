@@ -344,3 +344,36 @@ $(document).ready(function() {
     $('#errorMessage').slideUp();
   }
 });
+
+$(document).ready(function() {
+  $('.custom-list-collection-block').on('click', '.list_block .selectList',
+    function() {
+      var parent = $(this).parent();
+      if (!parent.hasClass('red')) {
+        parent.addClass('red');
+        $(this).siblings('.list-info-block').children().addClass(
+          'whiteTextClass');
+      } else {
+        parent.removeClass('red');
+        $(this).siblings().removeClass('whiteTextClass');
+      }
+    });
+  
+  $('#addListButton').on('click', function() {
+    $('.custom-list-collection-block').addClass('list-collection-block-short');
+  });
+
+  $('.custom-list-collection-block').on('click', '.list_block .deleteList',
+    function() {
+      $(this).parent().remove();
+    });
+
+  $('#errorButton').on('click', function() {
+    $('#errorMessage').slideUp();
+  });
+
+  function removePopup() {
+    $('#errorMessage').slideUp();
+  }
+});
+

@@ -64,19 +64,19 @@
 
         <h1 class="list-m-header your-list">Your List</h1>
         <hr class="hr-red">
-        <div class='list-collection-block custom-list-collection-block'>
+        <div class='custom-list-collection-block'>
             <div ng-class="list_block" class="list_block" ng-repeat="list in lists track by $index">
 
                 <h1 class = "list_name_header">
                     {{list.name}}</h1>
 
 
-                <div class='list-info-block' >
+              <!--   <div class='list-info-block' >
                     <div class='list-drugs'>
                         {{list.drugs}}
                         <br>
                     </div>
-                </div>
+                </div> -->
                 <br>
 
 
