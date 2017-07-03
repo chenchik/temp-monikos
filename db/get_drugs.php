@@ -13,8 +13,8 @@ $outp = "";
 
 
 foreach ($result as $drug) {
-
-    if($drug["Generic"] == "amoxicillin") {
+    
+    if ($outp != "") {$outp .= ",";}
     $outp .= '{"Generic":"'  . $drug['Generic'] . '",';
     $outp .= '"DrugId":"'   . $drug["_id"]        . '",';
     $outp .= '"Brand":'   . json_encode($drug['Brand'])        . ',';
@@ -32,7 +32,8 @@ foreach ($result as $drug) {
     $outp.='"Hint":'.json_encode($drug["Hint"]).',';
     $outp.='"Likes":'.json_encode($drug["Likes"]).',';
     $outp.='"Dislikes":'.json_encode($drug["Dislikes"]).'}';
-    }
+    
+    
 }
 $outp ='{"records":['.$outp.']}';
 
