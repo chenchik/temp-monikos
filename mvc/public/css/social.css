@@ -33,6 +33,14 @@
     font-size:16px;
 }
 
+.socialHeader{
+    background: #fa4e51 !important;
+}
+
+.socialHeader .modal_close{
+    background: #fa4e51 !important;
+}
+
 .add-friend {
     z-index:100;
 
@@ -46,7 +54,8 @@
 	top: 50%;
 	left: 50%;
 
-	margin-left: -8vw;
+    width: 25.5vw;
+	margin-left: -12.525vw;
     margin-top: -10vw;
 	height: auto;
 

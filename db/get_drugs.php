@@ -19,11 +19,6 @@ foreach ($result as $drug) {
     $outp .= '"DrugId":"'   . $drug["_id"]        . '",';
     $outp .= '"Brand":'   . json_encode($drug['Brand'])        . ',';
     $outp .= '"Class":'   . json_encode($drug["Class"])        . ',';
-    
-    if(!isset($drug["Renal Adjustment"])){
-        echo " Error: ".$drug['Generic'];
-    };
-    
     $outp .= '"Indication":'   . json_encode($drug["Indication and Dosage"])        . ',';
     $outp .= '"Side Effects":'   . json_encode($drug["Side Effects"])        . ',';
     $outp .= '"Black Box Warning":'   . json_encode($drug["Black Box Warning"])        . ',';

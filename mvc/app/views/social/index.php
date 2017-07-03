@@ -70,7 +70,7 @@
                         <button class='selectList' ng-click="deleteFriend(friend.username);showResult('deleted')">DELETE</button>
                         <div id="view-friend" style="visibility:hidden;">
                             <div id="modal" class="add-friend" ng-click='$event.stopPropagation()'>
-                                <header class="popupHeader">
+                                <header class="popupHeader socialHeader">
                                     <span class="header_title">Friend Profile</span>
                                     <span id="login_close" class="modal_close" ng-click="hidePopup()"><i class="fa fa-times"></i></span>
                                 </header>
@@ -128,7 +128,7 @@
     <!-- add friends popup -->
     <div id="modal-wrapper" style="visibility:hidden;">
         <div id="modal" class="add-friend" ng-click='$event.stopPropagation()'>
-            <header class="popupHeader">
+            <header class="popupHeader socialHeader">
                 <span class="header_title">Add a Friend</span>
                 <span id="login_close" class="modal_close" ng-click="hidePopup('add')"><i class="fa fa-times"></i></span>
             </header>
