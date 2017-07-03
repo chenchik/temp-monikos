@@ -649,7 +649,7 @@ app.controller('matchingCtrl', function($scope, $http) {
 
   $scope.updateChallengeBeingChallenged = function(id) {
     var finalScore = Math.ceil(((new Date).getTime() / 1000) - $scope.initTime);
-    console.log("final score user 2" + finalScore);
+    console.log("final score user2" + finalScore);
     var data = $.param({
       challengeid: id,
       user2score: finalScore,
@@ -714,7 +714,6 @@ app.controller('matchingCtrl', function($scope, $http) {
         'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
       }
     };
-
     var url = "/db/update_challenge_capsules.php";
     $http.post(url, data, config)
       .then(function(response) {
@@ -722,10 +721,10 @@ app.controller('matchingCtrl', function($scope, $http) {
         console.log(response);
         console.log("USER1 SCORE = " + usr1score);
         console.log("USER2 SCORE = " + usr2score);
-        var score1 = parseInt(usr1score);
-        var score2 = parseInt(usr2score);
-        $scope.deleteChallenge(id, usr1, usr2, usr1score, usr2score,
-          thebet, score1, score2);
+          var score1 = parseInt(usr1score);
+          var score2 = parseInt(usr2score);
+          $scope.deleteChallenge(id, usr1, usr2, usr1score, usr2score,
+            thebet, score1, score2);
       });
   }
 

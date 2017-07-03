@@ -91,7 +91,7 @@
             <div ng-if="numClicked < 2" >
                 <div ng-repeat="product in names" ng-if="$index % 4 == 0" class="row drugGridRow">
                     <div class="col-xs-3 drugGridCell"><button class="btnBlue"  ng-click="clicked(names[$index].front);" ng-hide = "names[$index].correct == 'Y' "
-                                                               ng-style="{'background-color' : (names[$index].clicked == 'Y') && (numClicked <=2) ? '#ff7878' : '#fff'}"  >{{names[$index].front}}</button>                    </div>
+                    ng-style="{'background-color' : (names[$index].clicked == 'Y') && (numClicked <=2) ? '#ff7878' : '#fff'}"  >{{names[$index].front}}</button>                    </div>
                     <div class="col-xs-3 drugGridCell" ng-if="names.length > ($index + 1)"><button class="btnBlue"  ng-click="clicked(names[$index+1].front);" ng-hide = "names[$index+1].correct == 'Y' "
                                                                                                    ng-style="{'background-color' : (names[$index+1].clicked == 'Y') && (numClicked <=2)  ? '#ff7878' : '#fff'}">{{names[$index +1].front }}</button>
                     </div>
