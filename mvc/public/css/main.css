@@ -186,6 +186,7 @@ button {
     top: 50px;
     right:15px;
     width:200px;
+    z-index:2;
     /*    height:200px;*/
     opacity:0;
     transition: 0.2s;

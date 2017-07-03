@@ -205,10 +205,59 @@
                                             <div class="drug-info-wrap"><label> ADULT:</label> </div>
                                             <div class="expand-info" ng-show="collapsed_adult">
                                                 <ul>
-                                                    <li ng-repeat='(key,val) in x.Indication.Adult'>{{key}}:
-                                                        <ul>
-                                                            <li ng-repeat='arrayItem in val'>
-                                                                {{arrayItem}}
+                                                    <li ng-repeat="(key1, val1) in x.Indication.Adult">
+
+                                                        <p ng-if="goOneMoreLevelDown(x.Indication.Adult)">{{key1}}</p>
+                                                        <p ng-if="!goOneMoreLevelDown(x.Indication.Adult)">{{val1}}</p>
+
+                                                        <ul ng-if="goOneMoreLevelDown(x.Indication.Adult)">
+                                                            <li ng-repeat="(key2,val2) in val1 track by $index">
+
+                                                                <p ng-if="goOneMoreLevelDown(val1)">{{key2}}</p>
+                                                                <p ng-if="!goOneMoreLevelDown(val1)">{{val2}}</p>
+
+                                                                <ul ng-if="goOneMoreLevelDown(val1)">
+                                                                    <li ng-repeat='(key3,val3) in val2 track by $index'>
+
+                                                                        <p ng-if="goOneMoreLevelDown(val2)">{{key3}}</p>
+                                                                        <p ng-if="!goOneMoreLevelDown(val2)">{{val3}}</p>
+
+
+                                                                        <ul ng-if="goOneMoreLevelDown(val2)">
+                                                                            <li ng-repeat='(key4,val4) in val3 track by $index'>
+
+                                                                                <p ng-if="goOneMoreLevelDown(val3)">{{key4}}</p>
+                                                                                <p ng-if="!goOneMoreLevelDown(val3)">{{val4}}</p>
+
+                                                                                <ul ng-if="goOneMoreLevelDown(val3)">
+                                                                                    <li ng-repeat='(key5,val5) in val4 track by $index'>
+
+                                                                                        <p ng-if="goOneMoreLevelDown(val4)">{{key5}}</p>
+                                                                                        <p ng-if="!goOneMoreLevelDown(val4)">{{val5}}</p>
+
+                                                                                        <ul ng-if="goOneMoreLevelDown(val4)">
+                                                                                            <li ng-repeat='(key6,val6) in val5 track by $index'>
+
+                                                                                                <p ng-if="goOneMoreLevelDown(val5)">{{key6}}</p>
+                                                                                                <p ng-if="!goOneMoreLevelDown(val5)">{{val6}}</p>
+
+                                                                                                <ul ng-if="goOneMoreLevelDown(val5)">
+                                                                                                    <li ng-repeat='(key7,val7) in val6 track by $index'>
+
+                                                                                                        <p ng-if="goOneMoreLevelDown(val6)">{{key7}}</p>
+                                                                                                        <p ng-if="!goOneMoreLevelDown(val6)">{{val7}}</p>
+                                                                                                    </li>
+                                                                                                </ul>
+
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                        </ul>
+
+                                                                    </li>
+                                                                </ul>
                                                             </li>
                                                         </ul>
                                                     </li>
@@ -220,17 +269,66 @@
                                             <div class="drug-info-wrap"><label>  PEDIATRICS:</label> </div>
                                             <div class="expand-info" ng-show="collapsed_P">
                                                 <ul>
-                                                    <li ng-repeat='(key,val) in x.Indication.Pediatric'>{{key}}:
-                                                        <ul>
-                                                            <li ng-repeat='arrayItem in val'>
-                                                                {{arrayItem}}
+                                                    <li ng-repeat="(key1, val1) in x.Indication.Pediatric">
+
+                                                        <p ng-if="goOneMoreLevelDown(x.Indication.Pediatric)">{{key1}}</p>
+                                                        <p ng-if="!goOneMoreLevelDown(x.Indication.Pediatric)">{{val1}}</p>
+
+                                                        <ul ng-if="goOneMoreLevelDown(x.Indication.Pediatric)">
+                                                            <li ng-repeat="(key2,val2) in val1 track by $index">
+
+                                                                <p ng-if="goOneMoreLevelDown(val1)">{{key2}}</p>
+                                                                <p ng-if="!goOneMoreLevelDown(val1)">{{val2}}</p>
+
+                                                                <ul ng-if="goOneMoreLevelDown(val1)">
+                                                                    <li ng-repeat='(key3,val3) in val2 track by $index'>
+
+                                                                        <p ng-if="goOneMoreLevelDown(val2)">{{key3}}</p>
+                                                                        <p ng-if="!goOneMoreLevelDown(val2)">{{val3}}</p>
+
+
+                                                                        <ul ng-if="goOneMoreLevelDown(val2)">
+                                                                            <li ng-repeat='(key4,val4) in val3 track by $index'>
+
+                                                                                <p ng-if="goOneMoreLevelDown(val3)">{{key4}}</p>
+                                                                                <p ng-if="!goOneMoreLevelDown(val3)">{{val4}}</p>
+
+                                                                                <ul ng-if="goOneMoreLevelDown(val3)">
+                                                                                    <li ng-repeat='(key5,val5) in val4 track by $index'>
+
+                                                                                        <p ng-if="goOneMoreLevelDown(val4)">{{key5}}</p>
+                                                                                        <p ng-if="!goOneMoreLevelDown(val4)">{{val5}}</p>
+
+                                                                                        <ul ng-if="goOneMoreLevelDown(val4)">
+                                                                                            <li ng-repeat='(key6,val6) in val5 track by $index'>
+
+                                                                                                <p ng-if="goOneMoreLevelDown(val5)">{{key6}}</p>
+                                                                                                <p ng-if="!goOneMoreLevelDown(val5)">{{val6}}</p>
+
+                                                                                                <ul ng-if="goOneMoreLevelDown(val5)">
+                                                                                                    <li ng-repeat='(key7,val7) in val6 track by $index'>
+
+                                                                                                        <p ng-if="goOneMoreLevelDown(val6)">{{key7}}</p>
+                                                                                                        <p ng-if="!goOneMoreLevelDown(val6)">{{val7}}</p>
+                                                                                                    </li>
+                                                                                                </ul>
+
+                                                                                            </li>
+                                                                                        </ul>
+                                                                                    </li>
+                                                                                </ul>
+                                                                            </li>
+                                                                        </ul>
+
+                                                                    </li>
+                                                                </ul>
                                                             </li>
                                                         </ul>
                                                     </li>
                                                 </ul>
                                             </div>
                                         </li>
-                                        <!-- Geriatric PART -->
+                                        <!-- Geriatric PART 
                                         <li class="drug_inner" ng-model="collapsed_g" ng-click='collapsed_g=!collapsed_g; collapsed_indi=True; collapsed_adult=True'>
                                             <div class="drug-info-wrap"><label>  Geriatric:</label> </div>
                                             <div class="expand-info" ng-show="collapsed_P">
@@ -245,6 +343,7 @@
                                                 </ul>
                                             </div>
                                         </li>
+                                        -->
                                     </ul>
                                 </div>
 
@@ -269,7 +368,7 @@
                                                                 <p ng-if="goOneMoreLevelDown(val2)">{{key3}}</p>
                                                                 <p ng-if="!goOneMoreLevelDown(val2)">{{val3}}</p>
 
-                                                                
+
                                                                 <ul ng-if="goOneMoreLevelDown(val2)">
                                                                     <li ng-repeat='(key4,val4) in val3 track by $index'>
 
@@ -287,22 +386,22 @@
 
                                                                                         <p ng-if="goOneMoreLevelDown(val5)">{{key6}}</p>
                                                                                         <p ng-if="!goOneMoreLevelDown(val5)">{{val6}}</p>
-                                                                                        
-                                                                                        <ul ng-if="goOneMoreLevelDown(val5)">
-                                                                                        <li ng-repeat='(key7,val7) in val6 track by $index'>
 
-                                                                                            <p ng-if="goOneMoreLevelDown(val6)">{{key7}}</p>
-                                                                                            <p ng-if="!goOneMoreLevelDown(val6)">{{val7}}</p>
-                                                                                        </li>
-                                                                                    </ul>
-                                                                                        
+                                                                                        <ul ng-if="goOneMoreLevelDown(val5)">
+                                                                                            <li ng-repeat='(key7,val7) in val6 track by $index'>
+
+                                                                                                <p ng-if="goOneMoreLevelDown(val6)">{{key7}}</p>
+                                                                                                <p ng-if="!goOneMoreLevelDown(val6)">{{val7}}</p>
+                                                                                            </li>
+                                                                                        </ul>
+
                                                                                     </li>
                                                                                 </ul>
                                                                             </li>
                                                                         </ul>
                                                                     </li>
                                                                 </ul>
-                                                                
+
                                                             </li>
                                                         </ul>
                                                     </li>

@@ -1,0 +1,214 @@
+{
+    "Generic": "amoxicillin",
+    "Hint": "(Amoxil) = (Amoxil + Cillin)",
+    "Likes": "0",
+    "Dislikes": "0",
+    "Generic Audio": "/mvc/public/audio/amoxicillin.wav",
+    "Brand Audio": "/mvc/public/audio/Amoxil+or+Moxatag.wav",
+    "Brand": [
+        "Amoxil",
+        "Moxatag"
+    ],
+    "Indication and Dosage": {
+        "Adult": {
+            "Bacterial Endocarditis; Prophylaxis": {
+                "High-risk patient; dental, respiratory or infected skin/skin structure procedures": [
+                    "Initial:  2 g orally 30 to 60 minutes prior to procedure  [1][2]"
+                ]
+            },
+            "Chlamydial Infection": {
+                "Pregnant Women": [
+                    "Initial:  500 Mg Orally 3 Times Daily For 7 Days  [3]"
+                ]
+            },
+            "Ear, Nose, And Throat Infection": {
+                "Mild To Moderate": [
+                    "Initial:  500 mg ORALLY every 12 hours or 250 mg ORALLY every 8 hours"
+                ],
+                "Severe": [
+                    "Initial:  875 mg Orally Every 12 Hours Or 500 Mg Orally Every 8 Hours [4]"
+                ]
+            },
+            "Helicobacter pylori gastrointestinal tract infection": {
+                "Triple Therapy amoxicillin": [
+                    "Initial:  1 g orally twice a day in combination with clarithromycin 500 mg orally twice a day and lansoprazole 30 mg orally twice a day for 14 days [5]"
+                ]
+            },
+            "Infection of skin AND/OR subcutaneous tissue": [
+                "Mild to moderate: 500 mg ORALLY every 12 hours OR 250 mg ORALLY every 8 hours [4]",
+                "Severe:875 mg ORALLY every 12 hours OR 500 mg ORALLY every 8 hours [4]"
+            ],
+            "Infectious disease of genitourinary system": {
+                "Mild to moderate:": [
+                    "500 mg orally every 12 hours or 250 mg orally every 8 hours [4]"
+                ],
+                "Severe:": [
+                    "875 mg orally every 12 hours or 500 mg orally every 8 hours [4]"
+                ]
+            },
+            "Lower Respiratory Tract Infection": [
+                "Initial:  875 mg ORALLY every 12 hours or 500 mg orally every 8 hours [4]"
+            ],
+            "Community-Acquired Pneumonia": [
+                "Initial:  1 g ORALLY 3 times daily (+/- macrolide) [6]"
+            ],
+            "Lyme disease": [
+                "Initial:  500 mg ORALLY 3 times daily for 14 days (range, 14 to 28 days) [7]"
+            ],
+            "Pharyngitis - Tonsillitis": {
+                "Extended-release tablet": [
+                    "Initial:  775 mg ORALLY once daily, taken within 1 hour of finishing a meal, for 10 days [8]"
+                ]
+            },
+            "Streptococcal pharyngitis": [
+                "Initial:  1 g ORALLY once daily for 10 days (guideline dosing) [9]"
+            ]
+        },
+        "Pediatric": {
+            "Acute otitis media, Uncomplicated": {
+                "6 months through 12 years of age mild to": {
+                    "Moderate infection": [
+                        "Initial:  80 to 90 mg/kg/day ORALLY in 2 divided doses; (guideline dosing) [10]"
+                    ]
+                },
+                "6 months through 12 years of age ": {
+                    "Severe infection": [
+                        "80 to 90 mg/kg/day ORALLY in 2 divided doses for 10 days (guideline dosing) [10]"
+                    ]
+                }
+            },
+            "Bacterial endocarditis; Prophylaxis": {
+                "High-risk patient; dental, respiratory, or infected skin/skin structure procedures": [
+                    "Initial:  50 mg/kg ORALLY 30 to 60 minutes prior to procedure [2]",
+                    "MAX dose: 2 g/dose (guideline dosing) [2]"
+                ]
+            },
+            "Ear, nose, and throat infection": {
+                "Older than 3 months less than 40 kg ": {
+                    "Mild to moderate Initial": [
+                        "25 mg/kg/day ORALLY divided every 12 hours [4]"
+                    ],
+                    "Severe Initial": [
+                        "45 mg/kg/day ORALLY divided every 12 hours [4]",
+                        "40 mg/kg/day divided every 8 hours [4]"
+                    ]
+                },
+                "Older than 3 months 40 kg or greater": {
+                    "Mild to moderate Initial": [
+                        "500 mg ORALLY every 12 hours[4]",
+                        "250 mg ORALLY every 8 hours[4]"
+                    ],
+                    "Severe Initial": [
+                        "875 mg ORALLY every 12 hours[4]",
+                        "500 mg ORALLY every 8 hours[4]"
+                    ]
+                }
+            },
+            "Infection of skin and/or subcutaneous tissue & genitourinary system": {
+                "Older than 3 months (less than 40 kg)": {
+                    "Mild To Moderate Initial": [
+                        "25 mg/kg/day ORALLY divided every 12 hours [4]",
+                        "20 mg/kg/day divided every 8 hours[4]"
+                    ],
+                    "Severe Initial:  ": [
+                        "45 mg/kg/day ORALLY divided every 12 ",
+                        "40 mg/kg/day divided every 8 hours[4]"
+                    ]
+                },
+                "Older than 3 months  (40 kg or greater)": {
+                    "Mild to Moderate Initial": [
+                        "500 mg ORALLY every 12 hours [4]",
+                        "250 mg ORALLY every 8 hours [4]"
+                    ],
+                    "Severe Initial": [
+                        "875 mg ORALLY every 12 hours [4]",
+                        " 500 mg ORALLY every 8 hours [4]"
+                    ]
+                }
+            },
+            "Lower respiratory tract infection": {
+                "Older than 3 months (less than 40 kg)": [
+                    "Initial:  45 mg/kg/day ORALLY divided every 12 hours [4]"
+                ],
+                "Older than 3 months (40 kg or greater)": [
+                    "875 mg ORALLY every 12 hours [4]",
+                    "500 mg ORALLY every 8 hours [4]"
+                ]
+            },
+            "Lyme disease": [
+                "Initial:  50 mg/kg/day ORALLY in 3 divided doses for 14 days [7]",
+                "MAX daily dose: 1500 mg [7] "
+            ],
+            "Pharyngitis - Tonsillitis": {
+                "Extended-release tablet": {
+                    "12 Years or Older": [
+                        "Initial:  775 mg ORALLY once daily, taken within 1 hour of finishing a meal, for 10 days [8]"
+                    ]
+                }
+            },
+            "Streptococcal pharyngitis": [
+                "Initial:  50 mg/kg ORALLY once daily for 10 days [9]",
+                "MAX daily dose: 1 g daily (guideline dosing) [9]"
+            ]
+        }
+    },
+    "Renal Adjustment": {
+        "Immediate Release": {
+            "GFR ≥30 mL/minute": [
+                "No dosage adjustment necessary [4]"
+            ],
+            "GFR 10 to 30 mL/minute": [
+                "250 to 500 mg every 12 hours [4]"
+            ],
+            "GFR <10 mL/minute": [
+                "250 to 500 mg every 24 hours [4]"
+            ]
+        },
+        "Extended Release": {
+            "CrCl ≥30 mL/minute": [
+                "There are no dosage adjustments provided in the manufacturer’s labeling [4]"
+            ],
+            "CrCl <30 mL/minute": [
+                "Not recommended [4]"
+            ]
+        }
+    },
+    "Hepatic Adjustment": [
+        "There are no dosage adjustments provided in the manufacturer’s labeling"
+    ],
+    "Side Effects": {
+        "Common": [
+            "Dermatologic: Rash (greater than 1%) [10]",
+            "Gastrointestinal: Diarrhea (> 1%) [10], Nausea (> 1%) [10], Vomiting (> 1%)[10]",
+            "Neurologic: Headache (1%)",
+            "Reproductive: Vulvovaginitis (2%) [4]"
+        ],
+        "Serious": [
+            "Dermatologic: Erythema multiforme [10], Stevens-Johnson syndrome [10], Toxic epidermal necrolysis [10]",
+            "Immunologic: Anaphylaxis [4], Hypersensitivity reaction [10]"
+        ]
+    },
+    "Mechanism of Action": [
+        "Amoxicillin inhibits the biosynthesis of the cell wall [1]"
+    ],
+    "Black Box Warning": [
+        "NA"
+    ],
+    "Resources": [
+        "Product Information: amoxicillin oral capsules, oral suspension, oral chewable tablets, amoxicillin oral capsules, oral suspension, oral chewable tablets. Teva Pharmaceuticals USA (per DailyMed), Sellersville, PA, 2013.",
+        "Wilson W, Taubert KA, Gewitz M, et al: Prevention of Infective Endocarditis. Guidelines From the American Heart Association. A Guideline From the American Heart Association Rheumatic Fever, Endocarditis, and Kawasaki Disease Committee, Council on Cardiovascular Disease in the Young, and the Council on Clinical Cardiology, Council on Cardiovascular Surgery and Anesthesia, and the Quality of Care and Outcomes Research Interdisciplinary Working Group. Circulation 2001",
+        "Centers for Disease Control and Prevention (CDC): Sexually transmitted diseases (STDs): prevention. Centers for Disease Control and Prevention (CDC). Atlanta, GA. 2015",
+        "Product Information: AMOXIL(R) oral capsules, tablets, powder for oral suspension, amoxicillin oral capsules, tablets, powder for oral suspension. Dr Reddy’s Laboratories (per FDA), Bridgewater, NJ, 2011.",
+        "Chey WD, Wong BC, & Practice Parameters Committee of the American College of Gastroenterology: American College of Gastroenterology guideline on the management of Helicobacter pylori infection. Am J Gastroenterology 2007; 102(8):1808-1825.",
+        "Mandell LA, Wunderink RG, Anzueto A, et al: Infectious diseases society of America/American thoracic society consensus guidelines on the management of community-acquired pneumonia in adults. Clin Infect Dis 2007; 44(Suppl 2):S27-S72.",
+        "Wormser GP, Dattwyler RJ, Shapiro ED, et al: The clinical assessment, treatment, and prevention of Lyme disease, human granulocytic anaplasmosis, and babesiosis: clinical practice guidelines by the Infectious Diseases Society of America. Clin Infect Dis 2006; 43(9):1089-1134.",
+        "Product Information: MOXATAG(R) oral extended-release tablets, amoxicillin oral extended-release tablets. Shionogi Inc. (per Manufacturer), Alpharetta, GA, 2011.",
+        "American Heart Association: Prevention of rheumatic fever and diagnosis and treatment of acute Streptococcal pharyngitis: a scientific statement from the American Heart Association Rheumatic Fever, Endocarditis, and Kawasaki Disease Committee of the Council on Cardiovascular Disease in the Young, the Interdisciplinary Council on Functional Genomics and Translational Biology, and the Interdisciplinary Council on Quality of Care and Outcomes Research: endorsed by the American Academy of Pediatrics. American Heart Association. Dallas, TX. 2009.",
+        "Lieberthal AS, Carroll AE, Chonmaitree T, et al: The diagnosis and management of acute otitis media. Pediatrics 2013; 131(3):e964-e999.",
+        "Product Information: amoxicillin oral capsules, oral suspension, oral chewable tablets, amoxicillin oral capsules, oral suspension, oral chewable tablets. Teva Pharmaceuticals USA (per DailyMed), Sellersville, PA, 2013."
+    ],
+    "Class": [
+        "Antibiotic",
+        "Penicillin"
+    ]
+}
