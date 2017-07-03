@@ -57,11 +57,11 @@
         <div class="tab-content">
             <div id="home" class="tab-pane fade in active">
                 <div class='add-list-block'>
-                    <button ng-click=showPopup("add") | $event.stopPropagation()> Add new Friends </button>
-                    <input type="search" class="form-control listButton" id="searchlist" placeholder="Search Friends">
+                    <button ng-click=showPopup("add") | $event.stopPropagation()> Add a Friend </button>
+                    <input type="search" class="form-control listButton" id="searchlist" placeholder="Search for your Friends" ng-model="searchText">
                 </div>
 
-                <div class="friends" ng-repeat="friend in friends">
+                <div class="friends" ng-repeat="friend in friends | filter:searchText">
                     <div class="friend">
                         <p>
                             {{friend.username}}
@@ -135,7 +135,7 @@
             <section class="popupBody">
                 <!-- fr_un means friend's username -->
                 <form name="login_form">
-                    <input placeholder="Search by Username" type="text" id="fr_un" />
+                    <input placeholder="Username" type="text" id="fr_un" />
                 </form>
             </section>
             <div id="container">
