@@ -6,4 +6,6 @@
 * ~~determined winner bug~~
 * ​
 * ~~update challenge capsules bug~~
+* Pill game bug
+* flashcard bug
 * ​

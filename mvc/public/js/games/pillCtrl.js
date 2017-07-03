@@ -262,7 +262,6 @@ var app = angular.module('myApp', []);
         }
       });
       $scope.firstLoad = false;
-
     }
 
 
@@ -288,10 +287,7 @@ var app = angular.module('myApp', []);
     }
 
       $scope.getallTheDrugs = function(){
-                      $('#completeMessage').slideDown('fast');
-
-
-
+      $('#completeMessage').slideDown('fast');
         var url = "/db/get_drugs.php";
         $http.get(url)
         .then(function (response) {

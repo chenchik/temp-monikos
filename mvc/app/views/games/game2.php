@@ -8,7 +8,7 @@
 
 	<div id=app_header>
 
-	   <a onclick="gotoGamelist(<?=$data['lid']?>)" ><button class = 'back'>Back</button></a>
+	   <a onclick='gotoGamelist("<?=$data['lid']?>")' ><button class = 'back'>Back</button></a>
 
        <a ng-click='home()'><img id="toplogo" src="/mvc/public/images/logo_without_words_version_1.png"></a>
 
@@ -61,7 +61,7 @@
 		</div>
        	<div id=app_body>
 	        <div ng-if="firstLoad">
-				{{getlid(<?=$data['lid']?>, false)}}
+				{{getlid("<?=$data['lid']?>", false)}}
 			</div>
 
 
@@ -94,7 +94,7 @@
 
 		   		<p class="challengeCompleteText" ng-show="checkIfBeingChallenged()"></p>
 
-		   		<div id='challenge_complete_btn'><button id="inner_challenge_complete_btn" class="button button5" onclick="gotoGamelist(<?=$data['lid']?>)" >Game Menu</button></div>
+		   		<div id='challenge_complete_btn'><button id="inner_challenge_complete_btn" class="button button5" onclick='gotoGamelist("<?=$data['lid']?>")' >Game Menu</button></div>
 
 		   </div>
 
