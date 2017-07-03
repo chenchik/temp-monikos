@@ -38,7 +38,12 @@
 }
 
 .socialHeader .modal_close{
+    color: white !important;
     background: #fa4e51 !important;
+}
+
+.socialHeader .header_title{
+    color: white !important;
 }
 
 .add-friend {
