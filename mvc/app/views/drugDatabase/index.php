@@ -1,4 +1,4 @@
-<!--Nik Gunawan-->
+<!--Nik Gunawan, Weijian Li, Shuo Wang, Joseph Son-->
 
 <body id="database_module">
     <script src="/mvc/public/js/drugDatabase/databaseCtrl.js"></script>

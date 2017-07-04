@@ -68,6 +68,7 @@
                         </p>
                         <button class='selectList' ng-click="showPopup(friend.username)">VIEW</button>
                         <button class='selectList' ng-click="deleteFriend(friend.username);showResult('deleted')">DELETE</button>
+                        <button class='selectList' >CHALLENGE</button>
                         <div id="view-friend" style="visibility:hidden;">
                             <div id="modal" class="add-friend" ng-click='$event.stopPropagation()'>
                                 <header class="popupHeader socialHeader">
