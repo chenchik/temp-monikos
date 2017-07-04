@@ -1,20 +1,21 @@
 @import 'https://fonts.googleapis.com/css?family=Raleway:300,500,900';
 
 button.btnBlue  {
-    border: 2px solid #fa4e51;
-    background: #fff;
+    /*border: 2px solid #fa4e51;*/
+    color:white;
+    background: #4c4c4c;
     font-family: 'Raleway';
-    font-weight: 600;
-    font-size: 18px;
+    font-size: 25px;
     width:85%;
    	height: 26vh;
     text-align: center;
+    letter-spacing: 0.1px;
   	border-radius: 10px;
   	text-overflow: ellipsis;
     white-space: initial;
     word-wrap: break-word;
     transition: all 0.3s ease 0s;
-    /*border-radius: 5px;*/
+    padding:8px;
     margin: 10px !important;
 }
 
@@ -164,10 +165,10 @@ p#donedone {
 #new_round {
 	width: 100%;
   height: 50px;
-  background-color: #ff3333;
-  color: white;
-  font-weight: 900;
-  box-shadow: 0 0 5px #444;
+  background-color: white;
+  color: fa4e51;
+  /*font-weight: 900;*/
+  /*box-shadow: 0 0 5px #444;*/
 }
 
 .home{
@@ -196,15 +197,15 @@ p#donedone {
 	bottom:0;
 	width: 100%;
 	height:7vh;
-	background-color: #777;
+	background-color: #FFF;
 	color:white;
 	font-family: 'Raleway',sans-serif;
 	font-size: 30px;
 	letter-spacing: 5px;
 	/*padding: 5px;*/
 	z-index: 25;
-	font-weight: 900;
-	box-shadow: 0 0 5px #444;
+	/*font-weight: 900;*/
+	/*box-shadow: 0 0 5px #444;*/
 }
 
 .row.drugGridRow {
@@ -226,7 +227,7 @@ div#completeMessage {
     background: #333;
     padding: 30px;
     color: white;
-    border-radius: 20px;
+    border-radius: 15px;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);

@@ -184,7 +184,7 @@
 
         </div><!--overlay end-->
 
-        <!-------LIST CREATOR END--------->
+<!-- LIST CREATOR END -->
 
     </div>
 
@@ -195,6 +195,6 @@
 
 
     <!-- <script src='/mvc/public/js/modal/classie.js'></script>
-    <script src='/mvc/public/js/modal/modalEffects.js'></script> -->
+    <script src='/mvc/public/js/modal/modalEffects.js'></script>  -->
 
 </body>
