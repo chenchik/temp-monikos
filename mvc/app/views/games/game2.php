@@ -85,6 +85,7 @@
 		   </div>
 
 		    <div id="result"></div>
+		    <p2 id="info"></p2>
 		   <div id = 'finished'></div>
 
 		   <div id="challengeCompleteMessage" style="display:none">

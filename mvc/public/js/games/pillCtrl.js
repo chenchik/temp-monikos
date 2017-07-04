@@ -9,7 +9,9 @@ var app = angular.module('myApp', []);
     $scope.word = null;
     $scope.myVar= null;
     $scope.finalList = [];
-    $scope.type = "Brand";
+    var type=["Brand","Generic"]
+    $scope.type = type[Math.floor(Math.random() * type.length)];
+    // $scope.type="Generic";
     var nextIndex = 0;
     $scope.result = "WRONG";
     console.log(" HEREEE 3");
@@ -370,10 +372,28 @@ var app = angular.module('myApp', []);
   					console.log(shuffledObjects);
 
   					$scope.names = shuffledObjects;
+            var brandMap=makeBrandMap($scope.names);
+            console.log(brandMap);
             var fiveMinutes = 60 * 5;
             var display = $('.timerText');
             startTimer(0, display);
 
+    function makeBrandMap(array){//this returns a map for single brand pointing to multiple generics 
+      var map={};
+        for(var i =0;i<array.length;i++){
+              var currentBrand=array[i].Brand[0].replace(/-/g,' ');
+              var currentGen=array[i].Generic;
+              if(array[i].Brand.length===1&& !map.hasOwnProperty(currentBrand)){
+                map[currentBrand]=[currentGen];
+              }else{continue;}
+              for(var j=i+1;j<array.length;j++){
+                  if(currentBrand==array[j].Brand[0]){
+                    map[currentBrand].push(array[j].Generic);
+                }else{continue;}
+              }
+        }
+        return map;
+    }
 
 		function makeIterator(array){
 
@@ -389,6 +409,7 @@ var app = angular.module('myApp', []);
 
 		var it = makeIterator($scope.names);
 		var card = it.next().value;
+
 
 
 
@@ -420,6 +441,7 @@ var app = angular.module('myApp', []);
           //$('#challengeCompleteMessage').slideUp('fast');
         }else{
           document.getElementById("finished").innerHTML = 'COMPLETED ROUND';
+          setTimeout($scope.home(),3000);
         }
 
 			}
@@ -462,7 +484,7 @@ var app = angular.module('myApp', []);
 
  			if ($scope.type == "Generic" ) {
  					document.getElementById("p1").innerHTML = card.Generic;
- 					document.getElementById("p2").innerHTML = card.Brand;
+ 					// document.getElementById("p2").innerHTML = card.Brand.join("; ");
  				return card.Generic;
  			}
 
@@ -480,8 +502,9 @@ var app = angular.module('myApp', []);
           console.log($scope.index + " index beforeeee");
           console.log($scope.names[$scope.index].Brand + " drug");
           console.log(card.Brand + " card drug");
+          console.log(card);
 
-          return card.Brand;
+          return card.Brand.join("; ");
           }
 
       if ($scope.type == "Generic" ) {
@@ -502,18 +525,30 @@ var app = angular.module('myApp', []);
         }
      }
 
+    $scope.isCorrect=function(array,string){
+          var answer=string.toLowerCase().split(";");
+          for(var i=0;i<answer.length;i++){
+            if(array.includes(answer[i])){
+              continue;
+            }else{return 0;}
+          }
+          return 1;
+    }
+
 		window.checkAnswer = function() {
 			var val= document.jojo.Answer.value;
 			console.log(val + " value of text box");
 			console.log(card.Generic + " generic");
-			console.log(val + " brand");
 			document.getElementById("wrong").innerHTML = "";
 
 			card.Generic = card.Generic.replace(/-/g, ' ');
-			card.Brand = card.Brand.replace(/-/g, ' ');
-
-			 if ($scope.type == "Brand" ) {
- 				if (card.Generic.toLowerCase() === val.toLowerCase()) {
+			// card.Brand = card.Brand.replace(/-/g, ' ');
+      for(var i=0;i<card.Brand.length;i++){
+        card.Brand[i].replace(/-/g,' ');
+      }
+			 if ($scope.type == "Brand") {
+ 				// if (card.Generic.toLowerCase() === val.toLowerCase()) {
+          if (card.Brand.length==1&& brandMap[card.Brand[0]].includes(val.toLowerCase())) {
  					//document.getElementById("plus2").innerHTML="+2!";
 	        console.log("RIGHT");
  					$scope.result = "RIGHT";
@@ -542,6 +577,7 @@ var app = angular.module('myApp', []);
               challengeComplete();
             }else{
 			 			  document.getElementById("finished").innerHTML = 'COMPLETED ROUND';
+              setTimeout($scope.home(),3000);
 					  }
           }
 
@@ -549,11 +585,48 @@ var app = angular.module('myApp', []);
  						window.move();
 						document.getElementById("result").innerHTML = "CORRECT!";
 						document.getElementById("thePill").src = '/mvc/public/images/pill_done.gif';
-
- 						//document.getElementById("nextBtn").disabled = false;
 					}
             setTimeout(nextCard, 1500);
  				}
+        else if(card.Brand.length>1&&card.Generic.toLowerCase() === val.toLowerCase()){
+          console.log("RIGHT");
+          $scope.result = "RIGHT";
+
+          $scope.$apply(function () {
+          $scope.score = $scope.score +2;
+          });
+          if(!($scope.checkIfInChallengeMode() || $scope.checkIfBeingChallenged())){
+            $scope.increaseCapules(2);
+          }
+          document.getElementById("thePill").src = '/mvc/public/images/pill_done.gif';
+
+          console.log("Current score: " + $scope.score);
+
+          if (cuIn == $scope.finalList.length){
+            window.move();
+            if($scope.checkIfBeingChallenged()){
+              $scope.setOutcomeMessage("DETERMINING RESULTS...");
+              $scope.handleBeingChallengedCompletion();
+
+            }else if($scope.checkIfInChallengeMode()){
+              $scope.handleChallengeModeCompletion();
+              //$scope.setOutcomeMessage("CHALLENGE SENT");
+              //$('#challengeCompleteMessage').css({"display": "block"});
+              //$('#challengeCompleteMessage').slideUp('fast');
+              challengeComplete();
+            }else{
+              document.getElementById("finished").innerHTML = 'COMPLETED ROUND';
+              setTimeout($scope.home(),3000);
+            }
+          }
+
+          else{
+            window.move();
+            document.getElementById("result").innerHTML = "CORRECT!";
+            document.getElementById("thePill").src = '/mvc/public/images/pill_done.gif';
+          }
+            setTimeout(nextCard, 1500);
+        }
  				else {
  					console.log ("WRONG");
  					$scope.result = "WRONG";
@@ -565,12 +638,45 @@ var app = angular.module('myApp', []);
  			}
 
  			if ($scope.type ==  "Generic" ) {
- 				if (card.Brand.toLowerCase() === val.toLowerCase()) {
+        var lowerBrand= card.Brand;
+        for(var i=0;i<lowerBrand.length;i++){
+          lowerBrand[i]=lowerBrand[i].toLowerCase();
+        }
+
+
+        if(val.includes(";")&&$scope.isCorrect(lowerBrand,val)){
+          var answer=val.split(";");
+          for(var i=0;i<answer.length;i++){
+            lowerBrand.splice(lowerBrand.indexOf(answer[i].toLowerCase()),1);
+          }
+          console.log("RIGHT");
+          $scope.result = "RIGHT";
+          window.move();
+          $scope.$apply(function () {
+          $scope.score = $scope.score +2;
+          });
+          if(!($scope.checkIfInChallengeMode() || $scope.checkIfBeingChallenged())){
+              $scope.increaseCapules(2);
+          }
+
+          document.getElementById("thePill").src = '/mvc/public/images/pill_done.gif';
+
+          console.log("Current score: " + $scope.score);
+
+        document.getElementById("result").innerHTML = "CORRECT!";
+        console.log(lowerBrand);
+        if(lowerBrand>=1){document.getElementById("result").innerHTML = "ALSO CORRECT: "+lowerBrand.join(";").toUpperCase();}
+        //document.getElementById("nextBtn").disabled = false;
+        // document.getElementById("info"),innerHTML="</br>Also correct: "+lowerBrand.join(";").toUpperCase();
+          setTimeout(nextCard, 1700);
+        }
+ 				else if (lowerBrand.includes(val.toLowerCase())) {
  				 	//document.getElementById("plus2").innerHTML="+2!";
 
+          lowerBrand.splice(lowerBrand.indexOf(val.toLowerCase()),1);//delete val from lowerBrand
 					console.log("RIGHT");
  					$scope.result = "RIGHT";
- 					 window.move();
+ 					window.move();
 
 				 	$scope.$apply(function () {
 					$scope.score = $scope.score +2;
@@ -584,20 +690,22 @@ var app = angular.module('myApp', []);
 					console.log("Current score: " + $scope.score);
 
  				document.getElementById("result").innerHTML = "CORRECT!";
+        if(lowerBrand.length>=1){document.getElementById("result").innerHTML = "ALSO CORRECT: "+lowerBrand.join(";").toUpperCase();}
 				//document.getElementById("nextBtn").disabled = false;
-
-          setTimeout(nextCard, 1500);
+        // document.getElementById("info"),innerHTML="</br>Also correct: "+lowerBrand.join(";").toUpperCase();
+          setTimeout(nextCard, 1700);
  				}
  				else {
  					console.log("WRONG");
  					$scope.result = "WRONG";
-				document.getElementById("wrong").innerHTML = "Incorrect, please type: " + card.Generic;
+				document.getElementById("wrong").innerHTML = "Incorrect, please type: " + card.Brand.join(";");
 				//document.getElementById("nextBtn").disabled = true;
 				$scope.names.push(card.value);
  				}
  			}
 
 		}
+
 
 
 
