@@ -14,10 +14,9 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen" title="no title">
 
   <script>
-var datalid = document.getElementById('datalid').innerHTML;
-function gotoGamelist() {
-  window.location = window.location.origin + "/mvc/public/games/menu/" +
-    datalid;
+function gotoGamelist(lid){
+  var lid = lid;
+  window.location = window.location.origin + "/mvc/public/games/menu/" + lid;
 }
 </script>
 
@@ -27,7 +26,7 @@ function gotoGamelist() {
 
 	<div id=app_header>
 
-	    <a onclick="gotoGamelist()" ><button class = 'backbtn'>Back</button></a>
+	    <a onclick='gotoGamelist("<?=$data['lid']?>")' ><button class = 'backbtn'>Back</button></a>
 
        <a ng-click='home()'><img id="toplogo" src="/mvc/public/images/logo_without_words_version_1.png"></a>
 
