@@ -1,30 +1,100 @@
 //Created by Danila Chenchik Monikos LLC
 
 var app = angular.module('myApp', []);
-app.controller('homeCtrl', function($scope, $http) {
-  var url = "/db/get_drugs.php";
-  $http.get(url)
-    .then(function(response) {
-      console.log(response);
-      $scope.names = response.data.records;
-      console.log($scope.names);
-    });
 
-  $scope.drugDatabase = function() {
-    //create new database controller
-    window.location = window.location.origin +
-      "/mvc/public/home/drugDatabase";
-  }
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
 
-  $scope.listManager = function() {
-    //create list manager controller
-    window.location = window.location.origin +
-      "/mvc/public/home/listManager";
-  }
+var config = {
+    headers: {
+        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+    }
+};
 
-  $scope.social = function() {
-    //create social controller
-    window.location = window.location.origin +
-      "/mvc/public/home/social";
-  }
+app.controller('homeCtrl', function ($scope, $http) {
+    var url = "/db/get_drugs.php";
+    $http.get(url)
+        .then(function (response) {
+            console.log(response);
+            $scope.names = response.data.records;
+            console.log($scope.names);
+        });
+
+    $scope.getNotifications = function () {
+        console.log("hello");
+        
+        var url = "/db/get_notifications.php";
+
+        var username = getCookie('username');
+
+        var data = $.param({
+            user: username
+        });
+
+        $http.post(url, data, config)
+            .then(function (response) {
+                console.log(response);
+
+                $('#notificationIndicator').html(response.data.records.length);
+                //if theres no challenges dont show anything
+                if (!response.data.records.length) {
+                    $('#notificationIndicator').css({
+                        'display': 'none'
+                    });
+                } else {
+                    $('#noNotificationsText').css({
+                        'display': 'none'
+                    });
+                    $('#notificationsBlock').css({
+                        'display': 'block'
+                    });
+                    for (var notif in response.data.records) {
+                        var _url = response.data.records[notif]['url'];
+                        var elemm = document.createElement('p');
+                        elemm.innerHTML = 'challenge:' + response.data.records[
+                                notif]['challengegame'] + ', bet:' + response.data.records[
+                                notif]['bet'] + ', who:' + response.data.records[notif]
+              ['user1'];
+                        elemm.className = 'notificationText';
+                        elemm.onclick = function () {
+                            window.location = _url
+                        };
+                        document.getElementById("notificationsBlock").appendChild(
+                            elemm);
+                    }
+                }
+            });
+
+    }
+    $scope.getNotifications();
+
+    $scope.drugDatabase = function () {
+        //create new database controller
+        window.location = window.location.origin +
+            "/mvc/public/home/drugDatabase";
+    }
+
+    $scope.listManager = function () {
+        //create list manager controller
+        window.location = window.location.origin +
+            "/mvc/public/home/listManager";
+    }
+
+    $scope.social = function () {
+        //create social controller
+        window.location = window.location.origin +
+            "/mvc/public/home/social";
+    }
 });

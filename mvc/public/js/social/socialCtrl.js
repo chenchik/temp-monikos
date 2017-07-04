@@ -34,6 +34,52 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
         un: un_cookie
     });
 
+    $scope.getNotifications = function () {
+        var url = "/db/get_notifications.php";
+        
+        var username = getCookie('username');
+
+        var data = $.param({
+            user: username
+        });
+
+        $http.post(url, data, config)
+            .then(function (response) {
+                console.log(response);
+
+                $('#notificationIndicator').html(response.data.records.length);
+                //if theres no challenges dont show anything
+                if (!response.data.records.length) {
+                    $('#notificationIndicator').css({
+                        'display': 'none'
+                    });
+                } else {
+                    $('#noNotificationsText').css({
+                        'display': 'none'
+                    });
+                    $('#notificationsBlock').css({
+                        'display': 'block'
+                    });
+                    for (var notif in response.data.records) {
+                        var _url = response.data.records[notif]['url'];
+                        var elemm = document.createElement('p');
+                        elemm.innerHTML = 'challenge:' + response.data.records[
+                                notif]['challengegame'] + ', bet:' + response.data.records[
+                                notif]['bet'] + ', who:' + response.data.records[notif]
+              ['user1'];
+                        elemm.className = 'notificationText';
+                        elemm.onclick = function () {
+                            window.location = _url
+                        };
+                        document.getElementById("notificationsBlock").appendChild(
+                            elemm);
+                    }
+                }
+            });
+
+    }
+    $scope.getNotifications();
+
     $http.post('/db/get_friends.php', data, config).then(function (response) {
         $log.info(response.data.records);
         $scope.friends = response.data.records;
@@ -88,12 +134,11 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
 
     $scope.showPopup = function (option) {
         if (option == "add") {
-                 document.getElementById('modal-wrapper').style.visibility = "visible";
-        }
-        else {
+            document.getElementById('modal-wrapper').style.visibility = "visible";
+        } else {
             var length = $scope.friends.length;
-            for(var i=0;i<length;i++){
-                if($scope.friends[i].username == option){
+            for (var i = 0; i < length; i++) {
+                if ($scope.friends[i].username == option) {
                     $scope.friend_username = option;
                     $scope.friend_school = $scope.friends[i].school;
                     $scope.friend_year = $scope.friends[i].year;
@@ -111,10 +156,10 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
     }
 
     $scope.hidePopup = function (option) {
-        if (option == "add"){
+        if (option == "add") {
             document.getElementById('modal-wrapper').style.visibility = "hidden";
             $scope.result = "";
-        }else{            
+        } else {
             document.getElementById('view-friend').style.visibility = "hidden";
             $scope.result = "";
         }
