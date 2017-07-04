@@ -14,11 +14,11 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen" title="no title">
 
   <script>
-    function gotoGamelist(){
-
-        window.location = window.location.origin + "/mvc/public/games/menu/" +  <?=$data['lid']?>;
-    }
-
+var datalid = document.getElementById('datalid').innerHTML;
+function gotoGamelist() {
+  window.location = window.location.origin + "/mvc/public/games/menu/" +
+    datalid;
+}
 </script>
 
 </head>

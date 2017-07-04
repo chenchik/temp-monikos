@@ -216,7 +216,7 @@ h1.list-m-header {
   width: 25%;
   margin: 2%;
   height:auto;
-  overflow-y: scroll;
+  /*overflow-y: scroll;*/
   transition: border-bottom 0.4s ease-in-out;
 }
 
