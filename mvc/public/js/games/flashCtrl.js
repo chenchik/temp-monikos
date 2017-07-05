@@ -12,8 +12,8 @@ app.controller('flashCtrl', function($scope, $http) {
   var index = 1;
   var tempFront = "";
   var tempBack = "";
-          var list="<ul>";//for jsonParser
-        var counter=0;
+  var list = "<ul>"; //for jsonParser
+  var counter = 0;
 
   //dcedits
   $scope.firstLoad = true;
@@ -98,27 +98,36 @@ app.controller('flashCtrl', function($scope, $http) {
         nextCard = function() {
           if (index < $scope.select.length) {
             index++;
-            
-            jsonParser($scope.finalList[index - 1]["Indication"]);//indication json->li
-        var indicationList=list+"</ul>";
-        list="<ul>";
-        counter=0;//reset list and counter
-        jsonParser($scope.finalList[index - 1]["Side Effects"]);
-        var sideList=list+"</ul>";
-        console.log(list);
-        list="<ul>";
-        counter=0;//reset list and counter
+
+            jsonParser($scope.finalList[index - 1]["Indication"]); //indication json->li
+            var indicationList = list + "</ul>";
+            list = "<ul>";
+            counter = 0; //reset list and counter
+            jsonParser($scope.finalList[index - 1]["Side Effects"]);
+            var sideList = list + "</ul>";
+            console.log(list);
+            list = "<ul>";
+            counter = 0; //reset list and counter
 
 
-        document.getElementById("brand_b").innerHTML = $scope.finalList[index - 1]["Brand"];
-        document.getElementById("generic_b").innerHTML = $scope.finalList[index - 1]["Generic"];
-        document.getElementById("class_b").innerHTML =$scope.finalList[index - 1]["Class"];
-        document.getElementById("indication_b").innerHTML = indicationList;
-        document.getElementById("renal_b").innerHTML =$scope.finalList[index - 1]["Renal Adjustment"];
-        document.getElementById("hepatic_b").innerHTML =$scope.finalList[index - 1]["Hepatic Adjustment"];
-        document.getElementById("moa_b").innerHTML =$scope.finalList[index - 1]["Mechanism of Action"]
-        document.getElementById("bbw_b").innerHTML =$scope.finalList[index - 1]["Black Box Warning"];
-        document.getElementById("sideEffect_b").innerHTML =sideList;
+            document.getElementById("brand_b").innerHTML = $scope.finalList[
+              index - 1]["Brand"];
+            document.getElementById("generic_b").innerHTML = $scope.finalList[
+              index - 1]["Generic"];
+            document.getElementById("class_b").innerHTML = $scope.finalList[
+              index - 1]["Class"];
+            document.getElementById("indication_b").innerHTML =
+              indicationList;
+            document.getElementById("renal_b").innerHTML = $scope.finalList[
+              index - 1]["Renal Adjustment"];
+            document.getElementById("hepatic_b").innerHTML = $scope.finalList[
+              index - 1]["Hepatic Adjustment"];
+            document.getElementById("moa_b").innerHTML = $scope.finalList[
+              index - 1]["Mechanism of Action"]
+            document.getElementById("bbw_b").innerHTML = $scope.finalList[
+              index - 1]["Black Box Warning"];
+            document.getElementById("sideEffect_b").innerHTML =
+              sideList;
 
             $scope.percent = index + "/" + $scope.select.length;
             $scope.percentSign = Math.ceil((index / $scope.select.length) *
@@ -194,28 +203,37 @@ app.controller('flashCtrl', function($scope, $http) {
         prevCard = function() {
           if (index > 1) {
             index--;
-            
-
-        jsonParser($scope.finalList[index - 1]["Indication"]);//indication json->li
-        var indicationList=list+"</ul>";
-        list="<ul>";
-        counter=0;//reset list and counter
-        jsonParser($scope.finalList[index - 1]["Side Effects"]);
-        var sideList=list+"</ul>";
-        console.log(list);
-        list="<ul>";
-        counter=0;//reset list and counter
 
 
-        document.getElementById("brand_b").innerHTML = $scope.finalList[index - 1]["Brand"];
-        document.getElementById("generic_b").innerHTML = $scope.finalList[index - 1]["Generic"];
-        document.getElementById("class_b").innerHTML =$scope.finalList[index - 1]["Class"];
-        document.getElementById("indication_b").innerHTML = indicationList;
-        document.getElementById("renal_b").innerHTML =$scope.finalList[index - 1]["Renal Adjustment"];
-        document.getElementById("hepatic_b").innerHTML =$scope.finalList[index - 1]["Hepatic Adjustment"];
-        document.getElementById("moa_b").innerHTML =$scope.finalList[index - 1]["Mechanism of Action"]
-        document.getElementById("bbw_b").innerHTML =$scope.finalList[index - 1]["Black Box Warning"];
-        document.getElementById("sideEffect_b").innerHTML =sideList;
+            jsonParser($scope.finalList[index - 1]["Indication"]); //indication json->li
+            var indicationList = list + "</ul>";
+            list = "<ul>";
+            counter = 0; //reset list and counter
+            jsonParser($scope.finalList[index - 1]["Side Effects"]);
+            var sideList = list + "</ul>";
+            console.log(list);
+            list = "<ul>";
+            counter = 0; //reset list and counter
+
+
+            document.getElementById("brand_b").innerHTML = $scope.finalList[
+              index - 1]["Brand"];
+            document.getElementById("generic_b").innerHTML = $scope.finalList[
+              index - 1]["Generic"];
+            document.getElementById("class_b").innerHTML = $scope.finalList[
+              index - 1]["Class"];
+            document.getElementById("indication_b").innerHTML =
+              indicationList;
+            document.getElementById("renal_b").innerHTML = $scope.finalList[
+              index - 1]["Renal Adjustment"];
+            document.getElementById("hepatic_b").innerHTML = $scope.finalList[
+              index - 1]["Hepatic Adjustment"];
+            document.getElementById("moa_b").innerHTML = $scope.finalList[
+              index - 1]["Mechanism of Action"]
+            document.getElementById("bbw_b").innerHTML = $scope.finalList[
+              index - 1]["Black Box Warning"];
+            document.getElementById("sideEffect_b").innerHTML =
+              sideList;
 
 
 
@@ -246,25 +264,23 @@ app.controller('flashCtrl', function($scope, $http) {
 
 
 
-        function jsonParser(input){//parse json to list element
-          for(var key in input){
-            list+="<li>";
-            if(input[key] instanceof Object){
-              list+=key+"</li><ul>";
+        function jsonParser(input) { //parse json to list element
+          for (var key in input) {
+            list += "<li class='item'>";
+            if (input[key] instanceof Object) {
+              list += key + "</li><ul>";
               counter++;
-              jsonParser(input[key],list,counter);
+              jsonParser(input[key], list, counter);
+            } else if (input[key] == false) {
+              list += key + "</li>";
+            } else {
+              list += input[key] + "</li>";
             }
-            else if(input[key]==false){
-              list+=key+"</li>";
-            }
-            else{
-                list+=input[key]+"</li>";
-              }
           }
-            for(var i=0;i<counter;i++){
-              list+="</ul>";
-              counter--;
-            }
+          for (var i = 0; i < counter; i++) {
+            list += "</ul>";
+            counter--;
+          }
         }
 
         var it = makeIterator($scope.finalList);
@@ -274,29 +290,36 @@ app.controller('flashCtrl', function($scope, $http) {
 
         // jsonParser(test);
 
-        jsonParser($scope.finalList[index - 1]["Indication"]);//indication json->li
-        var indicationList=list+"</ul>";
-        list="<ul>";
-        counter=0;//reset list and counter
+        jsonParser($scope.finalList[index - 1]["Indication"]); //indication json->li
+        var indicationList = list + "</ul>";
+        list = "<ul>";
+        counter = 0; //reset list and counter
         jsonParser($scope.finalList[index - 1]["Side Effects"]);
-        var sideList=list+"</ul>";
-        list="<ul>";
-        counter=0;//reset list and counter
-        jsonParser($scope.finalList[index-1]["Renal Adjustment"]);
-        var renalList=list+"</ul>";
-        list="<ul>";
-        counter=0;
+        var sideList = list + "</ul>";
+        list = "<ul>";
+        counter = 0; //reset list and counter
+        jsonParser($scope.finalList[index - 1]["Renal Adjustment"]);
+        var renalList = list + "</ul>";
+        list = "<ul>";
+        counter = 0;
 
 
-        document.getElementById("brand_b").innerHTML = $scope.finalList[index - 1]["Brand"];
-        document.getElementById("generic_b").innerHTML = $scope.finalList[index - 1]["Generic"];
-        document.getElementById("class_b").innerHTML =$scope.finalList[index - 1]["Class"];
-        document.getElementById("indication_b").innerHTML = indicationList;
-        document.getElementById("renal_b").innerHTML =renalList;
-        document.getElementById("hepatic_b").innerHTML =$scope.finalList[index - 1]["Hepatic Adjustment"];
-        document.getElementById("moa_b").innerHTML =$scope.finalList[index - 1]["Mechanism of Action"]
-        document.getElementById("bbw_b").innerHTML =$scope.finalList[index - 1]["Black Box Warning"];
-        document.getElementById("sideEffect_b").innerHTML =sideList;
+        document.getElementById("brand_b").innerHTML = $scope.finalList[
+          index - 1]["Brand"];
+        document.getElementById("generic_b").innerHTML = $scope.finalList[
+          index - 1]["Generic"];
+        document.getElementById("class_b").innerHTML = $scope.finalList[
+          index - 1]["Class"];
+        document.getElementById("indication_b").innerHTML =
+          indicationList;
+        document.getElementById("renal_b").innerHTML = renalList;
+        document.getElementById("hepatic_b").innerHTML = $scope.finalList[
+          index - 1]["Hepatic Adjustment"];
+        document.getElementById("moa_b").innerHTML = $scope.finalList[
+          index - 1]["Mechanism of Action"]
+        document.getElementById("bbw_b").innerHTML = $scope.finalList[
+          index - 1]["Black Box Warning"];
+        document.getElementById("sideEffect_b").innerHTML = sideList;
 
 
       });
