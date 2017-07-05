@@ -6,4 +6,5 @@
 * ~~determined winner bug~~
 * ​
 * ~~update challenge capsules bug~~
-* Pill game need to handle multiple brands​
+* ~~Pill game need to handle multiple brands~~
+* Matching game same brand error
