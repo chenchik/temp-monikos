@@ -296,7 +296,7 @@ app.controller('matchingCtrl', function($scope, $http) {
 
 
   $scope.getAllTheDrugs = function() {
-    var url = "/db/get_drugs_old.php";
+    var url = "/db/get_drugs.php";
     $http.get(url)
       .then(function(response) {
         console.log(response);
@@ -350,8 +350,11 @@ app.controller('matchingCtrl', function($scope, $http) {
         console.log("final list " + $scope.finalList);
 
         $scope.names = $scope.finalList;
+        for (var i=0;i<$scope.names.length;i++){
+          $scope.names[i].Brand=$scope.names[i].Brand.join(" ;");
+        }
 
-        console.log("names:"+$scope.names);
+        console.log($scope.names);
 
 
         //console.log("length of names " + $scope.names.length);
