@@ -730,8 +730,9 @@ var app = angular.module('myApp', []);
     }
     var challengeid = urlArr[challengeidUrlPosition];
     var senderUrl = urlArr.join("/");
-    $scope.updateChallengeChallenging(challengeid, senderUrl);
     console.log(senderUrl);
+    $scope.updateChallengeChallenging(challengeid, senderUrl);
+    
   }
 
   $scope.updateChallengeChallenging = function(id, senderUrl){

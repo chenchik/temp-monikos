@@ -12,7 +12,7 @@ app.controller('flashCtrl', function($scope, $http) {
   var index = 1;
   var tempFront = "";
   var tempBack = "";
-          var list="<ul>";//for jsonParsor
+          var list="<ul>";//for jsonParser
         var counter=0;
 
   //dcedits
@@ -99,11 +99,11 @@ app.controller('flashCtrl', function($scope, $http) {
           if (index < $scope.select.length) {
             index++;
             
-            jsonParsor($scope.finalList[index - 1]["Indication"]);//indication json->li
+            jsonParser($scope.finalList[index - 1]["Indication"]);//indication json->li
         var indicationList=list+"</ul>";
         list="<ul>";
         counter=0;//reset list and counter
-        jsonParsor($scope.finalList[index - 1]["Side Effects"]);
+        jsonParser($scope.finalList[index - 1]["Side Effects"]);
         var sideList=list+"</ul>";
         console.log(list);
         list="<ul>";
@@ -196,11 +196,11 @@ app.controller('flashCtrl', function($scope, $http) {
             index--;
             
 
-        jsonParsor($scope.finalList[index - 1]["Indication"]);//indication json->li
+        jsonParser($scope.finalList[index - 1]["Indication"]);//indication json->li
         var indicationList=list+"</ul>";
         list="<ul>";
         counter=0;//reset list and counter
-        jsonParsor($scope.finalList[index - 1]["Side Effects"]);
+        jsonParser($scope.finalList[index - 1]["Side Effects"]);
         var sideList=list+"</ul>";
         console.log(list);
         list="<ul>";
@@ -246,13 +246,16 @@ app.controller('flashCtrl', function($scope, $http) {
 
 
 
-        function jsonParsor(input){//parse json to list element
+        function jsonParser(input){//parse json to list element
           for(var key in input){
             list+="<li>";
             if(input[key] instanceof Object){
               list+=key+"</li><ul>";
               counter++;
-              jsonParsor(input[key],list,counter);
+              jsonParser(input[key],list,counter);
+            }
+            else if(input[key]==false){
+              list+=key+"</li>";
             }
             else{
                 list+=input[key]+"</li>";
@@ -269,24 +272,27 @@ app.controller('flashCtrl', function($scope, $http) {
 
         // var test={"adult":{"1st":["123","345"],"2nd":["345","234"]},"child":{"diyi":["hshs","sldaf"],"dier":["3asf45","23df4"]}};
 
-        // jsonParsor(test);
+        // jsonParser(test);
 
-        jsonParsor($scope.finalList[index - 1]["Indication"]);//indication json->li
+        jsonParser($scope.finalList[index - 1]["Indication"]);//indication json->li
         var indicationList=list+"</ul>";
         list="<ul>";
         counter=0;//reset list and counter
-        jsonParsor($scope.finalList[index - 1]["Side Effects"]);
+        jsonParser($scope.finalList[index - 1]["Side Effects"]);
         var sideList=list+"</ul>";
-        console.log(list);
         list="<ul>";
         counter=0;//reset list and counter
+        jsonParser($scope.finalList[index-1]["Renal Adjustment"]);
+        var renalList=list+"</ul>";
+        list="<ul>";
+        counter=0;
 
 
         document.getElementById("brand_b").innerHTML = $scope.finalList[index - 1]["Brand"];
         document.getElementById("generic_b").innerHTML = $scope.finalList[index - 1]["Generic"];
         document.getElementById("class_b").innerHTML =$scope.finalList[index - 1]["Class"];
         document.getElementById("indication_b").innerHTML = indicationList;
-        document.getElementById("renal_b").innerHTML =$scope.finalList[index - 1]["Renal Adjustment"];
+        document.getElementById("renal_b").innerHTML =renalList;
         document.getElementById("hepatic_b").innerHTML =$scope.finalList[index - 1]["Hepatic Adjustment"];
         document.getElementById("moa_b").innerHTML =$scope.finalList[index - 1]["Mechanism of Action"]
         document.getElementById("bbw_b").innerHTML =$scope.finalList[index - 1]["Black Box Warning"];
