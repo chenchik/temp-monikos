@@ -63,11 +63,11 @@
                 <div id="innerChallengeFindFriend" style="display:none">
                     <p id="selectUserText">Select a User</p>
                     <input type="text" name="findUser" id="findUser" placeholder="username">
-                    <div class="challengeButton" id="challengeUserButton" onclick="selectChallengeUser()">Choose</div>
+                    <div class="challengeButton" id="challengeUserButton" ng-click="selectUser()">Choose</div>
                 </div>
                 <div id="innerChallengePlaceBet" style="display:none">
                     <p id="placeBetText">Place a Bet</p>
-                    <input type="number" name="capsulesQuantity" id="capsulesQuantity" min="0" max="10000000">
+                    <input type="number" name="capsulesQuantity" id="capsulesQuantity">
                     <div class="challengeButton" id="challengeSubmit" onclick="challengeSubmit()">Challenge</div>
                 </div>
                 <div id="innerChallengeLoading" style="display:none">
