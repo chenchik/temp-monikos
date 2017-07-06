@@ -25,7 +25,23 @@ var config = {
     }
 };
 
+//challenging your friend variables
+var challengeGame;
+var bet;
+var challengeUser;
+var challenged_capsules;
+var user_capsules;
+
+
+function selectChallengeGame(game) {
+    $('#challenge-header').text("Place a bet");
+    $('#select-game').hide();
+    $('#place-bet').show();
+    challengeGame = game;
+}
+
 app.controller('socialCtrl', function ($scope, $http, $log) {
+
     var data = $.param({
         id: id_cookie
     });
@@ -34,9 +50,46 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
         un: un_cookie
     });
 
+    $scope.challengeSubmit = function(challengeUser, challenged_capsules) {
+        bet = $('#capsulesQuantity').val();
+        challengeUser = challengeUser;
+        challenged_capsules = challenged_capsules;
+        
+        console.log(un_cookie+" "+user_capsules);
+        console.log(challengeUser+" "+challenged_capsules);
+
+        var error = [];
+
+        if (bet < 0) {
+            error[0] = "Can't place a bet less than 0 capsules"
+        }
+        if (bet > user_capsules) {
+            error[1] = "Can't place a bet larger than what you have"
+        }
+        if (bet > challenged_capsules) {
+            error[2] = "Can't place a bet larger than what your friend has"
+        }
+
+        if (error.length == 0) {
+            /*
+            if (challengeGame == 'matching') {
+                gotoGame1('challenge');
+            } else if (challengeGame == 'pill') {
+                gotoGame2('challenge');
+            }
+            */
+        } else {
+            for (var i = 0; i < error.length; i++) {
+                if (error[i] != null) {
+                    console.log(error[i]);
+                }
+            }
+        }
+    }
+
     $scope.getNotifications = function () {
         var url = "/db/get_notifications.php";
-        
+
         var username = getCookie('username');
 
         var data = $.param({
@@ -133,8 +186,11 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
     }
 
     $scope.showPopup = function (option) {
+        console.log(option);
         if (option == "add") {
             document.getElementById('modal-wrapper').style.visibility = "visible";
+        } else if (option == "challenge") {
+            document.getElementById('challenge-friend').style.visibility = "visible";
         } else {
             var length = $scope.friends.length;
             for (var i = 0; i < length; i++) {
@@ -159,6 +215,8 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
         if (option == "add") {
             document.getElementById('modal-wrapper').style.visibility = "hidden";
             $scope.result = "";
+        } else if (option == "challenge") {
+            document.getElementById('challenge-friend').style.visibility = "hidden";
         } else {
             document.getElementById('view-friend').style.visibility = "hidden";
             $scope.result = "";
@@ -267,10 +325,10 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
         }
     }
 
-
     $http.post("/db/get_user_profile.php", data, config).then(function (response) {
         console.log(response);
         $scope.user_school = response.data.records[0].school;
+        user_capsules = response.data.records[0].capsules;
         console.log($scope.user_school);
         $scope.capsules = response.data.records;
     });

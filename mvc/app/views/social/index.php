@@ -43,13 +43,13 @@
                 </div>
             </div>
         </div>
-        
+
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#home"><i class="fa fa-address-book" aria-hidden="true"></i>  &nbsp Manage Friends</a></li>
             <li><a data-toggle="tab" href="#menu1" ng-click="getNatlRank() ; getSchoolRank() ; getFriendRank()"><i class="fa fa-trophy" aria-hidden="true"></i> &nbsp Rankings</a></li>
 
         </ul>
-        
+
     </div>
 
     <div class="container">
@@ -57,7 +57,7 @@
         <div class="tab-content">
             <div id="home" class="tab-pane fade in active">
                 <div class='add-list-block'>
-                    <button ng-click=showPopup("add") | $event.stopPropagation()> Add a Friend </button>
+                    <button ng-click='showPopup("add");$event.stopPropagation()'> Add a Friend </button>
                     <input type="search" class="form-control listButton" id="searchlist" placeholder="Search for your Friends" ng-model="searchText">
                 </div>
 
@@ -68,7 +68,9 @@
                         </p>
                         <button class='selectList' ng-click="showPopup(friend.username)">VIEW</button>
                         <button class='selectList' ng-click="deleteFriend(friend.username);showResult('deleted')">DELETE</button>
-                        <button class='selectList' >CHALLENGE</button>
+                        <button class='selectList' ng-click="showPopup('challenge')">CHALLENGE</button>
+
+                        <!-- view friend popup -->
                         <div id="view-friend" style="visibility:hidden;">
                             <div id="modal" class="add-friend" ng-click='$event.stopPropagation()'>
                                 <header class="popupHeader socialHeader">
@@ -79,11 +81,39 @@
                                     <b>Username:</b> <span ng-bind="friend_username"></span> <br>
                                     <b>School:</b> <span ng-bind="friend_school"></span> <br>
                                     <b>Year:</b> <span ng-bind="friend_year"></span><br>
-                                    <b>Capsules:</b> <span ng-bind="friend_caps"></span> 
+                                    <b>Capsules:</b> <span ng-bind="friend_caps"></span>
                                 </section>
                             </div>
                             <div id='lean_overlay_social' ng-click='$event.stopPropagation()'> </div>
                         </div>
+
+                        <!-- challenge friend popup -->
+                        <div id="challenge-friend" style="visibility:hidden;">
+                            <div id="modal" class="add-friend" ng-click='$event.stopPropagation()'>
+                                <header class="popupHeader socialHeader">
+                                    <span class="header_title" id="challenge-header">Select a game</span>
+                                    <span id="login_close" class="modal_close" ng-click="hidePopup('challenge')"><i class="fa fa-times"></i></span>
+                                </header>
+                                <div id="select-game">
+                                    <div id="container" style="margin-top:20px;">
+                                            <button class="submit" onclick="selectChallengeGame('matching')"> Matching </button>
+                                            <button class="submit" onclick="selectChallengeGame('pill')"> Pill Game </button>
+                                    </div>
+                                </div>
+                                <div id="place-bet" style="display:none;">
+                                    <section class="popupBody">
+                                        <form name="login_form">
+                                            <input placeholder="Amount of Capsules" type="text" id="capsulesQuantity" />
+                                        </form>
+                                    </section>
+                                    <div id="container">
+                                        <button class="submit" ng-click="challengeSubmit(friend.username, friend.capsules)"> Play </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id='lean_overlay_social' ng-click='$event.stopPropagation()'> </div>
+                        </div>
+                        
                     </div>
                 </div>
 
@@ -140,7 +170,7 @@
                 </form>
             </section>
             <div id="container">
-                <button ng-click="addFriend();showResult('added')" id="submit"> Add Friend </button>
+                <button ng-click="addFriend();showResult('added')" class="submit"> Add Friend </button>
             </div>
         </div>
         <div id='lean_overlay_social' ng-click='$event.stopPropagation()'> </div>
