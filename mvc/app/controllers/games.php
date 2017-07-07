@@ -29,10 +29,13 @@ class Games extends Controller {
 		$this->view('games/names');
 	}
 
+	public function challenge_pending($challengeid = ''){
+		$this->view('games/challenge_pending', ['challengeid'=> $challengeid]);
+	}
+
 	public function menu($lid = ''){
 		$this->view('games/gamemenu', ['lid'=> $lid]);
 	}
-
 	public function game1($lid = '', $challengeFlag = '', $game = '', $user1 = '', $user2 = '', $bet = '', $challengeid = ''){
 		$this->view('games/game1',['lid'=> $lid, 'challengeFlag'=> $challengeFlag, 'game'=> $game,'user1'=> $user1, 'user2'=> $user2,'bet'=> $bet, 'challengeid'=> $challengeid]);
 	}

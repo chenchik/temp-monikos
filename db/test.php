@@ -5,32 +5,27 @@
 header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
-/*Created by Danila Chenchik Monikos LLC*/
-
-header("Access-Control-Allow-Origin: *");
-header("Content-Type: application/json; charset=UTF-8");
+require_once 'db_init.php'; 
 
 
-require_once "db_init.php";
+$challenge =['challengeid'=>NULL,
+             "user1"=>1,
+             "user2"=>2,
+             "challengegame"=>12,
+             "bet"=>12,
+             "user1score"=> -1,
+             "user2score"=> -1,
+             "winner"=> NULL,
+             "url"=>'/dummyval'
+             ];
+$collection=$client->monikos->Challenge;
+$result=$collection->insertOne($challenge);
+$insertId=$result->getInsertedId();
 
-$collection= $client->monikos->Users;
-$result=$collection->findOne(["username"=>"mongo"]);
-
-
-if($result!=null){	
-	$to      =  $result["email"];
-	$subject = 'Monikos Challenge From ';
-	
-    // $message = 'Looks like ' . $_POST['user1'] . ' has challenged you to play the Monikos ' . $_POST['game'] . ' game. They have bet you ' . $_POST['bet'] . ' capsules that they can beat you. To accept, go to the url after this sentence, the game will start automatically.' . $_POST['url'];
-	$message="hello world";
-    $headers  = 'MIME-Version: 1.0' . "\r\n";
-    $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
-    $headers .= 'From: Monikos <monikosguide@monikos.com>' . "\r\n";
-	if(mail($to, $subject, $message, $headers)){
-        echo '{"emailsuccess":"'.$result["email"].'"}';
-    } else {
-        echo '{"emailfailure":"failedtosendemail"}';
-    }
-}else{echo '{"error":"no email"}'; }
+// $update=$collection->updateOne(["_id"=> new MongoDB\BSON\ObjectID($insertId)],["$set"=>["url"=>"/mvc/public/games/challenge_pending/".$insertId]]);
+$updateResult = $collection->updateOne(
+    [ '_id' => new MongoDB\BSON\ObjectID($insertId) ],
+    [ '$set' => [ "url"=>"/mvc/public/games/challenge_pending/".$insertId] ]
+);
 
 ?>
