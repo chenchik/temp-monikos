@@ -5,7 +5,7 @@ header("Content-Type: application/json; charset=UTF-8");
 require_once 'db_init.php';
 $collection =$client->monikos->Drugs;
 
-$result=$collection->find();
+$result=$collection->find([],['sort'=>["Generic"=>1],]);
 
 
 $outp = "";
