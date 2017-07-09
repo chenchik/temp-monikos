@@ -85,7 +85,7 @@
     
 }
 
-input[type=text] {
+.popupinput {
     width:100%;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -96,11 +96,6 @@ input[type=text] {
     background-repeat: no-repeat;
     padding: 12px 20px 12px 40px;
 }
-
-input[type=text]:focus {
-    width: 100%;
-}
-
 
 form{
     margin-bottom: 0px;
@@ -186,11 +181,15 @@ ul {
     transition: box-shadow 0.3s ease-in-out;
 }
 
-#container {
+.vertical-align{
     display: flex;
     justify-content: center;
     flex-direction:column;
     align-items:center;
+}
+
+#container{
+    padding:10px;
 }
 
 
@@ -199,7 +198,6 @@ ul {
     color: #8d99ae;
     font-size: 13px;
     padding: 10px;
-    margin-bottom: 20px;
     line-height: 10px;
     letter-spacing: 1px;
     border: 2px #ccc solid;

@@ -66,28 +66,13 @@
         <hr class="hr-red">
         <div class='custom-list-collection-block'>
             <div ng-class="list_block" class="list_block" ng-repeat="list in lists track by $index">
-
                 <h1 class = "list_name_header">
                     {{list.name}}</h1>
-
-
-              <!--   <div class='list-info-block' >
-                    <div class='list-drugs'>
-                        {{list.drugs}}
-                        <br>
-                    </div>
-                </div> -->
                 <br>
-
-
                 <button class ='selectList' ng-click='selectList($index)'>SELECT</button>
-
                 <button class='deleteList' ng-click='deleteList($index)'>DELETE</button>
-
                 <button class='deleteList' ng-click='viewList($index)'>VIEW</button>
-
             </div>
-
         </div>
 
         <br>

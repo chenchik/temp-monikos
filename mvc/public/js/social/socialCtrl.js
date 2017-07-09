@@ -31,6 +31,7 @@ var bet;
 var challengeUser;
 var challenged_capsules;
 var user_capsules;
+var datalid;
 
 
 function selectChallengeGame(game) {
@@ -38,6 +39,16 @@ function selectChallengeGame(game) {
     $('#select-game').hide();
     $('#place-bet').show();
     challengeGame = game;
+    console.log("You chose to play " + game);
+}
+
+function gotoGame1(challengeFlag) {
+    angular.element(document.getElementById('main_app_module')).scope().createChallenge('game1', challengeFlag);
+}
+
+
+function gotoGame2(challengeFlag) {
+    angular.element(document.getElementById('main_app_module')).scope().createChallenge('game2', challengeFlag);
 }
 
 app.controller('socialCtrl', function ($scope, $http, $log) {
@@ -50,13 +61,108 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
         un: un_cookie
     });
 
-    $scope.challengeSubmit = function(challengeUser, challenged_capsules) {
+    $scope.listId = [];
+    $scope.lists = [];
+
+    /* --------------- CHALLENGE SECTION --------------------- */
+
+    //get drugs for list
+    var getListsData = $.param({
+        user_id: getCookie("user_id")
+    });
+    var getListsUrl = "/db/get_lists.php";
+    $http.post(getListsUrl, getListsData, config)
+        .then(function (response) {
+            $scope.listId = response.data.records
+            if (response.data.records.length < 1) {
+                $(".custom-list-collection-block").append(
+                    '<p id="noListsMessage">Please create a list</p>');
+            } else {
+                for (var i in response.data.records) {
+                    $scope.lists.push({
+                        name: response.data.records[i].list_name.toString(),
+                        drugs: response.data.records[i].drugnames.toString().split(
+                            ",")
+                    });
+                }
+            }
+        });
+
+    //add list
+    $scope.addList = function () {
+        $scope.lists.push($scope.listform);
+        var createListUrl =
+            "http://monikos.xpyapvzutk.us-east-1.elasticbeanstalk.com/create_list.php";
+        var createListUrl = "/db/create_list.php";
+
+        var listData = $.param({
+            name: $scope.listform.name,
+            drugs: $scope.listform.drugs,
+            user_id: $scope.getCookie("user_id")
+        });
+
+
+        $scope.listform.drugs;
+        $http.post(createListUrl, listData, config)
+            .then(function (response) {
+                if (response.data[0].response == 200) {
+                    console.log("successfuly added a list!");
+                    $("#noListsMessage").remove();
+                }
+            });
+
+        $scope.listform = {
+            name: "",
+            drugs: []
+        };
+        closeNav();
+        window.location.reload();
+    }
+
+
+    //select list
+    $scope.list_block = "list-block";
+
+    $scope.selectList = function (index, thisElem) {
+        $scope.passedId = $scope.listId[index]['list_id'];
+        datalid=$scope.passedId;
+        console.log("You selected list with ID: " + $scope.passedId);
+    }
+
+    //delete list
+    $scope.deleteList = function (index) {
+        $scope.passedId = $scope.listId[index]['list_id'];
+        var url = "/db/delete_list.php";
+        var data = $.param({
+            lid: $scope.passedId
+        });
+        $http.post(url, data, config)
+            .then(function (response) {
+                console.log("You deleted list with ID: "+$scope.passedId);
+                $scope.passedId = undefined;
+            });
+    }
+
+    $scope.goToSelectGame = function () {
+        if ($scope.passedId != undefined) {
+            $('#challenge-header').text("Select a game");
+            $('#select-list').hide();
+            $('#select-game').show();
+        } else {
+            $('#errorMessage').slideDown();
+        }
+
+    }
+
+    //submit challenge
+    $scope.challengeSubmit = function (challengedUser, challenged_capsules) {
         bet = $('#capsulesQuantity').val();
-        challengeUser = challengeUser;
+        challengeUser = challengedUser;
         challenged_capsules = challenged_capsules;
         
-        console.log(un_cookie+" "+user_capsules);
-        console.log(challengeUser+" "+challenged_capsules);
+        console.log("You placed a bet of " + bet + " capsules");
+        console.log(un_cookie + " " + user_capsules);
+        console.log(challengeUser + " " + challenged_capsules);
 
         var error = [];
 
@@ -71,13 +177,13 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
         }
 
         if (error.length == 0) {
-            /*
+            
             if (challengeGame == 'matching') {
                 gotoGame1('challenge');
             } else if (challengeGame == 'pill') {
                 gotoGame2('challenge');
             }
-            */
+          
         } else {
             for (var i = 0; i < error.length; i++) {
                 if (error[i] != null) {
@@ -86,6 +192,31 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
             }
         }
     }
+    
+    $scope.createChallenge = function (dagame, challengeFlag) {
+
+        
+        var usr1 = un_cookie;
+        var usr2 = challengeUser;
+        console.log(usr2);
+        var data = $.param({
+            user1: usr1,
+            user2: usr2,
+            game: challengeGame,
+            bet: bet
+        });
+        var theurl = "/db/create_challenge.php";
+        $http.post(theurl, data, config)
+            .then(function (response) {
+                console.log(response);
+                $scope.response = response;
+                challengeId = response.data[0].challengeid;
+                window.location = window.location.origin + "/mvc/public/games/" + dagame + "/" + datalid + "/" + challengeFlag + "/" + challengeGame + "/" + usr1 + "/" + challengeUser + "/" + bet + "/" + challengeId;
+            });
+
+    }
+    /* --------------- END CHALLENGE SECTION --------------------- */
+
 
     $scope.getNotifications = function () {
         var url = "/db/get_notifications.php";
@@ -98,8 +229,6 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
 
         $http.post(url, data, config)
             .then(function (response) {
-                console.log(response);
-
                 $('#notificationIndicator').html(response.data.records.length);
                 //if theres no challenges dont show anything
                 if (!response.data.records.length) {
@@ -290,8 +419,10 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
         if (option == "deleted") {
             changeFontWhite();
             document.getElementsByClassName('deleted')[0].style.visibility = "visible";
-        } else {
+        } else if (option == "added") {
             document.getElementsByClassName('added')[0].style.visibility = "visible";
+        } else {
+            //document.getElementsByClassName('challenge')[0].style.visibility = "visbile";
         }
     }
 
@@ -300,11 +431,13 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
         if (option == "deleted") {
             document.getElementsByClassName('deleted')[0].style.visibility = "hidden";
             window.location.reload();
-        } else {
+        } else if (option == "added") {
             document.getElementsByClassName('added')[0].style.visibility = "hidden";
             if ($scope.result.includes("added")) {
                 window.location.reload();
             }
+        } else {
+            //document.getElementsByClassName('challenge')[0].style.visibility = "visbile";
         }
         changeFontRed();
         $scope.deleted = "";
@@ -326,10 +459,8 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
     }
 
     $http.post("/db/get_user_profile.php", data, config).then(function (response) {
-        console.log(response);
         $scope.user_school = response.data.records[0].school;
         user_capsules = response.data.records[0].capsules;
-        console.log($scope.user_school);
         $scope.capsules = response.data.records;
     });
 
@@ -342,3 +473,23 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
     }
 
 })
+
+$(document).ready(function () {
+
+    $('#addListButton').on('click', function () {
+        $('.custom-list-collection-block').addClass('list-collection-block-short');
+    });
+
+    $('.custom-list-collection-block').on('click', '.list_block .deleteList',
+        function () {
+            $(this).parent().remove();
+        });
+
+    $('.challenge').on('click', function () {
+        $('#errorMessage').slideUp();
+    });
+
+    function removePopup() {
+        $('.challenge').slideUp();
+    }
+});
