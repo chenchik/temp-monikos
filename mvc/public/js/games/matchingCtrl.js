@@ -350,8 +350,11 @@ app.controller('matchingCtrl', function($scope, $http) {
         console.log("final list " + $scope.finalList);
 
         $scope.names = $scope.finalList;
+        console.log($scope.names);
         for (var i=0;i<$scope.names.length;i++){
+            if(Array.isArray($scope.names[i].Brand)){
           $scope.names[i].Brand=$scope.names[i].Brand.join(" ;");
+            }
         }
 
         console.log($scope.names);
