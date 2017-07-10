@@ -55,7 +55,7 @@
 					<p class="intro-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer elementum in sem id congue. Sed vehicula eros</p>
 				</div>
 
-				<div ng-click="social()" class="flex-item">
+				<div id="social" ng-click="social()" class="flex-item">
 					<img class="flex-image break" src="/mvc/public/images/social.png" width="100px" height="80px">
 					<br>SOCIAL<br>
 					<p class="intro-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer elementum in sem id congue. Sed vehicula eros</p>

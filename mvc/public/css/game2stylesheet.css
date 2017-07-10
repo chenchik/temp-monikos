@@ -67,7 +67,7 @@ button {
 .app_content {
 	margin-top: 65px;
 	width: 100%;
-	background-color: #ddd;
+	background-color: #fff;
 	height: 100%;
 }
 
@@ -164,6 +164,7 @@ input#f1 {
 }
 
 p#wrong {
+	margin-top:20px;
 	text-align: center;
 	font-size: 20px;
 	font-family: 'Raleway',sans-serif;

@@ -33,7 +33,6 @@ app.controller('homeCtrl', function ($scope, $http) {
         });
 
     $scope.getNotifications = function () {
-        console.log("hello");
         
         var url = "/db/get_notifications.php";
 
@@ -93,8 +92,37 @@ app.controller('homeCtrl', function ($scope, $http) {
     }
 
     $scope.social = function () {
-        //create social controller
+        var username = getCookie('username');
+        var url = "/db/get_profile_by_user.php";
+        var data = $.param({
+            un: username
+        });
+        $http.post(url, data, config)
+            .then(function (response) {
+                console.log(response);
+                var premium=response.data.records[0]["premium"];
+            if(premium){
         window.location = window.location.origin +
-            "/mvc/public/home/social";
+            "/mvc/public/home/social";}
+            else if(!premium){
+            alert("To access more features, upgrade to PREMIUM!");
+        }   
+            });
+
+        
+
+    }
+
+    $scope.getUser= function(){
+        // var username = getCookie('username');
+        // var url = "/db/get_profile_by_user.php";
+        // var data = $.param({
+        //     un: username
+        // });
+        // $http.post(url, data, config)
+        //     .then(function (response) {
+        //         console.log(response);
+        //         response.data.records[0]["premium"];
+        //     });
     }
 });

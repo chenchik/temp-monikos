@@ -78,12 +78,13 @@
       <div class='submit_btn'><button id ='submit_button' class = "button button5" onclick="checkAnswer();" ><span class = 'glyphicon glyphicon-ok-circle'/></button></div>
       </div>
 
-			<p id="wrong"></p>
+			
 
 		   <div class ='pill_wrap'>
 				<div class="pill" id="pill"><img id ='thePill' src="/mvc/public/images/pill.png"></div>
 		   </div>
-
+		   
+		   <p id="wrong"></p>
 		    <div id="result"></div>
 		    <p2 id="info"></p2>
 		   <div id = 'finished'></div>

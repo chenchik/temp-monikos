@@ -38,17 +38,21 @@
     </div>
 
     <div id = app_content>
-        <div class = "game-wrapper">
+        <div class="blank"></div>
+        <div class = "flex-container">
 
-            <a onclick="gotoFlashcard()"><div class = "game-block game-red" id ='game_0'>FLASHCARD</div></a>
+            <a onclick="gotoFlashcard()"><div class = "flex-item " id ='game_0'><br>FLASHCARD</div></a>
 
-            <a onclick="gotoGame1()"><div class = "game-block game-white" id ='game_1'>MATCHING</div></a>
+            <a onclick="gotoGame1()"><div class = "flex-item " id ='game_1'><br>MATCHING</div></a>
 
-            <a onclick ="gotoGame2()"><div class = "game-block game-red" id ='game_2'>PILL GAME</div></a>
+        </div>
+        <div class = "flex-container distort">
+
+            <a onclick ="gotoGame2()"><div class = "flex-item " id ='game_2'><br>PILL GAME</div></a>
 
 <!--           <a href='#'><div class = "game-block game-white" id ='game_3'>MULTIPLE CHOICE<br>QUIZ</div></a>-->
 
-            <div class = "game-block game-white" id ='challenge-block'><span id='challengeText'>CHALLENGE A<br>FRIEND</span>
+            <div class = "flex-item " id ='challenge-block'><span id='challengeText'>CHALLENGE A<br>FRIEND</span>
                 <div id="innerChallenge" style="display:none">
                     <p id="selectGameText">Select a Game</p>
                     <div id="#challenge-matching" class="challengeButton SelectChallengeGameButton" onclick="selectChallengeGame('matching')">MATCHING</div>

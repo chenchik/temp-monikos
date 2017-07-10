@@ -505,7 +505,6 @@ var app = angular.module('myApp', []);
 
   }//end to the giant get request
 
-  //start Danila Chenchik code
 
 
   $scope.deleteChallenge = function(id){
@@ -522,7 +521,7 @@ var app = angular.module('myApp', []);
     $http.post(url, data, config)
     .then(function (response) {
       console.log(response);
-      $scope.home();
+      
     });
   }
 
