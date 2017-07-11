@@ -4,7 +4,7 @@
 
 <meta name='viewport' content="width=device-width, initial-scale=1" />
 
-<body id="game1" ng-app="myApp" ng-controller="matchingCtrl" >
+<body id="game1" ng-app="myApp" ng-controller="matchingCtrl">
 
     <!--HTML STUFF HERE-->
     <div id=app_header>
@@ -143,9 +143,5 @@
 
     </div>
 
-
-
 </body>
-<!--</html>-->
-
 <script src="/mvc/public/js/games/matchingCtrl.js"></script>

@@ -117,8 +117,8 @@
                                         </div>
                                     </div>
                                     <div id="select-game" style="display:none;">
-                                        <div id="container" style="margin-top:10px" class="vertical-align">
-                                            <button class="submit" onclick="selectChallengeGame('matching')" style="margin-bottom:10px;"> Matching </button>
+                                        <div id="container" class="vertical-align">
+                                            <button class="submit" onclick="selectChallengeGame('matching')" style="margin-bottom:10px; margin-top:10px;"> Matching </button>
                                             <button class="submit" onclick="selectChallengeGame('pill')"> Pill Game </button>
                                         </div>
                                     </div>

@@ -117,6 +117,4 @@
 
 </body>
 
-
-<!--</html>-->
 <script src = '/mvc/public/js/games/pillCtrl.js'></script>
