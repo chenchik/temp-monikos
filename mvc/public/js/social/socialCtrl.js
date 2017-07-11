@@ -127,6 +127,13 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
         $scope.passedId = $scope.listId[index]['list_id'];
         datalid=$scope.passedId;
         console.log("You selected list with ID: " + $scope.passedId);
+        if ($scope.passedId != undefined) {
+            $('#challenge-header').text("Select a game");
+            $('#select-list').hide();
+            $('#select-game').show();
+        } else {
+            $('#errorMessage').slideDown();
+        }
     }
 
     //delete list
@@ -143,22 +150,9 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
             });
     }
 
-    $scope.goToSelectGame = function () {
-        if ($scope.passedId != undefined) {
-            $('#challenge-header').text("Select a game");
-            $('#select-list').hide();
-            $('#select-game').show();
-        } else {
-            $('#errorMessage').slideDown();
-        }
-
-    }
-
     //submit challenge
-    $scope.challengeSubmit = function (challengedUser, challenged_capsules) {
+    $scope.challengeSubmit = function () {
         bet = $('#capsulesQuantity').val();
-        challengeUser = challengedUser;
-        challenged_capsules = challenged_capsules;
         
         console.log("You placed a bet of " + bet + " capsules");
         console.log(un_cookie + " " + user_capsules);
@@ -177,13 +171,11 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
         }
 
         if (error.length == 0) {
-            
             if (challengeGame == 'matching') {
                 gotoGame1('challenge');
             } else if (challengeGame == 'pill') {
                 gotoGame2('challenge');
             }
-          
         } else {
             for (var i = 0; i < error.length; i++) {
                 if (error[i] != null) {
@@ -314,11 +306,13 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
 
     }
 
-    $scope.showPopup = function (option) {
+    $scope.showPopup = function (option, challenge_user, challenge_capsules) {
         console.log(option);
         if (option == "add") {
             document.getElementById('modal-wrapper').style.visibility = "visible";
         } else if (option == "challenge") {
+            challengeUser = challenge_user;
+            challenged_capsules = challenge_capsules;
             document.getElementById('challenge-friend').style.visibility = "visible";
         } else {
             var length = $scope.friends.length;
@@ -345,6 +339,11 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
             document.getElementById('modal-wrapper').style.visibility = "hidden";
             $scope.result = "";
         } else if (option == "challenge") {
+            $('#challenge-header').text("Select a list");
+            $('#select-list').show();
+            $('#select-game').hide();
+            $('#place-bet').hide();
+            
             document.getElementById('challenge-friend').style.visibility = "hidden";
         } else {
             document.getElementById('view-friend').style.visibility = "hidden";

@@ -472,22 +472,6 @@ input[type=checkbox]{
 }
 
 
-div#errorMessage {
-    position: fixed;
-    z-index: 5;
-    text-align: center;
-    width: 300px;
-    font-family: 'Raleway',sans-serif;
-    font-size: 20px;
-    background: #333;
-    padding: 30px;
-    color: white;
-    border-radius: 20px;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-}
-
 div#errorButton:focus {
     outline: none;
     border: none;
@@ -496,12 +480,7 @@ div#errorButton:focus {
 div#errorButton:hover {
     cursor: pointer;
 }
-div#errorButton {
-    background: #22A7F0;
-    padding: 5px;
-    margin-top: 15px;
-    border-radius: 5px;
-}
+
 
 span#notificationIndicator {
     background: #22A7F0;

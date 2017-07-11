@@ -65,9 +65,9 @@
                             <p>
                                 {{friend.username}}
                             </p>
-                            <button class='selectList' ng-click="showPopup(friend.username)">VIEW</button>
+                            <button class='selectList' ng-click="showPopup(friend.username,0)">VIEW</button>
                             <button class='selectList' ng-click="deleteFriend(friend.username);showResult('deleted')">DELETE</button>
-                            <button class='selectList' ng-click="showPopup('challenge')">CHALLENGE</button>
+                            <button class='selectList' ng-click="showPopup('challenge',friend.username, friend.capsules)">CHALLENGE</button>
 
                             <!-- view friend popup -->
                             <div id="view-friend" style="visibility:hidden;">
@@ -107,21 +107,18 @@
                                         </section>
                                         <div id="container" class="vertical-align">
                                             <button class="submit" onclick="openNav()">
-                                                <label>CREATE NEW LISTS</label>
-                                            </button>
-                                            <button class="submit" ng-click="goToSelectGame()">
-                                                <label>Select a game</label>
+                                                <label>Create a list</label>
                                             </button>
                                         </div>
                                         <div id="errorMessage" class="challenge" style="display:none">
                                             <img id="errorLogo" src="/mvc/public/images/white_logo.png">
-                                            <p class="errorText">You haven't selected a list</p>
+                                            <p class="errorText" ng-bind="challengeError"></p>
                                             <div class="errorButton" id="errorButton">OKAY</div>
                                         </div>
                                     </div>
                                     <div id="select-game" style="display:none;">
-                                        <div id="container" style="margin-top:20px;" class="vertical-align">
-                                            <button class="submit" onclick="selectChallengeGame('matching')"> Matching </button>
+                                        <div id="container" style="margin-top:10px" class="vertical-align">
+                                            <button class="submit" onclick="selectChallengeGame('matching')" style="margin-bottom:10px;"> Matching </button>
                                             <button class="submit" onclick="selectChallengeGame('pill')"> Pill Game </button>
                                         </div>
                                     </div>
@@ -132,7 +129,7 @@
                                             </form>
                                         </section>
                                         <div id="container" class="vertical-align">
-                                            <button class="submit" ng-click="challengeSubmit(friend.username, friend.capsules)"> Play </button>
+                                            <button class="submit" ng-click="challengeSubmit()"> Play </button>
                                         </div>
                                     </div>
                                 </div>

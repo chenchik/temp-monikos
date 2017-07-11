@@ -173,7 +173,7 @@ ul {
     margin-top: 20px;
     padding: 10px;
     width: 20%;
-    line-height: 10px;
+    line-height: 10px !important;
     letter-spacing: 1px;
     border: 2px #ccc solid;
     border-radius: 10px;
@@ -190,6 +190,7 @@ ul {
 
 #container{
     padding:10px;
+    padding-top:0px;
 }
 
 
