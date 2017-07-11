@@ -4,7 +4,7 @@ var datalid = document.getElementById('datalid').innerHTML;
 //Created by Dana Elhertani, Danila Chenchik Monikos LLC
 
 var isChallenge;
-var isBeingChallenged = false;
+var isBeingChallenged;
 
 var app = angular.module('myApp', []);
 app.controller('matchingCtrl', function ($scope, $http) {
@@ -97,7 +97,7 @@ app.controller('matchingCtrl', function ($scope, $http) {
 
     function checkForRefresh() {
         if (performance.navigation.type == 1) {
-            if (isChallenge == true) {
+            if (isChallenge == true || isBeingChallenged == true) {
                 window.location = window.location.origin + "/mvc/public/home";
             }
         } else {
@@ -107,6 +107,7 @@ app.controller('matchingCtrl', function ($scope, $http) {
     $scope.checkIfBeingChallenged = function () {
         if ($('#challengeFlag').html() == 'beingchallenged') {
             isBeingChallenged = true;
+            checkForRefresh();
             return true;
         }
         return false;

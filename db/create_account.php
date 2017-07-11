@@ -23,7 +23,9 @@ $creds=["username"=>$_POST["username"],
 		"schoolname"=>$_POST["schoolname"],
         "year"=>$_POST["year"],
 		"fbid"=>NULL,
-		"capsules"=>200
+		"capsules"=>200,
+        "friends"=>[],
+        "premium"=>false
 	];
 
 
