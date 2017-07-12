@@ -1,4 +1,4 @@
-<!-- Created by Dana Elhertani Monikos LLC -->
+<!-- Created by Zhenwei Zhang Monikos LLC -->
 
 <head>
   <meta charset="utf-8">
@@ -31,13 +31,6 @@ function gotoGamelist(lid){
        <a ng-click='home()'><img id="toplogo" src="/mvc/public/images/logo_without_words_version_1.png"></a>
 
             <div ng-if="firstLoad">{{getlid("<?=$data['lid']?>", false)}}</div>
-
-
-
-        <!-- <div id = "toggle" onclick="toggleMenuNav()" class=menu-info>
-        	<span id="updated-capsules-indicator" style="display:none;float:left"></span>
-        	<img src=/mvc/public/images/icon_game.png>
-        </div> -->
 	</div>
 
         <div id="completeMessage" style="display:none">
@@ -76,7 +69,7 @@ function gotoGamelist(lid){
   </div>
 </div> -->
 
-<div class="tile-container" style="width:99%;margin-left:15%;margin-top:12px;margin-bottom:10%;">
+<div class="tile-container" style="width:99%;margin-left:18%;margin-top:12px;margin-bottom:10%;">
 
     <div class="tile-small tile-wide-x  flip manual-flip" data-role="tile">
       <div class="card" onclick="rotateCard(this)">

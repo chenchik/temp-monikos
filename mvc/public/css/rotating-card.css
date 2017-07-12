@@ -53,6 +53,8 @@ body {
 	text-align: center;
 	/*padding-top: 50px;*/
 	font-size: 22px;
+  background-color:#fe7174;
+  color: white;
 }
 
 /* back, initially hidden pane */
@@ -64,10 +66,10 @@ body {
         z-index: 3;
 				/*text-align: center;*/
 }
-.back{
+/*.back{
 	background-color: #fe676a;
 	color: white;
-}
+}*/
 
 .front, .back {
 	width: 100%;
@@ -136,7 +138,7 @@ body {
 }
 
 ul {
-    padding: 10px;
+    padding: 7px;
     list-style-position: inside;
 }
 
@@ -146,8 +148,14 @@ ul {
 	line-height: 150%;
 }
 
-.item{
-	padding: 3px;
+.back-card-super>h5>ul>ul>li{
+  font-weight: bold !important;
+  color: #ff4447 !important;
+}
+
+.item2{
+	margin-top: -5px;
+  padding-bottom: 25px;
 }
 
 .column{

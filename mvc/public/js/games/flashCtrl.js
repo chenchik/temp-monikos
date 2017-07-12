@@ -268,7 +268,7 @@ app.controller('flashCtrl', function($scope, $http) {
           for (var key in input) {
             list += "<li class='item'>";
             if (input[key] instanceof Object) {
-              list += key + "</li><ul>";
+              list += key + "</li><ul class='item2'>";
               counter++;
               jsonParser(input[key], list, counter);
             } else if (input[key] == false) {

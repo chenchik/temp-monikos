@@ -41,18 +41,18 @@
         <div class="blank"></div>
         <div class = "flex-container">
 
-            <a onclick="gotoFlashcard()"><div class = "flex-item " id ='game_0'><br>FLASHCARD</div></a>
+            <a onclick="gotoFlashcard()"><div class = "flex-item " id ='game_0'><br>FLASHCARD<br><img src="/mvc/public/images/flashcards.png" width="170px" height="170px"></div></a>
 
-            <a onclick="gotoGame1()"><div class = "flex-item " id ='game_1'><br>MATCHING</div></a>
+            <a onclick="gotoGame1()"><div class = "flex-item " id ='game_1'><br>MATCHING<br><img src="/mvc/public/images/matching.png" width="170px" height="170px"></div></a>
 
         </div>
         <div class = "flex-container distort">
 
-            <a onclick ="gotoGame2()"><div class = "flex-item " id ='game_2'><br>PILL GAME</div></a>
+            <a onclick ="gotoGame2()"><div class = "flex-item " id ='game_2'><br>PILL GAME<br><img src="/mvc/public/images/pill_game.png" width="170px" height="170px"></div></a>
 
 <!--           <a href='#'><div class = "game-block game-white" id ='game_3'>MULTIPLE CHOICE<br>QUIZ</div></a>-->
 
-            <div class = "flex-item " id ='challenge-block'><span id='challengeText'>CHALLENGE A<br>FRIEND</span>
+            <div class = "flex-item " id ='challenge-block'><span id='challengeText'>CHALLENGE A<br>FRIEND<br><img src="/mvc/public/images/challenge.png" width="160px" height="150px"></span>
                 <div id="innerChallenge" style="display:none">
                     <p id="selectGameText">Select a Game</p>
                     <div id="#challenge-matching" class="challengeButton SelectChallengeGameButton" onclick="selectChallengeGame('matching')">MATCHING</div>
@@ -77,6 +77,8 @@
                 <div id="innerChallengeLoading" style="display:none">
                     <img src="/mvc/public/images/loading.gif">
                 </div>
+
+              </div>
 
             </div>
 
