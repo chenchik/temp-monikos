@@ -770,6 +770,7 @@ app.controller('matchingCtrl', function ($scope, $http) {
             .then(function (response) {
                 console.log("UPDATING CAPSULES....");
                 console.log(response);
+                console.log(data);
                 console.log("USER1 SCORE = " + usr1score);
                 console.log("USER2 SCORE = " + usr2score);
                 var score1 = parseInt(usr1score);

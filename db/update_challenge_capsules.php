@@ -80,11 +80,10 @@ if($_POST['user1score'] < $_POST['user2score']){
 	    "lost": "'.$_POST["bet"].'"},';
 
 	}else{
-		$output='[{"response":"400"}]';
+		$output='[{"response":"401"}]';
 	}
-
 	
-	$collection= $client->minokos->Users;
+	$collection= $client->monikos->Users;
 	$previous = $collection -> findOne(
 		['username'=> $_POST['user2']]
 		);
@@ -104,7 +103,7 @@ if($_POST['user1score'] < $_POST['user2score']){
 	    "won": "'.$_POST["bet"].'"}]';
 
 	}else{
-		$output='[{"response":"400"}]';
+		$output='[{"response":"402"}]';
 	}
 	echo $output;	
 }else{
