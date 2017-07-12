@@ -50,13 +50,13 @@
 				</div>
 
 				<div ng-click="listManager()" class="flex-item">
-					<img class="flex-image" src="/mvc/public/images/study1.png" width="100px" height="100px">
+					<img class="flex-image" src="/mvc/public/images/study.png" width="100px" height="100px">
 					<br>STUDY<br>
 					<p class="intro-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer elementum in sem id congue. Sed vehicula eros</p>
 				</div>
 
-				<div id="social" ng-click="social()" class="flex-item">
-					<img class="flex-image break" src="/mvc/public/images/social.png" width="100px" height="80px">
+				<div id="social" ng-click="social()" class="flex-item" ng-init="img=getImg()">
+					<img class="flex-image" ng-src="{{img}}"  width="100px" height="100px">
 					<br>SOCIAL<br>
 					<p class="intro-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer elementum in sem id congue. Sed vehicula eros</p>
 				</div>

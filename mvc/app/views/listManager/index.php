@@ -62,6 +62,7 @@
             <div class="errorButton" id="errorButton">OKAY</div>
         </div>
 
+
         <h1 class="list-m-header your-list">Your List</h1>
         <hr class="hr-red">
         <div class='custom-list-collection-block'>
@@ -71,7 +72,12 @@
                 <br>
                 <button class ='selectList' ng-click='selectList($index)'>SELECT</button>
                 <button class='deleteList' ng-click='deleteList($index)'>DELETE</button>
-                <button class='deleteList' ng-click='viewList($index)'>VIEW</button>
+                <button class='viewList' ng-click='viewList($index)'>VIEW</button>
+
+                <div id="viewModal" style="display:none">
+                    <p id="view_list_detail">You haven't selected a list.</p>
+                    <div class="finishButton" id="finishButton">OKAY</div>
+                </div>
             </div>
         </div>
 
