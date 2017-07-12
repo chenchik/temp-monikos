@@ -134,7 +134,16 @@ app.controller('matchingCtrl', function ($scope, $http) {
         var urlArr = curUrl.split('/');
         return urlArr[urlArr.length - 4];
     }
-
+    $scope.getGame=function(){
+        var curUrl = window.location.href;
+        var urlArr = curUrl.split('/');
+        return urlArr[urlArr.length - 5];
+    }
+    $scope.getBet=function(){
+        var curUrl = window.location.href;
+        var urlArr = curUrl.split('/');
+        return urlArr[urlArr.length - 2];   
+    }
     function startTimer(duration, display) {
         var timer = duration,
             minutes, seconds;
@@ -588,21 +597,42 @@ app.controller('matchingCtrl', function ($scope, $http) {
     $scope.handleChallengeModeCompletion = function () {
         var curUrl = window.location.href;
         var urlArr = curUrl.split('/');
-        var challengeidUrlPosition = urlArr.length - 1;
+        //var challengeidUrlPosition = urlArr.length - 1;
+        //the challengeid is still a place holder now, because this challenge hasn't been inserted into the db yet
         for (var i in urlArr) {
             if (urlArr[i] == "challenge") {
                 urlArr[i] = "beingchallenged";
             }
         }
-        var challengeid = urlArr[challengeidUrlPosition];
+        urlArr.pop();//remove the challengeid element
         var senderUrl = urlArr.join("/");
         console.log(senderUrl);
-        console.log(urlArr[challengeidUrlPosition]);
-        $scope.updateChallengeChallenging(challengeid, senderUrl);
-
+        //console.log(urlArr[challengeidUrlPosition]);
+        var finalScore = Math.ceil(((new Date).getTime() / 1000) - $scope.initTime);
+        var data=$.param({
+            user1: $scope.getUser1(),
+            user2: $scope.getUser2(),
+            game: $scope.getGame(),
+            bet: $scope.getBet(),
+            url: senderUrl,
+            user1score: finalScore
+        });
+        var config = {
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'            }
+        };
+        var theurl = "/db/create_challenge.php";
+        $http.post(theurl, data, config)
+            .then(function (response) {
+                console.log(response.data[0]["url"]);
+                $scope.response = response;
+                senderUrl=response.data[0]["url"];
+                $scope.sendEmail(senderUrl);
+            });
     }
 
     $scope.updateChallengeChallenging = function (id, senderUrl) {
+        //this is an obsolete function
         console.log("INIT TIME " + $scope.initTime);
         var finalScore = Math.ceil(((new Date).getTime() / 1000) - $scope.initTime);
         console.log("THIS IS THE FINAL SCORE " + finalScore);
@@ -664,7 +694,6 @@ app.controller('matchingCtrl', function ($scope, $http) {
         var challengeidUrlPosition = urlArr.length - 1;
 
         var challengeid = urlArr[challengeidUrlPosition];
-
         $scope.updateChallengeBeingChallenged(challengeid);
 
     }

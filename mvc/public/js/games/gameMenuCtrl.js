@@ -162,26 +162,27 @@ gameMenuApp.controller('gameMenuCtrl', function ($scope, $http) {
 
         var usr1 = getCurrentUser();
         var usr2 = challengeUser;
-        var data = $.param({
-            user1: usr1,
-            user2: usr2,
-            game: challengeGame,
-            bet: bet
-        });
-        var config = {
-            headers: {
-                'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
-            }
-        };
-        var theurl = "/db/create_challenge.php";
-        //var theurl = '/db/get_drugs.php'
-        $http.post(theurl, data, config)
-            .then(function (response) {
-                console.log(response);
-                $scope.response = response;
-                challengeId = response.data[0].challengeid;
-                window.location = window.location.origin + "/mvc/public/games/" + dagame + "/" + datalid + "/" + challengeFlag + "/" + challengeGame + "/" + usr1 + "/" + challengeUser + "/" + bet + "/" + challengeId;
-            });
+        // var data = $.param({
+        //     user1: usr1,
+        //     user2: usr2,
+        //     game: challengeGame,
+        //     bet: bet
+        // });
+        // var config = {
+        //     headers: {
+        //         'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+        //     }
+        // };
+        // var theurl = "/db/create_challenge.php";
+        // //var theurl = '/db/get_drugs.php'
+        // $http.post(theurl, data, config)
+        //     .then(function (response) {
+        //         console.log(response);
+        //         $scope.response = response;
+        //         challengeId = response.data[0].challengeid;
+        //         window.location = window.location.origin + "/mvc/public/games/" + dagame + "/" + datalid + "/" + challengeFlag + "/" + challengeGame + "/" + usr1 + "/" + challengeUser + "/" + bet + "/" + challengeId;
+        //     });
+         window.location = window.location.origin + "/mvc/public/games/" + dagame + "/" + datalid + "/" + challengeFlag + "/" + challengeGame + "/" + usr1 + "/" + challengeUser + "/" + bet + "/" + 1;
 
     }
 

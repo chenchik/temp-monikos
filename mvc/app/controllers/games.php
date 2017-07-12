@@ -29,10 +29,6 @@ class Games extends Controller {
 		$this->view('games/names');
 	}
 
-	public function challenge_pending($challengeid = ''){
-		$this->view('games/challenge_pending', ['challengeid'=> $challengeid]);
-	}
-
 	public function menu($lid = ''){
 		$this->view('games/gamemenu', ['lid'=> $lid]);
 	}
