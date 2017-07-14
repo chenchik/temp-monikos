@@ -103,10 +103,19 @@ app.controller('matchingCtrl', function ($scope, $http) {
         } else {
         }
     }
-
+    
+    function checkNormal() {
+        if(isBeingChallenged==false && isChallenge == false){
+            $scope.normal = true;
+        }
+    }
+    
+    checkNormal();
+    
     $scope.checkIfBeingChallenged = function () {
         if ($('#challengeFlag').html() == 'beingchallenged') {
             isBeingChallenged = true;
+            $scope.normal=false;
             checkForRefresh();
             return true;
         }
@@ -117,6 +126,7 @@ app.controller('matchingCtrl', function ($scope, $http) {
         //$scope.challengingFlag = true;
         if ($('#challengeFlag').html() == 'challenge' || $('#challengeFlag').html() ==
             'challenge') {
+            $scope.normal=false;
             isChallenge = true;
             checkForRefresh();
             return true;

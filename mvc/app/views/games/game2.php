@@ -8,7 +8,10 @@
 
 	<div id=app_header>
 
-	   <a onclick='gotoGamelist("<?=$data['lid']?>")' ><button class = 'back'>Back</button></a>
+	    <a onclick="gotoGamelist()" ng-if="checkIfInChallengeMode()"><button class = 'back'>Forfeit</button></a>
+        <a onclick="gotoGamelist()" ng-if="checkIfBeingChallenged()"><button class = 'back'>Forfeit</button></a>
+        <a onclick='gotoGamelist("<?=$data['lid']?>")' ng-if="normal"><button class = 'back'>Back</button></a>
+
 
        <a ng-click='home()'><img id="toplogo" src="/mvc/public/images/logo_without_words_version_1.png"></a>
 
@@ -60,9 +63,7 @@
 			<p style="display:none" class="col-md-12 col-sm-12 col-xs-12 challengeInfoText outcomeMessage"></p>
 		</div>
        	<div id=app_body>
-	        <div ng-if="firstLoad">
-				{{getlid("<?=$data['lid']?>", false)}}
-			</div>
+	        <div ng-if="firstLoad">{{getlid("<?=$data['lid']?>", false)}}</div>
 
 
 		   	<div class = 'question'>

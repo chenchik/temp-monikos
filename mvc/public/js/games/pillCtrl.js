@@ -1,5 +1,9 @@
 //Created by Dana Elhertani, Danila Chenchik Monikos LLC
 
+
+var isChallenge;
+var isBeingChallenged;
+
 var app = angular.module('myApp', []);
     app.controller('pillCtrl', function($scope, $http) {
     //$scope.challengingFlag = false;
@@ -80,18 +84,43 @@ var app = angular.module('myApp', []);
       $('#challengeCompleteMessage').slideDown('fast');
     }
 
-    $scope.checkIfBeingChallenged = function(){
-      if($('#challengeFlag').html() == 'beingchallenged'){
-        return true;
-      }
-      return false;
+    function checkForRefresh() {
+        if (performance.navigation.type == 1) {
+            if (isChallenge == true || isBeingChallenged == true) {
+                window.location = window.location.origin + "/mvc/public/home";
+            }
+        } else {
+        }
+    }
+    
+    function checkNormal() {
+        if(isBeingChallenged==false && isChallenge == false){
+            $scope.normal = true;
+        }
+    }
+    
+    checkNormal();
+    
+    $scope.checkIfBeingChallenged = function () {
+        if ($('#challengeFlag').html() == 'beingchallenged') {
+            isBeingChallenged = true;
+            $scope.normal=false;
+            checkForRefresh();
+            return true;
+        }
+        return false;
     }
 
-    $scope.checkIfInChallengeMode = function(){
-      if($('#challengeFlag').html() == 'challenge' || $('#challengeFlag').html() == 'challenge'){
-        return true;
-      }
-      return false;
+    $scope.checkIfInChallengeMode = function () {
+        //$scope.challengingFlag = true;
+        if ($('#challengeFlag').html() == 'challenge' || $('#challengeFlag').html() ==
+            'challenge') {
+            $scope.normal=false;
+            isChallenge = true;
+            checkForRefresh();
+            return true;
+        }
+        return false;
     }
 
     $scope.getUser2 = function(){
@@ -987,6 +1016,10 @@ var app = angular.module('myApp', []);
 
 
 });
+
+window.onbeforeunload = function (e) {
+    return "If you continue, then your challenge will be not be sent and you will be redirected to the home page";
+};
 
 function gotoGamelist(lid){
   var lid = lid;
