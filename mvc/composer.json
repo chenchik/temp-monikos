@@ -2,7 +2,8 @@
     "require": {
         "aws/aws-sdk-php": "2.*",
         "illuminate/database": "^5.2",
-        "mongodb/mongodb": "^1.0.0"
+        "mongodb/mongodb": "^1.0.0",
+        "braintree/braintree_php" : "3.23.1"
     },
     "autoload": {
     	"classmap": [

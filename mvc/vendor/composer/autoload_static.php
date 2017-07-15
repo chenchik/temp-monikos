@@ -35,6 +35,10 @@ class ComposerStaticInit2df9cb3d169c0524ceb05a889d34fc04
         array (
             'Carbon\\' => 7,
         ),
+        'B' => 
+        array (
+            'Braintree\\' => 10,
+        ),
     );
 
     public static $prefixDirsPsr4 = array (
@@ -74,6 +78,10 @@ class ComposerStaticInit2df9cb3d169c0524ceb05a889d34fc04
         array (
             0 => __DIR__ . '/..' . '/nesbot/carbon/src/Carbon',
         ),
+        'Braintree\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/braintree/braintree_php/lib/Braintree',
+        ),
     );
 
     public static $prefixesPsr0 = array (
@@ -93,6 +101,13 @@ class ComposerStaticInit2df9cb3d169c0524ceb05a889d34fc04
             'Doctrine\\Common\\Inflector\\' => 
             array (
                 0 => __DIR__ . '/..' . '/doctrine/inflector/lib',
+            ),
+        ),
+        'B' => 
+        array (
+            'Braintree' => 
+            array (
+                0 => __DIR__ . '/..' . '/braintree/braintree_php/lib',
             ),
         ),
         'A' => 

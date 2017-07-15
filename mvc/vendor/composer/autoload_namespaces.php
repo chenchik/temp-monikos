@@ -9,5 +9,6 @@ return array(
     'Guzzle\\Tests' => array($vendorDir . '/guzzle/guzzle/tests'),
     'Guzzle' => array($vendorDir . '/guzzle/guzzle/src'),
     'Doctrine\\Common\\Inflector\\' => array($vendorDir . '/doctrine/inflector/lib'),
+    'Braintree' => array($vendorDir . '/braintree/braintree_php/lib'),
     'Aws' => array($vendorDir . '/aws/aws-sdk-php/src'),
 );
