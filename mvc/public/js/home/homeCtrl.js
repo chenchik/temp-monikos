@@ -79,6 +79,33 @@ app.controller('homeCtrl', function ($scope, $http) {
     }
     $scope.getNotifications();
 
+    $scope.premiumCheck=function(){
+        var username = getCookie('username');
+        var url = "/db/get_profile_by_user.php";
+        var data = $.param({
+            un: username
+        });
+        $http.post(url, data, config)
+            .then(function (response) {
+                console.log(response);
+                var premium=response.data.records[0]["premium"];
+            if(!premium){
+                $scope.img="/mvc/public/images/socialgrey.png";
+                $("#social").css('border','2px solid #777777');
+                $("#social").css('transition','');
+                $("#social").css('color','#777777');
+            }
+
+            else{
+                $scope.img="/mvc/public/images/social.png";
+            }   
+            });
+    }
+    $scope.premiumCheck();
+    $scope.getImg=function(){
+        return $scope.img;
+    }
+
     $scope.drugDatabase = function () {
         //create new database controller
         window.location = window.location.origin +

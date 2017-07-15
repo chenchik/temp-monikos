@@ -13,8 +13,8 @@
 <body ng-app="myApp" ng-controller="myCtrl" id="main_app_module">
 
   <div id=app_header>
-      <a ng-click="indextest()"><button class = 'back'>Home</button></a>
-      <a ng-click="drugDatabase()"><button class = 'database'>Database</button></a>
+      <a onclick="home()"><button class = 'back'>Home</button></a>
+      <a onclick="drugDatabase()"><button class = 'database'>Database</button></a>
       <a ng-click="listManager()"><button class = 'study'>Study</button></a>
       <a ng-click = 'home()'><img id="toplogo" src="/mvc/public/images/logo_without_words_version_1.png"></a>
 

@@ -11,6 +11,14 @@ function closeNav() {
   document.getElementById("createList_overlay").style.width = "0%";
 }
 
+function home() {
+  window.location = window.location.origin + "/mvc/public/home";
+}
+
+function drugDatabase() {
+  window.location = window.location.origin + "/mvc/public/home/drugDatabase";
+}
+
 $(document).ready(function() {
 
   $('.list-collection-block').on('click', '.list-block', function() {

@@ -127,6 +127,37 @@ gameMenuApp.controller('gameMenuCtrl', function ($scope, $http) {
     }
     $scope.getNotifications();
 
+
+    $scope.premiumCheck=function(){
+            console.log("dsf");
+        var username = getCookie('username');
+        var url = "/db/get_profile_by_user.php";
+        var data = $.param({
+            un: username
+        });
+        $http.post(url, data, config)
+            .then(function (response) {
+                console.log(response);
+                var premium=response.data.records[0]["premium"];
+            if(!premium){
+                $scope.img="/mvc/public/images/challengegrey.png";
+                $("#challenge-block").css('border','2px solid #777777');
+                $("#challenge-block").css('transition','');
+                 $("#challenge-block").css('hover:','');
+                $("#challenge-block").css('color','#777777');
+            }
+
+            else{
+                $scope.img="/mvc/public/images/challenge.png";
+            }   
+            });
+    }
+    $scope.premiumCheck();
+
+    $scope.getImg=function(){
+        return $scope.img;
+    }
+
     //validates if challenged user exists and stores challenged user's capsules
     $scope.selectUser = function () {
         selectChallengeUser();
