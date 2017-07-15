@@ -37,7 +37,7 @@ if($exists==1){
 
 if ($same == false && $already_friend == false && $exists == 1){
     $friend_doc = $collection->findOne(["username" => $friend_username]);
-    $friend_obj = (object)array('username'=>$friend_username,'capsules'=>$friend_doc->capsules,'school'=>$friend_doc->schoolname,'year'=>$friend_doc->year);
+    $friend_obj = (object)array('username'=>$friend_username);
     // var_dump($friend_obj);
 
     array_push($friends,$friend_obj);

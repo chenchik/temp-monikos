@@ -20,11 +20,13 @@ $outp .= '"username":'  . json_encode($result["username"]) . ',';
 $outp .= '"email":'  . json_encode($result["email"]) . ',';
 $outp .= '"school":' . json_encode($result["schoolname"]) . ',';
 $outp .= '"capsules":'. json_encode($result["capsules"]) . ',';
+$outp .= '"year":'. json_encode($result["year"]) . ',';
 $outp .='"premium":'.json_encode(($result["premium"])).'}';
 $outp ='{"records":['.$outp.']}';
 echo $outp;
 }else{
     echo "0";
 }
+
 
 ?>

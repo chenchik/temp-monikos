@@ -33,6 +33,8 @@ var challenged_capsules;
 var user_capsules;
 var datalid;
 
+var friends;
+
 
 function selectChallengeGame(game) {
     $('#challenge-header').text("Place a bet");
@@ -125,7 +127,7 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
 
     $scope.selectList = function (index, thisElem) {
         $scope.passedId = $scope.listId[index]['list_id'];
-        datalid=$scope.passedId;
+        datalid = $scope.passedId;
         console.log("You selected list with ID: " + $scope.passedId);
         if ($scope.passedId != undefined) {
             $('#challenge-header').text("Select a game");
@@ -145,7 +147,7 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
         });
         $http.post(url, data, config)
             .then(function (response) {
-                console.log("You deleted list with ID: "+$scope.passedId);
+                console.log("You deleted list with ID: " + $scope.passedId);
                 $scope.passedId = undefined;
             });
     }
@@ -153,7 +155,7 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
     //submit challenge
     $scope.challengeSubmit = function () {
         bet = $('#capsulesQuantity').val();
-        
+
         console.log("You placed a bet of " + bet + " capsules");
         console.log(un_cookie + " " + user_capsules);
         console.log(challengeUser + " " + challenged_capsules);
@@ -184,10 +186,10 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
             }
         }
     }
-    
+
     $scope.createChallenge = function (dagame, challengeFlag) {
 
-        
+
         var usr1 = un_cookie;
         var usr2 = challengeUser;
         console.log(usr2);
@@ -205,7 +207,7 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
         //         challengeId = response.data[0].challengeid;
         //         window.location = window.location.origin + "/mvc/public/games/" + dagame + "/" + datalid + "/" + challengeFlag + "/" + challengeGame + "/" + usr1 + "/" + challengeUser + "/" + bet + "/" + challengeId;
         //     });
-        window.location = window.location.origin + "/mvc/public/games/" + dagame + "/" + datalid + "/" + challengeFlag + "/" + challengeGame + "/" + usr1 + "/" + challengeUser + "/" + bet + "/" + 1;//1 for place holder, will update the challenge id after usr1 finishes the game
+        window.location = window.location.origin + "/mvc/public/games/" + dagame + "/" + datalid + "/" + challengeFlag + "/" + challengeGame + "/" + usr1 + "/" + challengeUser + "/" + bet + "/" + 1; //1 for place holder, will update the challenge id after usr1 finishes the game
 
     }
     /* --------------- END CHALLENGE SECTION --------------------- */
@@ -255,10 +257,25 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
     }
     $scope.getNotifications();
 
+    var ct = 0;
+    $scope.friends = [];
     $http.post('/db/get_friends.php', data, config).then(function (response) {
         $log.info(response.data.records);
-        $scope.friends = response.data.records;
+        friends = response.data.records;
+        friends.forEach(function(friend){
+            getFriendProfile(friend);
+        });
     });
+
+    function getFriendProfile(friend) {
+        var fr_data = $.param({
+            un: friend.username
+        });
+        $http.post('/db/get_profile_by_user.php', fr_data, config).then(function (response) {
+            $scope.friends[ct] = response.data.records[0];
+            ct++;
+        });
+    }
 
     $scope.getNatlRank = function () {
         $http.get("/db/rank_national.php").then(function (response) {
@@ -273,12 +290,27 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
             console.log(response.data);
         });
     };
+    
+    $scope.friends.sort(function(a,b){
+        return b.capsules - a.capsules;
+    });
 
     $scope.getFriendRank = function () {
+        /*
         $http.post("/db/rank_friend.php", un_data, config).then(function (response) {
             $scope.friend_rank = response.data.records;
             console.log(response.data);
         });
+        */
+        $scope.friend_rank = [];
+        var rank = 1;
+        for(var i =0;i<$scope.friends.length;i++){
+            $scope.friend_rank[i] = {
+                "content": $scope.friends[i].username + " has " + $scope.friends[i].capsules + " capsules",
+                "number": rank
+            }
+            rank++;
+        }
     };
 
     $scope.addFriend = function () {
@@ -344,7 +376,7 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
             $('#select-list').show();
             $('#select-game').hide();
             $('#place-bet').hide();
-            
+
             document.getElementById('challenge-friend').style.visibility = "hidden";
         } else {
             document.getElementById('view-friend').style.visibility = "hidden";
