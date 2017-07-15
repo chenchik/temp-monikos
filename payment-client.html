@@ -24,13 +24,16 @@
             }, function(createErr, instance) {
                 button.addEventListener('click', function() {
                     instance.requestPaymentMethod(function(err, payload) {
+            
                         $.post("/set-transaction.php",
                             {
                                 nonce: payload.nonce
                             },
                             function(data, status) {
                                 console.log(data);
+                                console.log(status);
                             });
+                            
                     });
                 });
             });
