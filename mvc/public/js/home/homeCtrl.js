@@ -118,6 +118,7 @@ app.controller('homeCtrl', function ($scope, $http) {
             "/mvc/public/home/listManager";
     }
 
+
     $scope.social = function () {
         var username = getCookie('username');
         var url = "/db/get_profile_by_user.php";
@@ -132,7 +133,8 @@ app.controller('homeCtrl', function ($scope, $http) {
         window.location = window.location.origin +
             "/mvc/public/home/social";}
             else if(!premium){
-            alert("To access more features, upgrade to PREMIUM!");
+            window.location = window.location.origin +
+            "/mvc/public/payment";
         }   
             });
 
