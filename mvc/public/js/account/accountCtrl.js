@@ -245,9 +245,9 @@ app.controller('accountCtrl', function ($scope, $http) {
 
     }
     $scope.login = function () {
+        $(".header_title").text('Login');
         document.getElementById('register_app').style.display = "none";
         document.getElementById('login_form').style.display = "inline";
-        document.getElementsByClassName('header_title')[0].innerHTML = "Login";
     }
 });
 

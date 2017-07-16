@@ -1334,6 +1334,12 @@
             top: 200,
             closeButton: ".modal_close"
         });
+        
+        $(".modal_close").click(function(){
+            $(".header_title").text('Login');
+            $("#register_app").hide();
+            $("#login_form").show();
+        });
 
         $(function() {
 
