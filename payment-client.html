@@ -2,18 +2,18 @@
     <meta charset="utf-8">
     <!-- Load PayPal's checkout.js Library. -->
     <script src="https://www.paypalobjects.com/api/checkout.js" data-version-4 log-level="warn"></script>
+    <!-- Load the dropin -->
     <script src="https://js.braintreegateway.com/web/dropin/1.4.0/js/dropin.min.js"></script>
     <!-- Load the client component. -->
     <script src="https://js.braintreegateway.com/web/3.19.1/js/client.min.js"></script>
     <!-- Load the PayPal Checkout component. -->
     <script src="https://js.braintreegateway.com/web/3.19.1/js/paypal-checkout.min.js"></script>
+    <!-- Collecting device data for Paypal -->
+    <script src="https://js.braintreegateway.com/web/3.19.1/js/data-collector.min.js"></script>
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
-<!--
-        Template for making a transaction. Check developer's console for success/failure results
--->
 
 <body>
     <div id="dropin-container"></div>
@@ -27,7 +27,7 @@
         });
 
         function createDropIn(token) {
-            //dropin-ui
+             /*-------------------------CREDIT CARDS-------------------------*/
             braintree.dropin.create({
                 authorization: token,
                 container: '#dropin-container'
@@ -44,24 +44,34 @@
                     });
                 });
             });
-            
-            //paypal
+
+            /*-------------------------PAYPAL-------------------------*/
             braintree.client.create({
                 authorization: token
             }, function(clientErr, clientInstance) {
-
-                // Stop if there was a problem creating the client.
-                // This could happen if there is a network error or if the authorization
-                // is invalid.
                 if (clientErr) {
                     console.error('Error creating client:', clientErr);
                     return;
                 }
 
+                braintree.dataCollector.create({
+                    client: clientInstance,
+                    paypal: true
+                }, function(err, dataCollectorInstance) {
+                    if (err) {
+                        // Handle error
+                        return;
+                    }
+                    // At this point, you should access the dataCollectorInstance.deviceData value and provide it
+                    // to your server, e.g. by injecting it into your form as a hidden input.
+                    myDeviceData = dataCollectorInstance.deviceData;
+                });
+
                 // Create a PayPal Checkout component.
                 braintree.paypalCheckout.create({
                     client: clientInstance
                 }, function(paypalCheckoutErr, paypalCheckoutInstance) {
+
 
                     // Stop if there was a problem creating PayPal Checkout.
                     // This could happen if there was a network error or if it's incorrectly
@@ -73,22 +83,37 @@
 
                     // Set up PayPal with the checkout.js library
                     paypal.Button.render({
-                        env: 'production', // or 'sandbox'
+
+                        env: 'sandbox', // or 'production'
 
                         payment: function() {
                             return paypalCheckoutInstance.createPayment({
-                                // Your PayPal options here. For available options, see
-                                // http://braintree.github.io/braintree-web/current/PayPalCheckout.html#createPayment
+                                flow: 'vault',
+                                billingAgreementDescription: 'Your agreement description',
+                                enableShippingAddress: true,
+                                shippingAddressEditable: false,
+                                shippingAddressOverride: {
+                                    recipientName: 'Scruff McGruff',
+                                    line1: '1234 Main St.',
+                                    line2: 'Unit 1',
+                                    city: 'Chicago',
+                                    countryCode: 'US',
+                                    postalCode: '60652',
+                                    state: 'IL',
+                                    phone: '123.456.7890'
+                                }
                             });
                         },
+
 
                         onAuthorize: function(data, actions) {
                             return paypalCheckoutInstance.tokenizePayment(data)
                                 .then(function(payload) {
-                                    // Submit `payload.nonce` to your server.
+                                    console.log(payload);
                                 });
                         },
 
+                        /*
                         onCancel: function(data) {
                             console.log('checkout.js payment cancelled', JSON.stringify(data, 0, 2));
                         },
@@ -96,13 +121,16 @@
                         onError: function(err) {
                             console.error('checkout.js error', err);
                         }
+                        */
                     }, '#paypal-button').then(function() {
                         // The PayPal button will be rendered in an html element with the id
                         // `paypal-button`. This function will be called when the PayPal button
                         // is set up and ready to be used.
                     });
 
+
                 });
+
 
             });
         }
