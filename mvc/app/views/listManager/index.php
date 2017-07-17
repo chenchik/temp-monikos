@@ -126,7 +126,7 @@
 
         </div>
 
-        <!-------LIST CREATOR--------->
+        <!---LIST CREATOR-->
 
         <!-- The overlay -->
         <div id="createList_overlay" class="overlay">
@@ -140,7 +140,7 @@
                     <div class=field-name>LIST TITLE: </div>
                     <input id = 'listName' ng-model=listform.name type="text" required>
                 </div>
-                <!-------LIST CREATOR--------->
+                <!--LIST CREATOR-->
                 <div class="list-container">
                     <div class="form-group">
                         <div class="col-xs-8 col-sm-8 col-xs-offset-2 col-sm-offset-2">
