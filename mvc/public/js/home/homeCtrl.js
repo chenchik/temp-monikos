@@ -24,6 +24,7 @@ var config = {
 };
 
 app.controller('homeCtrl', function ($scope, $http) {
+    var premium;
     var url = "/db/get_drugs.php";
     $http.get(url)
         .then(function (response) {
@@ -31,7 +32,7 @@ app.controller('homeCtrl', function ($scope, $http) {
             $scope.names = response.data.records;
             console.log($scope.names);
         });
-
+    $scope.logo="/mvc/public/images/logo_without_words_version_1.png";
     $scope.getNotifications = function () {
         
         var url = "/db/get_notifications.php";
@@ -78,17 +79,23 @@ app.controller('homeCtrl', function ($scope, $http) {
 
     }
     $scope.getNotifications();
-
-    $scope.premiumCheck=function(){
+    $scope.isPremium= function (){
         var username = getCookie('username');
         var url = "/db/get_profile_by_user.php";
         var data = $.param({
             un: username
         });
         $http.post(url, data, config)
-            .then(function (response) {
-                console.log(response);
-                var premium=response.data.records[0]["premium"];
+            .then(function (response) { 
+                premium=response.data.records[0]["premium"];
+            });
+            
+    }
+    $scope.isPremium();
+    console.log(premium);
+
+    $scope.premiumCheck=function(){
+
             if(!premium){
                 $scope.img="/mvc/public/images/socialgrey.png";
                 $("#social").css('border','2px solid #777777');
@@ -99,8 +106,8 @@ app.controller('homeCtrl', function ($scope, $http) {
             else{
                 $scope.img="/mvc/public/images/social.png";
             }   
-            });
-    }
+            };
+    
     $scope.premiumCheck();
     $scope.getImg=function(){
         return $scope.img;
@@ -119,16 +126,9 @@ app.controller('homeCtrl', function ($scope, $http) {
     }
 
 
+
+
     $scope.social = function () {
-        var username = getCookie('username');
-        var url = "/db/get_profile_by_user.php";
-        var data = $.param({
-            un: username
-        });
-        $http.post(url, data, config)
-            .then(function (response) {
-                console.log(response);
-                var premium=response.data.records[0]["premium"];
             if(premium){
         window.location = window.location.origin +
             "/mvc/public/home/social";}
@@ -136,10 +136,6 @@ app.controller('homeCtrl', function ($scope, $http) {
             window.location = window.location.origin +
             "/mvc/public/payment";
         }   
-            });
-
-        
-
     }
 
     $scope.getUser= function(){

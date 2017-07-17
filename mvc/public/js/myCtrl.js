@@ -1,5 +1,5 @@
 var app = angular.module('myApp', ['checklist-model']);
-
+var premium;
 app.controller('myCtrl', function($scope, $http) {
 
   function gotoChallenge(url) {
@@ -123,6 +123,18 @@ app.controller('myCtrl', function($scope, $http) {
 
   $scope.getSchoolLists();
 
+    $scope.isPremium= function (){
+        var username = getCookie('username');
+        var url = "/db/get_profile_by_user.php";
+        var data = $.param({
+            un: username
+        });
+        $http.post(url, data, config)
+            .then(function (response) {
+                console.log(response);
+                premium=response.data.records[0]["premium"];});
+    }
+    $scope.isPremium();
 
 
   //end NIk's edits
@@ -133,7 +145,7 @@ app.controller('myCtrl', function($scope, $http) {
 
   $scope.lists = [];
 
-  $scope.getCookie = function(cname) {
+  $scope.getCookie = function(cname) {  
     var name = cname + "=";
     var ca = document.cookie.split(';');
     for (var i = 0; i < ca.length; i++) {
@@ -166,11 +178,21 @@ app.controller('myCtrl', function($scope, $http) {
       'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
     }
   };
+  if(!premium){
+    $("#addbtn").attr("disabled",true);
+     $("#addbtn").css("background","#777777");
+     $("#addbtn").text("Upgrade to Create Your Own List");
+  }
 
-
+  if(premium){
   var getListsData = $.param({
     user_id: $scope.getCookie("user_id")
+  });}
+  else{
+    var getListsData = $.param({
+    user_id: "free"
   });
+  }
 
   $http.post(getListsUrl, getListsData, getListsConfig)
     .then(function(response) {
@@ -228,8 +250,6 @@ app.controller('myCtrl', function($scope, $http) {
       drugs: $scope.listform.drugs,
       user_id: $scope.getCookie("user_id")
     });
-
-
     $scope.listform.drugs;
     $http.post(createListUrl, listData, config)
       .then(function(response) {
