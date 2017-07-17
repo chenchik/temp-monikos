@@ -1,6 +1,6 @@
 <?php
 
-/* Created by Danila Chenchik Monikos LLC  */
+/* Created by Zhenwei Zhang Monikos LLC  */
 
 class Home extends Controller {
 
@@ -21,12 +21,17 @@ class Home extends Controller {
 		$user->name = $name;
 
 		//directory path
-		$this->view('payment/index', ['name' => $user->name]);
+		$this->view('payment/index');
 	}
 
 	public function test($param){
 		echo " : " . $param . " : ";
 	}
+
+	public function payment(){
+		$this->view('payment/index');
+	}
 }
+
 
 ?>

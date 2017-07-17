@@ -52,6 +52,16 @@ class Home extends Controller {
 		$this->view('social/index');
 	}
 
+	public function payment(){
+		$this->view('payment/index');
+	}
+
+	public function pricing(){
+		$this->view('payment/pricing');
+	}
+
+
+
 
 }
 
