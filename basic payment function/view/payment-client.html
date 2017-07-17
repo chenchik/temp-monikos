@@ -12,7 +12,16 @@
     <script src="https://js.braintreegateway.com/web/3.19.1/js/data-collector.min.js"></script>
     <!-- jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Angular -->
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </head>
+
+<!--
+<button type="button" onclick="subscription('month')"> 2.99 for 1 month</button>
+<button type="button" onclick="subscription('semester')"> 12.99 for 5 months</button>
+<button type="button" onclick="subscription('year')"> 20.99 for 10 months</button>
+-->
+
 
 
 <body>
@@ -22,7 +31,7 @@
     <script>
         var button = document.querySelector('#submit-button');
 
-        $.get("/payment-server.php", function(data, status) {
+        $.get("../db/payment-server-init.php", function(data, status) {
             createDropIn(data);
         });
 
@@ -35,7 +44,7 @@
                 //drop-in
                 button.addEventListener('click', function() {
                     instance.requestPaymentMethod(function(err, payload) {
-                        $.post("/set-transaction.php", {
+                        $.post("../db/credit-transaction.php", {
                                 nonce: payload.nonce
                             },
                             function(data, status) {
@@ -91,7 +100,11 @@
                                 flow: 'vault',
                                 billingAgreementDescription: 'Your agreement description',
                                 enableShippingAddress: true,
-                                shippingAddressEditable: false,
+                                shippingAddressEditable: true,
+                                amount: '2.99',
+                                currency: 'USD'
+                                
+                                /*
                                 shippingAddressOverride: {
                                     recipientName: 'Scruff McGruff',
                                     line1: '1234 Main St.',
@@ -102,6 +115,7 @@
                                     state: 'IL',
                                     phone: '123.456.7890'
                                 }
+                                */
                             });
                         },
 
@@ -110,6 +124,15 @@
                             return paypalCheckoutInstance.tokenizePayment(data)
                                 .then(function(payload) {
                                     console.log(payload);
+                                    $.post( "../db/paypal-transaction.php",{
+                                        nonce: payload.nonce,
+                                        type: payload.type,
+                                        payerId: payload.details.payerId,
+                                        address: payload.details.shippingAddress
+                                    } , function (data,status){
+                                        console.log(data);
+                                        
+                                    });
                                 });
                         },
 
