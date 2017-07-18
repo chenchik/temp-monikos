@@ -2,7 +2,7 @@
 require 'payment-server-init.php';
 
 $result = Braintree_Transaction::sale([
-    "amount" => 2.99,
+    "amount" => $_POST['amount'],
     "paymentMethodNonce" => $_POST['nonce']
     
     /*"options" => [
