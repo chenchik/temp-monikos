@@ -24,7 +24,6 @@ img{max-width:100%;}
 
 /****-----start-body----****/
 body{
-	background:url(https://preview.w3layouts.com/demos/flat_pricing_tables_design/web/images/bg.jpg)no-repeat 0px 0px;
 	    font-family: 'Lato', sans-serif;
 	    background-size: cover;
 	    -o-background-size: cover;
@@ -47,7 +46,7 @@ body a{
 	-ms-transition:0.5s all ease;
 }
 .pop_up{
-		border: 9px solid#485460;
+		border: 9px solid#fa6e6f;
 		border-radius: 1em;
 		-o-border-radius: 1em;
 		-moz-border-radius: 1em;

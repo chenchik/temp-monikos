@@ -71,10 +71,11 @@
      							</div>
      							<div class="price-bg">
      							<ul>
-     								<li class="whyt"><a href="#">200 Words </a></li>
-     								<li><a href="#">Learn With Friends</a></li>
-     								<li class="whyt"><a href="#">Challenge with your Friend </a></li>
-     								<li><a href="#">Fully Support</a></li>
+     								<li class="whyt"><a href="#">Access to over 300+ drugs </a></li>
+     								<li><a href="#">Edit and submit your own drug hints</a></li>
+     								<li class="whyt"><a href="#">Study with your friends </a></li>
+     								<li><a href="#">Eligible for rewards awarded to the top users each semester</a></li>
+                    <li class="whyt"><a href="#">$ 2.99 / month </a></li>
      							</ul>
      							<div class="cart2">
      								<a class="popup-with-zoom-anim" href="#small-dialog">Purchase</a>
@@ -84,7 +85,7 @@
      						<div class="pricing-grid2">
      							<div class="price-value two">
      								<h3><a href="#">Semi-Annually</a></h3>
-     								<h5><span>$ 12.99</span><lable> / 6 month</lable></h5>
+     								<h5><span>$ 12.99</span><lable> / Semester</lable></h5>
      								<div class="sale-box two">
 
      							</div>
@@ -92,10 +93,11 @@
      							</div>
      							<div class="price-bg">
                     <ul>
-       								<li class="whyt"><a href="#">200 Words </a></li>
-       								<li><a href="#">Learn With Friends</a></li>
-       								<li class="whyt"><a href="#">Challenge with your Friend </a></li>
-       								<li><a href="#">Fully Support</a></li>
+       								<li class="whyt"><a href="#">Access to over 300+ drugs</a></li>
+       								<li><a href="#">Edit and submit your own drug hints</a></li>
+       								<li class="whyt"><a href="#">Study with your friends </a></li>
+       								<li><a href="#">Eligible for rewards awarded to the top users each semester</a></li>
+                      <li class="whyt"><a href="#">$ 2.59 / month </a></li>
        							</ul>
      							<div class="cart2">
      								<a class="popup-with-zoom-anim" href="#small-dialog">Purchase</a>
@@ -113,10 +115,11 @@
      							</div>
      							<div class="price-bg">
                     <ul>
-       								<li class="whyt"><a href="#">200 Words </a></li>
-       								<li><a href="#">Learn With Friends</a></li>
-       								<li class="whyt"><a href="#">Challenge with your Friend </a></li>
-       								<li><a href="#">Fully Support</a></li>
+       								<li class="whyt"><a href="#">Access to over 300+ drugs </a></li>
+       								<li><a href="#">Edit and submit your own drug hints</a></li>
+       								<li class="whyt"><a href="#">Study with your friends</a></li>
+       								<li><a href="#">Eligible for rewards awarded to the top users each semester</a></li>
+                      <li class="whyt"><a href="#">$ 1.67 / month </a></li>
        							</ul>
      							<div class="cart2">
      								<a class="popup-with-zoom-anim" href="#small-dialog">Purchase</a>
@@ -151,20 +154,7 @@
      									<div class="pop_up">
      									 	<div class="payment-online-form-left">
      											<form>
-     												<h4><span class="shipping"> </span>Shipping</h4>
-     												<ul>
-     													<li><input class="text-box-dark" type="text" value="Frist Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Frist Name';}"></li>
-     													<li><input class="text-box-dark" type="text" value="Last Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Last Name';}"></li>
-     												</ul>
-     												<ul>
-     													<li><input class="text-box-dark" type="text" value="Email" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Email';}"></li>
-     													<li><input class="text-box-dark" type="text" value="Company Name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Company Name';}"></li>
-     												</ul>
-     												<ul>
-     													<li><input class="text-box-dark" type="text" value="Phone" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Phone';}"></li>
-     													<li><input class="text-box-dark" type="text" value="Address" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Address';}"></li>
-     													<div class="clear"> </div>
-     												</ul>
+
      												<div class="clear"> </div>
      											<ul class="payment-type">
      												<h4><span class="payment"> </span> Payments</h4>
