@@ -1,11 +1,11 @@
 <?php
 
-require 'payment-server.php';
+require 'payment-server-init.php';
 
 $nonceFromTheClient = $_POST["nonce"];
 
 $result = Braintree_Transaction::sale([
-  'amount' => '10.00',
+  'amount' => $_POST['amount'],
   'paymentMethodNonce' => $nonceFromTheClient,
 'options' => [
     'submitForSettlement' => True
