@@ -213,7 +213,6 @@
         <footer>
             <a href="#" onclick="logout()"> Log Out</a>
         </footer>
-
     </div>
 
 </body>
