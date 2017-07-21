@@ -10,5 +10,4 @@ $result = Braintree_Subscription::create([
 ]);
 
 echo "Successfully subscribed to ". $_POST['plan']. " plan";
-# true
 ?>

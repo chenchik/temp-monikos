@@ -1,20 +1,14 @@
 <?php
 require 'payment-server-init.php';
 
-$result = Braintree_Transaction::sale([
-    "amount" => $_POST['amount'],
-    "paymentMethodNonce" => $_POST['nonce']
-    
-    /*"options" => [
-      "paypal" => [
-        "customField" => $_POST["PayPal custom field"],
-        "description" => $_POST["Description for PayPal email receipt"],
-      ],
-    ],*/
+$nonceFromTheClient = $_POST["nonce"];
+
+$result = Braintree_Subscription::create([
+  "paymentMethodNonce" => $nonceFromTheClient,
+  'planId' => "".$_POST['plan']
 ]);
-if ($result->success) {
-  echo "Success ID: " . $result->transaction;
-} else {
-  echo "Error Message: " . $result->message;
-}
+
+
+echo "Successfully subscribed to ". $_POST['plan']. " plan";
+
 ?>

@@ -16,16 +16,28 @@
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 </head>
 
+<style>
+    #payment-container {
+        padding: 20px;
+        border-color: black;
+        width:50%;
+    }
+    
+    .braintree-sheet__content--form{
+        display:none !important;
+    }
+
+</style>
+
 <body>
     <!-- 1. choose your subscription -->
     <div id=subscription-page>
-        
-            First name:
-            <input id="first" type="text" name="first" />
-            Last name:
-            <input id="last" type="text" name="last" />
-            <button type="submit" onclick="createCustomer()">submit</button>
-        
+
+        First name:
+        <input id="first" type="text" name="first" /> Last name:
+        <input id="last" type="text" name="last" />
+        <button type="submit" onclick="createCustomer()">submit</button>
+
         <p>Choose your subscription! Note that monthly payments will be automatically renewed</p>
         <button type="button" onclick="subscription(2.99,'month')"> 2.99 for 1 month</button>
         <button type="button" onclick="subscription(12.99,'semester')"> 12.99 for 5 months</button>
@@ -33,11 +45,12 @@
     </div>
     <!-- 2. payment page loaded, client token with customer id from created customer -->
     <div id=payment-page style="display:none;">
-        <div id="dropin-container"></div>
-        <button id="submit-button">Request payment method</button>
-        <div id="paypal-button"></div>
+        <div id="payment-container">
+            <div id="dropin-container"></div>
+            <div id="paypal-button"></div>
+        </div>
+        <button id="submit-button">Purchase</button>
     </div>
-
 
 
     <script>
@@ -47,19 +60,19 @@
 
         function createCustomer() {
             $.post("../db/create-customer.php", {
-                    first: $('#first').val(),
-                    last: $('#last').val()
-                },function(data, status) {
-                    customerId = data;
-                    console.log(customerId);
-                })
+                first: $('#first').val(),
+                last: $('#last').val()
+            }, function(data, status) {
+                customerId = data;
+                console.log(customerId);
+            })
         }
 
         function subscription(option1, option2) {
             //console.log(customerId);
             $.post("../db/create-token.php", {
-                customerId:customerId
-            },function(data, status) {
+                customerId: customerId
+            }, function(data, status) {
                 createDropIn(data);
             })
 
@@ -85,7 +98,6 @@
                         //this will create the customer and transaction with specific plan
                         $.post("../db/credit-transaction.php", {
                                 nonce: payload.nonce,
-                                amount: charge,
                                 plan: plan
                             },
                             function(data, status) {
@@ -167,7 +179,7 @@
                                 .then(function(payload) {
                                     console.log(payload);
                                     $.post("../db/paypal-transaction.php", {
-                                        amount: charge,
+                                        plan: plan,
                                         nonce: payload.nonce,
                                         type: payload.type,
                                         payerId: payload.details.payerId,
