@@ -59,10 +59,6 @@ class Home extends Controller {
 	public function pricing(){
 		$this->view('payment/pricing');
 	}
-
-
-
-
 }
 
 ?>
