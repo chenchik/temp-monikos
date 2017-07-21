@@ -1,26 +1,38 @@
 <head>
   <meta charset="utf-8">
+  <!-- Load PayPal's checkout.js Library. -->
+  <script src="https://www.paypalobjects.com/api/checkout.js" data-version-4 log-level="warn"></script>
+    <!-- Load the dropin -->
+    <script src="https://js.braintreegateway.com/web/dropin/1.4.0/js/dropin.min.js"></script>
+    <!-- Load the client component. -->
+    <script src="https://js.braintreegateway.com/web/3.19.1/js/client.min.js"></script>
+    <!-- Load the PayPal Checkout component. -->
+    <script src="https://js.braintreegateway.com/web/3.19.1/js/paypal-checkout.min.js"></script>
+    <!-- Collecting device data for Paypal -->
+    <script src="https://js.braintreegateway.com/web/3.19.1/js/data-collector.min.js"></script>
+    <script src = '/mvc/public/js/payment/paymentCtrl.js'></script>
+    <link rel="stylesheet" href="/mvc/public/css/pricing.css" media="screen" title="no title">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+    <script>
+              $(document).ready(function() {
+              $('.popup-with-zoom-anim').magnificPopup({
+                type: 'inline',
+                fixedContentPos: false,
+                fixedBgPos: true,
+                overflowY: 'auto',
+                closeBtnInside: true,
+                preloader: false,
+                midClick: true,
+                removalDelay: 300,
+                mainClass: 'my-mfp-zoom-in'
+              });
+
+              });
+    </script>
 </head>
 <body>
-  <script src = '/mvc/public/js/home/homeCtrl.js'></script>
-  <link rel="stylesheet" href="/mvc/public/css/pricing.css" media="screen" title="no title">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
-  	<script>
-  						$(document).ready(function() {
-  						$('.popup-with-zoom-anim').magnificPopup({
-  							type: 'inline',
-  							fixedContentPos: false,
-  							fixedBgPos: true,
-  							overflowY: 'auto',
-  							closeBtnInside: true,
-  							preloader: false,
-  							midClick: true,
-  							removalDelay: 300,
-  							mainClass: 'my-mfp-zoom-in'
-  						});
-
-  						});
-  	</script>
+  
+  
 
 	<!-- <div ng-app="databaseApp" ng-controller="databaseCtrl"> -->
 	<!-- </div> -->
@@ -78,7 +90,7 @@
                     <li class="whyt"><a href="#">$ 2.99 / month </a></li>
      							</ul>
      							<div class="cart2">
-     								<a class="popup-with-zoom-anim" href="#small-dialog">Purchase</a>
+     								<a class="popup-with-zoom-anim" href="#small-dialog" onclick="subscription(2.99,'month')">Purchase</a>
      							</div>
      							</div>
      						</div>
@@ -97,17 +109,17 @@
        								<li><a href="#">Edit and submit your own drug hints</a></li>
        								<li class="whyt"><a href="#">Study with your friends </a></li>
        								<li><a href="#">Eligible for rewards awarded to the top users each semester</a></li>
-                      <li class="whyt"><a href="#">$ 2.59 / month </a></li>
+                      <li class="whyt"><a href="#">$ 2.165 / month </a></li>
        							</ul>
      							<div class="cart2">
-     								<a class="popup-with-zoom-anim" href="#small-dialog">Purchase</a>
+     								<a class="popup-with-zoom-anim" href="#small-dialog" onclick="subscription(12.99,'semester')">Purchase</a>
      							</div>
      							</div>
      						</div>
      						<div class="pricing-grid2">
      							<div class="price-value two">
      								<h3><a href="#">Annually</a></h3>
-     								<h5><span>$ 19.99</span><lable> / year</lable></h5>
+     								<h5><span>$ 12.99</span><lable> / year</lable></h5>
      								<div class="sale-box two">
 
      							</div>
@@ -122,7 +134,7 @@
                       <li class="whyt"><a href="#">$ 1.67 / month </a></li>
        							</ul>
      							<div class="cart2">
-     								<a class="popup-with-zoom-anim" href="#small-dialog">Purchase</a>
+     								<a class="popup-with-zoom-anim" href="#small-dialog" onclick="subscription(20.99,'year')">Purchase</a>
      							</div>
      							</div>
      						</div>

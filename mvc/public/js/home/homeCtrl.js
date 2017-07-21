@@ -121,6 +121,11 @@ app.controller('homeCtrl', function($scope, $http) {
     window.location = window.location.origin +
       "/mvc/public/home/listManager";
   }
+  $scope.payment = function() {
+    //create list manager controller
+    window.location = window.location.origin +
+      "/mvc/public/home/pricing";
+  }
 
 
   $scope.social = function() {
@@ -141,9 +146,6 @@ app.controller('homeCtrl', function($scope, $http) {
             "/mvc/public/payment";
         }
       });
-
-
-
   }
 
   $scope.getUser = function() {
