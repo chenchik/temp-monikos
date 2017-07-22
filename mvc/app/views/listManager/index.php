@@ -8,6 +8,45 @@
 <meta name='viewport' content="width=device-width, initial-scale=1" />
 
 <script src = '/mvc/public/js/listManager/listManagerFunctions.js'></script>
+<style media="screen">
+#modal-background {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  opacity: .50;
+  -webkit-opacity: .5;
+  -moz-opacity: .5;
+  filter: alpha(opacity=50);
+  z-index: 1000;
+}
+
+#modal-content {
+  background-color: white;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  box-shadow: 0 0 20px 0 #222;
+  -webkit-box-shadow: 0 0 20px 0 #222;
+  -moz-box-shadow: 0 0 20px 0 #222;
+  display: none;
+  height: 240px;
+  left: 50%;
+  margin: -120px 0 0 -160px;
+  padding: 10px;
+  position: absolute;
+  top: 50%;
+  width: 320px;
+  z-index: 1000;
+}
+
+#modal-background.active, #modal-content.active {
+  display: block;
+}
+</style>
 
 
 <body ng-app="myApp" ng-controller="myCtrl" id="main_app_module">
@@ -71,7 +110,18 @@
                 <br>
                 <button class ='selectList' ng-click='selectList($index)'>SELECT</button>
                 <button class='deleteList' ng-click='deleteList($index)'>DELETE</button>
-                <button class='deleteList' ng-click='viewList($index)'>VIEW</button>
+                <!-- <button id='viewList'>VIEW</button>
+
+                <div id="modal-background"></div>
+                <div id="modal-content">
+                    <button id="modal-close">Close Modal Window</button>
+                </div> -->
+                <button id="view" ng-click='viewList($index)'>VIEW</button>
+
+                <div id="modal-background"></div>
+                <div id="modal-content">
+                </div>
+
             </div>
         </div>
 

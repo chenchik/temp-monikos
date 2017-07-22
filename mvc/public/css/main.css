@@ -1107,9 +1107,9 @@ span#notificationIndicator {
 
 .intro-text{
   color: black;
-  font-size: 70%;
+  font-size: 80%;
   text-align: center;
-  padding-top: 5%;
+  padding-top: 10%;
   font-weight: normal;
   line-height: 150%;
 }
