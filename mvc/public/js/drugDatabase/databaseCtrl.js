@@ -233,7 +233,10 @@ $scope.premiumCheck = function() {
     //create new database controller
     window.location = window.location.origin + "/mvc/public/home";
   }
-
+  $scope.study = function() {
+    //create new database controller
+    window.location = window.location.origin + "/mvc/public/listMangager";
+  }
 
   //audio controls
   $scope.playAudio = function(myAudio) {

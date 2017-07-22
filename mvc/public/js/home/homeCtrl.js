@@ -24,6 +24,29 @@ var config = {
 };
 
 app.controller('homeCtrl', function($scope, $http) {
+  
+  var id_cookie = getCookie("user_id");
+  console.log(id_cookie);
+
+  var data = $.param({
+      id: id_cookie
+  });
+
+  var config = {
+      headers: {
+          'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+      }
+  };
+
+  var url = "/db/get_user_profile.php";
+
+  $http.post(url, data, config)
+      .then(function (response) {
+          user_capsules = response.data.records[0].capsules;
+          $scope.capsules = response.data.records;
+          //console.log($scope.names);
+          //alert($scope.names);
+      });
   var url = "/db/get_drugs.php";
   $http.get(url)
     .then(function(response) {
