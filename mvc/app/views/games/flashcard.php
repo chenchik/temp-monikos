@@ -22,7 +22,7 @@ function gotoGamelist(lid){
 
 </head>
 
-<body ng-app="myApp" ng-controller="flashCtrl" id="main_app_module" style="width:100%;">
+<body ng-app="myApp" ng-controller="flashCtrl" id="main_app_module" style="width:1060px;">
 
 	<div id=app_header>
 
@@ -39,7 +39,7 @@ function gotoGamelist(lid){
 
         <br>
 
-        <div class="container" style = "margin-top: 55px">
+        <div class="container" style = "margin-top: 55px;margin-left:160px;">
           <div class="progress" >
             <div id = "pb" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
               <div id = "percentpb">{{percent}} </div>
@@ -69,7 +69,7 @@ function gotoGamelist(lid){
   </div>
 </div> -->
 
-<div class="tile-container" style="width:99%;margin-left:18%;margin-top:12px;margin-bottom:10%;">
+<div class="tile-container" style="width:100%;margin-left:24%;margin-top:12px;margin-bottom:10%;">
 
     <div class="tile-small tile-wide-x  flip manual-flip" data-role="tile">
       <div class="card" onclick="rotateCard(this)">
