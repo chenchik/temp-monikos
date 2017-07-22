@@ -8,6 +8,7 @@
 <meta name='viewport' content="width=device-width, initial-scale=1" />
 
 <script src = '/mvc/public/js/listManager/listManagerFunctions.js'></script>
+<script src = '/mvc/public/js/myCtrl.js'></script>
 
 
 <body ng-app="myApp" ng-controller="myCtrl" id="main_app_module">
@@ -15,14 +16,16 @@
   <div id=app_header>
       <a onclick="home()"><button class = 'back'>Home</button></a>
       <a onclick="drugDatabase()"><button class = 'database'>Database</button></a>
-      <a ng-click="listManager()"><button class = 'study'>Study</button></a>
-      <a ng-click = 'home()'><img id="toplogo" src="/mvc/public/images/logo_without_words_version_1.png"></a>
+      <a onclick="listManager()"><button class = 'study'>Study</button></a>
+      <a onclick = 'home()'><img id="toplogo" src="/mvc/public/images/logo_without_words_version_1.png"></a>
+      
 
       <div onclick="toggleMenuNav()" class=menu-info>
           <span id="notificationIndicator"></span>
           <img src=/mvc/public/images/man-user.png>
       </div>
-
+      <a style="display: none" id="payment" ng-click="payment()"><button class = 'upgrade'>Upgrade</button></a>
+      
       <div id='menu-popup' class='menu-popup'>
           <div class=notif-info>
               <h2>Notifications</h2>
@@ -126,8 +129,8 @@
 
         </div>
 
-        <!---LIST CREATOR-->
 
+        <!-------LIST CREATOR--------->
         <!-- The overlay -->
         <div id="createList_overlay" class="overlay">
 
@@ -140,7 +143,7 @@
                     <div class=field-name>LIST TITLE: </div>
                     <input id = 'listName' ng-model=listform.name type="text" required>
                 </div>
-                <!--LIST CREATOR-->
+                <!-------LIST CREATOR--------->
                 <div class="list-container">
                     <div class="form-group">
                         <div class="col-xs-8 col-sm-8 col-xs-offset-2 col-sm-offset-2">
@@ -150,42 +153,29 @@
                     <div class = 'drug-container'>
                         <div class="form-group">
                             <div class="searchable-container">
-
                                 <div class= 'scrollableCreateDrugList'>
-
                                     <div ng-repeat="drug in drugs">
                                         <div class="item col-xs-3 col-sm-3">
                                             <div class = 'checkboxes'>
-
                                                 <input type="checkbox" name="var_id[]" autocomplete="off" checklist-model="listform.drugs" checklist-value="drug.Generic" id='drug-{{$index}}' required>
-
                                                 <label class = 'drug_name' for = 'drug-{{$index}}'>{{drug.Generic}}</label>
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <button id ='addbtn' ng-click=addList()>Add List</button>
-
             </div> <!--overlay content end-->
-
         </div><!--overlay end-->
 
-<!-- LIST CREATOR END -->
-
+        <!-------LIST CREATOR END--------->
     </div>
-
     <div class = 'play' ng-click="launchGame()">
         <p>PLAY</p>
         <br>
     </div>
-
-
-    <!-- <script src='/mvc/public/js/modal/classie.js'></script>
-    <script src='/mvc/public/js/modal/modalEffects.js'></script>  -->
 
 </body>

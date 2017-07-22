@@ -1,9 +1,13 @@
 var app = angular.module('myApp', ['checklist-model']);
-var premium;
+
 app.controller('myCtrl', function($scope, $http) {
 
   function gotoChallenge(url) {
     window.location = url;
+  }
+
+  function setPre(prem){
+    premium = prem;
   }
 
   $scope.getNotifications = function() {
@@ -57,6 +61,68 @@ app.controller('myCtrl', function($scope, $http) {
 
   }
   $scope.getNotifications();
+
+$scope.premiumCheck = function() {
+    var config = {
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+    }
+  };
+    var username = getCookie('username');
+    var url = "/db/get_profile_by_user.php";
+
+    var data = $.param({
+      un: username
+    });
+    $http.post(url, data, config)
+      .then(function(response) {
+        console.log(response);
+        var premium = response.data.records[0]["premium"];//only within scope
+        var getListsUrl = "/db/get_lists.php";
+        var getListsConfig = {
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+          }
+          };
+        if (premium) {
+          $("#payment").hide();
+          var getListsData = $.param({
+          user_id: $scope.getCookie("user_id")
+          });
+
+        } else {
+          $("#payment").show();
+          $("#addbtn").text("Upgrade to Premium to Create Your Own List");
+          $("#addbtn").click(function(){
+            window.location = window.location.origin + "/mvc/public/home/pricing";
+          });
+          var getListsData = $.param({
+          user_id: "free"
+          });
+        }
+        console.log(getListsData);
+        $http.post(getListsUrl, getListsData, getListsConfig)
+    .then(function(response) {
+      console.log(response);
+
+      $scope.listId = response.data.records
+
+      if (response.data.records.length < 1) {
+        $(".custom-list-collection-block").append(
+          '<p id="noListsMessage">Please create a list</p>');
+      } else {
+        for (var i in response.data.records) {
+          $scope.lists.push({
+            name: response.data.records[i].list_name.toString(),
+            drugs: response.data.records[i].drugnames.toString().split(
+              ",")
+          });
+        }
+      }
+    });                                                 
+      });
+  }
+  $scope.premiumCheck();
 
   //Nik's edits
   function getCookie(cname) {
@@ -123,18 +189,6 @@ app.controller('myCtrl', function($scope, $http) {
 
   $scope.getSchoolLists();
 
-    $scope.isPremium= function (){
-        var username = getCookie('username');
-        var url = "/db/get_profile_by_user.php";
-        var data = $.param({
-            un: username
-        });
-        $http.post(url, data, config)
-            .then(function (response) {
-                console.log(response);
-                premium=response.data.records[0]["premium"];});
-    }
-    $scope.isPremium();
 
 
   //end NIk's edits
@@ -145,7 +199,7 @@ app.controller('myCtrl', function($scope, $http) {
 
   $scope.lists = [];
 
-  $scope.getCookie = function(cname) {  
+  $scope.getCookie = function(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
     for (var i = 0; i < ca.length; i++) {
@@ -172,50 +226,40 @@ app.controller('myCtrl', function($scope, $http) {
     });
 
   //var getListsUrl = "http://monikos.xpyapvzutk.us-east-1.elasticbeanstalk.com/get_lists.php";
-  var getListsUrl = "/db/get_lists.php";
-  var getListsConfig = {
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
-    }
-  };
-  if(!premium){
-    $("#addbtn").attr("disabled",true);
-     $("#addbtn").css("background","#777777");
-     $("#addbtn").text("Upgrade to Create Your Own List");
-  }
+  // var getListsUrl = "/db/get_lists.php";
+  // var getListsConfig = {
+  //   headers: {
+  //     'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+  //   }
+  // };
 
-  if(premium){
-  var getListsData = $.param({
-    user_id: $scope.getCookie("user_id")
-  });}
-  else{
-    var getListsData = $.param({
-    user_id: "free"
-  });
-  }
 
-  $http.post(getListsUrl, getListsData, getListsConfig)
-    .then(function(response) {
-      console.log(response);
+  // var getListsData = $.param({
+  //   user_id: $scope.getCookie("user_id")
+  // });
 
-      $scope.listId = response.data.records
+  // $http.post(getListsUrl, getListsData, getListsConfig)
+  //   .then(function(response) {
+  //     console.log(response);
 
-      if (response.data.records.length < 1) {
-        $(".custom-list-collection-block").append(
-          '<p id="noListsMessage">Please create a list</p>');
-      } else {
-        for (var i in response.data.records) {
-          $scope.lists.push({
-            name: response.data.records[i].list_name.toString(),
-            drugs: response.data.records[i].drugnames.toString().split(
-              ",")
-          });
-        }
-      }
-      //$scope.drugs = response.data.records;
-      //console.log($scope.names);
-      //alert($scope.names);
-    });
+  //     $scope.listId = response.data.records
+
+  //     if (response.data.records.length < 1) {
+  //       $(".custom-list-collection-block").append(
+  //         '<p id="noListsMessage">Please create a list</p>');
+  //     } else {
+  //       for (var i in response.data.records) {
+  //         $scope.lists.push({
+  //           name: response.data.records[i].list_name.toString(),
+  //           drugs: response.data.records[i].drugnames.toString().split(
+  //             ",")
+  //         });
+  //       }
+  //     }
+  //     //$scope.drugs = response.data.records;
+  //     //console.log($scope.names);
+  //     //alert($scope.names);
+  //   });
 
 
 
@@ -250,6 +294,8 @@ app.controller('myCtrl', function($scope, $http) {
       drugs: $scope.listform.drugs,
       user_id: $scope.getCookie("user_id")
     });
+
+
     $scope.listform.drugs;
     $http.post(createListUrl, listData, config)
       .then(function(response) {

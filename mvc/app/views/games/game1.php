@@ -16,12 +16,12 @@
         
      
         <a ng-click='home()'><img id="toplogo" src="/mvc/public/images/logo_without_words_version_1.png"></a>
-
+        <a style="display: none" id="payment" ng-click="payment()"><button class = 'upgrade'>Upgrade</button></a>
         <div onclick="toggleMenuNav()" class=menu-info>
             <span id="updated-capsules-indicator" style="display:none;float:left"></span>
             <span id="notificationIndicator"></span>
             <img src=/mvc/public/images/man-user.png>
-
+        
         </div>
         <div id='menu-popup' class='menu-popup'>
             <div class=notif-info>

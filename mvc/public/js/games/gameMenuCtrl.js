@@ -129,7 +129,6 @@ gameMenuApp.controller('gameMenuCtrl', function ($scope, $http) {
 
 
     $scope.premiumCheck=function(){
-            console.log("dsf");
         var username = getCookie('username');
         var url = "/db/get_profile_by_user.php";
         var data = $.param({
@@ -145,10 +144,12 @@ gameMenuApp.controller('gameMenuCtrl', function ($scope, $http) {
                 $("#challenge-block").css('transition','');
                  $("#challenge-block").css('hover:','');
                 $("#challenge-block").css('color','#777777');
+                $("#payment").show();
             }
 
             else{
                 $scope.img="/mvc/public/images/challenge.png";
+                $("#payment").hide();
             }   
             });
     }

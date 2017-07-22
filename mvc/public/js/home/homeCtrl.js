@@ -94,12 +94,15 @@ app.controller('homeCtrl', function($scope, $http) {
           $("#social").css('border', '2px solid #777777');
           $("#social").css('transition', '');
           $("#social").css('color', '#777777');
+          $("#payment").show();
         } else {
           $scope.img = "/mvc/public/images/social.png";
+          $("#payment").hide();
         }
       });
   }
   $scope.premiumCheck();
+
   $scope.getImg = function() {
     return $scope.img;
   }
@@ -143,7 +146,7 @@ app.controller('homeCtrl', function($scope, $http) {
             "/mvc/public/home/social";
         } else if (!premium) {
           window.location = window.location.origin +
-            "/mvc/public/payment";
+            "/mvc/public/home/pricing";
         }
       });
   }

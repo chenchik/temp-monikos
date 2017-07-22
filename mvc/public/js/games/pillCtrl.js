@@ -72,6 +72,38 @@ var app = angular.module('myApp', []);
     }
     $scope.getNotifications();
 
+
+
+    $scope.premiumCheck=function(){
+        var config = {
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+            }
+        };
+        var username = getCookie('username');
+        var url = "/db/get_profile_by_user.php";
+        var data = $.param({
+            un: username
+        });
+        $http.post(url, data, config)
+            .then(function (response) {
+                console.log(response);
+                var premium=response.data.records[0]["premium"];
+            if(!premium){
+                $("#payment").show();
+            }
+
+            else{
+                $("#payment").hide();
+            }   
+            });
+    }
+    $scope.premiumCheck();
+    $scope.payment = function() {
+      //create list manager controller
+      window.location = window.location.origin +
+        "/mvc/public/home/pricing";
+    }
     function setRequestConfig(){
         return {
           headers : {

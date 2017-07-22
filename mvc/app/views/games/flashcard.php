@@ -29,6 +29,7 @@ function gotoGamelist(lid){
 	    <a onclick='gotoGamelist("<?=$data['lid']?>")' ><button class = 'backbtn'>Back</button></a>
 
        <a ng-click='home()'><img id="toplogo" src="/mvc/public/images/logo_without_words_version_1.png"></a>
+       <a style="display: none" id="payment" ng-click="payment()"><button class = 'upgrade'>Upgrade</button></a>
 
             <div ng-if="firstLoad">{{getlid("<?=$data['lid']?>", false)}}</div>
 	</div>

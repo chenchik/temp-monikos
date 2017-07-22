@@ -92,6 +92,64 @@ app.controller('databaseCtrl', ['$scope', '$sce', '$http', '$timeout', function(
   }
   $scope.getNotifications();
 
+
+$scope.premiumCheck = function() {
+    var config = {
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+    }
+  };
+    var username = getCookie('username');
+    var url = "/db/get_profile_by_user.php";
+
+    var data = $.param({
+      un: username
+    });
+    $http.post(url, data, config)
+      .then(function(response) {
+        console.log(response);
+        var premium = response.data.records[0]["premium"];//only within scope
+        if (premium) {
+          $("#payment").hide();
+            //get drug list
+            var url = "/db/get_drugs.php";
+            $scope.loading = true; //loading animation
+            $http.get(url)
+              .then(function(response) {
+                console.log(response);
+                $('#cssload-pgloading').css({
+                  'opacity': '0.0'
+                });
+                $(".dark-load").css({
+                  'opacity': '0.0'
+                })
+                $scope.loading = false;
+                $scope.names = response.data.records;
+                console.log($scope.names);
+              });
+        } else {
+          $("#payment").show();
+          //get drug list
+          var url = "/db/get_drugs_free.php";
+          $scope.loading = true; //loading animation
+          $http.get(url)
+            .then(function(response) {
+              console.log(response);
+              $('#cssload-pgloading').css({
+                'opacity': '0.0'
+              });
+              $(".dark-load").css({
+                'opacity': '0.0'
+              })
+              $scope.loading = false;
+              $scope.names = response.data.records;
+              console.log($scope.names);
+            });
+        }                                            
+      });
+  }
+  $scope.premiumCheck();
+
   //hint and drug info popup controls
   $scope.showPopup = function(x) {
     var y = x.toString();
@@ -167,23 +225,7 @@ app.controller('databaseCtrl', ['$scope', '$sce', '$http', '$timeout', function(
   $scope.queryBy = '$'; //sets queryBy for search bar
   $scope.trustAsHtml = $sce.trustAsHtml; //put trustashtml in scope for mnemonic hint
 
-  //get drug list
-  var url = "/db/get_drugs.php";
-  $scope.loading = true; //loading animation
-  $http.get(url)
-    .then(function(response) {
-      console.log(response);
-      $('#cssload-pgloading').css({
-        'opacity': '0.0'
-      });
-      $(".dark-load").css({
-        'opacity': '0.0'
-      })
-      $scope.loading = false;
-      $scope.names = response.data.records;
-      console.log($scope.names);
 
-    });
 
 
   //header home button

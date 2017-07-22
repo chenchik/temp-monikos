@@ -16,7 +16,7 @@
                 <span id="notificationIndicator"></span>
                 <img src=/mvc/public/images/man-user.png>
             </div>
-
+    <a style="display: none" id="payment" ng-click="payment()"><button class = 'upgrade'>Upgrade</button></a>
             <div id='menu-popup' class='menu-popup'>
                 <div class=notif-info>
                     <h2>Notifications</h2>

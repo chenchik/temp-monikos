@@ -183,9 +183,9 @@
             </div>
 
         </div>
-        <footer>
+<!--         <footer>
             <a href="#" onclick="logout()"> Log Out</a>
-        </footer>
+        </footer> -->
     </div>
 
     <div id="modal_wrapper" style="visibility:hidden;">

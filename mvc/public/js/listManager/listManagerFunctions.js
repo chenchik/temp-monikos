@@ -19,6 +19,11 @@ function drugDatabase() {
   window.location = window.location.origin + "/mvc/public/home/drugDatabase";
 }
 
+function listManager() {
+  window.location = window.location.origin + "/mvc/public/home/listManager";
+}
+
+
 $(document).ready(function() {
 
   $('.list-collection-block').on('click', '.list-block', function() {

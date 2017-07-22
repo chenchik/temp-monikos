@@ -16,7 +16,7 @@
 					<a ng-click="listManager()"><button class = 'study'>Study</button></a>
 					<a ng-click = 'home()'><img id="toplogo" src="/mvc/public/images/logo_without_words_version_1.png"></a>
 
-					<a ng-click="payment()"><button class = 'upgrade'>Upgrade</button></a>
+					<a id="payment" ng-click="payment()"><button class = 'upgrade'>Upgrade</button></a>
 
 					<div onclick="toggleMenuNav()" class=menu-info>
 							<span id="notificationIndicator"></span>

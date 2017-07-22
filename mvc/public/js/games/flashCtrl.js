@@ -17,6 +17,21 @@ app.controller('flashCtrl', function($scope, $http) {
 
   //dcedits
   $scope.firstLoad = true;
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
   $scope.getlid = function(thelid, schoolrequest) {
 
       var config = {
@@ -74,6 +89,32 @@ app.controller('flashCtrl', function($scope, $http) {
     });
   });
 
+
+  $scope.premiumCheck=function(){
+      var config = {
+          headers: {
+              'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+          }
+      };
+      var username = getCookie('username');
+      var url = "/db/get_profile_by_user.php";
+      var data = $.param({
+          un: username
+      });
+      $http.post(url, data, config)
+          .then(function (response) {
+              console.log(response);
+              var premium=response.data.records[0]["premium"];
+          if(!premium){
+              $("#payment").show();
+          }
+
+          else{
+              $("#payment").hide();
+          }   
+          });
+  }
+  $scope.premiumCheck();
   $scope.getallTheDrugs = function() {
 
 
