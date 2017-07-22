@@ -2,7 +2,6 @@
 require 'payment-server-init.php';
 $customer= Braintree_Customer::create([
     'firstName' => $_POST['first'],
-    'lastName' => $_POST['last'],
     'company' => 'Jones Co.',
     'email' => 'mike.jones@example.com',
     'phone' => '281.330.8004',

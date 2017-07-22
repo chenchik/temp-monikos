@@ -45,12 +45,55 @@ body a{
 	-o-transition:0.5s all ease;
 	-ms-transition:0.5s all ease;
 }
-.pop_up{
-		border: 9px solid#fa6e6f;
-		border-radius: 1em;
-		-o-border-radius: 1em;
-		-moz-border-radius: 1em;
-		-webkit-border-radius: 1em;
+#lean_overlay{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index:99998;
+    background: rgba(0,0,0,.2);
+}
+#pop_up{
+    z-index:99999;
+    -webkit-transform: scale(0.7);
+	-moz-transform: scale(0.7);
+	-ms-transform: scale(0.7);
+	transform: scale(0.7);
+	opacity: 0;
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.3s;
+	transition: all 0.3s;
+    
+    position: fixed;
+	top: 50%;
+	left: 50%;
+
+    width: 60vw;
+	margin-left: -30vw;
+    margin-top: -20vw;
+	height: auto;
+
+    overflow:auto;
+
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 4px 4px 80px #000;
+    -webkit-box-shadow: 4px 4px 80px #000;
+    -moz-box-shadow:    4px 4px 80px #000;
+    box-shadow:         4px 4px 80px #000;
+}
+.socialHeader{
+    background: #fa4e51 !important;
+}
+
+.socialHeader .modal_close{
+    color: white !important;
+    background: #fa4e51 !important;
+}
+
+.socialHeader .header_title{
+    color: white !important;
 }
 /* Styles for dialog window */
 #small-dialog,#small-dialog1,#small-dialog2,#small-dialog3,#small-dialog4,#small-dialog5{
@@ -280,7 +323,7 @@ form ul {
 	-ms-transition: border-color 0.3s;
 	-moz-transition: border-color 0.3s;
 	-webkit-transition: border-color 0.3s;
-	float: left;
+	
 	font-size: 0.9em;
 	border-color: #EEE;
 	-webkit-appearance:none;
@@ -460,6 +503,7 @@ input[type=checkbox].css-checkbox2:checked + label.css-label2 {
 	margin-top: 3%;
 	text-align: left;
 }
+
 input[type=checkbox].css-checkbox3,input[type=checkbox].css-checkbox4,input[type=checkbox].css-checkbox5,input[type=checkbox].css-checkbox6{
 	display: none;
 }
@@ -707,7 +751,7 @@ button::-moz-focus-inner {
   height: 44px;
   line-height: 44px;
   position: absolute;
- right: 0px;
+  right: 0px;
 	top:0px;
   text-decoration: none;
   text-align: center;
@@ -844,7 +888,7 @@ button::-moz-focus-inner {
 	padding: 1em 1em;
 	width: 91%;
 	}
-	.pop_up {
+	#pop_up {
 	border: 7px solid#485460;
 	}
 }
@@ -869,7 +913,7 @@ button::-moz-focus-inner {
 	font-size: 13px;
 	margin: 3px;
 	}
-	.pop_up {
+	#pop_up {
 	border: 4px solid#485460;
 	}
 	.payment-online-form-left h4 {

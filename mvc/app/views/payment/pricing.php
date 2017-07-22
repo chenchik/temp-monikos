@@ -3,9 +3,13 @@
 </head>
 
 <body>
+
     <script src='/mvc/public/js/home/homeCtrl.js'></script>
+    <script src='/mvc/public/js/payment/paymentCtrl.js'></script>
     <link rel="stylesheet" href="/mvc/public/css/pricing.css" media="screen" title="no title">
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
+    <link rel="stylesheet" href="/mvc/public/assets/css/style.css">
     <script>
         $(document).ready(function() {
             $('.popup-with-zoom-anim').magnificPopup({
@@ -23,6 +27,16 @@
         });
 
     </script>
+    <!-- Load PayPal's checkout.js Library. -->
+    <script src="https://www.paypalobjects.com/api/checkout.js" data-version-4 log-level="warn"></script>
+    <!-- Load the dropin -->
+    <script src="https://js.braintreegateway.com/web/dropin/1.4.0/js/dropin.min.js"></script>
+    <!-- Load the client component. -->
+    <script src="https://js.braintreegateway.com/web/3.19.1/js/client.min.js"></script>
+    <!-- Load the PayPal Checkout component. -->
+    <script src="https://js.braintreegateway.com/web/3.19.1/js/paypal-checkout.min.js"></script>
+    <!-- Collecting device data for Paypal -->
+    <script src="https://js.braintreegateway.com/web/3.19.1/js/data-collector.min.js"></script>
 
     <!-- <div ng-app="databaseApp" ng-controller="databaseCtrl"> -->
     <!-- </div> -->
@@ -84,7 +98,8 @@
                                 <li class="whyt"><a href="#">$ 2.99 / month </a></li>
                             </ul>
                             <div class="cart2">
-                                <a class="popup-with-zoom-anim" href="#small-dialog">Purchase</a>
+                                <!--<a class="popup-with-zoom-anim" href="#small-dialog" onclick="subscription('month')">Purchase</a>-->
+                                <a onclick="subscription('month')">Purchase</a>
                             </div>
                         </div>
                     </div>
@@ -108,7 +123,8 @@
                                 <li class="whyt"><a href="#">$ 2.59 / month </a></li>
                             </ul>
                             <div class="cart2">
-                                <a class="popup-with-zoom-anim" href="#small-dialog">Purchase</a>
+                                <!--<a class="popup-with-zoom-anim" href="#small-dialog" onclick="subscription('semester')">Purchase</a>-->
+                                <a onclick="subscription('semester')">Purchase</a>
                             </div>
                         </div>
                     </div>
@@ -132,7 +148,8 @@
                                 <li class="whyt"><a href="#">$ 1.67 / month </a></li>
                             </ul>
                             <div class="cart2">
-                                <a class="popup-with-zoom-anim" href="#small-dialog">Purchase</a>
+                                <!--<a class="popup-with-zoom-anim" href="#small-dialog" onclick="subscription('year')">Purchase</a>-->
+                                <a onclick="subscription('year')">Purchase</a>
                             </div>
                         </div>
                     </div>
@@ -159,51 +176,7 @@
      							</div>
      						</div> -->
                     <div class="clear"> </div>
-                    <!--pop-up-grid-->
-                    <div id="small-dialog" class="mfp-hide">
-                        <div class="pop_up">
-                            <div class="payment-online-form-left">
-                                <form>
 
-                                    <div class="clear"> </div>
-                                    <ul class="payment-type">
-                                        <h4><span class="payment"> </span> Payments</h4>
-                                        <li><span class="col_checkbox">
-     													<input id="3" class="css-checkbox1" type="checkbox">
-     													<label for="3" name="demo_lbl_1" class="css-label1"> </label>
-     													<a class="visa" href="#"> </a>
-     													</span>
-
-                                        </li>
-                                        <li>
-                                            <span class="col_checkbox">
-     														<input id="4" class="css-checkbox2" type="checkbox">
-     														<label for="4" name="demo_lbl_2" class="css-label2"> </label>
-     														<a class="paypal" href="#"> </a>
-     													</span>
-                                        </li>
-                                        <div class="clear"> </div>
-                                    </ul>
-                                    <ul>
-                                        <li><input class="text-box-dark" type="text" value="Card Number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Card Number';}"></li>
-                                        <li><input class="text-box-dark" type="text" value="Name on card" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name on card';}"></li>
-                                        <div class="clear"> </div>
-                                    </ul>
-                                    <ul>
-                                        <li><input class="text-box-light hasDatepicker" type="text" id="datepicker" value="Expiration Date" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Expiration Date';}"><em class="pay-date"> </em></li>
-                                        <li><input class="text-box-dark" type="text" value="Security Code" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Security Code';}"></li>
-                                        <div class="clear"> </div>
-                                    </ul>
-                                    <ul class="payment-sendbtns">
-                                        <li><input type="reset" value="Cancel"></li>
-                                        <li><input type="submit" value="Process order"></li>
-                                    </ul>
-                                    <div class="clear"> </div>
-                                </form>
-                            </div>
-                        </div>
-                    </div>
-                    <!--pop-up-grid-->
                 </div>
                 <div class="clear"> </div>
 
@@ -214,5 +187,27 @@
             <a href="#" onclick="logout()"> Log Out</a>
         </footer>
     </div>
+
+    <div id="modal_wrapper" style="visibility:hidden;">
+        <div id="pop_up">
+            <div class="payment-online-form-left">
+                <header class="popupHeader socialHeader">
+                    <span class="header_title">Make a Payment</span>
+                    <span id="login_close" class="modal_close" onclick="hidePopup()"><i class="fa fa-times"></i></span>
+                </header>
+                <div id="credit">
+                    <div id="dropin-container"></div>
+                    <button>Cancel</button>
+                    <button id="pay">Process</button>
+                    <div class="clear"> </div>
+                </div>
+                <div id="paypal-button"></div>
+            </div>
+        </div>
+        <div id="lean_overlay"></div>
+    </div>
+
+
+    <!--class="mfp-hide"id="small-dialog"-->
 
 </body>

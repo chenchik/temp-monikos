@@ -1,6 +1,6 @@
 <?php
 
-require '../../mvc/vendor/autoload.php';
+require '../mvc/vendor/autoload.php';
 
 Braintree_Configuration::environment('sandbox');
 Braintree_Configuration::merchantId('cfp2v7g7yy827vzn');
