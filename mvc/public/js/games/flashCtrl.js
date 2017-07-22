@@ -115,6 +115,11 @@ function getCookie(cname) {
           });
   }
   $scope.premiumCheck();
+  $scope.payment = function() {
+    //create list manager controller
+    window.location = window.location.origin +
+      "/mvc/public/home/pricing";
+  }
   $scope.getallTheDrugs = function() {
 
 

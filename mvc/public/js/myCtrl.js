@@ -124,6 +124,11 @@ $scope.premiumCheck = function() {
   }
   $scope.premiumCheck();
 
+  $scope.payment = function() {
+    //create list manager controller
+    window.location = window.location.origin +
+      "/mvc/public/home/pricing";
+  }
   //Nik's edits
   function getCookie(cname) {
     var name = cname + "=";

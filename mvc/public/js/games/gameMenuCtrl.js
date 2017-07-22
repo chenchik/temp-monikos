@@ -159,6 +159,11 @@ gameMenuApp.controller('gameMenuCtrl', function ($scope, $http) {
         return $scope.img;
     }
 
+    $scope.payment = function() {
+      //create list manager controller
+      window.location = window.location.origin +
+        "/mvc/public/home/pricing";
+    }
     //validates if challenged user exists and stores challenged user's capsules
     $scope.selectUser = function () {
         selectChallengeUser();
