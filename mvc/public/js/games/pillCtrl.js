@@ -91,6 +91,7 @@ var app = angular.module('myApp', []);
                 var premium=response.data.records[0]["premium"];
             if(!premium){
                 $("#payment").show();
+                $("#toplogo").attr("src","/mvc/public/images/litelogo.png");
             }
 
             else{

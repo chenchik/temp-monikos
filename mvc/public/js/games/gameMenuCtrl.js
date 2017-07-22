@@ -145,6 +145,7 @@ gameMenuApp.controller('gameMenuCtrl', function ($scope, $http) {
                  $("#challenge-block").css('hover:','');
                 $("#challenge-block").css('color','#777777');
                 $("#payment").show();
+                $("#toplogo").attr("src","/mvc/public/images/litelogo.png");
             }
 
             else{

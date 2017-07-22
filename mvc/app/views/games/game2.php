@@ -76,13 +76,13 @@
 			<form class = 'answer' id = 'answer_input' name = "jojo">
 				<input type="text" id="f1" name="Answer" autocomplete="off" placeholder="Answer:" >
 			</form>
-      <div class='submit_btn'><button id ='submit_button' class = "button button5" onclick="checkAnswer();" ><span class = 'glyphicon glyphicon-ok-circle'/></button></div>
+      <div class='submit_btn'><button id ='submit_button' class = "button button5" onclick="checkAnswer();" ><img style="height: 40px;width: 40px; margin-bottom: 0px" src="/mvc/public/images/select.png"></button></div>
       </div>
 
 			
 
 		   <div class ='pill_wrap'>
-				<div class="pill" id="pill"><img id ='thePill' src="/mvc/public/images/pill.png"></div>
+				<div class="pill" id="pill"><img id ='thePill' src="/mvc/public/images/pill1.png"></div>
 		   </div>
 		   
 		   <p id="wrong"></p>

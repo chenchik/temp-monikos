@@ -92,6 +92,7 @@ $scope.premiumCheck = function() {
 
         } else {
           $("#payment").show();
+          $("#toplogo").attr("src","/mvc/public/images/litelogo.png");
           $("#addbtn").text("Upgrade to Premium to Create Your Own List");
           $("#addbtn").click(function(){
             window.location = window.location.origin + "/mvc/public/home/pricing";

@@ -118,6 +118,7 @@ app.controller('homeCtrl', function($scope, $http) {
           $("#social").css('transition', '');
           $("#social").css('color', '#777777');
           $("#payment").show();
+          $("#toplogo").attr("src","/mvc/public/images/litelogo.png");
         } else {
           $scope.img = "/mvc/public/images/social.png";
           $("#payment").hide();

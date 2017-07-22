@@ -129,6 +129,7 @@ $scope.premiumCheck = function() {
               });
         } else {
           $("#payment").show();
+          $("#toplogo").attr("src","/mvc/public/images/litelogo.png");
           //get drug list
           var url = "/db/get_drugs_free.php";
           $scope.loading = true; //loading animation
@@ -235,7 +236,7 @@ $scope.premiumCheck = function() {
   }
   $scope.study = function() {
     //create new database controller
-    window.location = window.location.origin + "/mvc/public/listMangager";
+    window.location = window.location.origin + "/mvc/public/home/listManager";
   }
 
   //audio controls

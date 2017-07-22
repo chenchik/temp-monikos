@@ -24,7 +24,7 @@ class Account extends Controller {
 
 		//directory path
 		//$this->view('account/index', ['name' => $user->name]);
-		$this->view('account/login');
+		$this->view('account/landing');
 	}
 
 	public function test($param){
@@ -39,7 +39,7 @@ class Account extends Controller {
 
 	}
 	public function login(){
-		$this->view('account/login');
+		$this->view('account/landing');
 	}
 
 	public function loginSuccess(){
