@@ -113,12 +113,13 @@ app.controller('homeCtrl', function($scope, $http) {
         console.log(response);
         var premium = response.data.records[0]["premium"];
         if (!premium) {
+          $("#payment").show();
           $scope.img = "/mvc/public/images/socialgrey.png";
           $("#social").css('border', '2px solid #777777');
           $("#social").css('transition', '');
           $("#social").css('color', '#777777');
-          $("#payment").show();
           $("#toplogo").attr("src","/mvc/public/images/litelogo.png");
+          $("#social-text").text("Upgrade now to add friends, challenge them and see your rank among your friends!")
         } else {
           $scope.img = "/mvc/public/images/social.png";
           $("#payment").hide();

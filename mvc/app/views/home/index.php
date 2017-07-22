@@ -60,7 +60,7 @@
 				<div id="social" ng-click="social()" class="flex-item" ng-init="img=getImg()">
 					<img id="social_icon" class="flex-image" ng-src="{{img}}"  width="100px" height="100px">
 					<br>SOCIAL<br>
-					<p class="intro-text">Interact with friends and challenge each other on how much you know</p>
+					<p id="social-text" class="intro-text">Interact with friends and challenge each other on how much you know</p>
 				</div>
 
 			</div>
