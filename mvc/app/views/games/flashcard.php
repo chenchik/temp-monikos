@@ -40,7 +40,7 @@ function gotoGamelist(lid){
 
         <br>
 
-        <div class="container" style = "margin-top: 55px;margin-left:160px;">
+        <div class="container" style = "margin-top: 55px;margin-left:120px;">
           <div class="progress" >
             <div id = "pb" class="progress-bar progress-bar-striped active" role="progressbar" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100" style="width:70%">
               <div id = "percentpb">{{percent}} </div>
@@ -70,7 +70,7 @@ function gotoGamelist(lid){
   </div>
 </div> -->
 
-<div class="tile-container" style="width:100%;margin-left:24%;margin-top:12px;margin-bottom:10%;">
+<div class="tile-container" style="width:100%;margin-left:17%;margin-top:12px;margin-bottom:10%;">
 
     <div class="tile-small tile-wide-x  flip manual-flip" data-role="tile">
       <div class="card" onclick="rotateCard(this)">
