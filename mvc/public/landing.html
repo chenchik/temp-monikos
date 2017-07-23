@@ -828,7 +828,7 @@
     <!-- =================================
 			///// Begin section clients (clients) /////
 			================================== -->
-    <section id="section-clients" class="clients-section">
+    <section id="section-clients" class="clients-section" style="display:none;">
 
         <div class="container">
             <div class="row">
@@ -1162,7 +1162,7 @@
                         <!-- End divider -->
 
                         <p class="heading-tescription lead text-gray-2">
-                            Pease feel free to eamil us if you have questions.
+                            Pease feel free to email us if you have questions.
                         </p>
                     </div>
                     <!-- End heading -->
@@ -1174,7 +1174,7 @@
                 <div class="col-md-5 text-gray-2 padding-left-40">
 
                     <div class="contact-info">
-                        <p><i class="fa fa-home"></i> 321 W Rosemary St, Chapel Hill, NC 27516</p>
+                        <p><i class="fa fa-home"></i> 200 NC HWY 54 #A303 Carrboro, NC 27510 </p>
                         <p><i class="fa fa-phone"></i> phone: +123 456 789 00</p>
                         <p><i class="fa fa-envelope"></i> <a href="mailto:company.email@info.com" target="_blank">monikos.llc@gmail.com</a></p>
                     </div>
@@ -1330,21 +1330,27 @@
     <!-- modal popup -->
     <script src="assets/vendor/jquery.leanModal.min.js"></script>
     <script type="text/javascript">
+        
         $("#modal_trigger").leanModal({
             top: 200,
             closeButton: ".modal_close"
         });
+        
+        
         
         $(".modal_close").click(function(){
             $(".header_title").text('Login');
             $("#register_app").hide();
             $("#login_form").show();
         });
+        
 
         $(function() {
+            
 
             // Calling Register Form
             $("#register_button").click(function() {
+                
                 $("#errorMessage").hide();
                 $("#login_form").hide();
                 $("#register_app").show();
