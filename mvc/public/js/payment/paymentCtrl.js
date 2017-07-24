@@ -1,11 +1,10 @@
-//var app = angular.module('myApp', []);
+//created by Joseph Son
 
-//NEED TO UPDATE THIS FILE SO THAT A NEW CUSTOMER IS ONLY MADE ONCE
 $.post("../../../../db/create-customer.php", {
     first: getCookie("username"),
 }, function (data, status) {
     customerId = data;
-    console.log(customerId);
+    console.log("customerId: "+customerId);
 })
 
 function getCookie(cname) {
@@ -54,6 +53,11 @@ function subscription(subscriptionId) {
     console.log(plan);
 }
 
+function cancel(){
+    $.post('../../../../db/cancel_subscription.php',{'customerId':customerId},function(data,status){
+       console.log("subscription with ID: " + data + " has been cancelled"); 
+    });
+}
 function hidePopup() {
     var css = document.createElement("style");
     css.type = "text/css"
@@ -76,7 +80,8 @@ function createDropIn(token) {
             instance.requestPaymentMethod(function (err, payload) {
                 console.log(err);
                 //this will create the customer and transaction with specific plan
-                $.post("../../../../db/credit-transaction.php", {
+                $.post("../../../../db/create-subscription.php", {
+                        customerId: customerId,
                         nonce: payload.nonce,
                         plan: plan
                     },
@@ -166,7 +171,8 @@ function createDropIn(token) {
                     return paypalCheckoutInstance.tokenizePayment(data)
                         .then(function (payload) {
                             console.log(payload);
-                            $.post("../../../../db/paypal-transaction.php", {
+                            $.post("../../../../db/create-subscription.php", {
+                                customerId: customerId,
                                 plan: plan,
                                 nonce: payload.nonce,
                                 type: payload.type,

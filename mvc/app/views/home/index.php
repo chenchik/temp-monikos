@@ -5,6 +5,7 @@
 <body id="home_page">
 
 	<script src = '/mvc/public/js/home/homeCtrl.js'></script>
+    <script src = '/mvc/public/js/payment/paymentCtrl.js'></script>
 
 	<!-- <div ng-app="databaseApp" ng-controller="databaseCtrl"> -->
 	<!-- </div> -->
@@ -14,6 +15,9 @@
 					<a ng-click="indextest()"><button class = 'back'>Home</button></a>
 					<a ng-click="drugDatabase()"><button class = 'database'>Database</button></a>
 					<a ng-click="listManager()"><button class = 'study'>Study</button></a>
+                <!--test cancel subscription button -->
+                    <a onclick="cancel()"><button class="study" id="cancel-temp" style="margin-left:80px;">Cancel</button></a>
+                <!-- end --->
 					<a ng-click = 'home()'><img id="toplogo" src="/mvc/public/images/logo_without_words_version_1.png"></a>
 
 					<a id="payment" ng-click="payment()"><button class = 'upgrade'>Upgrade</button></a>
