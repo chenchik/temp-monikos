@@ -17,9 +17,10 @@ if(sizeof($result)==0){
 
     $cookie_name = "user_id";
     $cookie_value = $result["_id"];
+    //set's cookies for 30 days
     setcookie("user_id", $result["_id"], time() + (86400 * 30), "/");
     setcookie("username", $result["username"], time() + (86400 * 30), "/");
-    //setcookie("cookietest");
+    setcookie("remember_me", $_POST["remember"], time() + (86400 * 30), "/");
     // output data of each row
     echo '[{
     "response": 200,
