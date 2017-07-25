@@ -503,6 +503,9 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
         window.location = window.location.origin +
             "/mvc/public/home/listManager/";
     }
+    $scope.drugDatabase = function () {
+        window.location = window.location.origin + "/mvc/public/home/drugDatabase";
+    }
 
 })
 

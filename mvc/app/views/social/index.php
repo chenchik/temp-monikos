@@ -13,7 +13,7 @@
 <body>
     <section id="main_app_module" ng-controller='socialCtrl'>
         <div id=app_header>
-            <a ng-click="indextest()"><button class = 'back'>Home</button></a>
+            <a ng-click="home()"><button class = 'back'>Home</button></a>
             <a ng-click="drugDatabase()"><button class = 'database'>Database</button></a>
             <a ng-click="listManager()"><button class = 'study'>Study</button></a>
             <a ng-click='home()'><img id="toplogo" src="/mvc/public/images/logo_without_words_version_1.png"></a>
