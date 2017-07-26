@@ -41,7 +41,7 @@
 											<div class=username-info>{{capsules[0].username}}</div>
 											<div class=email-info>({{capsules[0].email}})</div>
 											<div class=capsule-info>{{capsules[0].capsules}} Capsules</div>
-											<a href="#" onclick="logout()"><div class=logout-btn>logout</div></a>
+											<a onclick="logout()"><div class=logout-btn>logout</div></a>
 									</div>
 							</div>
 					</div>
@@ -86,7 +86,7 @@
 			</div>
 		</a> -->
 		<footer>
-			<a href="#" onclick="logout()"> Log Out</a>
+			<a onclick="logout()"> Log Out</a>
 		</footer>
 
     </div>

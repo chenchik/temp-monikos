@@ -23,6 +23,13 @@ var config = {
   }
 };
 
+function logout(){
+    $.get("../../../../db/logout.php",function(data,status){
+       console.log(data); 
+    });
+    window.location = window.location.origin = "/mvc/public/landing.html";
+}
+
 app.controller('homeCtrl', function($scope, $http) {
   
   var id_cookie = getCookie("user_id");
