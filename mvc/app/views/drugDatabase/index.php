@@ -460,7 +460,7 @@
                                         </ul>
                                     </div>
                                 </div>
-                            </div>
+                            
 
                             <div class="drug_inner" ng-model="collapsed_rs" ng-click='collapsed_rs=!collapsed_rs'>
                                 <div class="drug-info-wrap"><label>Resources:</label> </div>
