@@ -18,7 +18,8 @@ $cursor = $manager->executeQuery( $database, $query );
 $outp = "";
 foreach($cursor as $data => $value){
     $data++;
-    $rank = $value->username." has ".$value->capsules." capsules";
+    $capsules = number_format($value->capsules);
+    $rank = $value->username.": ".$capsules." capsules";
     if ($outp != "") {$outp .= ",";}
     $outp .= '{"content":'.json_encode($rank);
     $outp .= ', "number":'.json_encode($data);

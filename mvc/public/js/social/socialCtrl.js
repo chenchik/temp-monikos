@@ -296,27 +296,21 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
             console.log(response.data);
         });
     };
-    
-    $scope.friends.sort(function(a,b){
-        return b.capsules - a.capsules;
-    });
 
     $scope.getFriendRank = function () {
-        /*
-        $http.post("/db/rank_friend.php", un_data, config).then(function (response) {
-            $scope.friend_rank = response.data.records;
-            console.log(response.data);
+        $scope.friends.sort(function(a,b){
+        return b.capsules - a.capsules;
         });
-        */
         $scope.friend_rank = [];
         var rank = 1;
         for(var i =0;i<$scope.friends.length;i++){
             $scope.friend_rank[i] = {
-                "content": $scope.friends[i].username + " has " + $scope.friends[i].capsules + " capsules",
+                "content": $scope.friends[i].username + ": " + $scope.friends[i].capsules.toLocaleString() + " capsules",
                 "number": rank
             }
             rank++;
         }
+        console.log($scope.friend_rank);
     };
 
     $scope.addFriend = function () {

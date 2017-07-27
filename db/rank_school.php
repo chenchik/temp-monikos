@@ -11,8 +11,7 @@ $manager = new \MongoDB\Driver\Manager('mongodb://root:kc3irtapdnayeli29r@104.23
 $database = 'monikos.Users';
 //this is the filter for the database. 
 
-//$username = $_POST['username'];
-$username = "bruh";
+$username = $_POST['un'];
 
 $filter = [
     'username' => $username
@@ -36,7 +35,8 @@ $cursor = $manager->executeQuery( $database, $query );
 
 $outp ="";
 foreach($cursor as $data => $value){
-    $rank = $value->username." has ".$value->capsules." capsules"; 
+    $capsules = number_format($value->capsules);
+    $rank = $value->username.": ". $capsules ." capsules"; 
     $data++;
     if ($outp != "") {$outp .= ",";}
     $outp .= '{"content":'.json_encode($rank);
