@@ -413,11 +413,16 @@ $(document).ready(function() {
     function() {
       $(this).parent().remove();
     });
+  var selected;
   $('.custom-list-collection-block').on('click', '.list_block .selectList',
     function() {
       var parent = $(this).parent();
       if (!parent.hasClass('red')) {
         parent.addClass('red');
+        if(selected!=null){
+          selected.removeClass('red');
+        }
+        selected=parent;
         $(this).siblings('.list-info-block').children().addClass(
           'whiteTextClass');
       } else {
@@ -425,16 +430,16 @@ $(document).ready(function() {
         $(this).siblings().removeClass('whiteTextClass');
       }
     });
-
+  $('.custom-list-collection-block').on('click', '.list_block .deleteList',
+    function() {
+      $(this).parent().remove();
+    });
   $('#addListButton').on('click', function() {
     $('.custom-list-collection-block').addClass(
       'list-collection-block-short');
   });
 
-  $('.custom-list-collection-block').on('click', '.list_block .deleteList',
-    function() {
-      $(this).parent().remove();
-    });
+  
   $('#errorButton').on('click', function() {
     $('#errorMessage').slideUp();
   });
