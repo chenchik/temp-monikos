@@ -30,8 +30,27 @@ function gotoGamelist(lid){
 
        <a ng-click='home()'><img id="toplogo" src="/mvc/public/images/logo_without_words_version_1.png"></a>
        <a style="display: none" id="payment" ng-click="payment()"><button class = 'upgrade'>Upgrade</button></a>
+       <div id='menu-popup' class='menu-popup' >
+           <div class=notif-info>
+               <h2>Notifications</h2>
+               <p id="noNotificationsText">There are no notifications at this moment.</p>
+               <div style="display:none" id="notificationsBlock">
+                   <!--append notifications in here-->
+               </div>
+           </div>
+           <div class=user-info>
+               <img src="/mvc/public/images/user_icon.png">
+               <div class=user-info-sub>
+                   <div class=username-info>{{capsules[0].username}}</div>
+                   <div class=email-info>({{capsules[0].email}})</div>
+                   <div class=capsule-info>{{capsules[0].capsules}} Capsules</div>
+                   <a href="#" onclick="logout()"><div class=logout-btn>logout</div></a>
 
-            <div ng-if="firstLoad">{{getlid("<?=$data['lid']?>", false)}}</div>
+               </div>
+           </div>
+       </div>
+       <div ng-if="firstLoad">{{getlid("<?=$data['lid']?>", false)}}</div>
+
 	</div>
 
         <div id="completeMessage" style="display:none">

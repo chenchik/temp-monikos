@@ -40,6 +40,11 @@ function logout(){
 gameMenuApp.controller('gameMenuCtrl', function ($scope, $http) {
 
     //Nik's edits
+    // function payment(){
+    //   //create list manager controller
+    //   window.location = window.location.origin +
+    //     "/mvc/public/home/pricing";
+    // }
     function getCookie(cname) {
         var name = cname + "=";
         var ca = document.cookie.split(';');
@@ -145,11 +150,13 @@ gameMenuApp.controller('gameMenuCtrl', function ($scope, $http) {
                 console.log(response);
                 var premium=response.data.records[0]["premium"];
             if(!premium){
+                $("#challenge-block").attr('ng-click','payment()');
                 $scope.img="/mvc/public/images/challengegrey.png";
                 $("#challenge-block").css('border','2px solid #777777');
                 $("#challenge-block").css('transition','');
                  $("#challenge-block").css('hover:','');
                 $("#challenge-block").css('color','#777777');
+                
                 $("#payment").show();
                 $("#toplogo").attr("src","/mvc/public/images/litelogo.png");
                 // $scope.payment();
@@ -368,6 +375,7 @@ function toggleMenuNav() {
 }
 
 $(document).ready(function () {
+
     $('#challenge-block').on('click', function () {
         if (!showingSelectGame) {
             var innerChallenge = $("#innerChallenge");

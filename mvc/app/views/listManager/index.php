@@ -109,7 +109,7 @@
                     {{list.name}}</h1>
                 <br>
                 <button class ='selectList' ng-click='selectList($index)'>SELECT</button>
-                <button class='deleteList' ng-click='deleteList($index)'>DELETE</button>
+                <button id="deleteList" class='deleteList' ng-click='deleteList($index)'>DELETE</button>
                 <!-- <button id='viewList'>VIEW</button>
 
                 <div id="modal-background"></div>
