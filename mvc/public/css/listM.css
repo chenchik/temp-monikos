@@ -218,7 +218,7 @@ h1.list-m-header {
   height:auto;
   /*overflow-y: scroll;*/
   transition: border-bottom 0.4s ease-in-out;
-  margin-left: 13px;
+  margin-left: 5%;
 }
 
 .list-block:hover{
