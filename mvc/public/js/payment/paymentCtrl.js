@@ -6,7 +6,13 @@ $.post("../../../../db/create-customer.php", {
     customerId = data;
     console.log("customerId: "+customerId);
 })
-
+function logout(){
+    $.get("../../../../db/logout.php",function(data,status){
+       console.log(data); 
+    });
+    
+    window.location = window.location.origin = "/mvc/public/landing.html";
+}
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');

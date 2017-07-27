@@ -17,7 +17,13 @@ app.controller('flashCtrl', function($scope, $http) {
 
   //dcedits
   $scope.firstLoad = true;
-
+function logout(){
+    $.get("../../../../db/logout.php",function(data,status){
+       console.log(data); 
+    });
+    
+    window.location = window.location.origin = "/mvc/public/landing.html";
+}
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');

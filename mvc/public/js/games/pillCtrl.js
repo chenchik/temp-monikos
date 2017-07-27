@@ -3,7 +3,13 @@
 
 var isChallenge;
 var isBeingChallenged;
-
+function logout(){
+    $.get("../../../../db/logout.php",function(data,status){
+       console.log(data); 
+    });
+    
+    window.location = window.location.origin = "/mvc/public/landing.html";
+}
 var app = angular.module('myApp', []);
     app.controller('pillCtrl', function($scope, $http) {
     //$scope.challengingFlag = false;

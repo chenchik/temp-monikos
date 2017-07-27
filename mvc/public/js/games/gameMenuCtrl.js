@@ -21,7 +21,13 @@ var config = {
 };
 
 var gameMenuApp = angular.module('gameMenuApp', ['ngAnimate']);
-
+function logout(){
+    $.get("../../../../db/logout.php",function(data,status){
+       console.log(data); 
+    });
+    
+    window.location = window.location.origin = "/mvc/public/landing.html";
+}
 /*DANGEROUS*/
 /*gameMenuApp.filter("trustUrl", ['$sce', function ($sce) {
     return function (recordingUrl) {

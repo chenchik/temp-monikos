@@ -2,6 +2,13 @@
 
 
 /* Open when someone clicks on the span element */
+function logout(){
+    $.get("../../../../db/logout.php",function(data,status){
+       console.log(data); 
+    });
+    
+    window.location = window.location.origin = "/mvc/public/landing.html";
+}
 function openNav() {
   document.getElementById("createList_overlay").style.width = "100%";
 }

@@ -5,7 +5,13 @@ var datalid = document.getElementById('datalid').innerHTML;
 
 var isChallenge;
 var isBeingChallenged;
-
+function logout(){
+    $.get("../../../../db/logout.php",function(data,status){
+       console.log(data); 
+    });
+    
+    window.location = window.location.origin = "/mvc/public/landing.html";
+}
 var app = angular.module('myApp', []);
 app.controller('matchingCtrl', function ($scope, $http) {
     $scope.numClicked = 0;

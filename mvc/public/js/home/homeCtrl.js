@@ -27,6 +27,7 @@ function logout(){
     $.get("../../../../db/logout.php",function(data,status){
        console.log(data); 
     });
+    
     window.location = window.location.origin = "/mvc/public/landing.html";
 }
 
