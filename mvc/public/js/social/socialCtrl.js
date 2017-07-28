@@ -93,6 +93,7 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
                             ",")
                     });
                 }
+                
             }
         });
 
@@ -160,6 +161,7 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
 
     //submit challenge
     $scope.challengeSubmit = function () {
+        $scope.challengeError = "";
         bet = $('#capsulesQuantity').val();
 
         console.log("You placed a bet of " + bet + " capsules");
@@ -167,15 +169,19 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
         console.log(challengeUser + " " + challenged_capsules);
 
         var error = [];
-
+        
+        var error_ct = 0;
         if (bet < 0) {
-            error[0] = "Can't place a bet less than 0 capsules"
+            error[error_ct] = "Can't place a bet less than 0 capsules. "
+            error_ct++;
         }
         if (bet > user_capsules) {
-            error[1] = "Can't place a bet larger than what you have"
+            error[error_ct] = "Can't place a bet larger than what you have. "
+            error_ct++;
         }
         if (bet > challenged_capsules) {
-            error[2] = "Can't place a bet larger than what your friend has"
+            error[error_ct] = "Can't place a bet larger than what your friend has. "
+            error_ct++;
         }
 
         if (error.length == 0) {
@@ -187,9 +193,10 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
         } else {
             for (var i = 0; i < error.length; i++) {
                 if (error[i] != null) {
-                    console.log(error[i]);
+                        $scope.challengeError = $scope.challengeError + error[i];
                 }
             }
+            document.getElementsByClassName('challenge')[0].style.visibility="visible";
         }
     }
 
@@ -469,7 +476,7 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
                 window.location.reload();
             }
         } else {
-            //document.getElementsByClassName('challenge')[0].style.visibility = "visbile";
+            document.getElementsByClassName('challenge')[0].style.visibility = "hidden";
         }
         changeFontRed();
         $scope.deleted = "";

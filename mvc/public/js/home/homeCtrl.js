@@ -118,7 +118,7 @@ app.controller('homeCtrl', function($scope, $http) {
     });
     $http.post(url, data, config)
       .then(function(response) {
-        console.log(response);
+        console.log(response.data.records);
         var premium = response.data.records[0]["premium"];
         if (!premium) {
           $("#payment").show();

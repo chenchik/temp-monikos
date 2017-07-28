@@ -110,11 +110,6 @@
                                                 <label>Create a list</label>
                                             </button>
                                         </div>
-                                        <div id="errorMessage" class="challenge" style="display:none">
-                                            <img id="errorLogo" src="/mvc/public/images/white_logo.png">
-                                            <p class="errorText" ng-bind="challengeError"></p>
-                                            <div class="errorButton" id="errorButton">OKAY</div>
-                                        </div>
                                     </div>
                                     <div id="select-game" style="display:none;">
                                         <div id="container" class="vertical-align">
@@ -133,16 +128,32 @@
                                         </div>
                                     </div>
                                 </div>
+                                
                                 <div id='lean_overlay_social' ng-click='$event.stopPropagation()'> </div>
                             </div>
 
                         </div>
                     </div>
-
+                    
+                    <!-- Friend deleted message -->
                     <div id="errorMessage" class="deleted" style="visibility:hidden;">
                         <img id="errorLogo" src="/mvc/public/images/white_logo.png">
                         <p class="errorText" ng-bind="deleted"></p>
                         <div id='errorBtn'><button id="innerErrorBtn" class="button button5" ng-click="hideResult('deleted')">Okay</button></div>
+                    </div>
+                    
+                    <!-- Error in sending request -->
+                    <div id="errorMessage" class="challenge" style="visibility:hidden;">
+                        <img id="errorLogo" src="/mvc/public/images/white_logo.png">
+                        <p class="errorText" ng-bind="challengeError"></p>
+                        <div id='errorBtn'><button id="innerErrorBtn" class="button button5" ng-click="hideResult('challenge')">Okay</button></div>
+                    </div>
+                    
+                    <!-- View drugs in list -->
+                    <div id="errorMessage" class="challenge" style="visibility:hidden;">
+                        <img id="errorLogo" src="/mvc/public/images/white_logo.png">
+                        <p class="errorText" ng-bind="challengeError"></p>
+                        <div id='errorBtn'><button id="innerErrorBtn" class="button button5" ng-click="hideResult('challenge')">Okay</button></div>
                     </div>
 
                 </div>
