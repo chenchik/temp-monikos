@@ -101,7 +101,7 @@
                                                     <br>
                                                     <button class='selectList' ng-click='selectList($index)'>SELECT</button>
                                                     <button class='deleteList' ng-click='deleteList($index)'>DELETE</button>
-                                                    <button class='deleteList' ng-click='viewList($index)'>VIEW</button>
+                                                    <button class='deleteList' ng-click='viewList(list.name)'>VIEW</button>
                                                 </div>
                                             </div>
                                         </section>
@@ -150,10 +150,10 @@
                     </div>
                     
                     <!-- View drugs in list -->
-                    <div id="errorMessage" class="challenge" style="visibility:hidden;">
+                    <div id="errorMessage" class="drugs" style="visibility:hidden;">
                         <img id="errorLogo" src="/mvc/public/images/white_logo.png">
-                        <p class="errorText" ng-bind="challengeError"></p>
-                        <div id='errorBtn'><button id="innerErrorBtn" class="button button5" ng-click="hideResult('challenge')">Okay</button></div>
+                        <p class="errorText" ng-repeat="x in drugs" id="drug" style="color:white; padding:0px; margin-bottom:0px;"> {{x}} </p>
+                        <div id='errorBtn'><button id="innerErrorBtn" class="button button5" ng-click="hideResult('drugs')">Okay</button></div>
                     </div>
 
                 </div>

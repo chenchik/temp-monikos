@@ -158,6 +158,26 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
                 $scope.passedId = undefined;
             });
     }
+    
+    //view list
+    $scope.viewList = function(listName){
+        console.log(listName);
+        var drugs;
+        $scope.drugs = [];
+        var rank = 1;
+        for(var i=0;i<$scope.lists.length;i++){
+            if($scope.lists[i].name == listName){
+                drugs = $scope.lists[i].drugs;
+                for(var j=0;j<drugs.length;j++){
+                    $scope.drugs[j] = rank +". "+ drugs[j];
+                    rank ++;
+                }
+                break;
+            }
+        }
+        console.log($scope.drugs);
+        $scope.showResult('drugs');
+    }
 
     //submit challenge
     $scope.challengeSubmit = function () {
@@ -461,7 +481,7 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
         } else if (option == "added") {
             document.getElementsByClassName('added')[0].style.visibility = "visible";
         } else {
-            //document.getElementsByClassName('challenge')[0].style.visibility = "visbile";
+            document.getElementsByClassName('drugs')[0].style.visibility = "visible";
         }
     }
 
@@ -475,6 +495,9 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
             if ($scope.result.includes("added")) {
                 window.location.reload();
             }
+        } else if(option=="drugs"){
+            changeFontRed();
+            document.getElementsByClassName('drugs')[0].style.visibility = "hidden";
         } else {
             document.getElementsByClassName('challenge')[0].style.visibility = "hidden";
         }
