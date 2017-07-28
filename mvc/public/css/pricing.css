@@ -64,14 +64,14 @@ body a{
 	-webkit-transition: all 0.3s;
 	-moz-transition: all 0.3s;
 	transition: all 0.3s;
-    
+
     position: fixed;
 	top: 50%;
 	left: 50%;
 
     width: 60vw;
 	margin-left: -30vw;
-    margin-top: -20vw;
+    margin-top: -15vw;
 	height: auto;
 
     overflow:auto;
@@ -83,17 +83,22 @@ body a{
     -moz-box-shadow:    4px 4px 80px #000;
     box-shadow:         4px 4px 80px #000;
 }
+
+.pink{
+	background-color: #fa6e6f !important;
+}
 .socialHeader{
-    background: #fa4e51 !important;
+    background: #fa6e6f !important;
 }
 
 .socialHeader .modal_close{
     color: white !important;
-    background: #fa4e51 !important;
+    background: #fa6e6f !important;
 }
 
 .socialHeader .header_title{
     color: white !important;
+		margin-left: 10px;
 }
 /* Styles for dialog window */
 #small-dialog,#small-dialog1,#small-dialog2,#small-dialog3,#small-dialog4,#small-dialog5{
@@ -291,6 +296,31 @@ border-bottom: 2px solid#04dbdd;
 /*----*/
 /*---start-pricing-tabels-----*/
 .payment-online-form-left{
+
+}
+#credit{
+	margin-left: 5%;
+	width: 90%;
+}
+#paypal-button{
+	/*margin-left: 5%;
+	width: 90%;
+	position: absolute;;
+	left: 50px;
+	top: 50px;*/
+	width: 20%;
+	margin-top: -30px;
+	margin-left: 630px;
+}
+
+.submit-button{
+	/*margin-left: 10px;*/
+	margin-right: 20px;
+}
+
+.or{
+	margin-top: -28px;
+	margin-left: 450px;
 }
 form li {
 list-style: none;
@@ -323,7 +353,7 @@ form ul {
 	-ms-transition: border-color 0.3s;
 	-moz-transition: border-color 0.3s;
 	-webkit-transition: border-color 0.3s;
-	
+
 	font-size: 0.9em;
 	border-color: #EEE;
 	-webkit-appearance:none;

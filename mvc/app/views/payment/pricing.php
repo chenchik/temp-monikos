@@ -7,7 +7,7 @@
     <script src='/mvc/public/js/home/homeCtrl.js'></script>
     <script src='/mvc/public/js/payment/paymentCtrl.js'></script>
     <link rel="stylesheet" href="/mvc/public/css/pricing.css" media="screen" title="no title">
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
     <link rel="stylesheet" href="/mvc/public/assets/css/style.css">
     <script>
@@ -197,11 +197,14 @@
                 </header>
                 <div id="credit">
                     <div id="dropin-container"></div>
-                    <button>Cancel</button>
-                    <button id="pay">Process</button>
+                    <button class ="submit-button pink">Cancel</button>
+                    <button class ="submit-button pink" id="pay">Process</button>
+                    <h3 class ="or">or</h3>
+                    <div  class ="submit-button" id="paypal-button"></div>
                     <div class="clear"> </div>
+                    <br>
                 </div>
-                <div id="paypal-button"></div>
+                <!-- <div id="paypal-button"></div> -->
             </div>
         </div>
         <div id="lean_overlay"></div>
