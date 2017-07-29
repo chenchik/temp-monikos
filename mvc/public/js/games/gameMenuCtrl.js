@@ -149,8 +149,10 @@ gameMenuApp.controller('gameMenuCtrl', function ($scope, $http) {
             .then(function (response) {
                 console.log(response);
                 var premium=response.data.records[0]["premium"];
-            if(!premium){
-                $("#challenge-block").attr('ng-click','payment()');
+            console.log(premium);
+            if(premium==false){
+                console.log("poop");
+                $("#challenge-block").attr('onclick','payment()');
                 $scope.img="/mvc/public/images/challengegrey.png";
                 $("#challenge-block").css('border','2px solid #777777');
                 $("#challenge-block").css('transition','');
@@ -174,11 +176,6 @@ gameMenuApp.controller('gameMenuCtrl', function ($scope, $http) {
         return $scope.img;
     }
 
-    $scope.payment = function() {
-      //create list manager controller
-      window.location = window.location.origin +
-        "/mvc/public/home/pricing";
-    }
     //validates if challenged user exists and stores challenged user's capsules
     $scope.selectUser = function () {
         selectChallengeUser();
@@ -239,6 +236,13 @@ gameMenuApp.controller('gameMenuCtrl', function ($scope, $http) {
     }
 
 });
+
+function payment() {
+      //create list manager controller
+        console.log('check');
+      window.location = window.location.origin +
+        "/mvc/public/home/pricing";
+    }
 
 function changeButtonColor(id, option) {
     if (option == false) {
