@@ -20,20 +20,6 @@ def profile(name):
 
     return render_template("profile.html",name=name)
 
-
-from flask import request
-from flask import jsonify
-
-
-@app.route("/get_my_ip", methods=["GET"])
-def get_my_ip():
-    return jsonify({'ip': request.remote_addr}), 200
-
-
-
-
-
-
 @app.route('/json/')
 def new_post():
     return render_template('json_trans.html')
@@ -160,10 +146,8 @@ def create_post():
             current = current + 1
         content = string[0:current].strip()
 
-
         first, current = parse_non_spe(string, current)
         real_content = string[first + 1:current].strip()
-        real_content=real_content.lower()
         new = new + '"' + content + '"' + ': ' + '"' + real_content + '"'
         print new
         return new, current - 7
@@ -305,15 +289,7 @@ def create_post():
     # long_str = ""
     # for each in userInput:
     #     long_str = long_str + each
-
-    tmp=post
-    cursor = 0;
-    l=list(tmp)
-    while cursor < len(l):
-        if l[cursor]==".":
-            l[cursor]="_"
-            n=n+1
-    long_str=''.join(l)
+    long_str=post
     long_str = long_str + '$'
     from pprint import pprint
 
@@ -367,14 +343,9 @@ def create_post():
     json = generic + ',' + simple + ',' + clas + ',' + brand + ',' + indication \
            + ',' + renal + ',' + hepatic + ',' + side + ',' + mecha + ',' + black + ',' + ref;
     return '<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">'\
-    '<link rel="stylesheet" type="text/css" href="/static/style.css">'\
-           "<span style='color:green;font-weight:bold'>CORRECT!</span> COPY PASTE EVERYTHING BELOW: <br> <br>" \
+           "COPY PASTE EVERYTHING BELOW: <br> <br>" \
            "<a href='/json/' class='w3-btn w3-black' >back</a>" \
            "<br>"+json
 
-
-
-
-
 if __name__ == "__main__":
-    app.run(host='0.0.0.0',port=9999,threaded=True)
+    app.run(debug=True)
