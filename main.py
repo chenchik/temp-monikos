@@ -312,7 +312,7 @@ def create_post():
     while cursor < len(l):
         if l[cursor]==".":
             l[cursor]="_"
-            n=n+1
+        cursor=cursor+1
     long_str=''.join(l)
     long_str = long_str + '$'
     from pprint import pprint
