@@ -1150,7 +1150,7 @@
                         <!-- End divider -->
 
                         <p class="heading-tescription lead text-gray-2">
-                            Pease feel free to eamil us if you have questions.
+                            Please feel free to email us if you have questions.
                         </p>
                     </div>
                     <!-- End heading -->
@@ -1178,7 +1178,7 @@
 
                     <!-- Begin contact form
 							========================= -->
-                    <form id="contact-form" class="margin-top-80 text-white wow fadeIn" data-wow-delay="0.3s">
+                    <form id="contact-form" class="margin-top-80 text-white wow fadeIn" data-wow-delay="0.3s" onsubmit="contactUs()"">
 
                         <!-- Begin hidden required fields (https://github.com/agragregra/uniMail) -->
                         <input type="hidden" name="project_name" value="monikos.org">
