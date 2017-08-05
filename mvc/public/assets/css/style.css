@@ -16,7 +16,6 @@
 .popupContainer {
     position:absolute;
     width: 330px;
-    height: 345px;
     overflow:auto;
     left: 45%;
     top: 100px!important;
@@ -830,7 +829,7 @@ h3 {
 #modal .btn {}
 .dropdown ul {
     /*margin-left: 41%;*/
-    text-align: center;
+    /*text-align: center;*/
 }
 .dropdown li:hover {
     /*background-color: #f7465b;*/

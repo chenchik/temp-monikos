@@ -1,9 +1,9 @@
 
 <head>
     <!-- angular js -->
-    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <!--<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>-->
     <!-- jQuery js -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>-->
     <!-- ngSanitize -->
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.js"></script>
     <!-- anuglar controllers -->
@@ -13,7 +13,7 @@
     <script src='/mvc/public/js/account/loginCtrl.js'></script>
     <script src='/mvc/public/js/account/accountCtrl.js'></script>
 
-    <script src="assets/vendor/jquery.leanModal.min.js"></script>
+    <script src="/mvc/public/assets/vendor/jquery.leanModal.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.js"></script>
     <script src="http://cdnjs.cloudflare.com/ajax/libs/es5-shim/2.2.0/es5-shim.js"></script>
     <script>
@@ -46,27 +46,27 @@
     <!-- Alternative font -->
 
     <!-- Bootstrap CSS (http://getbootstrap.com) -->
-    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/mvc/public/assets/vendor/bootstrap/css/bootstrap.min.css">
 
     <!-- Libs and Plugins CSS -->
-    <link rel="stylesheet" href="assets/vendor/animate.min.css">
+    <link rel="stylesheet" href="/mvc/public/assets/vendor/animate.min.css">
     <!-- Animations CSS (more info: http://daneden.github.io/animate.css) -->
-    <link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/mvc/public/assets/vendor/font-awesome/css/font-awesome.min.css">
     <!-- Font Icons (more info: http://fortawesome.github.io/Font-Awesome) -->
-    <link rel="stylesheet" href="assets/vendor/ytplayer/css/jquery.mb.YTPlayer.min.css">
+    <link rel="stylesheet" href="/mvc/public/assets/vendor/ytplayer/css/jquery.mb.YTPlayer.min.css">
     <!-- YTPlayer JS (more info: https://github.com/pupunzi/jquery.mb.YTPlayer) -->
-    <link rel="stylesheet" href="assets/vendor/owl-carousel/css/owl.carousel.css">
+    <link rel="stylesheet" href="/mvc/public/assets/vendor/owl-carousel/css/owl.carousel.css">
     <!-- Owl Carousel CSS (more info: http://www.owlcarousel.owlgraphic.com) -->
-    <link rel="stylesheet" href="assets/vendor/owl-carousel/css/owl.carousel.plugins.css">
+    <link rel="stylesheet" href="/mvc/public/assets/vendor/owl-carousel/css/owl.carousel.plugins.css">
     <!-- Owl Carousel plugins CSS (more info: http://www.owlcarousel.owlgraphic.com) -->
-    <link rel="stylesheet" href="assets/vendor/owl-carousel/css/owl.theme.default.css">
+    <link rel="stylesheet" href="/mvc/public/assets/vendor/owl-carousel/css/owl.theme.default.css">
     <!-- Owl Carousel default theme CSS (more info: http://www.owlcarousel.owlgraphic.com) -->
-    <link rel="stylesheet" href="assets/vendor/magnific-popup/css/magnific-popup.css">
+    <link rel="stylesheet" href="/mvc/public/assets/vendor/magnific-popup/css/magnific-popup.css">
     <!-- Magnific Popup CSS (more info: http://dimsemenov.com/plugins/magnific-popup/) -->
 
     <!-- Theme master CSS -->
-    <link rel="stylesheet" href="assets/css/helper.css">
-    <link rel="stylesheet" href="assets/css/theme.css">
+    <link rel="stylesheet" href="/mvc/public/assets/css/helper.css">
+    <link rel="stylesheet" href="/mvc/public/assets/css/theme.css">
 
     <!-- Theme styles CSS (comment or uncomment below lines to enable/disable styles) -->
     <!-- <link rel="stylesheet" media="screen" title="blue-theme" href="assets/css/styles/blue.css"> -->
@@ -76,8 +76,8 @@
     <!-- <link rel="stylesheet" media="screen" title="yellow-theme" href="assets/css/styles/yellow.css"> -->
 
     <!-- Theme custom CSS (all your CSS customizations) -->
-    <link rel="stylesheet" href="assets/css/custom.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="/mvc/public/assets/css/custom.css">
+    <link rel="stylesheet" href="/mvc/public/assets/css/style.css">
     <!-- ui select css -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.css" />
 
@@ -382,7 +382,7 @@
                 <span class="cover"></span>
                 <!-- Begin intro caption -->
                 <div class="intro-caption vertical-align-center text-center text-white">
-                    <img class="wow fadeIn" style="height:50%; width: 50%" src="images/landing_page/logo2.png">
+                    <img class="wow fadeIn" style="height:50%; width: 50%" src="/mvc/public/images/landing_page/logo2.png">
                     <!-- <p class="intro-description wow fadeIn" data-wow-delay="2.2s">est. 2015</p> -->
                     <div id="sign_up" class="margin-top-30">
                         <a id="modal_trigger" href="#modal" class="btn btn-primary margin-top-10 wow bounceIn" data-wow-delay="1s">START HERE</a>
@@ -446,7 +446,7 @@
 								-->
                             <hr class="hr-width-1 hr-5x border-main">
                             <!-- End divider -->
-                            <img class="img-responsive" src="assets/img/ourst.jpg" alt="team_img" id='our_str' style="height: 100%;width: 100%; padding-right: 20px;padding-top: 20px" />
+                            <img class="img-responsive" src="/mvc/public/assets/img/ourst.jpg" alt="team_img" id='our_str' style="height: 100%;width: 100%; padding-right: 20px;padding-top: 20px" />
                         </div>
                         <!-- End heading -->
 
@@ -507,7 +507,7 @@
                             <div class="portfolio-item wow fadeInLeft">
                                 <a class="item-link inline-popup-trigger" href="">
                                     <span class="cover bg-transparent-9-main"></span>
-                                    <img class="item-img" src="images/landing_page/app2.jpeg" alt="Matching Game">
+                                    <img class="item-img" src="/mvc/public/images/landing_page/app2.jpeg" alt="Matching Game">
                                     <div class="item-info text-white">
                                         <h3 class="item-info-title">Matching game</h3>
                                         <p class="item-info-text">Matching game</p>
@@ -521,7 +521,7 @@
                             <div class="portfolio-item wow fadeInUp">
                                 <a class="item-link inline-popup-trigger" href="">
                                     <span class="cover bg-transparent-9-main"></span>
-                                    <img class="item-img" src="images/landing_page/app3.jpeg" alt="Friend">
+                                    <img class="item-img" src="/mvc/public/images/landing_page/app3.jpeg" alt="Friend">
                                     <div class="item-info text-white">
                                         <h3 class="item-info-title">Compete with Friends</h3>
                                         <p class="item-info-text">Compete with Friends</p>
@@ -535,7 +535,7 @@
                             <div class="portfolio-item wow fadeInRight">
                                 <a class="item-link inline-popup-trigger" href="">
                                     <span class="cover bg-transparent-9-main"></span>
-                                    <img class="item-img" src="images/landing_page/app1.jpeg" alt="Flash Card">
+                                    <img class="item-img" src="/mvc/public/images/landing_page/app1.jpeg" alt="Flash Card">
                                     <div class="item-info text-white">
                                         <h3 class="item-info-title">Flash Card</h3>
                                         <p class="item-info-text">Flash Card</p>
@@ -620,7 +620,7 @@
                             <div class="col col-md-3 no-padding wow fadeInLeft">
                                 <div class="team-box team-box-hover ">
                                     <div class="team-image">
-                                        <a class="item-link inline-popup-trigger" href="#portfolio-1"><img src="images/landing_page/patrick.jpg" alt="Patrick"></a>
+                                        <a class="item-link inline-popup-trigger" href="#portfolio-1"><img src="/mvc/public/images/landing_page/patrick.jpg" alt="Patrick"></a>
                                     </div>
 
                                 </div>
@@ -655,7 +655,7 @@
                                             <p>He originally thought he would be heading back to Texas for Pharmacy school to be closer to his family, but when he was accepted into the UNC Eshelman School of Pharmacy, it was hard for him to turn down the then #2 ranked pharmacy school in the country. One of the promise Patrick’s mother made him keep was that no matter what school he chose to attend, that he leaves a positive impact. Hopefully Monikos will fulfill this promise to her.</p>
                                         </div>
                                         <div class="col-md-4 margin-bottom-20 padding-left-40">
-                                            <img src="images/landing_page/patrick.jpg" alt="patrick">
+                                            <img src="/mvc/public/images/landing_page/patrick.jpg" alt="patrick">
 
                                             <ul class="social-icons">
                                                 <li><a class="btn btn-social-min btn-default btn-sm" href="" target="_blank"><i class="fa fa-facebook"></i></a></li>
@@ -684,7 +684,7 @@
                             <div class="col col-md-3 col-md-push-9 no-padding wow fadeInRight">
                                 <div class="team-box team-box-hover ">
                                     <div class="team-image">
-                                        <a class="item-link inline-popup-trigger" href="#portfolio-2"><img src="images/landing_page/riley.jpg" alt="Patrick"></a>
+                                        <a class="item-link inline-popup-trigger" href="#portfolio-2"><img src="/mvc/public/images/landing_page/riley.jpg" alt="Patrick"></a>
                                     </div>
 
                                 </div>
@@ -894,35 +894,35 @@
                         <!-- Begin carousel item
 								========================= -->
                         <div class="cc-item">
-                            <a target="_blank" href="#" class="client"><img src="assets/img/clients/client-1.png" alt="image"></a>
+                            <a target="_blank" href="#" class="client"><img src="/mvc/public/assets/img/clients/client-1.png" alt="image"></a>
                         </div>
                         <!-- End carousel item -->
 
                         <!-- Begin carousel item
 								========================= -->
                         <div class="cc-item">
-                            <a target="_blank" href="#" class="client"><img src="assets/img/clients/client-2.png" alt="image"></a>
+                            <a target="_blank" href="#" class="client"><img src="/mvc/public/assets/img/clients/client-2.png" alt="image"></a>
                         </div>
                         <!-- End carousel item -->
 
                         <!-- Begin carousel item
 								========================= -->
                         <div class="cc-item">
-                            <a target="_blank" href="#" class="client"><img src="images/landing_page/user_unc.png" alt="image"></a>
+                            <a target="_blank" href="#" class="client"><img src="/mvc/public/images/landing_page/user_unc.png" alt="image"></a>
                         </div>
                         <!-- End carousel item -->
 
                         <!-- Begin carousel item
 								========================= -->
                         <div class="cc-item">
-                            <a target="_blank" href="#" class="client"><img src="assets/img/clients/client-4.png" alt="image"></a>
+                            <a target="_blank" href="#" class="client"><img src="/mvc/public/assets/img/clients/client-4.png" alt="image"></a>
                         </div>
                         <!-- End carousel item -->
 
                         <!-- Begin carousel item
 								========================= -->
                         <div class="cc-item">
-                            <a target="_blank" href="#" class="client"><img src="assets/img/clients/client-5.png" alt="image"></a>
+                            <a target="_blank" href="#" class="client"><img src="/mvc/public/assets/img/clients/client-5.png" alt="image"></a>
                         </div>
                         <!-- End carousel item -->
 
@@ -1005,7 +1005,7 @@
 
                             <!-- Begin testimonial item -->
                             <div class="testimonial-item text-gray-2">
-                                <img src="assets/img/testimonial/client-1.png" alt="image">
+                                <img src="/mvc/public/assets/img/testimonial/client-1.png" alt="image">
                                 <blockquote>
                                     <p>"Duis vel ligula non neque varius eleifend quis id elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse lacus dui, pellentesque ut porta et, consequat sit amet suscipit lacus."</p>
                                     <small>Anna Clarkson</small>
@@ -1015,7 +1015,7 @@
 
                             <!-- Begin testimonial item -->
                             <div class="testimonial-item text-gray-2">
-                                <img src="assets/img/testimonial/client-2.png" alt="image">
+                                <img src="/mvc/public/assets/img/testimonial/client-2.png" alt="image">
                                 <blockquote>
                                     <p>"Maecenas sit amet diam iaculis, lobortis tortor sed, bibendum quam. Nam mauris odio, sodales interdum facilisis in, dignissim et massa. In suscipit quam nisi."</p>
                                     <small>John Smith</small>
@@ -1025,7 +1025,7 @@
 
                             <!-- Begin testimonial item -->
                             <div class="testimonial-item text-gray-2">
-                                <img src="assets/img/testimonial/client-3.png" alt="image">
+                                <img src="/mvc/public/assets/img/testimonial/client-3.png" alt="image">
                                 <blockquote>
                                     <p>"Proin at tincidunt leo. Morbi ut metus sit amet purus molestie sollicitudin. Maecenas convallis est vitae neque feugiat, in accumsan odio vestibulum. Pellentesque sodales fermentum porttitor."</p>
                                     <small>Jack Paterson</small>
@@ -1082,14 +1082,14 @@
                         <!-- Begin carousel item
 								========================= -->
                         <div class="cc-item">
-                            <a target="_blank" href="" class="client"><img src="images/landing_page/cube.png" alt="image"></a>
+                            <a target="_blank" href="" class="client"><img src="/mvc/public/images/landing_page/cube.png" alt="image"></a>
                         </div>
                         <!-- End carousel item -->
 
                         <!-- Begin carousel item
 								========================= -->
                         <div class="cc-item">
-                            <a target="_blank" href="" class="client"><img src="images/landing_page/launch.png" alt="image"></a>
+                            <a target="_blank" href="" class="client"><img src="/mvc/public/images/landing_page/launch.png" alt="image"></a>
                         </div>
                         <!-- End carousel item -->
 
@@ -1163,21 +1163,9 @@
 
                     <div class="contact-info">
                         <p><i class="fa fa-home"></i> 321 W Rosemary St, Chapel Hill, NC 27516</p>
-                        <p><i class="fa fa-phone"></i> phone: +123 456 789 00</p>
-                        <p><i class="fa fa-envelope"></i> <a href="mailto:company.email@info.com" target="_blank">monikos.llc@gmail.com</a></p>
+                        <p><i class="fa fa-phone"></i> phone: (512) 663 4745</p>
+                        <p><i class="fa fa-envelope"></i> <a href="mailto:monikos.inc@gmail.com" target="_blank">monikos.inc@gmail.com</a></p>
                     </div>
-
-                    <h5 class="margin-top-40 margin-bottom-20">Follow Us:</h5>
-
-                    <!-- Begin social icons -->
-                    <ul class="social-icons margin-bottom-20">
-                        <li><a class="btn btn-social-min btn-white-bordered btn-lg" href="" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                        <li><a class="btn btn-social-min btn-white-bordered btn-lg" href="" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                        <li><a class="btn btn-social-min btn-white-bordered btn-lg" href="" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a class="btn btn-social-min btn-white-bordered btn-lg" href="" target="_blank"><i class="fa fa-pinterest"></i></a></li>
-                        <li><a class="btn btn-social-min btn-white-bordered btn-lg" href="" target="_blank"><i class="fa fa-dribbble"></i></a></li>
-                    </ul>
-                    <!-- End social icons -->
 
                 </div>
                 <!-- /.col -->
@@ -1283,40 +1271,40 @@
 		===================== -->
 
     <!-- Core JS -->
-    <script src="assets/vendor/jquery/jquery-1.11.1.min.js"></script>
+    <script src="/mvc/public/assets/vendor/jquery/jquery-1.11.1.min.js"></script>
     <!-- jquery JS (more info: https://jquery.com) -->
-    <script src="assets/vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="/mvc/public/assets/vendor/bootstrap/js/bootstrap.min.js"></script>
     <!-- bootstrap JS (more info: http://getbootstrap.com) -->
 
     <!-- Libs and Plugins JS -->
-    <script src="assets/vendor/ytplayer/js/jquery.mb.YTPlayer.min.js"></script>
+    <script src="/mvc/public/assets/vendor/ytplayer/js/jquery.mb.YTPlayer.min.js"></script>
     <!-- YTPlayer JS (more info: https://github.com/pupunzi/jquery.mb.YTPlayer) -->
-    <script src="assets/vendor/wow.min.js"></script>
+    <script src="/mvc/public/assets/vendor/wow.min.js"></script>
     <!-- WOW animations JS (more info: http://mynameismatthieu.com/WOW/index.html) -->
-    <script src="assets/vendor/owl-carousel/js/owl.carousel.js"></script>
+    <script src="/mvc/public/assets/vendor/owl-carousel/js/owl.carousel.js"></script>
     <!-- Owl Carousel JS (more info: http://www.owlcarousel.owlgraphic.com) -->
-    <script src="assets/vendor/owl-carousel/js/owl.carousel.plugins.js"></script>
+    <script src="/mvc/public/assets/vendor/owl-carousel/js/owl.carousel.plugins.js"></script>
     <!-- Owl Carousel plugins JS (more info: http://www.owlcarousel.owlgraphic.com) -->
-    <script src="assets/vendor/magnific-popup/js/jquery.magnific-popup.min.js"></script>
+    <script src="/mvc/public/assets/vendor/magnific-popup/js/jquery.magnific-popup.min.js"></script>
     <!-- Magnific Popup JS (more info: http://dimsemenov.com/plugins/magnific-popup/) -->
 
-    <script src="assets/vendor/isotope.pkgd.min.js"></script>
+    <script src="/mvc/public/assets/vendor/isotope.pkgd.min.js"></script>
     <!-- isotope JS (more info: http://isotope.metafizzy.co) -->
-    <script src="assets/vendor/imagesloaded.pkgd.min.js"></script>
+    <script src="/mvc/public/assets/vendor/imagesloaded.pkgd.min.js"></script>
     <!-- ImagesLoaded JS (https://github.com/desandro/imagesloaded) -->
-    <script src="assets/vendor/smoothscroll.js"></script>
+    <script src="/mvc/public/assets/vendor/smoothscroll.js"></script>
     <!-- YTPlayer JS (more info: https://gist.github.com/theroyalstudent/4e6ec834be19bf077298) -->
-    <script src="assets/vendor/jquery.easing.min.js"></script>
+    <script src="/mvc/public/assets/vendor/jquery.easing.min.js"></script>
     <!-- Easing JS (more info: http://gsgd.co.uk/sandbox/jquery/easing/) -->
 
     <!-- Theme master JS -->
-    <script src="assets/js/theme.js"></script>
+    <script src="/mvc/public/assets/js/theme.js"></script>
 
     <!-- Theme custom JS (all your JS customizations) -->
-    <script src="assets/js/custom.js"></script>
+    <script src="/mvc/public/assets/js/custom.js"></script>
 
     <!-- modal popup -->
-    <script src="assets/vendor/jquery.leanModal.min.js"></script>
+    <script src="/mvc/public/assets/vendor/jquery.leanModal.min.js"></script>
     <script type="text/javascript">
         $("#modal_trigger").leanModal({
             top: 200,
