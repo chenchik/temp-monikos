@@ -8,6 +8,8 @@ function logout(){
     
     window.location = window.location.origin = "/mvc/public/landing.html";
 }
+
+
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
@@ -553,6 +555,7 @@ $(document).ready(function () {
     $('.challenge').on('click', function () {
         $('#errorMessage').slideUp();
     });
+    
 
     function removePopup() {
         $('.challenge').slideUp();

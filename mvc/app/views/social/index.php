@@ -4,10 +4,10 @@
 <link rel="stylesheet" type="text/css" href="/mvc/public/css/main.css">
 <link rel="stylesheet" href="/mvc/public/assets/css/style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen" title="no title">
-<script src="/mvc/public/js/social/socialCtrl.js"></script>
 <meta name='viewport' content="width=device-width, initial-scale=1" />
 <script src="/mvc/public/js/ui-bootstrap-tpls-2.5.0.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/mvc/public/css/listM.css">
+   <script src="/mvc/public/js/social/socialCtrl.js"></script>
 <script src='/mvc/public/js/listManager/listManagerFunctions.js'></script>
 
 <body>
@@ -271,7 +271,10 @@
         <!-- LIST CREATOR END -->
 
     </section>
-
+    
+    <script>
+    $('.errorText').css('text-align','center');
+    </script>
 </body>
 
 <script type="text/javascript">

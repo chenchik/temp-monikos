@@ -26,7 +26,7 @@
                     </div>
                 </div>
                 <div class=user-info>
-                    <img src="/mvc/public/images/user_icon.png">
+                    <img src="/mvc/public/images/landing_page/logo2.png">
                     <div class=user-info-sub>
                         <div class=username-info>{{capsules[0].username}}</div>
                         <div class=email-info>({{capsules[0].email}})</div>
@@ -141,7 +141,7 @@
                                 </div>
 
                                 <div class=ng-modal-content-footer-bar>
-                                    Do you have a better hint? <a class="earn200link" ng-click="showPopup2();$event.stopPropagation()">Earn 200 Capsules</a>
+                                    <span id="suggest-msg">Do you have a better hint? </span><a class="earn200link" ng-click="showPopup2();$event.stopPropagation()">Earn 2500 Capsules</a>
                                 </div>
 
                             </div>
@@ -171,10 +171,12 @@
                             <div class='ng-modal-close' ng-click='hidePopup("info" + x.DrugId);$event.stopPropagation()'>X</div>
 
                             <div class=expand-info>
-                                <div class="drug_inner" ng-model="collapsed_brand" ng-click='collapsed_brand=!collapsed_brand'>
+                                <div class="drug_inner" ng-model="collapsed_brand">
+                                    <!--ng-click='collapsed_brand=!collapsed_brand'-->
                                     <audio id="{{'myAudio-' + x['Brand']}}"> <source src="{{x['Brand Audio'] | trustUrl}}" type="audio/wav"></audio>
                                     <div class="drug-info-wrap"><label>Brand:</label> </div>
-                                    <div class="expand-info" ng-show="collapsed_brand"> &nbsp &nbsp
+                                    <div class="expand-info" style="margin-top:-11px !important"> &nbsp &nbsp
+                                        <!--ng-show="collapsed_brand"-->
                                         <ul>
                                             <li ng-repeat="arrayItem in x['Brand']">
                                                 {{arrayItem}}
@@ -186,9 +188,11 @@
                                     </div>
 
                                 </div>
-                                <div class="expand_info" ng-model="collapsed_class" ng-click='collapsed_class=!collapsed_class'>
+                                <div class="expand_info" ng-model="collapsed_class" style="margin-left:20px;">
+                                    <!--ng-click='collapsed_class=!collapsed_class'-->
                                     <div class="drug-info-wrap"><label>Class:</label> </div>
-                                    <div class="expand-info" ng-show="collapsed_class">
+                                    <div class="expand-info">
+                                        <!--ng-show="collapsed_class"-->
                                         <ul>
                                             <li ng-repeat="arrayItem in x['Class']">
                                                 {{arrayItem}}
@@ -199,7 +203,7 @@
 
                                 <div class="drug_inner" ng-model="collapsed_indi" ng-click='collapsed_indi=!collapsed_indi'>
                                     <div class="drug-info-wrap"><label>Indication:</label> </div>
-                                    <ul class="expand-info" ng-show="collapsed_indi">
+                                    <ul class="expand-info" ng-show="collapsed_indi" style="margin-left:-23px;">
                                         <!-- ADULT PART -->
                                         <li class="drug_inner" ng-model="collapsed_adult" ng-click='collapsed_adult=!collapsed_adult; collapsed_indi=True'>
                                             <div class="drug-info-wrap"><label> ADULT:</label> </div>
