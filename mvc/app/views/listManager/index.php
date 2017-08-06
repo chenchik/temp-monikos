@@ -71,7 +71,7 @@
               </div>
           </div>
           <div class=user-info>
-              <img src="/mvc/public/images/user_icon.png">
+              <img src="/mvc/public/images/landing_page/logo2.png">
               <div class=user-info-sub>
                   <div class=username-info>{{capsules[0].username}}</div>
                   <div class=email-info>({{capsules[0].email}})</div>

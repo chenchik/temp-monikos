@@ -238,7 +238,7 @@ button {
 .user-info img {
     width:55px;
     float:left;
-    margin-top:0px;
+    margin-top:15px;
 }
 
 .user-info .username-info {
@@ -424,7 +424,10 @@ button {
     font-size: 16px;
     margin-top:12px;
     transition: all 0.2s ease;
-    padding: 5%;
+}
+
+.drug_inner {
+    margin-left:20px;
 }
 
 
@@ -597,6 +600,11 @@ label.field-name {
     margin-bottom:25px;
 }
 
+#suggest-msg {
+    color: black;
+    font-weight: bold;
+}
+
 .like-count {
     font-size:12px;
 }
@@ -746,7 +754,7 @@ button.like-btn:active, button.dislike-btn:active, button.like-btn:focus, button
     color: #7D7D7D;
     text-align: center;
     border-top: solid 1px #ADADAD;
-    font-size:12px;
+    font-size:14px;
     font-weight: 400;
     padding: 10px 0;
     margin-top:10px;
@@ -754,12 +762,13 @@ button.like-btn:active, button.dislike-btn:active, button.like-btn:focus, button
 
 .ng-modal-content-footer-bar a.earn200link {
     text-decoration: underline;
-    color: #7D7D7D;
+    font-weight:bold;
+    color: #fa4e51;
     cursor: pointer;
 }
 
 .ng-modal-content-footer-bar a.earn200link:hover {
-    color: #4d4d4d;
+    color:#ff0000;
 }
 
 /**--------------------------------------SUGGESTION FORM----------------------------------------**/
