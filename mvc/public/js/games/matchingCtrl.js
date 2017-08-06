@@ -514,6 +514,8 @@ app.controller('matchingCtrl', function ($scope, $http) {
 
     $scope.clicked = function (front) {
         $scope.clear = false;
+
+        console.log($scope.names);
         // console.log( $scope.numClicked);
 
 
@@ -620,6 +622,17 @@ app.controller('matchingCtrl', function ($scope, $http) {
                     }
 
                 }
+
+                console.log($scope.firstCard.drug);
+                console.log($scope.secondCard.drug);
+                console.log($scope.firstCard);
+                console.log($scope.secondCard);
+                $scope.firstCard.style.display = 'none';
+                $scope.secondCard.drug.css({'display':'none'});
+                $scope.firstCard = null;
+                $scope.secondCard = null;
+                
+                
             } else {
                 $scope.correct = "N";
             }

@@ -105,7 +105,17 @@
             <img id="finished" src="" style="margin-top: 25px; margin-left: 2%">
             <div ng-if="numClicked < 2">
                 <div ng-repeat="product in names" ng-if="$index % 4 == 0" class="row drugGridRow">
-                    <div class="col-xs-3 drugGridCell"><button class="btnBlue" ng-click="clicked(names[$index].front);" ng-hide="names[$index].correct == 'Y' " ng-style="{'background-color' : (names[$index].clicked == 'Y') && (numClicked <=2) ? '#8fbcf9' : '#ffb641'}">{{names[$index].front}}</button> </div>
+                    <div class="col-xs-3 drugGridCell">
+                        <button class="btnBlue" ng-click="clicked(names[$index].front);" ng-if="!(names[$index].correct == 'Y')"
+                         ng-style="
+                            {
+                                'background-color' : (names[$index].clicked == 'Y') && 
+                                (numClicked <=2) &&  !(names[$index].correct == 'Y')
+                                    ? '#8fbcf9' 
+                                    : '#ffb641'
+                            }">{{names[$index].front}}
+                        </button>
+                    </div>
                     <div class="col-xs-3 drugGridCell" ng-if="names.length > ($index + 1)"><button class="btnBlue" ng-click="clicked(names[$index+1].front);" ng-hide="names[$index+1].correct == 'Y' " ng-style="{'background-color' : (names[$index+1].clicked == 'Y') && (numClicked <=2)  ? '#8fbcf9' : '#ffb641'}">{{names[$index +1].front }}</button>
                     </div>
                     <div class="col-xs-3 drugGridCell" ng-if="names.length > ($index + 2)"><button class="btnBlue" ng-click="clicked(names[$index+2].front);" ng-hide="names[$index+2].correct == 'Y' " ng-style="{'background-color' : (names[$index+2].clicked == 'Y') && (numClicked <=2)? '#8fbcf9' : '#ffb641'}">{{names[$index+2].front}}</button> </div>

@@ -47,6 +47,7 @@
 
     <!-- Bootstrap CSS (http://getbootstrap.com) -->
     <link rel="stylesheet" href="/mvc/public/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/mvc/public/css/helios.css" />
 
     <!-- Libs and Plugins CSS -->
     <link rel="stylesheet" href="/mvc/public/assets/vendor/animate.min.css">
@@ -1178,7 +1179,7 @@
 
                     <!-- Begin contact form
 							========================= -->
-                    <form id="contact-form" class="margin-top-80 text-white wow fadeIn" data-wow-delay="0.3s" onsubmit="contactUs()"">
+                    <form id="contact-form" class="margin-top-80 text-white wow fadeIn" data-wow-delay="0.3s">
 
                         <!-- Begin hidden required fields (https://github.com/agragregra/uniMail) -->
                         <input type="hidden" name="project_name" value="monikos.org">

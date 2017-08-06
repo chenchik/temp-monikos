@@ -116,6 +116,7 @@ app.controller('accountCtrl', function ($scope, $http) {
         }
     }
 
+
     function passwordSameChecker(str, str2) {
         if (str === str2) {
             return true;

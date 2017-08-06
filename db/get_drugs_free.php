@@ -3,7 +3,7 @@ header("Access-Control-Allow-Origin: *");
 header("Content-Type: application/json; charset=UTF-8");
 
 require_once 'db_init.php';
-$collection =$client->monikos->DrugsFree;
+$collection =$client->monikos->Trial_Drugs;
 function dotParser($string){
     return str_replace("_", ".", $string);
 }
