@@ -46,6 +46,16 @@
 #modal-background.active, #modal-content.active {
   display: block;
 }
+    
+.drug {
+    font-family: 'Raleway',sans-serif;
+    text-align:center;
+    margin-left:20px;           
+}
+    
+[id^="view-list"] {
+    display:none;
+}
 </style>
 
 
@@ -108,6 +118,15 @@
                 <h1 class = "list_name_header">
                     {{list.name}}</h1>
                 <br>
+                
+                <div id="view-list-{{list.name}}" >
+                    <p class="drug" ng-repeat="drug in drugList" >
+                        {{drug}} <br>
+                    </p>
+                </div>
+                
+            
+                <br>
                 <button class ='selectList' ng-click='selectList($index)'>SELECT</button>
                 <button id="deleteList" class='deleteList' ng-click='deleteList($index)'>DELETE</button>
                 <!-- <button id='viewList'>VIEW</button>
@@ -116,7 +135,7 @@
                 <div id="modal-content">
                     <button id="modal-close">Close Modal Window</button>
                 </div> -->
-                <button id="view" ng-click='viewList($index)'>VIEW</button>
+                <button id="button-view-{{list.name}}" ng-click='viewList(list.name)'>VIEW</button>
 
                 <div id="modal-background"></div>
                 <div id="modal-content">

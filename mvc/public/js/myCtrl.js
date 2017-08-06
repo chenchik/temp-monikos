@@ -128,10 +128,43 @@ $scope.premiumCheck = function() {
               ",")
           });
         }
+         
       }
     });                                                 
       });
   }
+    
+    //view list
+    $scope.viewList = function(listName){
+        var id='view-list-'+listName;
+        var buttonId = 'button-view-'+listName;
+        console.log(listName);
+        var drugs;
+        $scope.drugList = [];
+        var rank = 1;
+        for(var i=0;i<$scope.lists.length;i++){
+            if($scope.lists[i].name == listName){
+                drugs = $scope.lists[i].drugs;
+                for(var j=0;j<drugs.length;j++){
+                    $scope.drugList[j] = rank +". "+ drugs[j];
+                    rank ++;
+                }
+                break;
+            }
+        }
+        console.log($scope.drugList);
+        $("[id^='view-list']:not(#"+id+")").slideUp();
+        $('#'+id).slideToggle();
+        console.log($('#'+buttonId).text());
+        if($('#'+buttonId).text() == 'VIEW'){
+            $("[id^='button-view']:not(#"+buttonId+")").text('VIEW');
+            $('#'+buttonId).text('HIDE');
+        }else{
+            $("[id^='button-view']").text('VIEW');
+        }
+    }
+    
+    
   $scope.premiumCheck();
 
   $scope.payment = function() {
@@ -450,10 +483,6 @@ $(document).ready(function() {
   function removePopup() {
     $('#errorMessage').slideUp();
   }
-
-  $('.viewList').on('click', function() {
-    $('#viewModal').slideDown();
-  });
 
   $('#finishButton').on('click', function() {
     $('#viewModal').slideUp();
