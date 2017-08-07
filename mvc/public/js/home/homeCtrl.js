@@ -119,10 +119,10 @@ app.controller('homeCtrl', function($scope, $http) {
     });
     $http.post(url, data, config)
       .then(function(response) {
-        console.log(response.data.records);
-        var premium = response.data.records[0]["premium"];
-        $scope.premium = true;
-        if (!premium) {
+        //console.log(response.data.records);
+        $scope.premium = response.data.records[0]["premium"];
+        console.log($scope.premium);
+        if (!$scope.premium) {
           $("#payment").show();
           $scope.img = "/mvc/public/images/socialgrey.png";
           $("#social").css('border', '2px solid #777777');
@@ -131,7 +131,6 @@ app.controller('homeCtrl', function($scope, $http) {
           $("#toplogo").attr("src","/mvc/public/images/litelogo.png");
           $("#social-text").text("Upgrade now to add friends, challenge them and see your rank among your friends!")
         } else {
-            $scope.premium=false;
           $scope.img = "/mvc/public/images/social.png";
           $("#payment").hide();
         }

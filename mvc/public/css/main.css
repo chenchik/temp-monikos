@@ -863,7 +863,7 @@ button.like-btn:active, button.dislike-btn:active, button.like-btn:focus, button
     font-size:16px;
     border-radius: 4px;
     border:0;
-    background:#458f29;
+    background:#e1e3e8;
     color: #FFF;
     width:100%;
     height:45px;
@@ -879,7 +879,7 @@ button.like-btn:active, button.dislike-btn:active, button.like-btn:focus, button
     display:block;
     width:100%;
     height:45px;
-    background: #2a5e1a;
+    background: #b4b6ba;
     margin-top: -41px;
     border-radius: 4px;
 }
@@ -899,14 +899,14 @@ button.like-btn:active, button.dislike-btn:active, button.like-btn:focus, button
 
 
 body.email-page {
-    background: #458f29;
+    background: #e1e3e8;
     color:#FFF;
-    font-family: 'Raleway';
+    font-family: 'Raleway',sans-serif;
     font-size:36px;
-    font-weight:800;
+
     letter-spacing: 2px;
     text-align: center;
-    padding: 50% 15px;
+    padding: 10% 15px;
 }
 
 body.email-page .back-btn {
@@ -915,7 +915,7 @@ body.email-page .back-btn {
     width:150px;
     padding:10px;
     border-radius: 4px;
-    background: #347021;
+    background: #b4b6ba;
     font-weight:500;
     font-size:20px;
     text-decoration: none;

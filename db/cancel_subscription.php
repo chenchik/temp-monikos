@@ -5,7 +5,7 @@ require 'db_init.php';
 $current = $client->monikos->Users->findOne(['customerId'=> $_POST['customerId']]);
 $current = $current['braintree_subscription_info'];
 
-if($_POST['isExpired']==false or !isset($_POST['isExpired'])){
+if(!isset($_POST['isExpired']) or $_POST['isExpired']==false){
 //cancels subscription
     $cancel = Braintree_Subscription::cancel($current['subscriptionId']);
 //updates database
@@ -23,7 +23,7 @@ if($_POST['isExpired']==false or !isset($_POST['isExpired'])){
             ]
         ]
     );
-    echo "subscription with id"+$current['subscriptionId']+"";
+    echo "subscription with id".$current['subscriptionId']."has been cancelled and will expire on " . $current['billingPeriodEndDate']['date'];
 } else {
     $updateExpired=$client->monikos->Users->updateOne(
         ["customerId"=>$_POST['customerId']],

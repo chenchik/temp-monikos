@@ -298,10 +298,11 @@ border-bottom: 2px solid#04dbdd;
 .payment-online-form-left{
 
 }
-#credit{
+#payment-container{
 	margin-left: 5%;
 	width: 90%;
 }
+
 #paypal-button{
 	/*margin-left: 5%;
 	width: 90%;
@@ -309,14 +310,28 @@ border-bottom: 2px solid#04dbdd;
 	left: 50px;
 	top: 50px;*/
 	width: 20%;
-	margin-top: -30px;
-	margin-left: 630px;
+	margin-top: -20px;
+	margin-left: 520px;
 }
 
-.submit-button{
+.payment-button{
+    color: #FFF;
+    font-size: 0.9em;
+    font-weight: 500;
+    padding: 0.8em 2em;
+    text-decoration: none;
+    background: #fa6e6f;
+    text-transform: uppercase;
+    -webkit-appearance: none;
+    border-radius: 1em;
+    -webkit-border-radius: 1em;
+    -o-border-radius: 1em;
+    -moz-border-radius: 1em;
+    outline: none;
 	/*margin-left: 10px;*/
 	margin-right: 20px;
 }
+
 
 .or{
 	margin-top: -28px;

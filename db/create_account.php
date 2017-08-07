@@ -25,7 +25,8 @@ $creds=["username"=>$_POST["username"],
 		"fbid"=>NULL,
 		"capsules"=>200,
         "friends"=>[],
-        "premium"=>false
+        "premium"=>false,
+        "customerId"=>null
 	];
 
 
