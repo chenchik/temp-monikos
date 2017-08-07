@@ -198,7 +198,8 @@
                 <div id="payment-container">
                     <div id="dropin-container"></div>
                     <button class ="payment-button">Cancel</button>
-                    <button class ="payment-button" id="pay">Process</button>
+                    <button class ="payment-button" id="choose">Next</button>
+                    <button class ="payment-button" id="purchase" style="display:none;">Process</button>
                     <!--<h3 class ="or">or</h3>-->
                     <!--<div  class ="submit-button" id="paypal-button"></div>-->
                     <div class="clear"> </div>
