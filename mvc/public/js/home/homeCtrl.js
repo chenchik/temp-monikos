@@ -32,6 +32,7 @@ function logout(){
 }
 
 app.controller('homeCtrl', function($scope, $http) {
+    
   
   var id_cookie = getCookie("user_id");
   console.log(id_cookie);
@@ -120,6 +121,7 @@ app.controller('homeCtrl', function($scope, $http) {
       .then(function(response) {
         console.log(response.data.records);
         var premium = response.data.records[0]["premium"];
+        $scope.premium = true;
         if (!premium) {
           $("#payment").show();
           $scope.img = "/mvc/public/images/socialgrey.png";
@@ -129,6 +131,7 @@ app.controller('homeCtrl', function($scope, $http) {
           $("#toplogo").attr("src","/mvc/public/images/litelogo.png");
           $("#social-text").text("Upgrade now to add friends, challenge them and see your rank among your friends!")
         } else {
+            $scope.premium=false;
           $scope.img = "/mvc/public/images/social.png";
           $("#payment").hide();
         }

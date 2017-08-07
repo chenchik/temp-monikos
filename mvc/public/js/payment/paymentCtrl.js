@@ -1,18 +1,35 @@
 //created by Joseph Son
 
+var customerId;
+
+
 $.post("../../../../db/create-customer.php", {
-    first: getCookie("username"),
+    first: getCookie("username")
 }, function (data, status) {
     customerId = data;
-    console.log("customerId: "+customerId);
-})
-function logout(){
-    $.get("../../../../db/logout.php",function(data,status){
-       console.log(data); 
+    console.log("customerId: " + customerId);
+    checkSubscription(data);
+});
+
+function checkSubscription(id){
+    console.log(id);
+$.post("../../../../db/check_subscription.php", {
+        customerId: id
+    }, function (data, status) {
+        console.log(data);
     });
-    
+}
+
+
+
+function logout() {
+    $.get("../../../../db/logout.php", function (data, status) {
+        console.log(data);
+    });
+
     window.location = window.location.origin = "/mvc/public/landing.html";
 }
+
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
@@ -36,7 +53,6 @@ var config = {
 
 var charge;
 var plan;
-var customerId;
 var button;
 
 function subscription(subscriptionId) {
@@ -59,11 +75,15 @@ function subscription(subscriptionId) {
     console.log(plan);
 }
 
-function cancel(){
-    $.post('../../../../db/cancel_subscription.php',{'customerId':customerId},function(data,status){
-       console.log("subscription with ID: " + data + " has been cancelled"); 
+function cancel() {
+    $.post('../../../../db/cancel_subscription.php', {
+        'customerId': customerId
+    }, function (data, status) {
+        console.log(data);
     });
+    location.reload;
 }
+
 function hidePopup() {
     var css = document.createElement("style");
     css.type = "text/css"
