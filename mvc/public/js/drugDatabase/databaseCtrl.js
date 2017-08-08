@@ -133,7 +133,7 @@ app.controller('databaseCtrl', ['$scope', '$sce', '$http', '$timeout', function 
                             $scope.pg1 = true;
                             $scope.loading = false;
                             $scope.names = response.data.records;
-                            $scope.totalPages = $scope.names.length / 50 + 1;
+                            $scope.totalPages = $scope.names.length / 50;
                             $scope.pages = [];
                             for (var i = 0; i < $scope.totalPages; i++) {
                                 $scope.pages[i] = i + 1;
@@ -159,7 +159,7 @@ app.controller('databaseCtrl', ['$scope', '$sce', '$http', '$timeout', function 
                             $scope.pg1 = true;
                             $scope.loading = false;
                             $scope.names = response.data.records;
-                            $scope.totalPages = $scope.names.length / 50 + 1;
+                            $scope.totalPages = $scope.names.length / 50;
                             $scope.pages = [];
                             for (var i = 0; i < $scope.totalPages; i++) {
                                 $scope.pages[i] = i + 1;
@@ -175,7 +175,9 @@ app.controller('databaseCtrl', ['$scope', '$sce', '$http', '$timeout', function 
 
 
     $scope.goToPage=function(page) {
-        console.log(page);
+        console.log($('#pageNum-'+page).get());
+        $('#pageNum-'+page).css('font-weight','bold');
+        $("[id^='pageNum']:not(#pageNum-"+page+")").css('font-weight','normal');
         switch (page) {
             case 1:
                 $scope.pg1 = true
