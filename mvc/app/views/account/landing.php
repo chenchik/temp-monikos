@@ -8,6 +8,8 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-sanitize.js"></script>
     <!-- anuglar controllers -->
     <script src="/mvc/public/js/myCtrl.js"></script>
+    
+    
     <script src="/mvc/public/js/checklist-model.js"></script>
     <script src="/mvc/public/js/global-script.js"></script>
     <script src='/mvc/public/js/account/loginCtrl.js'></script>
@@ -44,6 +46,10 @@
     <!-- Body font -->
     <link href='http://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'>
     <!-- Alternative font -->
+
+    <!--
+	<link rel="stylesheet" type="text/css" href="/mvc/public/css/helios.css" />
+    -->
 
     <!-- Bootstrap CSS (http://getbootstrap.com) -->
     <link rel="stylesheet" href="/mvc/public/assets/vendor/bootstrap/css/bootstrap.min.css">
@@ -137,7 +143,7 @@
         <section class="popupBody">
 
             <!-- Username & Password Login form -->
-            <div id="errorMessage">
+            <div id="error" style="font-size:11px; color:red;">
                 <p class="errorText text-center"></p>
             </div>
             <div class="social_login" ng-app="loginApp" ng-controller="loginCtrl" id="login_form">
@@ -151,8 +157,11 @@
                                     <input id        ="remember" type="checkbox" />
                                     <label for       ="remember">Remember me </label>
                                 </div> -->
-
                     <br />
+
+                    <input type="checkbox" name="remember" id="remember" style="margin-left: 20px;"/> Remember me
+                    <br />
+                    
                     <div class="action_btns">
                         <div id="loginBtn" class="one_half"><a ng-model="submit" class="btn btn-primary margin-top-10 wow bounceIn" data-wow-delay="0.5s" ng-click="login()">Log in</a></div>
                         <div class="last_half"><a id="register_button" class="btn btn-primary margin-top-10 wow bounceIn" data-wow-delay="0.5s">Create Account</a></div>
@@ -216,6 +225,8 @@
 						                <option ng-repeat="x in schoolnames" id="a{{x.schoolid}}" value="{{x.schoolid}}">{{x.schoolname}}</option>
 									</select> -->
                     <!-- </div> -->
+                    
+                    <div style="text-align:center;overflow:hidden;font-size:12px;padding:0px 10px 0px 10px;">By signing up, you agree to the <a>Terms of Service</a> and <a>Privacy Policy</a>. </div>
 
 
 
@@ -370,7 +381,7 @@
 			* Use class "angle-left-bottom" or "angle-right-bottom" to change intro bottom angle.
 			* Use class "bg-image-parallax" to enable background image parallax effect (otherwise use class "bg-image").
 			-->
-        <section id="intro" class="bg-image-parallax" style="background-image: url(images/landing_page/intro.jpg);">
+        <section id="intro" class="bg-image-parallax" style="background-image: url(/mvc/public/images/landing_page/intro.jpg);">
 
             <div class="intro-inner">
 
@@ -382,7 +393,7 @@
                 <span class="cover"></span>
                 <!-- Begin intro caption -->
                 <div class="intro-caption vertical-align-center text-center text-white">
-                    <img class="wow fadeIn" style="height:50%; width: 50%" src="/mvc/public/images/landing_page/logo2.png">
+                    <img class="wow fadeIn" style="width: 50%" src="/mvc/public/images/landing_page/logo2.png">
                     <!-- <p class="intro-description wow fadeIn" data-wow-delay="2.2s">est. 2015</p> -->
                     <div id="sign_up" class="margin-top-30">
                         <a id="modal_trigger" href="#modal" class="btn btn-primary margin-top-10 wow bounceIn" data-wow-delay="1s">START HERE</a>
@@ -446,7 +457,7 @@
 								-->
                             <hr class="hr-width-1 hr-5x border-main">
                             <!-- End divider -->
-                            <img class="img-responsive" src="/mvc/public/assets/img/ourst.jpg" alt="team_img" id='our_str' style="height: 100%;width: 100%; padding-right: 20px;padding-top: 20px" />
+                            <img class="img-responsive" src="/mvc/public/assets/img/ourst.jpg" alt="team_img" id='our_str' style="width: 100%; padding-right: 20px;padding-top: 20px" />
                         </div>
                         <!-- End heading -->
 
@@ -486,7 +497,7 @@
 			* Use class "bg-image-parallax" to enable background image parallax effect (otherwise use class "bg-image").
 			* Use class "bg-pattern" if you use background patterns (example: http://subtlepatterns.com/). Combine with class "bg-image-fixed".
 			-->
-        <section id="section-product" class="services-section bg-dark bg-image-parallax" style="background-image: url(assets/img/unc_med.jpeg);">
+        <section id="section-product" class="services-section bg-dark bg-image-parallax" style="background-image: url(/mvc/public/assets/img/unc_med.jpeg);">
             <span class="cover bg-transparent-6-5-dark"></span>
             <div class="row">
                 <div class="heading heading-md heading-uppercase text-white heading-hover wow fadeIn" data-wow-delay="0.2s">
@@ -816,6 +827,7 @@
     <!-- =================================
 			///// Begin section clients (clients) /////
 			================================== -->
+    <!--
     <section id="section-clients" class="clients-section">
 
         <div class="container">
@@ -830,6 +842,8 @@
 							* Use class "heading-hover" to enable heading hover effect.
 							* Use class "heading-uppercase" to enable uppercase letters.
 							-->
+                    -->
+                    <!--
                     <div class="heading heading-md heading-uppercase heading-center heading-hover wow fadeIn">
                         <span class="heading-title-ghost">Our Clients</span>
                         <h2 class="heading-title">Our Clients</h2>
@@ -839,20 +853,24 @@
 								* Use class "hr-width-1", "hr-width-2" -> up to "hr-width-10" to shange divider width.
 								* Use class "hr-1x", "hr-2x", "hr-3x", "hr-4x" or "hr-5x" to shange divider size.
 								* Use class "hr-dotted", "hr-dashed" or "hr-double" to shange divider style.
-								-->
+				
+                        <!--
                         <hr class="hr-width-1 hr-5x border-main">
                         <!-- End divider -->
-
+                        -->
+                       
+<!--
                         <p class="heading-tescription lead max-width-800 margin-auto">
                             Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
                         </p>
                     </div>
                     <!-- End heading -->
-
+                <!--
                 </div>
                 <!-- /.col -->
 
                 <!-- Left column -->
+<!--
                 <div class="col-md-12 margin-top-60 wow fadeIn" data-wow-delay="0.3s">
 
                     <!-- Begin content carousel (http://www.owlcarousel.owlgraphic.com)
@@ -888,11 +906,13 @@
 									data-nav-speed="800".................(milliseconds)
 									data-dots="false"....................(true/false)
 									data-dots-speed="800"................(milliseconds)
-							-->
+			-->
+<!--
                     <div class="owl-carousel clients-carousel dots-outside" data-items="5" data-margin="40" data-tablet-landscape="4" data-tablet-portrait="3" data-mobile-landscape="2" data-mobile-portrait="1">
 
                         <!-- Begin carousel item
 								========================= -->
+<!--
                         <div class="cc-item">
                             <a target="_blank" href="#" class="client"><img src="/mvc/public/assets/img/clients/client-1.png" alt="image"></a>
                         </div>
@@ -900,42 +920,41 @@
 
                         <!-- Begin carousel item
 								========================= -->
-                        <div class="cc-item">
+                        <!--<div class="cc-item">
                             <a target="_blank" href="#" class="client"><img src="/mvc/public/assets/img/clients/client-2.png" alt="image"></a>
                         </div>
                         <!-- End carousel item -->
 
                         <!-- Begin carousel item
 								========================= -->
-                        <div class="cc-item">
+                        <!--<div class="cc-item">
                             <a target="_blank" href="#" class="client"><img src="/mvc/public/images/landing_page/user_unc.png" alt="image"></a>
                         </div>
                         <!-- End carousel item -->
 
                         <!-- Begin carousel item
 								========================= -->
-                        <div class="cc-item">
+                        <!--<div class="cc-item">
                             <a target="_blank" href="#" class="client"><img src="/mvc/public/assets/img/clients/client-4.png" alt="image"></a>
                         </div>
                         <!-- End carousel item -->
 
                         <!-- Begin carousel item
 								========================= -->
-                        <div class="cc-item">
+                        <!--<div class="cc-item">
                             <a target="_blank" href="#" class="client"><img src="/mvc/public/assets/img/clients/client-5.png" alt="image"></a>
                         </div>
                         <!-- End carousel item -->
 
-
+<!--
                     </div>
-                    <!-- End content carousel -->
 
                 </div>
-                <!-- /.col-->
+               
             </div>
-            <!-- /.row -->
+           
         </div>
-        <!-- /.container -->
+
 
     </section>
     <!-- End section clients -->
@@ -1162,9 +1181,9 @@
                 <div class="col-md-5 text-gray-2 padding-left-40">
 
                     <div class="contact-info">
-                        <p><i class="fa fa-home"></i> 321 W Rosemary St, Chapel Hill, NC 27516</p>
+                        <p><i class="fa fa-home"></i> 200 NC HWY 54 #A303 Carrboro, NC 27510</p>
                         <p><i class="fa fa-phone"></i> phone: (512) 663 4745</p>
-                        <p><i class="fa fa-envelope"></i> <a href="mailto:monikos.inc@gmail.com" target="_blank">monikos.inc@gmail.com</a></p>
+                        <p><i class="fa fa-envelope"></i> <a href="mailto:monikos.inc@gmail.com" target="_blank">monikos.llc@gmail.com</a></p>
                     </div>
 
                 </div>
@@ -1178,7 +1197,7 @@
 
                     <!-- Begin contact form
 							========================= -->
-                    <form id="contact-form" class="margin-top-80 text-white wow fadeIn" data-wow-delay="0.3s" onsubmit="contactUs()"">
+                    <form id="contact-form" class="margin-top-80 text-white wow fadeIn" data-wow-delay="0.3s">
 
                         <!-- Begin hidden required fields (https://github.com/agragregra/uniMail) -->
                         <input type="hidden" name="project_name" value="monikos.org">
@@ -1321,7 +1340,7 @@
 
             // Calling Register Form
             $("#register_button").click(function() {
-                $("#errorMessage").hide();
+                $("#error").hide();
                 $("#login_form").hide();
                 $("#register_app").show();
                 $(".header_title").text('Register');
@@ -1330,6 +1349,7 @@
 
             //Going back to Login Forms
             $("#back_btn").click(function() {
+                $("#error").hide();
                 //$(".user_login").hide();
                 $("#register_app").hide();
                 $("#login_form").show();

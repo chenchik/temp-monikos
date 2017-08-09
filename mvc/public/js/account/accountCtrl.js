@@ -86,7 +86,8 @@ app.controller('accountCtrl', function ($scope, $http) {
     }
 
     function showError(str) {
-        $('#errorMessage').show();
+        
+        $("#error").show();
         $('.errorText').html(str);
     }
 
@@ -99,7 +100,7 @@ app.controller('accountCtrl', function ($scope, $http) {
     function checkEmail(email) {
 
         if (!validateEmail(email)) {
-            showError("The email you enetered is not valid");
+            showError("The email you entered is not valid");
             return false;
         }
         return true;
@@ -255,6 +256,6 @@ angular.bootstrap(document.getElementById('register_app'), ['myApp']);
 
 $(document).ready(function () {
     $('#errorBtn').on('click', function () {
-        $('#errorMessage').slideUp('fast');
+        $('#error').slideUp('fast');
     });
 });
