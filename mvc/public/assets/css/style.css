@@ -207,9 +207,6 @@ select {}
     margin-bottom: 5px;
 }
 
-.user_register input {
-    height: 10%
-}
 
 .user_register input[type="text"],
 .user_register input[type="email"],

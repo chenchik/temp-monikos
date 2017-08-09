@@ -165,7 +165,7 @@
                                 </div> -->
 
                     <br />
-                    <input type="checkbox" name="remember" id="remember" style="margin-left: 20px;" ng-click="test()"/> Remember me
+                    <input type="checkbox" name="remember" id="remember" style="margin-left: 20px;"/> Remember me
                     <br />
                     <div class="action_btns">
                         <div id="loginBtn" class="one_half"><a ng-model="submit" class="btn btn-primary margin-top-10 wow bounceIn" data-wow-delay="0.5s" ng-click="login()">Log in</a></div>
@@ -230,8 +230,11 @@
 						                <option ng-repeat="x in schoolnames" id="a{{x.schoolid}}" value="{{x.schoolid}}">{{x.schoolname}}</option>
 									</select> -->
                     <!-- </div> -->
-
-
+                    <!--
+                    <input type="checkbox" name="agree" id="agree" style="margin-left: 20px;"/> 
+                    -->
+                    <div style="text-align:center;overflow:hidden;font-size:12px;padding:0px 10px 0px 10px;">By signing up, you agree to the <a>Terms of Service</a> and <a>Privacy Policy</a>. </div>
+                    
 
                     <div class="action_btns">
                         <div class="one_half"><a href="#" class="btn back_btn btn-primary margin-top-10" id="back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>

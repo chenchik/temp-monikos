@@ -16,7 +16,7 @@
 					<a ng-click="drugDatabase()"><button class = 'database'>Database</button></a>
 					<a ng-click="listManager()"><button class = 'study'>Study</button></a>
                 <!--test cancel subscription button -->
-                    <a onclick="cancel()"><button class="study" id="cancel-temp" style="margin-left:80px;">Cancel</button></a>
+                    <a onclick="cancel()" ng-show="premium"><button class="study" id="cancel-temp" style="margin-left:80px;">Cancel</button></a>
                 <!-- end --->
 					<a ng-click = 'home()'><img id="toplogo" src="/mvc/public/images/logo_without_words_version_1.png"></a>
 

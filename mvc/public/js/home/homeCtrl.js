@@ -32,6 +32,7 @@ function logout(){
 }
 
 app.controller('homeCtrl', function($scope, $http) {
+    
   
   var id_cookie = getCookie("user_id");
   console.log(id_cookie);
@@ -118,9 +119,10 @@ app.controller('homeCtrl', function($scope, $http) {
     });
     $http.post(url, data, config)
       .then(function(response) {
-        console.log(response.data.records);
-        var premium = response.data.records[0]["premium"];
-        if (!premium) {
+        //console.log(response.data.records);
+        $scope.premium = response.data.records[0]["premium"];
+        console.log($scope.premium);
+        if (!$scope.premium) {
           $("#payment").show();
           $scope.img = "/mvc/public/images/socialgrey.png";
           $("#social").css('border', '2px solid #777777');

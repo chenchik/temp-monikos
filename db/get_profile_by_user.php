@@ -21,7 +21,17 @@ $outp .= '"email":'  . json_encode($result["email"]) . ',';
 $outp .= '"school":' . json_encode($result["schoolname"]) . ',';
 $outp .= '"capsules":'. json_encode($result["capsules"]) . ',';
 $outp .= '"year":'. json_encode($result["year"]) . ',';
-$outp .='"premium":'.json_encode(($result["premium"])).'}';
+$outp .='"premium":'.json_encode(($result["premium"])).',';
+    
+$outp .='"customerId":'.json_encode(($result["customerId"])).',';
+$outp .='"planId":'.json_encode(($result["braintree_subscription_info"]["planId"])).',';
+
+$outp .='"subscriptionId":'.json_encode(($result["braintree_subscription_info"]["subscriptionId"])).',';
+$outp .='"billingPeriodStartDate":'.json_encode(($result["braintree_subscription_info"]["billingPeriodStartDate"]["date"])).',';
+$outp .='"billingPeriodEndDate":'.json_encode(($result["braintree_subscription_info"]["billingPeriodEndDate"]["date"])).',';
+$outp .='"subscriptionStatus":'.json_encode(($result["braintree_subscription_info"]["subscriptionStatus"])).'}';
+
+
 $outp ='{"records":['.$outp.']}';
 echo $outp;
 }else{

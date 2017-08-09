@@ -74,7 +74,7 @@ app.controller('loginCtrl', function ($scope, $http, $location, $window) {
     }
 
     function showError(str) {
-        $('#errorMessage').show();
+        $('#error').show();
         $('.errorText').html(str);
         $scope.loading = false;
     }
@@ -110,7 +110,7 @@ app.controller('loginCtrl', function ($scope, $http, $location, $window) {
 
 $(document).ready(function () {
     $('#errorBtn').on('click', function () {
-        $('#errorMessage').slideUp('fast');
+        $('#error').slideUp('fast');
     });
 
 });

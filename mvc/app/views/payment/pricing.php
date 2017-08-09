@@ -82,7 +82,7 @@
                     <div class="pricing-grid2">
                         <div class="price-value two">
                             <h3><a href="#">Monthly</a></h3>
-                            <h5><span>$ 2.99</span>
+                            <h5><span>$ 3.99</span>
                                 <lable> / month</lable>
                             </h5>
                             <div class="sale-box two">
@@ -95,7 +95,7 @@
                                 <li><a href="#">Edit and submit your own drug hints</a></li>
                                 <li class="whyt"><a href="#">Study with your friends </a></li>
                                 <li><a href="#">Eligible for rewards awarded to the top users each semester</a></li>
-                                <li class="whyt"><a href="#">$ 2.99 / month </a></li>
+                                <li class="whyt"><a href="#">$ 3.99 / month </a></li>
                             </ul>
                             <div class="cart2">
                                 <!--<a class="popup-with-zoom-anim" href="#small-dialog" onclick="subscription('month')">Purchase</a>-->
@@ -195,12 +195,13 @@
                     <span class="header_title">Make a Payment</span>
                     <span id="login_close" class="modal_close" onclick="hidePopup()"><i class="fa fa-times"></i></span>
                 </header>
-                <div id="credit">
+                <div id="payment-container">
                     <div id="dropin-container"></div>
-                    <button class ="submit-button pink">Cancel</button>
-                    <button class ="submit-button pink" id="pay">Process</button>
-                    <h3 class ="or">or</h3>
-                    <div  class ="submit-button" id="paypal-button"></div>
+                    <button class ="payment-button">Cancel</button>
+                    <button class ="payment-button" id="choose">Next</button>
+                    <button class ="payment-button" id="purchase" style="display:none;">Process</button>
+                    <!--<h3 class ="or">or</h3>-->
+                    <!--<div  class ="submit-button" id="paypal-button"></div>-->
                     <div class="clear"> </div>
                     <br>
                 </div>
