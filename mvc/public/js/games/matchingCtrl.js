@@ -513,6 +513,8 @@ app.controller('matchingCtrl', function ($scope, $http) {
     });
 
     $scope.clicked = function (front) {
+        //only execute click function to cards that havent disappeared
+        
         $scope.clear = false;
 
         console.log($scope.names);
@@ -643,6 +645,7 @@ app.controller('matchingCtrl', function ($scope, $http) {
         }
         //console.log("numClicked after " + $scope.numClicked);
         //console.log("correct " + $scope.correct);
+    
     }
 
 
