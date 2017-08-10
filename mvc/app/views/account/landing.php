@@ -16,8 +16,8 @@
     <script src='/mvc/public/js/account/accountCtrl.js'></script>
 
     <script src="/mvc/public/assets/vendor/jquery.leanModal.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.js"></script>
-    <script src="http://cdnjs.cloudflare.com/ajax/libs/es5-shim/2.2.0/es5-shim.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/es5-shim/2.2.0/es5-shim.js"></script>
     <script>
         document.createElement('ui-select');
         document.createElement('ui-select-match');
@@ -42,9 +42,9 @@
     <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Google font (https://www.google.com/fonts) -->
-    <link href='http://fonts.googleapis.com/css?family=Roboto+Mono:400,300,500,700' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Roboto+Mono:400,300,500,700' rel='stylesheet' type='text/css'>
     <!-- Body font -->
-    <link href='http://fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Black+Ops+One' rel='stylesheet' type='text/css'>
     <!-- Alternative font -->
 
     <!--
@@ -70,6 +70,9 @@
     <!-- Owl Carousel default theme CSS (more info: http://www.owlcarousel.owlgraphic.com) -->
     <link rel="stylesheet" href="/mvc/public/assets/vendor/magnific-popup/css/magnific-popup.css">
     <!-- Magnific Popup CSS (more info: http://dimsemenov.com/plugins/magnific-popup/) -->
+    
+    <link rel="stylesheet" href="/mvc/public/css/landing-solo.css">
+    <!-- Magnific Popup CSS (more info: http://dimsemenov.com/plugins/magnific-popup/) -->
 
     <!-- Theme master CSS -->
     <link rel="stylesheet" href="/mvc/public/assets/css/helper.css">
@@ -86,7 +89,7 @@
     <link rel="stylesheet" href="/mvc/public/assets/css/custom.css">
     <link rel="stylesheet" href="/mvc/public/assets/css/style.css">
     <!-- ui select css -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.css" />
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.css" />
 
     <style media="screen">
       #modal{
@@ -94,6 +97,7 @@
         margin-top: 5%;
         display: flex;
         justify-content: center;
+        height: 70%;
       }
 
       /*.ui-select-match{
@@ -332,7 +336,6 @@
                                     <ul class="dropdown-menu">
                                         <li><a class="mlc sm-scroll" href="#section-team">Our Team</a></li>
                                         <li><a class="mlc sm-scroll" href="#section-video">Video Promo</a></li>
-                                        <li><a class="mlc sm-scroll" href="#section-test">Testimonials</a></li>
                                         <li><a class="mlc sm-scroll" href="#section-clients">Our Clients</a></li>
                                         <!--
 											 Begin dropdown (submenu)
@@ -504,7 +507,7 @@
                 <div class="heading heading-md heading-uppercase text-white heading-hover wow fadeIn" data-wow-delay="0.2s">
 
                     <span class="heading-title-ghost" id='our_pro'>Our Product</span>
-                    <h2 class="heading-title" id='our_pro'>Our Product</h2>
+                    <h2 class="heading-title our_pro_main" id='our_pro'>Our Product</h2>
                 </div>
 
                 <!-- Element cover
@@ -512,7 +515,7 @@
 				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.
 				-->
 
-                <div class="container margin-top-20">
+                <div class="container margin-top-20" id="product-container">
                     <div class="row" data-wow-delay="0.3s" style="visability: visible; animation-delay: 0.3s; animation-name: fadeIn">
                         <!--first-->
                         <div class="col-sm-6 col-md-4">
@@ -816,7 +819,9 @@
 						</p>
 					</div> -->
         <!-- End heading -->
-        <iframe width="1280" height="720" src="https://www.youtube.com/embed/shmACcIxdUA?rel=0?ecver=1" frameborder="0" allowfullscreen></iframe>
+        <div id="section-video">
+            <iframe width="1280" height="720" src="//www.youtube.com/embed/shmACcIxdUA?rel=0?ecver=1" frameborder="0" allowfullscreen></iframe>
+        </div>
 
     </div>
     <!-- /.vertical-align-center -->
@@ -968,108 +973,6 @@
 			* Use class "bg-image-parallax" to enable background image parallax effect (otherwise use class "bg-image").
 			* Use class "bg-pattern" if you use background patterns (example: http://subtlepatterns.com/). Combine with class "bg-image-fixed".
 			-->
-    <section id="section-test" class="testimonials-section bg-dark bg-image-parallax" style="background-image: url(images/landing_page/bg-2.jpg);">
-
-        <!-- Element cover
-				===================
-				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.
-				-->
-        <span class="cover bg-transparent-5-1-dark"></span>
-
-        <div class="container">
-            <div class="row wow fadeIn" data-wow-delay="0.3s">
-                <div class="col-md-12">
-
-                    <!-- Begin testimonials
-							========================
-							* Use class "tm-hide-image" to hide testimonial image.
-							* Use class "tm-center" or "tm-right" to align testimonials.
-							-->
-                    <div class="testimonial-wrap tm-center max-width-800 margin-auto">
-
-                        <!-- Begin content carousel (http://www.owlcarousel.owlgraphic.com)
-								====================================================================
-								* Use class "nav-outside" for outside nav.
-								* Use class "nav-outside-top" for outside top nav.
-								* Use class "nav-rounded" for rounded nav.
-								* Use class "dots-outside" for outside dots.
-								* Use class "dots-left" or "dots-right" to align dots.
-								* Use class "dots-rounded" for rounded dots.
-								* Available carousel data attributes:
-										data-items="5".......................(items visible on desktop)
-										data-tablet-landscape="4"............(items visible on mobiles)
-										data-tablet-portrait="3".............(items visible on mobiles)
-										data-mobile-landscape="2"............(items visible on tablets)
-										data-mobile-portrait="1".............(items visible on tablets)
-										data-loop="true".....................(true/false)
-										data-margin="10".....................(space between items)
-										data-center="true"...................(true/false)
-										data-start-position="0"..............(item start position)
-										data-animate-in="fadeIn".............(more animations: http://daneden.github.io/animate.css/)
-										data-animate-out="fadeOut"...........(more animations: http://daneden.github.io/animate.css/)
-										data-mouse-drag="false"..............(true/false)
-										data-touch-drag="false"..............(true/false)
-										data-autoheight="true"...............(true/false)
-										data-autoplay="true".................(true/false)
-										data-autoplay-timeout="5000".........(milliseconds)
-										data-autoplay-hover-pause="true".....(true/false)
-										data-autoplay-speed="800"............(milliseconds)
-										data-drag-end-speed="800"............(milliseconds)
-										data-lazy-load="true"................(true/false)
-										data-nav="true"......................(true/false)
-										data-nav-speed="800".................(milliseconds)
-										data-dots="false"....................(true/false)
-										data-dots-speed="800"................(milliseconds)
-								-->
-                        <div class="owl-carousel testimonial-carousel dots-outside text-white" data-items="1" data-loop="true">
-
-                            <!-- Begin testimonial item -->
-                            <div class="testimonial-item text-gray-2">
-                                <img src="/mvc/public/assets/img/testimonial/client-1.png" alt="image">
-                                <blockquote>
-                                    <p>"Duis vel ligula non neque varius eleifend quis id elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse lacus dui, pellentesque ut porta et, consequat sit amet suscipit lacus."</p>
-                                    <small>Anna Clarkson</small>
-                                </blockquote>
-                            </div>
-                            <!-- End testimonial item -->
-
-                            <!-- Begin testimonial item -->
-                            <div class="testimonial-item text-gray-2">
-                                <img src="/mvc/public/assets/img/testimonial/client-2.png" alt="image">
-                                <blockquote>
-                                    <p>"Maecenas sit amet diam iaculis, lobortis tortor sed, bibendum quam. Nam mauris odio, sodales interdum facilisis in, dignissim et massa. In suscipit quam nisi."</p>
-                                    <small>John Smith</small>
-                                </blockquote>
-                            </div>
-                            <!-- End testimonial item -->
-
-                            <!-- Begin testimonial item -->
-                            <div class="testimonial-item text-gray-2">
-                                <img src="/mvc/public/assets/img/testimonial/client-3.png" alt="image">
-                                <blockquote>
-                                    <p>"Proin at tincidunt leo. Morbi ut metus sit amet purus molestie sollicitudin. Maecenas convallis est vitae neque feugiat, in accumsan odio vestibulum. Pellentesque sodales fermentum porttitor."</p>
-                                    <small>Jack Paterson</small>
-                                </blockquote>
-                            </div>
-                            <!-- End testimonial item -->
-
-                        </div>
-                        <!-- End testimonials carousel -->
-
-                    </div>
-                    <!-- End testimonials -->
-
-                </div>
-                <!-- /.col -->
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container -->
-
-    </section>
-    <!-- End section test -->
-
-
 
     <!-- =================================
 			///// Begin section clients (clients) /////

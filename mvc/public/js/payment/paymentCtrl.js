@@ -27,7 +27,7 @@ function logout() {
         console.log(data);
     });
 
-    window.location = window.location.origin = "/mvc/public/landing.html";
+    window.location = window.location.origin = "/mvc/public/account/landing";
 }
 
 function getCookie(cname) {

@@ -168,7 +168,23 @@
 
         <div ng-if="numClicked==2 && correct == 'Y' ">{{isGameFinished()}}</div>
 
-        <button id='new_round' onClick="window.location.reload()">PLAY NEW ROUND</button>
+        <!--<button id='new_round' onClick="window.location.reload()">PLAY NEW ROUND</button>-->
+        <script type="text/javascript">
+            function replay()
+                {
+
+                 $.ajax({
+                            async: true,
+                            type: "GET",
+                            url: $(this).href,
+                            success: function (html) {
+                                console.log(html);                
+                            }  
+                        });
+
+                }
+        </script>
+        <button id='new_round' onClick="replay()">PLAY NEW ROUND</button>
 
 
     </div>

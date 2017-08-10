@@ -6,8 +6,8 @@ app.controller('myCtrl', function($scope, $http) {
        console.log(data); 
     });
     
-    window.location = window.location.origin = "/mvc/public/landing.html";
-}
+    window.location = window.location.origin = "/mvc/public/account/landing";
+  }
   function gotoChallenge(url) {
     window.location = url;
   }
@@ -67,13 +67,16 @@ app.controller('myCtrl', function($scope, $http) {
 
   }
   $scope.getNotifications();
-
-$scope.premiumCheck = function() {
-    var config = {
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
-    }
+  var delete_cookie = function(name) {
+    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
   };
+
+  $scope.premiumCheck = function() {
+    var config = {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+      }
+    };
     var username = getCookie('username');
     var url = "/db/get_profile_by_user.php";
 
