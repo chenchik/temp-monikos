@@ -335,6 +335,10 @@ app.controller('databaseCtrl', ['$scope', '$sce', '$http', '$timeout', function 
         //create new database controller
         window.location = window.location.origin + "/mvc/public/home/listManager";
     }
+    
+    $scope.upgrade = function(){
+        window.location = window.location.origin + "/mvc/public/home/pricing";
+    }
 
     //audio controls
     $scope.playAudio = function (myAudio) {

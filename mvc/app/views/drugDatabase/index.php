@@ -27,7 +27,7 @@
                 <span id="notificationIndicator"></span>
                 <img src=/mvc/public/images/man-user.png>
             </div>
-    <a style="display: none" id="payment" ng-click="payment()"><button class = 'upgrade'>Upgrade</button></a>
+    <a style="display: none" id="payment" ng-click="upgrade()"><button class = 'upgrade'>Upgrade</button></a>
             <div id='menu-popup' class='menu-popup'>
                 <div class=notif-info>
                     <h2>Notifications</h2>
@@ -102,7 +102,7 @@
             <!-- </div> -->
             
             
-            <div id="page-navigate" style="text-align:center">
+            <div id="page-navigate" style="text-align:center" ng-show="premium">
                 <p> Navigate to page: </p>
                 <button type="button" id="pageNum-{{page}}" ng-repeat="page in pages" ng-click=goToPage(page)>
                     {{page}}
@@ -2497,6 +2497,10 @@
                 </div>
             </div>
         </div>
+            
+            <div id="footer-container" ng-show="!premium">
+            <button type="button" id="upgrade-incentive" ng-click="upgrade()"> Access 300+ More Drugs</button>
+            </div>
             
 
     </div>
