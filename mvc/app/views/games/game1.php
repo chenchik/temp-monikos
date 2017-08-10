@@ -9,9 +9,9 @@
     <!--HTML STUFF HERE-->
     <div id=app_header>
         
-        <a onclick="gotoGamelist()" ng-if="checkIfInChallengeMode()"><button class = 'back'>Forfeit</button></a>
-        <a onclick="gotoGamelist()" ng-if="checkIfBeingChallenged()"><button class = 'back'>Forfeit</button></a>
-        <a onclick='gotoGamelist("<?=$data['lid']?>")' ng-if="normal"><button class = 'back'>Back</button></a>
+        <a onclick="gotoGamelist()" ng-show="checkIfInChallengeMode()"><button class = 'back'>Forfeit</button></a>
+        <a onclick="gotoGamelist()" ng-show="checkIfBeingChallenged()"><button class = 'back'>Forfeit</button></a>
+        <a onclick='gotoGamelist("<?=$data['lid']?>")' ng-show="normal"><button class = 'back'>Back</button></a>
 
         
      
