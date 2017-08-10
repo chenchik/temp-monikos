@@ -83,6 +83,8 @@ $scope.premiumCheck = function() {
     $http.post(url, data, config)
       .then(function(response) {
         console.log(response);
+        $scope.premium = response.data.records[0]["premium"];
+        console.log($scope.premium);
         var premium = response.data.records[0]["premium"];//only within scope
         var getListsUrl = "/db/get_lists.php";
         var getListsConfig = {
@@ -123,11 +125,13 @@ $scope.premiumCheck = function() {
       } else {
         for (var i in response.data.records) {
           $scope.lists.push({
+            list_id: response.data.records[i].list_id,
             name: response.data.records[i].list_name.toString(),
             drugs: response.data.records[i].drugnames.toString().split(
               ",")
           });
         }
+          console.log($scope.lists);
          
       }
     });                                                 
@@ -135,15 +139,15 @@ $scope.premiumCheck = function() {
   }
     
     //view list
-    $scope.viewList = function(listName){
-        var id='view-list-'+listName;
-        var buttonId = 'button-view-'+listName;
-        console.log(listName);
+    $scope.viewList = function(listId){
+        var id='view-list-'+listId;
+        var buttonId = 'button-view-'+listId;
+        console.log(listId);
         var drugs;
         $scope.drugList = [];
         var rank = 1;
         for(var i=0;i<$scope.lists.length;i++){
-            if($scope.lists[i].name == listName){
+            if($scope.lists[i].list_id == listId){
                 drugs = $scope.lists[i].drugs;
                 for(var j=0;j<drugs.length;j++){
                     $scope.drugList[j] = rank +". "+ drugs[j];

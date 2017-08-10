@@ -12,6 +12,7 @@
 
 <body id="database_module">
     <script src="/mvc/public/js/drugDatabase/databaseCtrl.js"></script>
+    <script src = '/mvc/public/js/payment/paymentCtrl.js'></script>
     <script src="/mvc/public/js/ui-bootstrap-tpls-2.5.0.min.js"></script>
 
     <div ng-app="databaseApp" ng-controller="databaseCtrl">
@@ -41,6 +42,9 @@
                         <div class=username-info>{{capsules[0].username}}</div>
                         <div class=email-info>({{capsules[0].email}})</div>
                         <div class=capsule-info>{{capsules[0].capsules}} Capsules</div>
+                        
+                    <a onclick="cancel()" ng-show="premium" style="color: #CCC;font-size: 10px;cursor: pointer;">Cancel Subscription</a>
+                                            
                         <a href="#" onclick="logout()">
                             <div class=logout-btn>logout</div>
                         </a>
