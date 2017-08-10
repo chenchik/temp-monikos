@@ -1,6 +1,7 @@
 var app = angular.module('myApp', ['checklist-model']);
 
 app.controller('myCtrl', function($scope, $http) {
+    
   function logout(){
     $.get("../../../../db/logout.php",function(data,status){
        console.log(data); 
