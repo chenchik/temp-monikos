@@ -39,3 +39,11 @@ div#section-video {
 .our_pro_main{
 	color:#cccccc;
 }
+
+span#our_pro {
+    left: 20px;
+}
+
+h2#our_pro {
+    left: 20px;
+}
