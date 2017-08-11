@@ -115,6 +115,8 @@ app.controller('databaseCtrl', ['$scope', '$sce', '$http', '$timeout', function 
         $http.post(url, data, config)
             .then(function (response) {
                 console.log(response);
+                $scope.premium = response.data.records[0]["premium"];
+                console.log($scope.premium);
                 var premium = response.data.records[0]["premium"]; //only within scope
                 if (premium) {
                     $("#payment").hide();
@@ -332,6 +334,10 @@ app.controller('databaseCtrl', ['$scope', '$sce', '$http', '$timeout', function 
     $scope.study = function () {
         //create new database controller
         window.location = window.location.origin + "/mvc/public/home/listManager";
+    }
+    
+    $scope.upgrade = function(){
+        window.location = window.location.origin + "/mvc/public/home/pricing";
     }
 
     //audio controls

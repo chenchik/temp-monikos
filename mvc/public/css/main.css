@@ -6,6 +6,24 @@
 /**--------------------------------LOGIN AND REGISTER CODE------------------------------------**/
 /**-------------------------------------------------------------------------------------------**/
 
+#upgrade-incentive{
+    background: #fa4e51;
+    border: 0;
+    border-radius: 4px;
+    text-decoration: none;
+    color: #FFF;
+    font-size: 20px;
+    font-family: 'Raleway';
+    /* font-weight: 600; */
+    padding: 5px 10px;
+}
+
+#footer-container{
+    text-align:center;
+    padding:10px;
+    margin-bottom:20px;
+}
+
 body#usr_mng_module {
     /*    background: #888;*/
     background: #FF3D39;

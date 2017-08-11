@@ -8,6 +8,8 @@
 <script src="/mvc/public/js/ui-bootstrap-tpls-2.5.0.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/mvc/public/css/listM.css">
    <script src="/mvc/public/js/social/socialCtrl.js"></script>
+    <script src = '/mvc/public/js/payment/paymentCtrl.js'></script>
+
 <script src='/mvc/public/js/listManager/listManagerFunctions.js'></script>
 
 <body>
@@ -31,11 +33,14 @@
                     </div>
                 </div>
                 <div class=user-info>
-                    <img src="/mvc/public/images/user_icon.png">
+                    <img src="/mvc/public/images/landing_page/logo2.png">
                     <div class=user-info-sub>
                         <div class=username-info>{{capsules[0].username}}</div>
                         <div class=email-info>({{capsules[0].email}})</div>
                         <div class=capsule-info>{{capsules[0].capsules}} Capsules</div>
+                        <!--test cancel subscription button -->
+                                                <a onclick="cancel()" style="color: #CCC;font-size: 10px;cursor: pointer;">Cancel Subscription</a>
+                                            <!-- end --->
                         <a href="#" onclick="logout()">
                             <div class=logout-btn>logout</div>
                         </a>

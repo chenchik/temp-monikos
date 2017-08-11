@@ -7,7 +7,10 @@
 
 <meta name='viewport' content="width=device-width, initial-scale=1" />
 
-<script src = '/mvc/public/js/listManager/listManagerFunctions.js'></script>
+<script src = '/mvc/public/js/listManager/listManagerFunctions.js'>
+</script>
+    <script src = '/mvc/public/js/payment/paymentCtrl.js'></script>
+
 <style media="screen">
 #modal-background {
   display: none;
@@ -86,6 +89,9 @@
                   <div class=username-info>{{capsules[0].username}}</div>
                   <div class=email-info>({{capsules[0].email}})</div>
                   <div class=capsule-info>{{capsules[0].capsules}} Capsules</div>
+                  <!--test cancel subscription button -->
+                                                <a onclick="cancel()" ng-show="premium" style="color: #CCC;font-size: 10px;cursor: pointer;">Cancel Subscription</a>
+                                            <!-- end --->
                   <a href="#" onclick="logout()"><div class=logout-btn>logout</div></a>
               </div>
           </div>
@@ -119,7 +125,7 @@
                     {{list.name}}</h1>
                 <br>
                 
-                <div id="view-list-{{list.name}}" >
+                <div id="view-list-{{list.list_id}}" >
                     <p class="drug" ng-repeat="drug in drugList" >
                         {{drug}} <br>
                     </p>
@@ -128,14 +134,14 @@
             
                 <br>
                 <button class ='selectList' ng-click='selectList($index)'>SELECT</button>
-                <button id="deleteList" class='deleteList' ng-click='deleteList($index)'>DELETE</button>
+                <button id="deleteList" class='deleteList' ng-click='deleteList($index)' ng-show="premium">DELETE</button>
                 <!-- <button id='viewList'>VIEW</button>
 
                 <div id="modal-background"></div>
                 <div id="modal-content">
                     <button id="modal-close">Close Modal Window</button>
                 </div> -->
-                <button id="button-view-{{list.name}}" ng-click='viewList(list.name)'>VIEW</button>
+                <button id="button-view-{{list.list_id}}" ng-click='viewList(list.list_id)'>VIEW</button>
 
                 <div id="modal-background"></div>
                 <div id="modal-content">

@@ -12,6 +12,7 @@
 
 <body id="database_module">
     <script src="/mvc/public/js/drugDatabase/databaseCtrl.js"></script>
+    <script src = '/mvc/public/js/payment/paymentCtrl.js'></script>
     <script src="/mvc/public/js/ui-bootstrap-tpls-2.5.0.min.js"></script>
 
     <div ng-app="databaseApp" ng-controller="databaseCtrl">
@@ -26,7 +27,7 @@
                 <span id="notificationIndicator"></span>
                 <img src=/mvc/public/images/man-user.png>
             </div>
-    <a style="display: none" id="payment" ng-click="payment()"><button class = 'upgrade'>Upgrade</button></a>
+    <a style="display: none" id="payment" ng-click="upgrade()"><button class = 'upgrade'>Upgrade</button></a>
             <div id='menu-popup' class='menu-popup'>
                 <div class=notif-info>
                     <h2>Notifications</h2>
@@ -41,6 +42,9 @@
                         <div class=username-info>{{capsules[0].username}}</div>
                         <div class=email-info>({{capsules[0].email}})</div>
                         <div class=capsule-info>{{capsules[0].capsules}} Capsules</div>
+                        
+                    <a onclick="cancel()" ng-show="premium" style="color: #CCC;font-size: 10px;cursor: pointer;">Cancel Subscription</a>
+                                            
                         <a href="#" onclick="logout()">
                             <div class=logout-btn>logout</div>
                         </a>
@@ -98,7 +102,7 @@
             <!-- </div> -->
             
             
-            <div id="page-navigate" style="text-align:center">
+            <div id="page-navigate" style="text-align:center" ng-show="premium">
                 <p> Navigate to page: </p>
                 <button type="button" id="pageNum-{{page}}" ng-repeat="page in pages" ng-click=goToPage(page)>
                     {{page}}
@@ -2493,6 +2497,10 @@
                 </div>
             </div>
         </div>
+            
+            <div id="footer-container" ng-show="!premium">
+            <button type="button" id="upgrade-incentive" ng-click="upgrade()"> Access 300+ More Drugs</button>
+            </div>
             
 
     </div>
