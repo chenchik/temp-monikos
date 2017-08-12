@@ -73,7 +73,7 @@
     
     <link rel="stylesheet" href="/mvc/public/css/landing-solo.css">
     <!-- Magnific Popup CSS (more info: http://dimsemenov.com/plugins/magnific-popup/) -->
-
+    
     <!-- Theme master CSS -->
     <link rel="stylesheet" href="/mvc/public/assets/css/helper.css">
     <link rel="stylesheet" href="/mvc/public/assets/css/theme.css">
@@ -88,16 +88,18 @@
     <!-- Theme custom CSS (all your CSS customizations) -->
     <link rel="stylesheet" href="/mvc/public/assets/css/custom.css">
     <link rel="stylesheet" href="/mvc/public/assets/css/style.css">
+    <link rel="stylesheet" href="/mvc/public/css/popup.css">
+ 
     <!-- ui select css -->
     <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/angular-ui-select/0.20.0/select.css" />
 
     <style media="screen">
       #modal{
+        height:400px;
         width:400px;
         margin-top: 5%;
         display: flex;
         justify-content: center;
-        height: 70%;
       }
 
       /*.ui-select-match{
@@ -231,10 +233,8 @@
 									</select> -->
                     <!-- </div> -->
                     
-                    <div style="text-align:center;overflow:hidden;font-size:12px;padding:0px 10px 0px 10px;">By signing up, you agree to the <a>Terms of Service</a> and <a>Privacy Policy</a>. </div>
-
-
-
+                    <div style="text-align:center;overflow:hidden;font-size:12px;padding:0px 10px 0px 10px;">By signing up, you agree to the <a onclick="show('terms')">Terms of Service</a> and <a onclick="show('privacy')">Privacy Policy</a>. </div>
+                    
                     <div class="action_btns">
                         <div class="one_half"><a href="#" class="btn back_btn btn-primary margin-top-10" id="back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
                         <div class="one_half last"><a href="" id="register" class="btn btn-primary margin-top-10" ng-click="checkUsername()">Register</a></div>
@@ -242,8 +242,506 @@
                 </form>
 
             </div>
+            
+            <section id = "documents" style="display:none; padding-top:0px">
+            <!-- terms of use -->
+            <div id="doc-terms" style="display:none;">
+               <p class=MsoNormal align=center style='margin-top:0in;margin-right:59.25pt;
+margin-bottom:0in;margin-left:59.25pt;margin-bottom:.0001pt;text-align:center'><span
+style='font-size:20.0pt;font-family:"Calibri",sans-serif;color:#0070C0;
+text-transform:uppercase;letter-spacing:-.75pt'>TERMS OF USE</span></p>
 
+<p class=MsoNormal align=center style='margin-top:0in;margin-right:59.25pt;
+margin-bottom:0in;margin-left:59.25pt;margin-bottom:.0001pt;text-align:center'><span
+style='font-size:20.0pt;font-family:"Calibri",sans-serif;color:#0070C0;
+text-transform:uppercase;letter-spacing:-.75pt'>&nbsp;</span></p>
 
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:13.0pt;font-family:"Calibri",sans-serif;color:black'>Description
+of Service</span></b></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>Monikos (&quot;the service&quot;) is a web application that helps
+healthcare students learn and retain different drug facts through the use of
+mnemonics. It is provided by Monikos, Inc. (&quot;the company&quot;).</span></p>
+
+<p class=MsoNormal><span style='font-family:"Calibri",sans-serif;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:13.0pt;font-family:"Calibri",sans-serif;color:black'>Acceptance
+of Terms</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:black'>By accessing
+or using any part of the service, you agree to the following terms and
+conditions governing your use of the service. If you are entering this
+agreement on behalf of a company or other legal entity, you represent that you
+have the requisite power, authority and right to act on behalf of that entity
+in accepting these terms and conditions. If you do not have such authority, or
+if you do not agree to these terms and conditions, you may not sign up and may
+not use the service.</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:black'>This
+service is only available to persons over the age of 13.</span></p>
+
+<p class=MsoNormal><span style='font-family:"Calibri",sans-serif;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:13.0pt;font-family:"Calibri",sans-serif;color:black'>Consumer
+Content</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>The Monikos Website is designed to offer users general health
+information for educational purposes only. The general health information
+furnished on this site is not intended to replace personal consultation with a
+qualified health care professional. You must always seek the advice of a
+professional for questions related to your disease, disease symptoms, and
+appropriate therapeutic treatments. If you have or suspect that you have a
+medical problem or condition, please contact a qualified health care professional
+immediately.&nbsp;&nbsp;You should never disregard medical advice or delay in
+seeking it because of something you have read on this site. IF YOU HAVE AN
+EMERGENCY, CALL 9-1-1.</span></p>
+
+<p class=MsoNormal style='margin-bottom:12.0pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>Monikos, Inc. does not give medical advice, nor do we provide
+medical or diagnostic services. Neither Monikos nor any Monikos Entity
+guarantees that the content covers all possible uses, direction, precautions,
+drug interactions, or adverse effects that may be associated with any
+therapeutic treatments. You may not rely on the application of any information
+on the Monikos Website as being applicable to your specific circumstances.
+Neither Monikos nor any Monikos Entity assumes any liability or responsibility
+for damages or injury to you, other persons, or property arising from any use of
+any information, idea, or instruction contained in the Monikos Website.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:13.0pt;font-family:"Calibri",sans-serif;color:black'>Permission
+to reproduce Monikos material</span></b></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:12.0pt;margin-left:
+0in;text-align:justify;text-justify:inter-ideograph'><span style='font-family:
+"Calibri",sans-serif;color:black'>Permission to reproduce material from the
+Monikos service in another publication or web site must be secured in writing.</span></p>
+
+<p style='margin-top:0in;margin-right:0in;margin-bottom:12.0pt;margin-left:
+0in;text-align:justify;text-justify:inter-ideograph'><span style='font-family:
+"Calibri",sans-serif;color:black'>To request permission to reproduce material
+from Monikos, please submit your request in writing via regular email. You may
+wish to include a copy of the material for which you are requesting permission.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:13.0pt;font-family:"Calibri",sans-serif;color:black'>Accounts</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>Monikos provides free and premium subscription accounts types. Each
+account is linked to a unique username and password. You are responsible for
+maintaining the security of your account at all times and are responsible for
+all activities related to your account when using Monikos. You will immediately
+notify monikos.llc@gmail.com of any unauthorized use of your account or any
+other breaches of security.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>Only one free account is permitted for any given user. If any user
+is caught using multiple accounts, we reserve the right to pause those accounts
+and ask those users to upgrade in order to maintain access to our database.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>By signing up for a premium account and providing credit card
+details to Monikos, Inc., you authorize the company to charge that credit card
+the requisite amount on the agreed basis in accordance with the terms of the
+chosen account type. Furthermore, you agree not to dispute such charges with
+your credit card company. All premium account charges are exclusive of all
+taxes, levies, or duties imposed by taxing authorities, and you shall be
+responsible for payment of all such taxes, levies, or duties, excluding only
+those based on our net income.</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:black'>Should
+your account fall into arrears the company reserves the right to suspend or
+terminate your account. In this case, the company cannot be held responsible
+for any resulting loss of data, communication or other expenses. Should your
+payment details change, you should contact Monikos, Inc. within 30 days to
+ensure continuity of service. If you believe your bill is incorrect, you must
+contact the company within 30 days to be eligible to receive an adjustment or
+credit. Monikos, Inc. reserves the right to terminate your access to the
+service upon any breach of these terms of service or in the event of any
+fraudulent or otherwise illegal activity.</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:13.0pt;font-family:"Calibri",sans-serif;color:black'>Ownership
+of Content</span></b></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>Monikos, Inc. will claim intellectual property rights over
+material you provide to the service, however, it is not responsible for that
+content. You understand that your content may be viewable by others who access
+the unique URL provided for sharing your projects. Monikos, Inc. reserves the
+right to compile and share anonymous, aggregate usage data relating to the
+product. You agree not to duplicate, modify, copy, rent, lease, loan, adapt,
+reproduce, resell or create derivative works from our database without express
+permission from Monikos, Inc. You agree not to use trademarks, logos or domains
+associated with Monikos, Inc. without express permission.</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:13.0pt;font-family:"Calibri",sans-serif;color:black'>Disclaimer</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt'><span style='font-size:10.0pt;
+font-family:"Calibri",sans-serif;color:black'>The service is provided to you
+strictly on an “as is” basis. All conditions, representations and warranties,
+whether expressed, implied, statutory or otherwise including any implied
+warranty of merchantability, fitness for a particular purpose or non
+infringement of third party rights are hereby disclaimed to the maximum extent
+permitted by applicable law.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt'><span style='font-size:10.0pt;
+font-family:"Calibri",sans-serif;color:black'>Monikos, Inc. does not represent,
+warrant or guarantee that:</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt'><span style='font-size:10.0pt;
+font-family:"Calibri",sans-serif;color:black'>- The use of the service will be
+timely, uninterrupted, error free or operate in combination with any other
+hardware, software, system or data</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt'><span style='font-size:10.0pt;
+font-family:"Calibri",sans-serif;color:black'>- The service will meet your
+requirements or expectations</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt'><span style='font-size:10.0pt;
+font-family:"Calibri",sans-serif;color:black'>- Any stored data will be
+accurate or reliable</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt'><span style='font-size:10.0pt;
+font-family:"Calibri",sans-serif;color:black'>- The service or the server(s)
+that make the service available are free of viruses or other harmful components</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>Monikos, Inc. will accept no liability for indirect, punitive,
+special, exemplary, incidental, consequential, financial, economic or other
+damages of any type or kind (including loss or sharing of data including
+private data) arising out of or in any way connected with use of the service.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:13.0pt;font-family:"Calibri",sans-serif;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:13.0pt;font-family:"Calibri",sans-serif;color:black'>Indemnity</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt'><span style='font-size:10.0pt;
+font-family:"Calibri",sans-serif;color:black'>You shall indemnify and hold
+Monikos, Inc. and its officers, co-branders, other partners and employees
+harmless from and against any claims, costs, damages, losses, liabilities and
+expenses (including legal fees and costs) arising out of your use the service.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt'><span style='font-size:10.0pt;
+font-family:"Calibri",sans-serif;color:black'>If you create any material
+(“Content”) using the service, upload Content to the service, share Content
+using the service, or otherwise make (or allow any third party to make) Content
+available by means of the service, you are forfeiting your ownership for the
+content. That content belongs to Monikos, Inc.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt'><span style='font-size:10.0pt;
+font-family:"Calibri",sans-serif;color:black'>By making Content available, you
+represent and warrant that:</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt'><span style='font-size:10.0pt;
+font-family:"Calibri",sans-serif;color:black'>- Use of the Content will not
+infringe the proprietary rights, including but not limited to the copyright,
+patent, trademark or trade secret rights, of any third party</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt'><span style='font-size:10.0pt;
+font-family:"Calibri",sans-serif;color:black'>- If your employer has rights to
+intellectual property you create, you have either (i) received permission from
+your employer to post or make available the Content, or (ii) secured from your
+employer a waiver as to all rights in or to the Content</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt'><span style='font-size:10.0pt;
+font-family:"Calibri",sans-serif;color:black'>You have fully complied with any
+third-party licenses relating to the Content, and have done all things
+necessary to successfully pass through to end users any required terms by
+operating the Service, Monikos, Inc does not represent or imply that it
+endorses the Content created or shared by users of the Service, or that it
+believes such Content to be accurate, useful or non-harmful</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>The Service may also contain Content uploaded by others that
+violates the privacy or publicity rights, or infringes the intellectual
+property and other proprietary rights of third parties or the downloading
+copying or use of which is subject to additional terms and conditions stated or
+unstated. Monikos, Inc. disclaims any responsibility for any harm resulting
+from the use by visitors of the service.</span></p>
+
+<p class=MsoNormal><span style='font-size:15.0pt;font-family:"Calibri",sans-serif;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:13.0pt;font-family:"Calibri",sans-serif;color:black'>Modification
+to the Service</span></b></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>Monikos, Inc. reserves the right to modify, supplement, expand or
+discontinue the service with or without notice. Prices of all account types are
+subject to change upon 30 days notice. Monikos, Inc. shall not be liable for
+any modification, price change, suspension or discontinuance of the service.</span></p>
+
+<p class=MsoNormal><span style='font-size:15.0pt;font-family:"Calibri",sans-serif;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:13.0pt;font-family:"Calibri",sans-serif;color:black'>Modification
+to Terms</span></b></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>Monikos Inc. may update these Terms &amp; Conditions from time to
+time at its sole discretion. Your continued access or use of the Service
+constitutes your acceptance of these changes. You are responsible for regularly
+reviewing this Agreement. Continued use of the service after any such changes
+shall constitute your consent to such changes. As long as you comply with these
+terms and conditions, Monikos, Inc. grants you a personal, non-transferrable,
+non-exclusive limited privilege to enter and use the service.</span></p>
+
+<p class=MsoNormal><span style='font-size:15.0pt;font-family:"Calibri",sans-serif;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='margin-top:0in;margin-right:59.25pt;
+margin-bottom:0in;margin-left:59.25pt;margin-bottom:.0001pt;text-align:center'><span
+style='font-size:20.0pt;font-family:"Calibri",sans-serif;color:#0070C0;
+text-transform:uppercase;letter-spacing:-.75pt'>PAYMENT AND REFUND POLICY</span></p>
+
+<p class=MsoNormal align=center style='margin-top:0in;margin-right:59.25pt;
+margin-bottom:0in;margin-left:59.25pt;margin-bottom:.0001pt;text-align:center'><span
+style='font-family:"Calibri",sans-serif;color:#0070C0;text-transform:uppercase;
+letter-spacing:-.75pt'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:13.0pt;font-family:"Calibri",sans-serif;color:black'>How we
+bill your account</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt'><span style='font-size:10.0pt;
+font-family:"Calibri",sans-serif;color:black'>Access to a Monikos, Inc. premium
+account is offered via a monthly, six month or annual subscription.</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>Your account will be billed when you first sign up for a premium
+account and either monthly, six month or annually (depending on the account
+type and payment choices) after this point. No refund will be given for
+completed or partially completed billing periods.</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:13.0pt;font-family:"Calibri",sans-serif;color:black'>How we
+handle chargebacks</span></b></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>If we receive a chargeback we will prevent access to your account
+and block access to your capsules. Additionally, we forward a request to your
+bank regarding the reason of chargeback to check whether it complies with our
+Refund Policy. If it does not, we may take further action to ensure fair
+payment for the service.</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><span
+style='font-size:20.0pt;font-family:"Calibri",sans-serif;color:#0070C0;
+text-transform:uppercase;letter-spacing:-.75pt'>HONOR CODE</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'><br>
+</span><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>Monikos wants to help you study more efficiently and effectively.
+Our team works hard to uphold academic integrity on our platform, and we are
+continuously looking to add content to support our fellow healthcare students.
+Thus, we expect all Monikos users to agree to our Honor Code while using our
+product.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:13.0pt;font-family:"Calibri",sans-serif;color:black'>For
+Students</span></b></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>It's simple: don't cheat or help others do so. </span></b><span
+style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:black'>Monikos
+is meant for learning. We’ve consolidated all your study material for you so
+you can spend more time studying and less time gathering material. However, our
+material shouldn’t be used in lieu of primary literature, nor should it be used
+during exams. </span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>Additionally, it is&nbsp;<b>your responsibility</b>&nbsp;to be
+aware of and uphold your specific teacher or institution's policies regarding
+using material online; please review your classes' or school's own academic
+integrity policy before posting any content publicly on Monikos.</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><b><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>Violating Monikos's Honor Code includes (but is not limited to):</span></b></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:31.5pt;margin-bottom:
+9.0pt;margin-left:.25in;text-indent:-.25in'><span style='font-size:10.0pt;
+font-family:Symbol;color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>Searching Monikos for answers and using them to cheat on a
+take-home test or assessment</span></p>
+
+<p class=MsoNormal style='margin-top:0in;margin-right:31.5pt;margin-bottom:
+9.0pt;margin-left:.25in;text-indent:-.25in'><span style='font-size:10.0pt;
+font-family:Symbol;color:black'>·<span style='font:7.0pt "Times New Roman"'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+</span></span><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>Using Monikos on your phone to copy answers during an in-class
+test</span></p>
+
+<p class=MsoNormal><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>The bottom line: If your teacher or professor would be unhappy
+with you using Quizlet in a specific way, then you probably shouldn't be doing
+it.</span></p>
+
+<p class=MsoNormal><span style='font-family:"Calibri",sans-serif;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:"Calibri",sans-serif;color:black'>&nbsp;</span></p>
+
+            
+            </div>
+            <!-- privacy policy -->
+            <div id="doc-privacy" style="display:none;">
+            
+<p class=MsoNormal align=center style='margin-top:0in;margin-right:59.25pt;
+margin-bottom:0in;margin-left:59.25pt;margin-bottom:.0001pt;text-align:center'><span
+style='font-size:20.0pt;font-family:"Calibri",sans-serif;color:#0070C0;
+text-transform:uppercase;letter-spacing:-.75pt'>PRIVACY POLICY</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:13.0pt;font-family:"Calibri",sans-serif;color:black'>&nbsp;</span></b></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:13.0pt;font-family:"Calibri",sans-serif;color:black'>Our
+commitment to you</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:black'>In order
+to improve the quality of service we offer, Monikos, Inc. collects and stores
+certain information about its users. We treat all such information with great
+care and will never sell or otherwise pass on this information to third parties
+except when it is required to do so as part of Monikos service.</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:13.0pt;font-family:"Calibri",sans-serif;color:black'>What
+information do we collect?</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>- Personal information which you provide voluntarily (such as your
+email address) when you register or otherwise interact with the site.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>- Information about how you use the site, including the time of
+your visit, what browser you are using, how long you stay and whether this is
+your first time visiting the site or not.</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:black'>-
+Information you create when using the product such as project data, uploaded
+images and other data required for the correct functioning of the product.</span></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:13.0pt;font-family:"Calibri",sans-serif;color:black'>How is
+that information used?</span></b></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>- We use a customer’s email in order to uniquely identify a
+customer when logging in to their account. We also use that email as the
+primary point of contact for each account and for providing additional
+information relating to Monikos, Inc.</span></p>
+
+<p class=MsoNormal style='margin-bottom:7.5pt;text-align:justify;text-justify:
+inter-ideograph'><span style='font-size:10.0pt;font-family:"Calibri",sans-serif;
+color:black'>- When signing up for a premium account, we will ask for and pass
+on credit card details to our secure payment provider (PayPal) We will not
+store your credit card details on our servers, but they will be stored by our
+secure payment provider in order to facilitate easy, regular payments.</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:13.0pt;font-family:"Calibri",sans-serif;color:black'>Is my
+data secure?</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:black'>We have
+taken every effort to ensure that your data is as secure as possible when using
+Monikos, Inc. All communication between you and the server are transmitted
+using an encrypted SSL connection with an industry approved secure certificate
+provider. Our servers are appropriately hardened with suitable firewalls and
+password protected. Our code is peer reviewed as a matter of course in order to
+detect potential security flaws. To ensure your security, we also request that
+you use a suitably strong password for your account. If you have any issues or
+concerns regarding your security at any time, please email </span><a
+href="mailto:monikos.inc@gmail.com"><span style='font-size:10.0pt;font-family:
+"Calibri",sans-serif'>monikos.inc@gmail.com</span></a></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:13.0pt;font-family:"Calibri",sans-serif;color:black'>Changes
+to this policy</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:black'>Monikos, Inc.
+reserves the right to amend this policy from time to time. The most up to date
+version of this policy will always be available at </span><a
+href="http://www.monikos.org"><span style='font-size:10.0pt;font-family:"Calibri",sans-serif'>www.monikos.org</span></a></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal align=center style='text-align:center'><b><span
+style='font-size:13.0pt;font-family:"Calibri",sans-serif;color:black'>Further
+information</span></b></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:black'>If you
+want more information on the use of your private information after reading this
+document, we are perfectly happy to respond to your question directly at </span><a
+href="mailto:monikos.inc@gmail.com"><span style='font-size:10.0pt;font-family:
+"Calibri",sans-serif'>monikos.inc@gmail.com</span></a></p>
+
+<p class=MsoNormal style='text-align:justify;text-justify:inter-ideograph'><span
+style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:black'>&nbsp;</span></p>
+
+<p class=MsoNormal><span style='font-family:"Calibri",sans-serif;color:black'>&nbsp;</span></p>
+
+            </div>
+            <div class="action_btns">
+                     <div class="one_half" onclick="hide()"><a class="btn back_btn btn-primary margin-top-10" id="leave-docs"><i class="fa fa-angle-double-left"></i> Back</a></div>
+            </div>
+            </section>
         </section>
     </div>
     <!-- End Popup  -->
@@ -989,7 +1487,7 @@
                         <hr class="hr-width-1 hr-5x border-main">
                         <!-- End divider -->
 
-                        <p class="heading-tescription lead max-width-800 margin-auto">
+                        <p class="heading-tescription lead max-width-800 margin-auto" style="text-align:center;">
                             Join Us
                         </p>
                     </div>
@@ -1180,13 +1678,46 @@
 
     <!-- Scroll to top button -->
     <a href="#body-content" class="scrolltotop sm-scroll bg-main"><i class="fa fa-chevron-up"></i></a>
-
     </div>
     <!-- End body content -->
 
 
+    <!--
+     <div id="modal_wrapper" style="visibility:hidden;">
+        <div id="pop_up">
+            <header class="popupHeader socialHeader">
+                <span class="header_title">Cancel Subscription</span>                    
+                <span id="login_close" class="modal_close" onclick="hidePopup()"><i class="fa fa-times"></i></span>
+                </header>
+                <section class="popupBody">
+                    
+                </section>
+            </div>
+        <div id='lean_overlay_social' ng-click='$event.stopPropagation()'> </div>
+    </div>
 
+    <script type="text/javascript">
+        function showPopup(legal){
+            console.log(legal);
+            $('#modal').hide();
+            var css = document.createElement("style");
+            css.type = "text/css"
+            css.innerHTML =
+                "#pop_up {webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); transform: scale(1); opacity: 1; }";
+            document.body.appendChild(css);
+            document.getElementById('modal_wrapper').style.visibility = "visible";
+        }
 
+        function hidePopup() {
+            var css = document.createElement("style");
+            css.type = "text/css"
+            css.innerHTML =
+                "#pop_up{ -webkit-transform: scale(0.7); -moz-transform: scale(0.7);-ms-transform: scale(0.7);transform: scale(0.7);opacity: 0;-webkit-transition: all 0.3s;-moz-transition: all 0.3s;transition: all 0.3s;}";
+            document.body.appendChild(css);
+            document.getElementById('modal_wrapper').style.visibility = "hidden";
+        }
+    </script>
+    -->
 
 
     <!-- ====================
@@ -1230,7 +1761,6 @@
     <script src="/mvc/public/assets/vendor/jquery.leanModal.min.js"></script>
     <script type="text/javascript">
         $("#modal_trigger").leanModal({
-            top: 200,
             closeButton: ".modal_close"
         });
         
@@ -1260,24 +1790,33 @@
                 $(".header_title").text('Login');
                 return false;
             });
-
-
-            // $("#program").blur(function(){
-            // 	// $("#school").addClass("wow fadeInUp")
-            // 	$("#school").show();
-
-            // 	return false;
-            // });
-
-            // $("#loginBtn").click(function(){
-            // 	$("input [name='unVal']").attr("ng-model='unVal' ng-required='true'");
-            // 	$("input [name='pwVal']").attr("ng-model='pwVal' ng-required='true'");
-
-            // 	return false;
-            // });
-
-
         })
+        
+        function show(legal){
+            $("#error").hide();
+            $('#modal').css('width','500px');
+            $('#modal').css('left','46%');
+            $('#register_app').hide();
+            $('#documents').show();
+            switch(legal){
+                case 'terms':
+                    $('.header_title').text('Terms of Use');
+                    break;
+                case 'privacy':
+                    $('.header_title').text('Privacy Policy');
+                    break;
+            }
+            $('#doc-'+legal).show();
+            $("[id^='doc-']:not(#doc-"+legal).hide();
+        }
+        
+        function hide(){
+            $('#modal').css('width','400px');
+            $('#modal').css('left','50%');
+            $('#documents').hide();
+            $('#register_app').show();
+            $('.header_title').text('Register');
+        }
 
     </script>
 

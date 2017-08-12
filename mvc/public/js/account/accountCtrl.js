@@ -86,10 +86,15 @@ app.controller('accountCtrl', function ($scope, $http) {
     }
 
     function showError(str) {
-        
         $("#error").show();
         $('.errorText').html(str);
+        
+        
+        var topPos = document.getElementById('error').offSetTop;
+        document.getElementById('modal').scrollTop = topPos;
     }
+    
+
 
 
     function validateEmail(email) {
