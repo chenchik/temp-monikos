@@ -50,7 +50,8 @@ function goHome(){
 $.post('/db/get_profile_by_user.php', {
     un:getCookie('username')
 },function(data,status){
-    userame = data.records[0].username;
+    
+    username = data.records[0].username;
     email = data.records[0].email;
     console.log(email);
 });
@@ -66,14 +67,27 @@ var plan;
 var button;
 var purchase;
 
-function subscription(subscriptionId) {
+function showPopup(){
     var css = document.createElement("style");
     css.type = "text/css"
     css.innerHTML =
         "#pop_up {webkit-transform: scale(1); -moz-transform: scale(1); -ms-transform: scale(1); transform: scale(1); opacity: 1; }";
     document.body.appendChild(css);
     document.getElementById('modal_wrapper').style.visibility = "visible";
+}
 
+function hidePopup() {
+    var css = document.createElement("style");
+    css.type = "text/css"
+    css.innerHTML =
+        "#pop_up{ -webkit-transform: scale(0.7); -moz-transform: scale(0.7);-ms-transform: scale(0.7);transform: scale(0.7);opacity: 0;-webkit-transition: all 0.3s;-moz-transition: all 0.3s;transition: all 0.3s;}";
+    document.body.appendChild(css);
+    document.getElementById('modal_wrapper').style.visibility = "hidden";
+}
+
+
+function subscription(subscriptionId) {
+    showPopup();
     $.post("../../../../db/create-token.php", {
         customerId: customerId
     }, function (data, status) {
@@ -91,18 +105,9 @@ function cancel() {
     $.post('../../../../db/cancel_subscription.php', {
         'customerId': customerId
     }, function (data, status) {
-        console.log(data);
+        $('#cancel_message').text(data);
     });
-    location.reload;
-}
-
-function hidePopup() {
-    var css = document.createElement("style");
-    css.type = "text/css"
-    css.innerHTML =
-        "#pop_up{ -webkit-transform: scale(0.7); -moz-transform: scale(0.7);-ms-transform: scale(0.7);transform: scale(0.7);opacity: 0;-webkit-transition: all 0.3s;-moz-transition: all 0.3s;transition: all 0.3s;}";
-    document.body.appendChild(css);
-    document.getElementById('modal_wrapper').style.visibility = "hidden";
+    showPopup();
 }
 
 function createDropIn(token) {

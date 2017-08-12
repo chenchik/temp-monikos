@@ -1,0 +1,55 @@
+#pop_up{
+    z-index: 100;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 25.5vw;
+    margin-left: -12.525vw;
+    margin-top: -10vw;
+    height: auto;
+    overflow: auto;
+    border-radius: 4px;
+    background-color: #fff;
+    box-shadow: 4px 4px 80px #000;
+    -webkit-box-shadow: 4px 4px 80px #000;
+    -moz-box-shadow: 4px 4px 80px #000;
+    box-shadow: 4px 4px 80px #000;
+
+    
+    -webkit-transform: scale(0.7);
+    -moz-transform: scale(0.7);
+    -ms-transform: scale(0.7);
+    transform: scale(0.7);
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    transition: all 0.3s;
+    
+}
+
+#cancel_message {
+    font-size:18px; 
+    margin-bottom:10px;
+    font-family: 'Raleway', sans-serif; 
+    text-align:center;
+}
+
+.socialHeader {
+    color: white !important;
+    background: #fa4e51 !important;
+}
+
+.socialHeader .modal_close {
+    color: white !important;
+    background: #fa4e51 !important;
+}
+
+#lean_overlay_social{
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: 99;
+    background: rgba(0,0,0,.2);
+}

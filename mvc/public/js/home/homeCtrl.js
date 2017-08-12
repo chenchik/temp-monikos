@@ -31,6 +31,7 @@ function logout(){
     window.location = window.location.origin = "/mvc/public/account/landing";
 }
 
+
 app.controller('homeCtrl', function($scope, $http) {
     
   

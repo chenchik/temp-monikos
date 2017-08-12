@@ -3,7 +3,12 @@
 <!-- <link rel="stylesheet" type="text/css" href="/mvc/public/css/home_style.css"/> -->
 
 <body id="home_page">
-
+<link rel="stylesheet" href="/mvc/public/css/popup.css">
+<link rel="stylesheet" href="/mvc/public/assets/css/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen" title="no title">
+    
+    
+    
 	<script src = '/mvc/public/js/home/homeCtrl.js'></script>
     <script src = '/mvc/public/js/payment/paymentCtrl.js'></script>
 
@@ -68,6 +73,21 @@
 				</div>
 
 			</div>
+        <div id="modal_wrapper" style="visibility:hidden;">
+            <div id="pop_up">
+                <header class="popupHeader socialHeader">
+                    <span class="header_title">Cancel Subscription</span>
+                    <span id="login_close" class="modal_close" onclick="hidePopup()"><i class="fa fa-times"></i></span>
+                </header>
+                <section class="popupBody">
+                    <p id="cancel_message">
+                        
+                    </p>
+                </section>
+               
+            </div>
+            <div id='lean_overlay_social' ng-click='$event.stopPropagation()'> </div>
+        </div>
 
 			<!-- <a href="#" ng-click="drugDatabase()">
 				<div class="top-block">

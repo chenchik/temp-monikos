@@ -1,4 +1,5 @@
 <?php
+//written by Joseph Son 
 
 require 'payment-server-init.php';
 require 'db_init.php';
@@ -46,28 +47,29 @@ echo $message;
 
 
 $body =
-    "Hi ".$_POST['username'].", \r\n\r\n
+    "Hi ".$_POST['username'].", <br><br>
 
-    We’re thrilled that you joined Monikos! \r\n
-    Now you can spend all your time studying instead of spending time making flashcards. Make sure to check out our database, fun study games and our favorite, the interactive flashcard. \r\n\r\n
+    We’re thrilled that you joined Monikos! <br>
+    Now you can spend all your time studying instead of spending time making flashcards. Make sure to check out our database, fun study games and our favorite, the interactive flashcard. <br><br>
 
-    And remember, we're always looking to improve Monikos to make it work for you, so please feel free to email us your thoughts at info@monikos.org. \r\n\r\n
-
-    Your transaction details: \r\n";
+    And remember, we're always looking to improve Monikos to make it work for you, so please feel free to email us your thoughts at info@monikos.org. <br><br>";
 
 $payment_method = $_POST['type'];
 switch($payment_method){
     case 'CreditCard':
         $body .= 
-            'Your '.$_POST['cardType'].' card ending with '.$_POST['lastTwo'].' will be automatically billed $'.$charge.' on a '.$planId.' basis, starting today: '.date("l jS \of F Y").'.' 
+            'Your '.$_POST['cardType'].' card ending with '.$_POST['lastTwo'].' will be automatically billed $'.$charge.' on a '.$planId.' basis, starting today: '.date("l jS \of F Y").'.' ;
         break;
     case 'PayPalAccount': 
         $body .= 
-            'Your PayPal account under the email '.$_POST['payPalEmail'].' will be automatically billed $'.$charge.' on a '.$planId.' basis, starting today: '.date("l jS \of F Y").'.''
+            'Your PayPal account under the email '.$_POST['payPalEmail'].' will be automatically billed $'.$charge.' on a '.$planId.' basis, starting today: '.date("l jS \of F Y").'.';
         break;
 }
+$body .= 
+    "<br><br>Sincerely, <br>
+    The Monikos Team";
 
-$to      =  $email;
+$to  =  $email;
 $subject = 'Confirmation of purchase for Monikos user '.$_POST['username'];
 
 
@@ -76,10 +78,4 @@ $headers .= "Content-type: text/html; charset=iso-8859-1\r\n";
 $headers .= 'From: Monikos <info@monikos.org>' . "\r\n";
             
 mail($to, $subject, $body, $headers);
-
-
-
-
-
-
 ?>

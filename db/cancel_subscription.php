@@ -23,7 +23,20 @@ if(!isset($_POST['isExpired']) or $_POST['isExpired']==false){
             ]
         ]
     );
-    echo "subscription with id".$current['subscriptionId']."has been cancelled and will expire on " . $current['billingPeriodEndDate']['date'];
+    $planId = $current['planId'];
+    
+    $begin = $current['billingPeriodStartDate']['date'];
+    $expiration = DateTime::createFromFormat('Y-m-d h:i:s.u',$begin);
+    $begin = $expiration->format('F dS Y');
+     
+    $expiration = $current['billingPeriodEndDate']['date'];
+    $expiration = DateTime::createFromFormat('Y-m-d h:i:s.u',$expiration);
+    $expiration = $expiration->format('F dS Y');
+    
+    if($planId == 'month'){
+        $planId = 'monthly';
+    }  
+    echo "Your ".$planId." subscription has been cancelled. You will mantain access to premium features until " . $expiration;
 } else {
     $updateExpired=$client->monikos->Users->updateOne(
         ["customerId"=>$_POST['customerId']],
