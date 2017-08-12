@@ -1,7 +1,8 @@
 //created by Joseph Son
 
 var customerId;
-
+var username;
+var email;
 
 $.post("../../../../db/create-customer.php", {
     first: getCookie("username")
@@ -20,13 +21,10 @@ function checkSubscription(id) {
     });
 }
 
-
-
 function logout() {
     $.get("../../../../db/logout.php", function (data, status) {
         console.log(data);
     });
-
     window.location = window.location.origin = "/mvc/public/account/landing";
 }
 
@@ -44,6 +42,18 @@ function getCookie(cname) {
     }
     return "";
 }
+
+function goHome(){
+    window.location = window.location.origin = '/mvc/public/home';
+}
+
+$.post('/db/get_profile_by_user.php', {
+    un:getCookie('username')
+},function(data,status){
+    userame = data.records[0].username;
+    email = data.records[0].email;
+    console.log(email);
+});
 
 var config = {
     headers: {
@@ -108,44 +118,68 @@ function createDropIn(token) {
         //this will be true if there is already a payment method available
         if (instance.isPaymentMethodRequestable()) {
             instance.requestPaymentMethod(function (err, payload) {
-                console.log(err);
                 $('#choose').hide();
                 $('#purchase').show();
                 purchase.addEventListener('click', function () {
-                        transaction(payload.nonce);
+                        transaction(payload);
                 });
             });
         } else {
             button.addEventListener('click', function () {
                 instance.requestPaymentMethod(function (err, payload) {
-                    console.log(err);
                         $('#choose').hide();
                         $('#purchase').show();
                         purchase.addEventListener('click', function () {
-                            transaction(payload.nonce);
-                        })
+                            transaction(payload);
+                        });
                 });
             });
         }
     });
 }
 
-function transaction(nonce) {
-    $.post("../../../../db/create-subscription.php", {
+function transaction(payload) {
+    console.log(payload);
+    var post_data;
+    if(payload.type == "CreditCard"){
+        post_data  = {
+            username:username,
+            email: email,
             customerId: customerId,
-            nonce: nonce,
+            nonce: payload.nonce,
+            cardType: payload.details.cardType,
+            lastTwo: payload.details.lastTwo,
+            type: payload.type,
+            plan:plan
+        }
+    } else {
+        post_data  = {
+            username:username,
+            email: email,
+            customerId: customerId,
+            nonce: payload.nonce,
+            type: payload.type,
+            payPalEmail: payload.details.email,
             plan: plan
-        },
+        }
+    }
+    $.post("../../../../db/create-subscription.php", post_data,
         function (data, status) {
-            $.post("../../../../db/change_premium.php", {
-                'user': getCookie('username')
-            }, function (data, status) {
-                if (data == 1) {
-                    window.location = window.location.origin + "/mvc/public/home";
-                    console.log(data);
-                }
+           console.log(data);
+            $('#success').text(data);
+        
+            $('#pop_up').css('width','477px');
+            $('#pop_up').css('height','239px');
+            $('#pop_up').css('left','67%');
+            $('#pop_up').css('top','55%');
+            $('.header_title').text('Congratulations');
+           
+            document.getElementById('login_close').addEventListener('click', function () {
+               goHome();
             });
-            console.log(data);
+        
+            $('#making_payment').hide();
+            $('#payment_made').show();
         });
 }
 

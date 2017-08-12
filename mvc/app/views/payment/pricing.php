@@ -6,6 +6,7 @@
 
     <script src='/mvc/public/js/home/homeCtrl.js'></script>
     <script src='/mvc/public/js/payment/paymentCtrl.js'></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen" title="no title">
     <link rel="stylesheet" href="/mvc/public/css/pricing.css" media="screen" title="no title">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.js"></script>
@@ -99,7 +100,7 @@
                             </ul>
                             <div class="cart2">
                                 <!--<a class="popup-with-zoom-anim" href="#small-dialog" onclick="subscription('month')">Purchase</a>-->
-                                <a onclick="subscription('month')">Purchase</a>
+                                <a onclick="subscription('monthly')">Purchase</a>
                             </div>
                         </div>
                     </div>
@@ -124,7 +125,7 @@
                             </ul>
                             <div class="cart2">
                                 <!--<a class="popup-with-zoom-anim" href="#small-dialog" onclick="subscription('semester')">Purchase</a>-->
-                                <a onclick="subscription('semester')">Purchase</a>
+                                <a onclick="subscription('semi-annual')">Purchase</a>
                             </div>
                         </div>
                     </div>
@@ -149,7 +150,7 @@
                             </ul>
                             <div class="cart2">
                                 <!--<a class="popup-with-zoom-anim" href="#small-dialog" onclick="subscription('year')">Purchase</a>-->
-                                <a onclick="subscription('year')">Purchase</a>
+                                <a onclick="subscription('annual')">Purchase</a>
                             </div>
                         </div>
                     </div>
@@ -183,7 +184,7 @@
             </div>
 
         </div>
-<!--         <footer>
+        <!--         <footer>
             <a href="#" onclick="logout()"> Log Out</a>
         </footer> -->
     </div>
@@ -196,16 +197,19 @@
                     <span id="login_close" class="modal_close" onclick="hidePopup()"><i class="fa fa-times"></i></span>
                 </header>
                 <div id="payment-container">
-                    <div id="dropin-container"></div>
-                    <button class ="payment-button" onclick="hidePopup()">Cancel</button>
-                    <button class ="payment-button" id="choose">Next</button>
-                    <button class ="payment-button" id="purchase" style="display:none;">Process</button>
-                    <!--<h3 class ="or">or</h3>-->
-                    <!--<div  class ="submit-button" id="paypal-button"></div>-->
-                    <div class="clear"> </div>
-                    <br>
+                    <div id="making_payment">
+                        <div id="dropin-container"></div>
+                        <button class="payment-button" onclick="hidePopup()">Cancel</button>
+                        <button class="payment-button" id="choose">Next</button>
+                        <button class="payment-button" id="purchase" style="display:none;">Process</button>
+                        <div class="clear"> </div>
+                        <br>
+                    </div>
+                    <div id="payment_made" style="display:none;  font-family: 'Raleway', sans-serif; text-align:center;">
+                        <p id="success" style="font-size:18px; margin-bottom:10px;"> </p>
+                        <button class="payment-button" onclick="goHome()">Okay</button>
+                    </div>
                 </div>
-                <!-- <div id="paypal-button"></div> -->
             </div>
         </div>
         <div id="lean_overlay"></div>
