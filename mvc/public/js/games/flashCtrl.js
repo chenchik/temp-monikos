@@ -161,6 +161,14 @@ function getCookie(cname) {
             console.log(list);
             list = "<ul>";
             counter = 0; //reset list and counter
+            jsonParser($scope.finalList[index - 1]["Renal Adjustment"]);
+            var renalList = list + "</ul>";
+            list = "<ul>";
+            counter = 0;
+            jsonParser($scope.finalList[index - 1]["Hepatic Adjustment"]);
+            var hepaticList = list + "</ul>";
+            list = "<ul>";
+            counter = 0;
 
 
             document.getElementById("brand_b").innerHTML = $scope.finalList[
@@ -171,18 +179,39 @@ function getCookie(cname) {
               index - 1]["Class"];
             document.getElementById("indication_b").innerHTML =
               indicationList;
-            document.getElementById("renal_b").innerHTML = $scope.finalList[
-              index - 1]["Renal Adjustment"];
-            document.getElementById("hepatic_b").innerHTML = $scope.finalList[
-              index - 1]["Hepatic Adjustment"];
+            document.getElementById("renal_b").innerHTML = renalList;
+            document.getElementById("hepatic_b").innerHTML = hepaticList;
             document.getElementById("moa_b").innerHTML = $scope.finalList[
               index - 1]["Mechanism of Action"]
             document.getElementById("bbw_b").innerHTML = $scope.finalList[
               index - 1]["Black Box Warning"];
-            document.getElementById("sideEffect_b").innerHTML =
-              sideList;
-              document.getElementById("hint").innerHTML =$scope.finalList[
-              index - 1]["Hint"];
+            document.getElementById("sideEffect_b").innerHTML = sideList;
+            document.getElementById("hint").innerHTML =$scope.finalList[
+                  index - 1]["Hint"];
+
+
+            // document.getElementById("brand_b").innerHTML = $scope.finalList[
+            //   index - 1]["Brand"];
+            // document.getElementById("generic_b").innerHTML = $scope.finalList[
+            //   index - 1]["Generic"];
+            // document.getElementById("class_b").innerHTML = $scope.finalList[
+            //   index - 1]["Class"];
+            // document.getElementById("indication_b").innerHTML =
+            //   indicationList;
+            // document.getElementById("renal_b").innerHTML = $scope.finalList[
+            //   index - 1]["Renal Adjustment"];
+            // document.getElementById("hepatic_b").innerHTML = $scope.finalList[
+            //   index - 1]["Hepatic Adjustment"];
+            // document.getElementById("moa_b").innerHTML = $scope.finalList[
+            //   index - 1]["Mechanism of Action"]
+            // document.getElementById("bbw_b").innerHTML = $scope.finalList[
+            //   index - 1]["Black Box Warning"];
+            // document.getElementById("sideEffect_b").innerHTML =
+            //   sideList;
+            //   document.getElementById("hint").innerHTML =$scope.finalList[
+            //   index - 1]["Hint"];
+
+              
 
             $scope.percent = index + "/" + $scope.select.length;
             $scope.percentSign = Math.ceil((index / $scope.select.length) *
@@ -269,6 +298,14 @@ function getCookie(cname) {
             console.log(list);
             list = "<ul>";
             counter = 0; //reset list and counter
+            jsonParser($scope.finalList[index - 1]["Renal Adjustment"]);
+            var renalList = list + "</ul>";
+            list = "<ul>";
+            counter = 0;
+            jsonParser($scope.finalList[index - 1]["Hepatic Adjustment"]);
+            var hepaticList = list + "</ul>";
+            list = "<ul>";
+            counter = 0;
 
 
             document.getElementById("brand_b").innerHTML = $scope.finalList[
@@ -279,18 +316,15 @@ function getCookie(cname) {
               index - 1]["Class"];
             document.getElementById("indication_b").innerHTML =
               indicationList;
-            document.getElementById("renal_b").innerHTML = $scope.finalList[
-              index - 1]["Renal Adjustment"];
-            document.getElementById("hepatic_b").innerHTML = $scope.finalList[
-              index - 1]["Hepatic Adjustment"];
+            document.getElementById("renal_b").innerHTML = renalList;
+            document.getElementById("hepatic_b").innerHTML = hepaticList;
             document.getElementById("moa_b").innerHTML = $scope.finalList[
               index - 1]["Mechanism of Action"]
             document.getElementById("bbw_b").innerHTML = $scope.finalList[
               index - 1]["Black Box Warning"];
-            document.getElementById("sideEffect_b").innerHTML =
-              sideList;
-              document.getElementById("hint").innerHTML =$scope.finalList[
-              index - 1]["Hint"];
+            document.getElementById("sideEffect_b").innerHTML = sideList;
+            document.getElementById("hint").innerHTML =$scope.finalList[
+                  index - 1]["Hint"];
 
 
             $scope.percent = index + "/" + $scope.select.length;
@@ -299,7 +333,7 @@ function getCookie(cname) {
             document.getElementById("pb").style.width = $scope.percentSign;
             console.log($scope.percentSign);
             document.getElementById("percentpb").innerHTML = $scope.percent;
-            
+
 
           }
         }
@@ -358,6 +392,10 @@ function getCookie(cname) {
         var renalList = list + "</ul>";
         list = "<ul>";
         counter = 0;
+        jsonParser($scope.finalList[index - 1]["Hepatic Adjustment"]);
+        var hepaticList = list + "</ul>";
+        list = "<ul>";
+        counter = 0;
 
 
         document.getElementById("brand_b").innerHTML = $scope.finalList[
@@ -369,8 +407,7 @@ function getCookie(cname) {
         document.getElementById("indication_b").innerHTML =
           indicationList;
         document.getElementById("renal_b").innerHTML = renalList;
-        document.getElementById("hepatic_b").innerHTML = $scope.finalList[
-          index - 1]["Hepatic Adjustment"];
+        document.getElementById("hepatic_b").innerHTML = hepaticList;
         document.getElementById("moa_b").innerHTML = $scope.finalList[
           index - 1]["Mechanism of Action"]
         document.getElementById("bbw_b").innerHTML = $scope.finalList[
