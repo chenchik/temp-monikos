@@ -2,13 +2,13 @@ var app = angular.module('myApp', ['checklist-model']);
 
 app.controller('myCtrl', function($scope, $http) {
     
-  function logout(){
-    $.get("../../../../db/logout.php",function(data,status){
-       console.log(data); 
+  function logout() {
+    $.get("../../../../db/logout.php", function (data, status) {
+        console.log(data);
     });
-    
     window.location = window.location.origin = "/mvc/public/account/landing";
   }
+    
   function gotoChallenge(url) {
     window.location = url;
   }

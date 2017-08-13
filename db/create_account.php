@@ -26,7 +26,14 @@ $creds=["username"=>$_POST["username"],
 		"capsules"=>200,
         "friends"=>[],
         "premium"=>false,
-        "customerId"=>null
+        "customerId"=>null,
+        "braintree_subscription_info"=>[
+            "planId"=>null,
+            "subscriptionId"=>null,
+            "billingPeriodStartDate"=>null,
+            "billingPeriodEndDate"=>null,
+            "subscriptionStatus"=> "Inactive"
+        ]
 	];
 
 

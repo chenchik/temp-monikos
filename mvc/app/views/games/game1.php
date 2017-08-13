@@ -92,8 +92,8 @@
             <div id="challengeCompleteMessage" style="display:none">
                 <img id="challengeCompleteLogo" src="/mvc/public/images/white_logo.png">
 
-                <p class="challengeCompleteText" ng-show="checkIfInChallengeMode() && !checkIfBeingChallenged()">Your challenge has been sent to
-                    <?=$data['user2']?>. Once they answer it, you'll either lose or win
+                <p class="challengeCompleteText" ng-show="checkIfInChallengeMode() && !checkIfBeingChallenged()">Your challenge has been sent!
+                    <?=$data['user2']?> has 24 hours to respond. The winner will gain 
                         <?=$data['bet']?> capsules. Click the button below to return to the game menu.</p>
 
                 <p class="challengeCompleteText" ng-show="checkIfBeingChallenged()"></p>
