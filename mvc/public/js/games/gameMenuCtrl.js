@@ -180,13 +180,17 @@ gameMenuApp.controller('gameMenuCtrl', function ($scope, $http) {
             .then(function (response) {
                 if (response.data == "0") {
                     changeButtonColor('#challengeUserButton', false);
-                    console.log("user doesn't exist");
+                    $scope.challengeError = "User doesn't exist";
+                    console.log($scope.challengeError);
+                    $('#error').show();
                 } else {
                     var username = getCurrentUser();
                     challenged_capsules = response.data.records[0].capsules;
                     console.log(username + " " + user_capsules);
                     console.log(challengeUser + " " + challenged_capsules);
                     if (!showingSelectUser) {
+                        $scope.challengeError = "";
+                        $('#error').hide();
                         changeButtonColor('#challengeUserButton', true);
                         $('#innerChallengePlaceBet').slideDown('fast');
                         $('#innerChallengeFindFriend').slideUp("fast");
@@ -337,13 +341,13 @@ function challengeSubmit() {
     var error = [];
 
     if (bet < 0) {
-        error[0] = "Can't place a bet less than 0 capsules"
+        error[0] = "Can't place a bet less than 0 capsules. "
     }
     if (bet > user_capsules) {
-        error[1] = "Can't place a bet larger than what you have"
+        error[1] = "Can't place a bet larger than what you have. "
     }
     if (bet > challenged_capsules) {
-        error[2] = "Can't place a bet larger than what your friend has"
+        error[2] = "Can't place a bet larger than what your friend has. "
     }
 
     if (!showingPlaceBet && error.length == 0) {
@@ -359,11 +363,15 @@ function challengeSubmit() {
         }
 
     } else {
+        var errorMessage = "";
         for (var i = 0; i < error.length; i++) {
             if(error[i] != null){
-            console.log(error[i]);
+             errorMessage += error[i];
             }
         }
+        console.log(errorMessage);
+        $('#error555').html(errorMessage);
+        $('#error555').show();
     }
 }
 
