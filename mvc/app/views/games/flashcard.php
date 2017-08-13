@@ -143,7 +143,7 @@ function gotoGamelist(lid){
                     Hint
                 </div>
                 <div class="back back-card-small">
-                        <h5 id="indication_b">Hint shows up here</h5>
+                        <h5 id="hint">Hint shows up here</h5>
                 </div>
             </div>
         </div>
