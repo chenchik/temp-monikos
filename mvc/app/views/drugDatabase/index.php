@@ -102,8 +102,8 @@
             <!-- </div> -->
             
             
-            <div id="page-navigate" style="text-align:center" ng-show="premium">
-                <p> Navigate to page: </p>
+            <div id="page-navigate" style="text-align:center; font-family:'Raleway';margin-top:20px;" ng-show="premium">
+                <p style="display:inline-block;"> Navigate to page: </p>
                 <button type="button" id="pageNum-{{page}}" ng-repeat="page in pages" ng-click=goToPage(page)>
                     {{page}}
                 </button>
