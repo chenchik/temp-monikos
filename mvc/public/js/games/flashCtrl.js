@@ -181,6 +181,8 @@ function getCookie(cname) {
               index - 1]["Black Box Warning"];
             document.getElementById("sideEffect_b").innerHTML =
               sideList;
+              document.getElementById("hint").innerHTML =$scope.finalList[
+              index - 1]["Hint"];
 
             $scope.percent = index + "/" + $scope.select.length;
             $scope.percentSign = Math.ceil((index / $scope.select.length) *
@@ -287,7 +289,8 @@ function getCookie(cname) {
               index - 1]["Black Box Warning"];
             document.getElementById("sideEffect_b").innerHTML =
               sideList;
-
+              document.getElementById("hint").innerHTML =$scope.finalList[
+              index - 1]["Hint"];
 
 
             $scope.percent = index + "/" + $scope.select.length;
@@ -296,7 +299,7 @@ function getCookie(cname) {
             document.getElementById("pb").style.width = $scope.percentSign;
             console.log($scope.percentSign);
             document.getElementById("percentpb").innerHTML = $scope.percent;
-
+            
 
           }
         }
@@ -373,7 +376,8 @@ function getCookie(cname) {
         document.getElementById("bbw_b").innerHTML = $scope.finalList[
           index - 1]["Black Box Warning"];
         document.getElementById("sideEffect_b").innerHTML = sideList;
-
+        document.getElementById("hint").innerHTML =$scope.finalList[
+              index - 1]["Hint"];
 
       });
 
