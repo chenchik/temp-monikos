@@ -135,13 +135,28 @@ function gotoGamelist(lid){
         </div>
       </div>
 
+
       <div class="column">
-        <div class="tile-big tile-wide-x tile-big-y  flip manual-flip" data-role="tile">
+          <div class ="tile-small tile-wide-x flip manual-flip" data-role="tile">
+            <div class="card" onclick="rotateCard(this)">
+                <div class="front card-small">
+                    Hint
+                </div>
+                <div class="back back-card-small">
+                        <h5 id="hint">Hint shows up here</h5>
+                </div>
+            </div>
+        </div>
+
+      <!-- </div> -->
+
+      <!-- <div class="column"> -->
+        <div class ="tile-big tile-wide-x tile-wider-y  flip manual-flip" data-role="tile">
           <div class="card" onclick="rotateCard(this)">
-              <div class="front card-big">
+              <div class="front card-wider">
                   Side Effects
               </div>
-              <div class="back back-card-big">
+              <div class="back back-card-wider">
                       <h5 id="sideEffect_b">Side Effect shows up here</h5>
               </div>
           </div>
@@ -156,8 +171,10 @@ function gotoGamelist(lid){
               </div>
           </div>
         </div>
-
       </div>
+
+
+
       <div class="column">
         <div class="tile tile-wide-x  flip manual-flip" data-role="tile">
           <div class="card" onclick="rotateCard(this)">

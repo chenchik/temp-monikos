@@ -5,13 +5,7 @@ var datalid = document.getElementById('datalid').innerHTML;
 
 var isChallenge = false;
 var isBeingChallenged = false;
-function logout(){
-    $.get("../../../../db/logout.php",function(data,status){
-       console.log(data); 
-    });
-    
-    window.location = window.location.origin = "/mvc/public/landing.html";
-}
+
 var app = angular.module('myApp', []);
 app.controller('matchingCtrl', function ($scope, $http) {
     $scope.numClicked = 0;
@@ -131,6 +125,7 @@ app.controller('matchingCtrl', function ($scope, $http) {
     }
 
     function challengeComplete() {
+        window.onbeforeunload = null;
         $('#challengeCompleteMessage').slideDown('fast');
     }
     
@@ -178,6 +173,7 @@ app.controller('matchingCtrl', function ($scope, $http) {
     checkNormal();
     
      if($scope.normal == false){
+         console.log('lol');
         window.onbeforeunload = function (e) {
             return "If you continue, then your challenge will be not be sent and you will be redirected to the home page";
         };

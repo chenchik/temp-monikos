@@ -21,13 +21,6 @@ function checkSubscription(id) {
     });
 }
 
-function logout() {
-    $.get("../../../../db/logout.php", function (data, status) {
-        console.log(data);
-    });
-    window.location = window.location.origin = "/mvc/public/account/landing";
-}
-
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
@@ -175,7 +168,7 @@ function transaction(payload) {
         
             $('#pop_up').css('width','477px');
             $('#pop_up').css('height','239px');
-            $('#pop_up').css('left','67%');
+            $('#pop_up').css('left','62%');
             $('#pop_up').css('top','55%');
             $('.header_title').text('Congratulations');
            
