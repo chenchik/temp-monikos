@@ -177,9 +177,11 @@ app.controller('databaseCtrl', ['$scope', '$sce', '$http', '$timeout', function 
 
 
     $scope.goToPage=function(page) {
-        console.log($('#pageNum-'+page).get());
         $('#pageNum-'+page).css('font-weight','bold');
         $("[id^='pageNum']:not(#pageNum-"+page+")").css('font-weight','normal');
+  
+        $('#bottom-pageNum-'+page).css('font-weight','bold');
+        $("[id^='bottom-pageNum']:not(#bottom-pageNum-"+page+")").css('font-weight','normal');
         switch (page) {
             case 1:
                 $scope.pg1 = true
@@ -337,7 +339,9 @@ app.controller('databaseCtrl', ['$scope', '$sce', '$http', '$timeout', function 
     }
     
     $scope.upgrade = function(){
+        if($scope.premium == false){
         window.location = window.location.origin + "/mvc/public/home/pricing";
+        }
     }
 
     //audio controls
