@@ -834,7 +834,7 @@ style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:black'>&nbsp;</sp
                                     <ul class="dropdown-menu">
                                         <li><a class="mlc sm-scroll" href="#section-team">Our Team</a></li>
                                         <li><a class="mlc sm-scroll" href="#section-video">Video Promo</a></li>
-                                        <li><a class="mlc sm-scroll" href="#section-clients">Our Clients</a></li>
+                                        <li><a class="mlc sm-scroll" href="#section-clients">Friends of Monikos</a></li>
                                         <!--
 											 Begin dropdown (submenu)
 											==============================
@@ -852,8 +852,6 @@ style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:black'>&nbsp;</sp
                                 <li><span class="nav-link-separator">/</span></li>
 
                                 <li><span class="nav-link-separator">/</span></li>
-
-                                <li><a class="mlc sm-scroll" href="#section-sponsors">Sponsors</a></li>
 
                                 <li><span class="nav-link-separator">/</span></li>
                                 <li><a class="mlc sm-scroll" href="#section-contact">Contact</a></li>
@@ -901,7 +899,7 @@ style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:black'>&nbsp;</sp
                         <a id="modal_trigger" href="#modal" class="btn btn-primary margin-top-10 wow bounceIn" data-wow-delay="1s">START HERE</a>
                     </div>
                     <br>
-                    <a style="font-size:120%;color:white;">Helping healthcare students learn and study better.</a>
+                    <a style="font-size:120%;color:white;">Helping healthcare students learn from one another.</a>
                 </div>
                 <!-- End intro caption -->
 
@@ -1022,8 +1020,8 @@ style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:black'>&nbsp;</sp
                                     <span class="cover bg-transparent-9-main"></span>
                                     <img class="item-img" src="/mvc/public/images/landing_page/app2.jpeg" alt="Matching Game">
                                     <div class="item-info text-white">
-                                        <h3 class="item-info-title">Matching game</h3>
-                                        <p class="item-info-text">Matching game</p>
+                                        <h3 class="item-info-title">Matching Game</h3>
+                                        <p class="item-info-text">Test your knowledge of Brand-generic drugs!</p>
                                     </div>
                                 </a>
                             </div>
@@ -1036,8 +1034,8 @@ style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:black'>&nbsp;</sp
                                     <span class="cover bg-transparent-9-main"></span>
                                     <img class="item-img" src="/mvc/public/images/landing_page/app3.jpeg" alt="Friend">
                                     <div class="item-info text-white">
-                                        <h3 class="item-info-title">Compete with Friends</h3>
-                                        <p class="item-info-text">Compete with Friends</p>
+                                        <h3 class="item-info-title">Study with Friends</h3>
+                                        <p class="item-info-text">Wager your capsules against your friends to see who really knows their drug facts!</p>
                                     </div>
                                 </a>
                             </div>
@@ -1050,8 +1048,8 @@ style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:black'>&nbsp;</sp
                                     <span class="cover bg-transparent-9-main"></span>
                                     <img class="item-img" src="/mvc/public/images/landing_page/app1.jpeg" alt="Flash Card">
                                     <div class="item-info text-white">
-                                        <h3 class="item-info-title">Flash Card</h3>
-                                        <p class="item-info-text">Flash Card</p>
+                                        <h3 class="item-info-title">FlashBox</h3>
+                                        <p class="item-info-text">Are you tired of making flashcards? We got you covered!</p>
                                     </div>
                                 </a>
                             </div>
@@ -1148,7 +1146,7 @@ style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:black'>&nbsp;</sp
                                         <p class="article-time">Co-founder</p>
                                     </div>
                                     <p class="blog-list-desc  text-center">
-                                        Patrick is originally from Austin, Texas. He attended Duke University on a full athletic football scholarship. Before he left for college, his mother was diagnosed with type 2 diabetes. It was during this time period that Patrick started to take notice into what medications she took to control her diabetes and this is what motivated him to want to attend Pharmacy school...
+                                        Patrick is originally from Austin, Texas. He attended Duke University on a full athletic football scholarship where he double majored in Biological Anthropology & Anatomy and Psychology. Currently at the University of North Carolina, Patrick is pursuing a MBA/PharmD dual degree. He hopes to use the clinical knowledge he will gain from the Eshelman School of Pharmacy and apply that to the business acumen and leadership development he will gain from the Kenan-Flagler Business School to affect patient populations on a macro scale...
                                         <a class="tem-link inline-popup-trigger" href="#portfolio-1"> read more...</a>
                                     </p>
                                 </div>
@@ -1163,9 +1161,9 @@ style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:black'>&nbsp;</sp
                                     <div class="row margin-top-40">
                                         <div class="col-md-8 margin-bottom-20">
                                             <h2 class="no-margin-top">Patrick</h2>
-                                            <p>Patrick is originally from Austin, Texas. He attended Duke University on a full athletic football scholarship. Before he left for college, his mother was diagnosed with type 2 diabetes. It was during this time period that Patrick started to take notice into what medications she took to control her diabetes and this is what motivated him to want to attend Pharmacy school. Upon graduation, he took a two-year hiatus to enter the work force and complete a post-bac to make himself an eligible candidate for pharmacy school. </p>
+                                            <p>Patrick is originally from Austin, Texas. He attended Duke University on a full athletic football scholarship where he double majored in Biological Anthropology & Anatomy and Psychology. Currently at the University of North Carolina, Patrick is pursuing a MBA/PharmD dual degree. He hopes to use the clinical knowledge he will gain from the Eshelman School of Pharmacy and apply that to the business acumen and leadership development he will gain from the Kenan-Flagler Business School to affect patient populations on a macro scale. </p>
 
-                                            <p>He originally thought he would be heading back to Texas for Pharmacy school to be closer to his family, but when he was accepted into the UNC Eshelman School of Pharmacy, it was hard for him to turn down the then #2 ranked pharmacy school in the country. One of the promise Patrick’s mother made him keep was that no matter what school he chose to attend, that he leaves a positive impact. Hopefully Monikos will fulfill this promise to her.</p>
+                                            <p>As a pharmacy student, Patrick observed how much healthcare is changing and realized there is no reason why the same tedious and boring techniques should be used in studying drug facts. He believes that all healthcare students deserve a platform like Monikos that makes their learning process more enjoyable.</p>
                                         </div>
                                         <div class="col-md-4 margin-bottom-20 padding-left-40">
                                             <img src="/mvc/public/images/landing_page/patrick.jpg" alt="patrick">
@@ -1581,12 +1579,6 @@ style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:black'>&nbsp;</sp
 
                 <!-- Right column -->
                 <div class="col-md-5 text-gray-2 padding-left-40">
-
-                    <div class="contact-info">
-                        <p><i class="fa fa-home"></i> 200 NC HWY 54 #A303 Carrboro, NC 27510</p>
-                        <p><i class="fa fa-phone"></i> phone: (512) 663 4745</p>
-                        <p><i class="fa fa-envelope"></i> <a href="mailto:monikos.inc@gmail.com" target="_blank">monikos.llc@gmail.com</a></p>
-                    </div>
 
                 </div>
                 <!-- /.col -->
