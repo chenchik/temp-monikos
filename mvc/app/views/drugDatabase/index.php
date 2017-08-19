@@ -442,8 +442,27 @@
                                     <div class="drug-info-wrap"><label>Hepatic Adjustments:</label> </div>
                                     <div class="expand-info" ng-show="collapsed_ha">
                                         <ul>
-                                            <li ng-repeat="arrayItem in x['Hepatic Adjustment']">
-                                                {{arrayItem}}
+                                            <li ng-repeat="(key1, val1) in x['Hepatic Adjustment']">
+
+                                                <p ng-if="goOneMoreLevelDown(x['Hepatic Adjustment'])">{{key1}}</p>
+                                                <p ng-if="!goOneMoreLevelDown(x['Hepatic Adjustment'])">{{val1}}</p>
+
+                                                <ul ng-if="goOneMoreLevelDown(x['Hepatic Adjustment'])">
+                                                    <li ng-repeat="(key2,val2) in val1 track by $index">
+
+                                                        <p ng-if="goOneMoreLevelDown(val1)">{{key2}}</p>
+                                                        <p ng-if="!goOneMoreLevelDown(val1)">{{val2}}</p>
+
+                                                        <ul ng-if="goOneMoreLevelDown(val1)">
+                                                            <li ng-repeat='(key3,val3) in val2 track by $index'>
+
+                                                                <p ng-if="goOneMoreLevelDown(val2)">{{key3}}</p>
+                                                                <p ng-if="!goOneMoreLevelDown(val2)">{{val3}}</p>
+
+                                                            </li>
+                                                        </ul>
+                                                    </li>
+                                                </ul>
                                             </li>
                                         </ul>
                                     </div>
