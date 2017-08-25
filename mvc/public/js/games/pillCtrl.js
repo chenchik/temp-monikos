@@ -506,7 +506,7 @@ var app = angular.module('myApp', []);
 			console.log(" final list length " + $scope.finalList.length);
 			//document.getElementById("plus2").innerHTML="";
 
-			document.getElementById("thePill").src = '/mvc/public/images/pill.png';
+			document.getElementById("thePill").src = '/mvc/public/images/pill1.png';
 			//alert("right here");
 			if (cuIn == $scope.finalList.length){
         //done with round here
