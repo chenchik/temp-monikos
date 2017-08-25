@@ -123,11 +123,13 @@ body {
 .card-wider{
 	height:390px !important;
   padding-top: 130px !important;
+  overflow: scroll;
 }
 
 .back-card-wider{
 	height:390px !important;
   /*padding-top: 130px;*/
+  overflow: scroll;
 }
 
 .card-super{

@@ -163,7 +163,7 @@
                                 </div>
 
                                 <div class=ng-modal-content-footer-bar>
-                                    <span id="suggest-msg">Do you have a better hint? </span><a class="earn200link" ng-click="showPopup2();$event.stopPropagation()">Earn 2500 Capsules</a>
+                                    <span id="suggest-msg">Do you have a better hint? </span><a class="earn200link" ng-click="showPopup2();$event.stopPropagation();upgrade()">Earn 2500 Capsules</a>
                                 </div>
 
                             </div>
@@ -2517,7 +2517,15 @@
             </div>
         </div>
             
+            <div id="page-navigate" style="text-align:center; font-family:'Raleway';margin-top:20px;" ng-show="premium">
+                <p style="display:inline-block;"> Navigate to page: </p>
+                <button type="button" id="bottom-pageNum-{{page}}" ng-repeat="page in pages" ng-click=goToPage(page)>
+                    {{page}}
+                </button>
+            </div>
+            
             <div id="footer-container" ng-show="!premium">
+                
             <button type="button" id="upgrade-incentive" ng-click="upgrade()"> Access 300+ More Drugs</button>
             </div>
             
