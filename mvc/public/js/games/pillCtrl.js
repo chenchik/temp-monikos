@@ -510,7 +510,7 @@ var app = angular.module('myApp', []);
 			//alert("right here");
 			if (cuIn == $scope.finalList.length){
         //done with round here
-				window.move();
+				//window.move();
 				document.getElementById("result").remove();
 				document.getElementById("wrong").remove();
         if($scope.checkIfBeingChallenged()){

@@ -40,7 +40,7 @@
                         <div class=capsule-info>{{capsules[0].capsules}} Capsules</div>
                         <!--test cancel subscription button -->
                                                 <a onclick="cancel()" style="color: #CCC;font-size: 10px;cursor: pointer;">Cancel Subscription</a>
-                                            <!-- end --->
+                                            <!-- end -->
                         <a href="#" onclick="logout()">
                             <div class=logout-btn>logout</div>
                         </a>
@@ -50,7 +50,11 @@
 
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#home"><i class="fa fa-address-book" aria-hidden="true"></i>  &nbsp Manage Friends</a></li>
-                <li><a data-toggle="tab" href="#menu1" ng-click="getNatlRank() ; getSchoolRank() ; getFriendRank()"><i class="fa fa-trophy" aria-hidden="true"></i> &nbsp Rankings</a></li>
+                <li>
+                    <a data-toggle="tab" href="#menu1" ng-click="getNatlRank() ; getSchoolRank() ; getSchoolsRank()">
+                        <i class="fa fa-trophy" aria-hidden="true"></i> &nbsp Rankings
+                    </a>
+                </li>
 
             </ul>
 
@@ -167,7 +171,8 @@
                     <div class='add-list-block'>
                         <button ng-click=showNatl()> National </button>
                         <button ng-click=showSchool() class="form-control listButton" ng-bind="user_school" style="width:auto;"> </button>
-                        <button ng-click=showFriendRank() class="form-control listButton"> Friends </button>
+                        <!--<button ng-click=showFriendRank() class="form-control listButton"> Friends </button>-->
+                        <button ng-click=showSchools()>Schools</button>
                     </div>
 
                     <div class="ranking-list natl" ng-repeat="x in national" style="display:none;">
@@ -183,13 +188,19 @@
                             <p>{{y.content}}<span class="badge ranking-circle">{{y.number}}</span></p>
                         </div>
                     </div>
-
-                    <div class="ranking-list pals" ng-repeat="z in friend_rank" style="display:none;">
+                    
+                    <div class="ranking-list schools" ng-repeat="y in schools" style="display:none;">
+                        <div class="ranking-item">
+                            <br>
+                            <p>{{y.content}}<span class="badge ranking-circle">{{y.number}}</span></p>
+                        </div>
+                    </div>
+                    <!--<div class="ranking-list pals" ng-repeat="z in friend_rank" style="display:none;">
                         <div class="ranking-item">
                             <br>
                             <p>{{z.content}}<span class="badge ranking-circle">{{z.number}}</span></p>
                         </div>
-                    </div>
+                    </div>-->
 
                 </div>
             </div>
