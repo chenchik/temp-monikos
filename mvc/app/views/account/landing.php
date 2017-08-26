@@ -1344,7 +1344,7 @@ style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:black'>&nbsp;</sp
 							* Use class "heading-hover" to enable heading hover effect.
 							* Use class "heading-uppercase" to enable uppercase letters.
 							-->
-                    -->
+                
                     <!--
                     <div class="heading heading-md heading-uppercase heading-center heading-hover wow fadeIn">
                         <span class="heading-title-ghost">Our Clients</span>
@@ -1359,7 +1359,7 @@ style='font-size:10.0pt;font-family:"Calibri",sans-serif;color:black'>&nbsp;</sp
                         <!--
                         <hr class="hr-width-1 hr-5x border-main">
                         <!-- End divider -->
-                        -->
+                        
                        
 <!--
                         <p class="heading-tescription lead max-width-800 margin-auto">
