@@ -8,12 +8,9 @@ app.controller('accountCtrl', function ($scope, $http) {
         console.log('ww');
         console.log(response);
         $scope.programs = response.data.records;
-        for (var i = 0; i < 6; i++) {
+        for (var i = 0; i < 5; i++) {
+            //changing how the program names appear on screen
             switch ($scope.programs[i].program) {
-                case "do":
-                    $scope.programs[i].program = "D.O";
-                    $scope.programs[i].programId = i;
-                    break;
                 case "nursing":
                     $scope.programs[i].program = "Nursing";
                     $scope.programs[i].programId = i;
@@ -22,8 +19,8 @@ app.controller('accountCtrl', function ($scope, $http) {
                     $scope.programs[i].program = "Pharmacy";
                     $scope.programs[i].programId = i;
                     break;
-                case "med":
-                    $scope.programs[i].program = "Medicine";
+                case "med/do":
+                    $scope.programs[i].program = "MED/DO";
                     $scope.programs[i].programId = i;
                     break;
                 case "pa":
@@ -51,17 +48,15 @@ app.controller('accountCtrl', function ($scope, $http) {
             var url = "/db/get_nursing_schools.php";
         } else if (pro == "Pharmacy") {
             var url = "/db/get_pharm_schools.php";
-        } else if (pro == "Medicine") {
-            var url = "/db/get_med_schools.php";
         } else if (pro == "PA") {
             var url = "/db/get_pa_schools.php";
-        } else if (pro == "D.O") {
-            var url = "/db/get_do_schools.php";
+        } else if (pro == "MED/DO") {
+            var url = "/db/get_medDo_schools.php";
         } else if (pro = "Dental") {
             var url = "/db/get_dental_schools.php";
         }
         $http.get(url).then(function (response) {
-            console.log('ww');
+ 
             console.log(response);
             $scope.schoolnames = response.data.records;
             $scope.selectedSchool = $scope.schoolnames[0];
