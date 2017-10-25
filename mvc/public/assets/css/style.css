@@ -16,12 +16,12 @@
 .popupContainer {
     position:absolute;
     width: 330px;
-    height: 345px;
     overflow:auto;
     left: 45%;
-    top: 100px!important;
+    top: 50px;
     background: #FFF;
     color: black;
+    height:auto;
     /*overflow: hidden;*/
 }
 
@@ -208,9 +208,6 @@ select {}
     margin-bottom: 5px;
 }
 
-.user_register input {
-    height: 10%
-}
 
 .user_register input[type="text"],
 .user_register input[type="email"],
@@ -830,7 +827,7 @@ h3 {
 #modal .btn {}
 .dropdown ul {
     /*margin-left: 41%;*/
-    text-align: center;
+    /*text-align: center;*/
 }
 .dropdown li:hover {
     /*background-color: #f7465b;*/

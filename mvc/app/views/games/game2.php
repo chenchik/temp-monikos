@@ -8,9 +8,9 @@
 
 	<div id=app_header>
 
-	    <a onclick="gotoGamelist()" ng-if="checkIfInChallengeMode()"><button class = 'back'>Forfeit</button></a>
-        <a onclick="gotoGamelist()" ng-if="checkIfBeingChallenged()"><button class = 'back'>Forfeit</button></a>
-        <a onclick='gotoGamelist("<?=$data['lid']?>")' ng-if="normal"><button class = 'back'>Back</button></a>
+	    <a onclick="gotoGamelist()" ng-show="checkIfInChallengeMode()"><button class = 'back'>Forfeit</button></a>
+        <a onclick="gotoGamelist()" ng-show="checkIfBeingChallenged()"><button class = 'back'>Forfeit</button></a>
+        <a onclick='gotoGamelist("<?=$data['lid']?>")' ng-show="normal"><button class = 'back'>Back</button></a>
 
 
        <a ng-click='home()'><img id="toplogo" src="/mvc/public/images/logo_without_words_version_1.png"></a>
@@ -29,7 +29,7 @@
                 </div>
             </div>
             <div class=user-info>
-                <img src="/mvc/public/images/user_icon.png">
+                <img src="/mvc/public/images/landing_page/logo2.png">
              <div class=user-info-sub>
                     <div class=username-info>{{capsules[0].username}}</div>
                     <div class=email-info>({{capsules[0].email}})</div>
@@ -93,7 +93,9 @@
 		   <div id="challengeCompleteMessage" style="display:none">
 		   		<img id="challengeCompleteLogo" src="/mvc/public/images/white_logo.png">
 
-		   		<p class="challengeCompleteText" ng-show="checkIfInChallengeMode() && !checkIfBeingChallenged()">Your challenge has been sent to <?=$data['user2']?>. Once they answer it, you'll either lose or win <?=$data['bet']?> capsules. Click the button below to return to the game menu.</p>
+		   		<p class="challengeCompleteText" ng-show="checkIfInChallengeMode() && !checkIfBeingChallenged()">Your challenge has been sent!
+                    <?=$data['user2']?> has 24 hours to respond. The winner will gain 
+                        <?=$data['bet']?> capsules. Click the button below to return to the game menu.</p>
 
 		   		<p class="challengeCompleteText" ng-show="checkIfBeingChallenged()"></p>
 

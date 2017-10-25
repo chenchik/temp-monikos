@@ -1,7 +1,7 @@
 @import 'https://fonts.googleapis.com/css?family=Raleway:300,500,900';
 
-button.btnBlue  {
-    /*border: 2px solid #fa4e51;*/
+/*button.btnBlue  {
+    
     color:white;
     background: #4c4c4c;
     font-family: 'Raleway';
@@ -17,6 +17,25 @@ button.btnBlue  {
     transition: all 0.3s ease 0s;
     padding:8px;
     margin: 10px !important;
+}*/
+
+button.btnBlue {
+    /* border: 2px solid #fa4e51; */
+    color: white;
+    background: #4c4c4c;
+    font-family: 'Raleway';
+    font-size: 20px;
+    width: 100%;
+    height: 130px;
+    text-align: center;
+    letter-spacing: 0.1px;
+    border-radius: 10px;
+    text-overflow: ellipsis;
+    white-space: initial;
+    word-wrap: break-word;
+    transition: all 0.3s ease 0s;
+    padding: 8px;
+    /* margin: 10px !important; */
 }
 
 

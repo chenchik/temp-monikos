@@ -25,7 +25,7 @@
                 </div>
             </div>
             <div class=user-info>
-                <img src="/mvc/public/images/user_icon.png">
+                <img src="/mvc/public/images/landing_page/logo2.png">
                 <div class=user-info-sub>
                     <div class=username-info>{{capsules[0].username}}</div>
                     <div class=email-info>({{capsules[0].email}})</div>
@@ -66,11 +66,15 @@
                 </div>
                 <div id="innerChallengeFindFriend" style="display:none">
                     <p id="selectUserText">Select a User</p>
+                    <p id="error" ng-bind="challengeError" style="display:none;font-size: 10px;
+    font-weight: 100;"></p>
                     <input type="text" name="findUser" id="findUser" placeholder="username">
                     <div class="challengeButton" id="challengeUserButton" ng-click="selectUser()">Choose</div>
                 </div>
                 <div id="innerChallengePlaceBet" style="display:none">
                     <p id="placeBetText">Place a Bet</p>
+                    <p id="error555" style="display:none;font-size: 10px;
+    font-weight: 100;"></p>
                     <input type="number" name="capsulesQuantity" id="capsulesQuantity">
                     <div class="challengeButton" id="challengeSubmit" onclick="challengeSubmit()">Challenge</div>
                 </div>

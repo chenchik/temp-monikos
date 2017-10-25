@@ -120,6 +120,18 @@ body {
   /*padding-top: 130px;*/
 }
 
+.card-wider{
+	height:390px !important;
+  padding-top: 130px !important;
+  overflow: scroll;
+}
+
+.back-card-wider{
+	height:390px !important;
+  /*padding-top: 130px;*/
+  overflow: scroll;
+}
+
 .card-super{
 	height:630px;
 	padding-top: 250px;
@@ -1157,8 +1169,11 @@ ul {
 .tile-wide-y {
   height: 310px;
 }
+.tile-wider-y {
+  height: 390px;
+}
 .tile-large-y {
-  height: 310px;
+  height: 390px;
 }
 .tile-big-y {
   height: 470px;

@@ -3,7 +3,12 @@
 <!-- <link rel="stylesheet" type="text/css" href="/mvc/public/css/home_style.css"/> -->
 
 <body id="home_page">
-
+<link rel="stylesheet" href="/mvc/public/css/popup.css">
+<link rel="stylesheet" href="/mvc/public/assets/css/style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen" title="no title">
+    
+    
+    
 	<script src = '/mvc/public/js/home/homeCtrl.js'></script>
     <script src = '/mvc/public/js/payment/paymentCtrl.js'></script>
 
@@ -15,9 +20,6 @@
 					<a ng-click="indextest()"><button class = 'back'>Home</button></a>
 					<a ng-click="drugDatabase()"><button class = 'database'>Database</button></a>
 					<a ng-click="listManager()"><button class = 'study'>Study</button></a>
-                <!--test cancel subscription button -->
-                    <a onclick="cancel()"><button class="study" id="cancel-temp" style="margin-left:80px;">Cancel</button></a>
-                <!-- end --->
 					<a ng-click = 'home()'><img id="toplogo" src="/mvc/public/images/logo_without_words_version_1.png"></a>
 
 					<a id="payment" ng-click="payment()"><button class = 'upgrade'>Upgrade</button></a>
@@ -36,11 +38,14 @@
 									</div>
 							</div>
 							<div class=user-info>
-									<img src="/mvc/public/images/user_icon.png">
+									<img src="/mvc/public/images/landing_page/logo2.png">
 									<div class=user-info-sub>
 											<div class=username-info>{{capsules[0].username}}</div>
 											<div class=email-info>({{capsules[0].email}})</div>
 											<div class=capsule-info>{{capsules[0].capsules}} Capsules</div>
+                                            <!--test cancel subscription button -->
+                                                <a onclick="cancel()" ng-show="premium" style="color: #CCC;font-size: 10px;cursor: pointer;">Cancel Subscription</a>
+                                            <!-- end --->
 											<a onclick="logout()"><div class=logout-btn>logout</div></a>
 									</div>
 							</div>
@@ -68,6 +73,21 @@
 				</div>
 
 			</div>
+        <div id="modal_wrapper" style="visibility:hidden;">
+            <div id="pop_up">
+                <header class="popupHeader socialHeader">
+                    <span class="header_title">Cancel Subscription</span>
+                    <span id="login_close" class="modal_close" onclick="hidePopup()"><i class="fa fa-times"></i></span>
+                </header>
+                <section class="popupBody">
+                    <p id="cancel_message">
+                        
+                    </p>
+                </section>
+               
+            </div>
+            <div id='lean_overlay_social' ng-click='$event.stopPropagation()'> </div>
+        </div>
 
 			<!-- <a href="#" ng-click="drugDatabase()">
 				<div class="top-block">

@@ -34,7 +34,6 @@
         document.createElement('ui-select-choices');
 
     </script>
-     <script src="/mvc/public/js/landingCtrl.js"></script>
     <!-- Title -->
     <title>Monikos</title>
 
@@ -97,7 +96,7 @@
     <style media="screen">
       #modal{
         width:400px;
-        margin-top: 5%;
+        margin-top: -20px;
         display: flex;
         justify-content: center;
       }
@@ -166,7 +165,7 @@
                                 </div> -->
 
                     <br />
-                    <input type="checkbox" name="remember" id="remember" style="margin-left: 20px;" ng-click="test()"/> Remember me
+                    <input type="checkbox" name="remember" id="remember" style="margin-left: 20px;"/> Remember me
                     <br />
                     <div class="action_btns">
                         <div id="loginBtn" class="one_half"><a ng-model="submit" class="btn btn-primary margin-top-10 wow bounceIn" data-wow-delay="0.5s" ng-click="login()">Log in</a></div>
@@ -231,8 +230,11 @@
 						                <option ng-repeat="x in schoolnames" id="a{{x.schoolid}}" value="{{x.schoolid}}">{{x.schoolname}}</option>
 									</select> -->
                     <!-- </div> -->
-
-
+                    <!--
+                    <input type="checkbox" name="agree" id="agree" style="margin-left: 20px;"/> 
+                    -->
+                    <div style="text-align:center;overflow:hidden;font-size:12px;padding:0px 10px 0px 10px;">By signing up, you agree to the <a>Terms of Service</a> and <a>Privacy Policy</a>. </div>
+                    
 
                     <div class="action_btns">
                         <div class="one_half"><a href="#" class="btn back_btn btn-primary margin-top-10" id="back_btn"><i class="fa fa-angle-double-left"></i> Back</a></div>
@@ -650,7 +652,7 @@
                                         <p class="article-time">Co-founder</p>
                                     </div>
                                     <p class="blog-list-desc  text-center">
-                                        Patrick is originally from Austin, Texas. He attended Duke University on a full athletic football scholarship. Before he left for college, his mother was diagnosed with type 2 diabetes. It was during this time period that Patrick started to take notice into what medications she took to control her diabetes and this is what motivated him to want to attend Pharmacy school...
+                                        Patrick is originally from Austin, Texas. He attended Duke University on a full athletic football scholarship where he double majored in Biological Anthropology and Psychology. Currently at the University of North Carolina, Patrick is pursuing a MBA/PharmD dual degree. He hopes to use the clinical knowledge... 
                                         <a class="tem-link inline-popup-trigger" href="#portfolio-1"> read more...</a>
                                     </p>
                                 </div>
@@ -665,9 +667,9 @@
                                     <div class="row margin-top-40">
                                         <div class="col-md-8 margin-bottom-20">
                                             <h2 class="no-margin-top">Patrick</h2>
-                                            <p>Patrick is originally from Austin, Texas. He attended Duke University on a full athletic football scholarship. Before he left for college, his mother was diagnosed with type 2 diabetes. It was during this time period that Patrick started to take notice into what medications she took to control her diabetes and this is what motivated him to want to attend Pharmacy school. Upon graduation, he took a two-year hiatus to enter the work force and complete a post-bac to make himself an eligible candidate for pharmacy school. </p>
+                                            <p>Patrick is originally from Austin, Texas. He attended Duke University on a full athletic football scholarship where he double majored in Biological Anthropology and Psychology. Currently at the University of North Carolina, Patrick is pursuing a MBA/PharmD dual degree. He hopes to use the clinical knowledge he will gain from the Eshelman School of Pharmacy and apply that to the business acumen and leadership development he will gain from the Kenan-Flagler Business School to affect patient populations on a macro scale. </p>
 
-                                            <p>He originally thought he would be heading back to Texas for Pharmacy school to be closer to his family, but when he was accepted into the UNC Eshelman School of Pharmacy, it was hard for him to turn down the then #2 ranked pharmacy school in the country. One of the promise Patrick’s mother made him keep was that no matter what school he chose to attend, that he leaves a positive impact. Hopefully Monikos will fulfill this promise to her.</p>
+                                            <p>As a pharmacy student, Patrick observed how much healthcare is changing and realized there is no reason why the same tedious and boring techniques should be used in studying drug facts. He believes that all healthcare students deserve a platform like Monikos that makes their learning process more enjoyable.</p>
                                         </div>
                                         <div class="col-md-4 margin-bottom-20 padding-left-40">
                                             <img src="images/landing_page/patrick.jpg" alt="patrick">
@@ -675,7 +677,7 @@
                                             <ul class="social-icons">
                                                 <li><a class="btn btn-social-min btn-default btn-sm" href="" target="_blank"><i class="fa fa-facebook"></i></a></li>
                                                 <li><a class="btn btn-social-min btn-default btn-sm" href="" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                                                <li><a class="btn btn-social-min btn-default btn-sm" href="" target="_blank"><i class="fa fa-pinterest"></i></a></li>
+                                                
                                                 <li><a class="btn btn-social-min btn-default btn-sm" href="" target="_blank"><i class="fa fa-dribbble"></i></a></li>
                                             </ul>
                                         </div>
@@ -963,108 +965,7 @@
 			* Use class "bg-image-parallax" to enable background image parallax effect (otherwise use class "bg-image").
 			* Use class "bg-pattern" if you use background patterns (example: http://subtlepatterns.com/). Combine with class "bg-image-fixed".
 			-->
-    <section id="section-test" class="testimonials-section bg-dark bg-image-parallax" style="background-image: url(images/landing_page/bg-2.jpg);">
-
-        <!-- Element cover
-				===================
-				* Use background transparent color classes for colored opacity (example: "bg-transparent-6-dark", "bg-transparent-8-5-red" ... 1 to 95). Look into "helper.css" file for more info.
-				-->
-        <span class="cover bg-transparent-5-1-dark"></span>
-
-        <div class="container">
-            <div class="row wow fadeIn" data-wow-delay="0.3s">
-                <div class="col-md-12">
-
-                    <!-- Begin testimonials
-							========================
-							* Use class "tm-hide-image" to hide testimonial image.
-							* Use class "tm-center" or "tm-right" to align testimonials.
-							-->
-                    <div class="testimonial-wrap tm-center max-width-800 margin-auto">
-
-                        <!-- Begin content carousel (http://www.owlcarousel.owlgraphic.com)
-								====================================================================
-								* Use class "nav-outside" for outside nav.
-								* Use class "nav-outside-top" for outside top nav.
-								* Use class "nav-rounded" for rounded nav.
-								* Use class "dots-outside" for outside dots.
-								* Use class "dots-left" or "dots-right" to align dots.
-								* Use class "dots-rounded" for rounded dots.
-								* Available carousel data attributes:
-										data-items="5".......................(items visible on desktop)
-										data-tablet-landscape="4"............(items visible on mobiles)
-										data-tablet-portrait="3".............(items visible on mobiles)
-										data-mobile-landscape="2"............(items visible on tablets)
-										data-mobile-portrait="1".............(items visible on tablets)
-										data-loop="true".....................(true/false)
-										data-margin="10".....................(space between items)
-										data-center="true"...................(true/false)
-										data-start-position="0"..............(item start position)
-										data-animate-in="fadeIn".............(more animations: http://daneden.github.io/animate.css/)
-										data-animate-out="fadeOut"...........(more animations: http://daneden.github.io/animate.css/)
-										data-mouse-drag="false"..............(true/false)
-										data-touch-drag="false"..............(true/false)
-										data-autoheight="true"...............(true/false)
-										data-autoplay="true".................(true/false)
-										data-autoplay-timeout="5000".........(milliseconds)
-										data-autoplay-hover-pause="true".....(true/false)
-										data-autoplay-speed="800"............(milliseconds)
-										data-drag-end-speed="800"............(milliseconds)
-										data-lazy-load="true"................(true/false)
-										data-nav="true"......................(true/false)
-										data-nav-speed="800".................(milliseconds)
-										data-dots="false"....................(true/false)
-										data-dots-speed="800"................(milliseconds)
-								-->
-                        <div class="owl-carousel testimonial-carousel dots-outside text-white" data-items="1" data-loop="true">
-
-                            <!-- Begin testimonial item -->
-                            <div class="testimonial-item text-gray-2">
-                                <img src="assets/img/testimonial/client-1.png" alt="image">
-                                <blockquote>
-                                    <p>"Duis vel ligula non neque varius eleifend quis id elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Suspendisse lacus dui, pellentesque ut porta et, consequat sit amet suscipit lacus."</p>
-                                    <small>Anna Clarkson</small>
-                                </blockquote>
-                            </div>
-                            <!-- End testimonial item -->
-
-                            <!-- Begin testimonial item -->
-                            <div class="testimonial-item text-gray-2">
-                                <img src="assets/img/testimonial/client-2.png" alt="image">
-                                <blockquote>
-                                    <p>"Maecenas sit amet diam iaculis, lobortis tortor sed, bibendum quam. Nam mauris odio, sodales interdum facilisis in, dignissim et massa. In suscipit quam nisi."</p>
-                                    <small>John Smith</small>
-                                </blockquote>
-                            </div>
-                            <!-- End testimonial item -->
-
-                            <!-- Begin testimonial item -->
-                            <div class="testimonial-item text-gray-2">
-                                <img src="assets/img/testimonial/client-3.png" alt="image">
-                                <blockquote>
-                                    <p>"Proin at tincidunt leo. Morbi ut metus sit amet purus molestie sollicitudin. Maecenas convallis est vitae neque feugiat, in accumsan odio vestibulum. Pellentesque sodales fermentum porttitor."</p>
-                                    <small>Jack Paterson</small>
-                                </blockquote>
-                            </div>
-                            <!-- End testimonial item -->
-
-                        </div>
-                        <!-- End testimonials carousel -->
-
-                    </div>
-                    <!-- End testimonials -->
-
-                </div>
-                <!-- /.col -->
-            </div>
-            <!-- /.row -->
-        </div>
-        <!-- /.container -->
-
-    </section>
-    <!-- End section test -->
-
-
+   
 
     <!-- =================================
 			///// Begin section clients (clients) /////
@@ -1174,32 +1075,7 @@
                 <!-- /.col -->
 
                 <!-- Right column -->
-                <div class="col-md-5 text-gray-2 padding-left-40">
-
-                    <div class="contact-info">
-                        <p><i class="fa fa-home"></i> 200 NC HWY 54 #A303 Carrboro, NC 27510 </p>
-                        <p><i class="fa fa-phone"></i> phone: +123 456 789 00</p>
-                        <p><i class="fa fa-envelope"></i> <a href="mailto:company.email@info.com" target="_blank">monikos.llc@gmail.com</a></p>
-                    </div>
-
-                    <h5 class="margin-top-40 margin-bottom-20">Follow Us:</h5>
-
-                    <!-- Begin social icons -->
-                    <ul class="social-icons margin-bottom-20">
-                        <li><a class="btn btn-social-min btn-white-bordered btn-lg" href="" target="_blank"><i class="fa fa-facebook"></i></a></li>
-                        <li><a class="btn btn-social-min btn-white-bordered btn-lg" href="" target="_blank"><i class="fa fa-twitter"></i></a></li>
-                        <li><a class="btn btn-social-min btn-white-bordered btn-lg" href="" target="_blank"><i class="fa fa-google-plus"></i></a></li>
-                        <li><a class="btn btn-social-min btn-white-bordered btn-lg" href="" target="_blank"><i class="fa fa-pinterest"></i></a></li>
-                        <li><a class="btn btn-social-min btn-white-bordered btn-lg" href="" target="_blank"><i class="fa fa-dribbble"></i></a></li>
-                    </ul>
-                    <!-- End social icons -->
-
-                </div>
-                <!-- /.col -->
-
-            </div>
-            <!-- /.row -->
-
+                
             <div class="row">
                 <div class="col-md-12">
 

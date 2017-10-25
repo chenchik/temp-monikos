@@ -1,13 +1,14 @@
 var app = angular.module('myApp', ['checklist-model']);
 
 app.controller('myCtrl', function($scope, $http) {
-  function logout(){
-    $.get("../../../../db/logout.php",function(data,status){
-       console.log(data); 
-    });
     
-    window.location = window.location.origin = "/mvc/public/landing.html";
-}
+  function logout() {
+    $.get("../../../../db/logout.php", function (data, status) {
+        console.log(data);
+    });
+    window.location = window.location.origin = "/mvc/public/account/landing";
+  }
+    
   function gotoChallenge(url) {
     window.location = url;
   }
@@ -67,13 +68,16 @@ app.controller('myCtrl', function($scope, $http) {
 
   }
   $scope.getNotifications();
-
-$scope.premiumCheck = function() {
-    var config = {
-    headers: {
-      'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
-    }
+  var delete_cookie = function(name) {
+    document.cookie = name + '=;expires=Thu, 01 Jan 1970 00:00:01 GMT;';
   };
+
+  $scope.premiumCheck = function() {
+    var config = {
+      headers: {
+        'Content-Type': 'application/x-www-form-urlencoded;charset=utf-8;'
+      }
+    };
     var username = getCookie('username');
     var url = "/db/get_profile_by_user.php";
 
@@ -83,6 +87,8 @@ $scope.premiumCheck = function() {
     $http.post(url, data, config)
       .then(function(response) {
         console.log(response);
+        $scope.premium = response.data.records[0]["premium"];
+        console.log($scope.premium);
         var premium = response.data.records[0]["premium"];//only within scope
         var getListsUrl = "/db/get_lists.php";
         var getListsConfig = {
@@ -123,15 +129,50 @@ $scope.premiumCheck = function() {
       } else {
         for (var i in response.data.records) {
           $scope.lists.push({
+            list_id: response.data.records[i].list_id,
             name: response.data.records[i].list_name.toString(),
             drugs: response.data.records[i].drugnames.toString().split(
               ",")
           });
         }
+          console.log($scope.lists);
+         
       }
     });                                                 
       });
   }
+    
+    //view list
+    $scope.viewList = function(listId){
+        var id='view-list-'+listId;
+        var buttonId = 'button-view-'+listId;
+        console.log(listId);
+        var drugs;
+        $scope.drugList = [];
+        var rank = 1;
+        for(var i=0;i<$scope.lists.length;i++){
+            if($scope.lists[i].list_id == listId){
+                drugs = $scope.lists[i].drugs;
+                for(var j=0;j<drugs.length;j++){
+                    $scope.drugList[j] = rank +". "+ drugs[j];
+                    rank ++;
+                }
+                break;
+            }
+        }
+        console.log($scope.drugList);
+        $("[id^='view-list']:not(#"+id+")").slideUp();
+        $('#'+id).slideToggle();
+        console.log($('#'+buttonId).text());
+        if($('#'+buttonId).text() == 'VIEW'){
+            $("[id^='button-view']:not(#"+buttonId+")").text('VIEW');
+            $('#'+buttonId).text('HIDE');
+        }else{
+            $("[id^='button-view']").text('VIEW');
+        }
+    }
+    
+    
   $scope.premiumCheck();
 
   $scope.payment = function() {
@@ -450,10 +491,6 @@ $(document).ready(function() {
   function removePopup() {
     $('#errorMessage').slideUp();
   }
-
-  $('.viewList').on('click', function() {
-    $('#viewModal').slideDown();
-  });
 
   $('#finishButton').on('click', function() {
     $('#viewModal').slideUp();

@@ -41,7 +41,7 @@ PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
                 $find = $collection -> findOne(
                     ['username' => $name]
                 );
-                $new = $find['capsules'] + 200;
+                $new = $find['capsules'] + 2500;
                 $result = $collection->updateOne(
                     ['username'=> $name],
                     ['$set'=>['capsules'=> $new]]

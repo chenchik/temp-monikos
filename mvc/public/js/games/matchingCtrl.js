@@ -3,15 +3,9 @@ var datalid = document.getElementById('datalid').innerHTML;
 
 //Created by Dana Elhertani, Danila Chenchik Monikos LLC
 
-var isChallenge;
-var isBeingChallenged;
-function logout(){
-    $.get("../../../../db/logout.php",function(data,status){
-       console.log(data); 
-    });
-    
-    window.location = window.location.origin = "/mvc/public/landing.html";
-}
+var isChallenge = false;
+var isBeingChallenged = false;
+
 var app = angular.module('myApp', []);
 app.controller('matchingCtrl', function ($scope, $http) {
     $scope.numClicked = 0;
@@ -131,31 +125,13 @@ app.controller('matchingCtrl', function ($scope, $http) {
     }
 
     function challengeComplete() {
+        window.onbeforeunload = null;
         $('#challengeCompleteMessage').slideDown('fast');
     }
-
-    function checkForRefresh() {
-        if (performance.navigation.type == 1) {
-            if (isChallenge == true || isBeingChallenged == true) {
-                window.location = window.location.origin + "/mvc/public/home";
-            }
-        } else {
-        }
-    }
     
-    function checkNormal() {
-        if(isBeingChallenged==false && isChallenge == false){
-            $scope.normal = true;
-        }
-    }
-    
-    checkNormal();
-    
-    $scope.checkIfBeingChallenged = function () {
+     $scope.checkIfBeingChallenged = function () {
         if ($('#challengeFlag').html() == 'beingchallenged') {
             isBeingChallenged = true;
-            $scope.normal=false;
-            checkForRefresh();
             return true;
         }
         return false;
@@ -165,13 +141,43 @@ app.controller('matchingCtrl', function ($scope, $http) {
         //$scope.challengingFlag = true;
         if ($('#challengeFlag').html() == 'challenge' || $('#challengeFlag').html() ==
             'challenge') {
-            $scope.normal=false;
             isChallenge = true;
-            checkForRefresh();
             return true;
         }
         return false;
     }
+    
+    function checkForRefresh() {
+        if (performance.navigation.type == 1) {
+            if (isChallenge == true || isBeingChallenged == true) {
+                window.location = window.location.origin + "/mvc/public/home";
+            }
+        }
+    }
+    
+    
+    function checkNormal() {
+        if(isBeingChallenged==false && isChallenge == false){
+            $scope.normal = true;
+        } else {
+            $scope.normal = false;
+        }     
+        console.log('am I being challenged?: '+isBeingChallenged);
+        console.log('am I challenging someone?: '+isChallenge);
+        console.log('am I in normal mode?: '+$scope.normal);
+    }
+    
+    $scope.checkIfBeingChallenged();
+    $scope.checkIfInChallengeMode();
+    checkForRefresh();
+    checkNormal();
+    
+     if($scope.normal == false){
+         console.log('lol');
+        window.onbeforeunload = function (e) {
+            return "If you continue, then your challenge will be not be sent and you will be redirected to the home page";
+        };
+    }  
 
     $scope.getUser2 = function () {
         var curUrl = window.location.href;
@@ -513,7 +519,11 @@ app.controller('matchingCtrl', function ($scope, $http) {
     });
 
     $scope.clicked = function (front) {
+        //only execute click function to cards that havent disappeared
+        
         $scope.clear = false;
+
+        console.log($scope.names);
         // console.log( $scope.numClicked);
 
 
@@ -620,6 +630,17 @@ app.controller('matchingCtrl', function ($scope, $http) {
                     }
 
                 }
+
+                console.log($scope.firstCard.drug);
+                console.log($scope.secondCard.drug);
+                console.log($scope.firstCard);
+                console.log($scope.secondCard);
+                $scope.firstCard.style.display = 'none';
+                $scope.secondCard.drug.css({'display':'none'});
+                $scope.firstCard = null;
+                $scope.secondCard = null;
+                
+                
             } else {
                 $scope.correct = "N";
             }
@@ -630,6 +651,7 @@ app.controller('matchingCtrl', function ($scope, $http) {
         }
         //console.log("numClicked after " + $scope.numClicked);
         //console.log("correct " + $scope.correct);
+    
     }
 
 
@@ -948,10 +970,6 @@ app.controller('matchingCtrl', function ($scope, $http) {
         });
     });
 });
-
-window.onbeforeunload = function (e) {
-    return "If you continue, then your challenge will be not be sent and you will be redirected to the home page";
-};
 
 
 function gotoGamelist() {

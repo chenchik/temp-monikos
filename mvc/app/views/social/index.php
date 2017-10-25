@@ -4,10 +4,12 @@
 <link rel="stylesheet" type="text/css" href="/mvc/public/css/main.css">
 <link rel="stylesheet" href="/mvc/public/assets/css/style.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" media="screen" title="no title">
-<script src="/mvc/public/js/social/socialCtrl.js"></script>
 <meta name='viewport' content="width=device-width, initial-scale=1" />
 <script src="/mvc/public/js/ui-bootstrap-tpls-2.5.0.min.js"></script>
 <link rel="stylesheet" type="text/css" href="/mvc/public/css/listM.css">
+   <script src="/mvc/public/js/social/socialCtrl.js"></script>
+    <script src = '/mvc/public/js/payment/paymentCtrl.js'></script>
+
 <script src='/mvc/public/js/listManager/listManagerFunctions.js'></script>
 
 <body>
@@ -31,11 +33,14 @@
                     </div>
                 </div>
                 <div class=user-info>
-                    <img src="/mvc/public/images/user_icon.png">
+                    <img src="/mvc/public/images/landing_page/logo2.png">
                     <div class=user-info-sub>
                         <div class=username-info>{{capsules[0].username}}</div>
                         <div class=email-info>({{capsules[0].email}})</div>
                         <div class=capsule-info>{{capsules[0].capsules}} Capsules</div>
+                        <!--test cancel subscription button -->
+                                                <a onclick="cancel()" style="color: #CCC;font-size: 10px;cursor: pointer;">Cancel Subscription</a>
+                                            <!-- end -->
                         <a href="#" onclick="logout()">
                             <div class=logout-btn>logout</div>
                         </a>
@@ -45,7 +50,11 @@
 
             <ul class="nav nav-tabs">
                 <li class="active"><a data-toggle="tab" href="#home"><i class="fa fa-address-book" aria-hidden="true"></i>  &nbsp Manage Friends</a></li>
-                <li><a data-toggle="tab" href="#menu1" ng-click="getNatlRank() ; getSchoolRank() ; getFriendRank()"><i class="fa fa-trophy" aria-hidden="true"></i> &nbsp Rankings</a></li>
+                <li>
+                    <a data-toggle="tab" href="#menu1" ng-click="getNatlRank() ; getSchoolRank() ; getSchoolsRank()">
+                        <i class="fa fa-trophy" aria-hidden="true"></i> &nbsp Rankings
+                    </a>
+                </li>
 
             </ul>
 
@@ -162,7 +171,8 @@
                     <div class='add-list-block'>
                         <button ng-click=showNatl()> National </button>
                         <button ng-click=showSchool() class="form-control listButton" ng-bind="user_school" style="width:auto;"> </button>
-                        <button ng-click=showFriendRank() class="form-control listButton"> Friends </button>
+                        <!--<button ng-click=showFriendRank() class="form-control listButton"> Friends </button>-->
+                        <button ng-click=showSchools()>Schools</button>
                     </div>
 
                     <div class="ranking-list natl" ng-repeat="x in national" style="display:none;">
@@ -178,13 +188,19 @@
                             <p>{{y.content}}<span class="badge ranking-circle">{{y.number}}</span></p>
                         </div>
                     </div>
-
-                    <div class="ranking-list pals" ng-repeat="z in friend_rank" style="display:none;">
+                    
+                    <div class="ranking-list schools" ng-repeat="y in schools" style="display:none;">
+                        <div class="ranking-item">
+                            <br>
+                            <p>{{y.content}}<span class="badge ranking-circle">{{y.number}}</span></p>
+                        </div>
+                    </div>
+                    <!--<div class="ranking-list pals" ng-repeat="z in friend_rank" style="display:none;">
                         <div class="ranking-item">
                             <br>
                             <p>{{z.content}}<span class="badge ranking-circle">{{z.number}}</span></p>
                         </div>
-                    </div>
+                    </div>-->
 
                 </div>
             </div>
@@ -271,7 +287,10 @@
         <!-- LIST CREATOR END -->
 
     </section>
-
+    
+    <script>
+    $('.errorText').css('text-align','center');
+    </script>
 </body>
 
 <script type="text/javascript">

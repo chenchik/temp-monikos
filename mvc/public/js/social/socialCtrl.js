@@ -1,13 +1,7 @@
 //Created by Joseph Son Monikos LLC
 
 var app = angular.module('socialApp', []);
-function logout(){
-    $.get("../../../../db/logout.php",function(data,status){
-       console.log(data); 
-    });
-    
-    window.location = window.location.origin = "/mvc/public/landing.html";
-}
+
 function getCookie(cname) {
     var name = cname + "=";
     var ca = document.cookie.split(';');
@@ -324,6 +318,13 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
         });
     };
 
+    $scope.getSchoolsRank = function () {
+        $http.post("/db/rank_schools.php", un_data, config).then(function (response) {
+            $scope.schools = response.data.records;
+            console.log(response.data);
+        });
+    };
+
     $scope.getFriendRank = function () {
         $scope.friends.sort(function(a,b){
         return b.capsules - a.capsules;
@@ -417,7 +418,12 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
     }
 
     $scope.showNatl = function () {
-        var arr = document.getElementsByClassName("ranking-list pals");
+        /*var arr = document.getElementsByClassName("ranking-list pals");
+        var length = arr.length;
+        for (i = 0; i < length; i++) {
+            arr[i].style.display = "none";
+        }*/
+        var arr = document.getElementsByClassName("ranking-list schools");
         var length = arr.length;
         for (i = 0; i < length; i++) {
             arr[i].style.display = "none";
@@ -436,8 +442,14 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
 
 
     $scope.showSchool = function () {
-        var arr = document.getElementsByClassName("ranking-list pals");
+        /*var arr = document.getElementsByClassName("ranking-list pals");
         var length = arr.length;
+        for (i = 0; i < length; i++) {
+            arr[i].style.display = "none";
+        }*/
+        var arr = document.getElementsByClassName("ranking-list schools");
+        var length = arr.length;
+        console.log(length);
         for (i = 0; i < length; i++) {
             arr[i].style.display = "none";
         }
@@ -455,6 +467,37 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
         }
     }
 
+    $scope.showSchools = function () {
+        //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+        //SAVING THIS JUST IN CASE WE WANT TO REVERT BACK TO FRIENDS RANKINGS
+        //@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+        /*var arr = document.getElementsByClassName("ranking-list pals");
+        var length = arr.length;
+        for (i = 0; i < length; i++) {
+            arr[i].style.display = "none";
+        }*/
+
+        var arr = document.getElementsByClassName("ranking-list schools");
+        var length = arr.length;
+        console.log(length);
+        for (i = 0; i < length; i++) {
+            arr[i].style.display = "block";
+        }
+        var arr = document.getElementsByClassName("ranking-list natl");
+        var length = arr.length;
+        console.log(length);
+        for (i = 0; i < length; i++) {
+            arr[i].style.display = "none";
+        }
+        var arr = document.getElementsByClassName("ranking-list school");
+        var length = arr.length;
+        console.log(length);
+        for (i = 0; i < length; i++) {
+            arr[i].style.display = "none";
+        }
+    }
+
     $scope.showFriendRank = function () {
         var arr = document.getElementsByClassName("ranking-list school");
         var length = arr.length;
@@ -466,8 +509,15 @@ app.controller('socialCtrl', function ($scope, $http, $log) {
         for (i = 0; i < length; i++) {
             arr[i].style.display = "none";
         }
+        /*
         var arr = document.getElementsByClassName("ranking-list pals");
         var length = arr.length;
+        for (i = 0; i < length; i++) {
+            arr[i].style.display = "block";
+        }*/
+        var arr = document.getElementsByClassName("ranking-list schools");
+        var length = arr.length;
+        console.log(length);
         for (i = 0; i < length; i++) {
             arr[i].style.display = "block";
         }
@@ -553,6 +603,7 @@ $(document).ready(function () {
     $('.challenge').on('click', function () {
         $('#errorMessage').slideUp();
     });
+    
 
     function removePopup() {
         $('.challenge').slideUp();
